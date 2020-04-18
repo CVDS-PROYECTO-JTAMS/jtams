@@ -42,6 +42,36 @@ lang="es">
 		
 	</h:form>
 	
+	<h2>Busqueda de iniciativas por palabras clave</h2>
+	<h:form>
+		<input id="ejemplo" type="text" value="parqueadero" data-role="tagsinput"/>
+		<p:inputText id="keyword" binding="#{palabraclave}" type="hidden"  />
+		<p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" actionListener="#{initiativeBean.buscainiciativa(palabraclave.value)}" styleClass="btn btn-primary"></p:commandButton>
+	</h:form>
+
+	<br/><br/>
+	
+	<p:dataTable id="tabla_iniciativas var="initiative" iniciativa="#{initiativeBean.buscainiciativa(palabraclave.value)}"> 
+		<p:column headerText="Id">
+			<h:outputText iniciativa="#{initiative.id}" />
+		</p:column>
+		<p:column headerText="Descripcion">
+			<h:outputText iniciativa="#{initiative.description}" />
+		</p:column>
+		<p:column headerText="Area">
+			<h:outputText iniciativa="#{initiative.area}" />
+		</p:column>
+		<p:column headerText="Estado">
+			<h:outputText iniciativa="#{initiative.typeStatusId}" />
+		</p:column>		
+		<p:column headerText="Fecha de creacion">
+			<h:outputText iniciativa="#{initiative.creationDate}" />
+		</p:column>	
+		<p:column headerText="# de votos">
+			<h:outputText iniciativa="#{initiative.numVotes }" />
+		</p:column>	
+	</p:dataTable>
+	
 	
 	
 	

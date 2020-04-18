@@ -27,17 +27,19 @@ CREATE TABLE Type_Status (
    CONSTRAINT Type_Status_pk PRIMARY KEY (id)
 );
 
-ALTER TABLE Initiative ADD CONSTRAINT Initiative_Type_Status
-   FOREIGN KEY (Type_Status_id)
-   REFERENCES Type_Status (status)  
-   NOT DEFERRABLE 
-   INITIALLY IMMEDIATE
-;
+
 --Foreing Key
 
 ALTER TABLE Initiative ADD CONSTRAINT Initiative_User
    FOREIGN KEY (User_id)
    REFERENCES "User" (id)  
+   NOT DEFERRABLE 
+   INITIALLY IMMEDIATE
+;
+
+ALTER TABLE Initiative ADD CONSTRAINT Initiative_Type_Status
+   FOREIGN KEY (Type_Status_id)
+   REFERENCES Type_Status (status)  
    NOT DEFERRABLE 
    INITIALLY IMMEDIATE
 ;

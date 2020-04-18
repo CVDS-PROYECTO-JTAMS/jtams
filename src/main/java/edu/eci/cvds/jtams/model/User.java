@@ -6,16 +6,19 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	private UserType type;
 	
 	public User() {
 		
 	}
 	
-	public User(int id, String name, String email, String password) {
+	public User(int id, String name, String email, String password, UserType type) {
+		
 		this.id = id;
 		this.name = name;
 		this.email =email;
 		this.password = password;
+		this.type = type;
 	}
 	
 	public String getName() {
@@ -50,10 +53,20 @@ public class User {
 		this.name = name;
 	}
 	
+	public UserType getUserType() {
+		return type;
+	}
+
+	public void setUserType(UserType type) {
+		this.type = type;
+	}
+	
 	@Override
     public String toString() {
         return "User{" + "name=" + name + ", email=" + email + ", password" + password + '}';
     }
+
+	
 
 	
 

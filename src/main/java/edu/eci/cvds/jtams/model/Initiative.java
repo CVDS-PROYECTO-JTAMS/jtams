@@ -9,13 +9,14 @@ public class Initiative {
 	private int numVotes;
 	private Date creationDate;
 	private int userId;
+	private Date modifyDate;
 	private String typeStatusId;
 	
 	public Initiative() {
 		
 	}
 	
-	public Initiative(int id, String description, String area, int numVotes, Date creationDate, int userId, String typeStatusId) {
+	public Initiative(int id, String description, String area, int numVotes, Date creationDate, int userId, Date modifyDate, String typeStatusId) {
 		this.id = id;
 		this.description = description;
 		this.area = area;
@@ -23,6 +24,7 @@ public class Initiative {
 		this.creationDate = creationDate;
 		this.userId = userId;
 		this.typeStatusId = typeStatusId;
+		this.modifyDate = modifyDate;
 	}
 
 	public int getId() {
@@ -81,9 +83,17 @@ public class Initiative {
 		this.typeStatusId = typeStatusId;
 	}
 	
+	public Date getModifyDate() {
+		return modifyDate;
+	}
+
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
+	}
+
 	@Override
     public String toString() {
-        return "Initiative{" + "description=" + description + ", area=" + area + ", numVotes" + numVotes + ", creationDate" + creationDate + '}';
+        return "Initiative{" + "description=" + description + ", area=" + area + ", numVotes" + numVotes + ", creationDate" + creationDate + ", userId" + userId + '}';
     }
 
 	

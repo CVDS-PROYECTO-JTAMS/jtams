@@ -1,5 +1,7 @@
 package edu.eci.cvds.jtams.services.impl;
 
-public class InitiativeServicesImpl {
+import edu.eci.cvds.jtams.services.InitiativeServices;
+
+public class InitiativeServicesImpl implements InitiativeServices {
 
 }

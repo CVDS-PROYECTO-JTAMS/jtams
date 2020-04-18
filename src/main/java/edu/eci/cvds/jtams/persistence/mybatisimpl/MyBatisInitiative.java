@@ -1,5 +1,7 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
-public class MyBatisInitiative {
+import edu.eci.cvds.jtams.persistence.InitiativeDAO;
+
+public class MyBatisInitiative implements InitiativeDAO{
 
 }

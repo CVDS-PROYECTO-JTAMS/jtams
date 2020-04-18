@@ -1,5 +1,7 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
-public class MyBatisUser {
+import edu.eci.cvds.jtams.persistence.UserDAO;
+
+public class MyBatisUser implements UserDAO {
 
 }

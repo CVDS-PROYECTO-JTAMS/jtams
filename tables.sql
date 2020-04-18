@@ -27,7 +27,6 @@ CREATE TABLE Type_Status (
    CONSTRAINT Type_Status_pk PRIMARY KEY (id)
 );
 
-
 --Foreing Key
 
 ALTER TABLE Initiative ADD CONSTRAINT Initiative_User

@@ -1,5 +1,7 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
-public class MyBatisComment {
+import edu.eci.cvds.jtams.persistence.CommentDAO;
+
+public class MyBatisComment implements CommentDAO {
 
 }

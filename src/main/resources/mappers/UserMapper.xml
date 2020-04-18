@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.UserMapper">
+<mapper namespace="edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper">
 
     <resultMap type='User' id='UserResult'>
         <id property='id' column='id'/>
@@ -33,7 +33,7 @@
     </select>
 
     <update id='updateUser'>
-        update "User" set type_user=#{rol}, email=#{email}, password=#{password}, name=#{name} where id= #{id};
+        update "User" set type_user=#{type_user}, email=#{email}, password=#{password}, name=#{name} where id= #{id};
     </update>
 
     <insert id="createUser" parameterType="User">

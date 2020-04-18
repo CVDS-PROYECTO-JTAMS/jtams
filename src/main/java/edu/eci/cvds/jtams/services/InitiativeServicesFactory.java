@@ -16,7 +16,6 @@ import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisUser;
 import edu.eci.cvds.jtams.services.impl.InitiativeServicesImpl;
 import edu.eci.cvds.jtams.services.impl.UserServicesImpl;
 
-import org.mybatis.guice.XMLMyBatisModule;
 import static com.google.inject.Guice.createInjector;
 
 public class InitiativeServicesFactory {
@@ -55,10 +54,27 @@ public class InitiativeServicesFactory {
 
     public InitiativeServices getInitiativeServicesTesting(){
         if (!optInjector.isPresent()) {
-            optInjector = Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
+            optInjector = Optional.of(myBatisInjector("test", "mybatis-config-h2.xml"));
         }
 
         return optInjector.get().getInstance(InitiativeServices.class);
+    }
+
+    public UserServices getUserServices(){
+        if (!optInjector.isPresent()) {
+            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+        }
+
+        return optInjector.get().getInstance(UserServices.class);
+    }
+
+
+    public UserServices getUserServicesTesting(){
+        if (!optInjector.isPresent()) {
+            optInjector = Optional.of(myBatisInjector("test", "mybatis-config-h2.xml"));
+        }
+
+        return optInjector.get().getInstance(UserServices.class);
     }
 
 

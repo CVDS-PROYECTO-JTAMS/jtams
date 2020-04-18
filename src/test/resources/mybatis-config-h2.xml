@@ -5,10 +5,9 @@
 <configuration>
 
     <typeAliases>
-        <typeAlias type='edu.eci.cvds.samples.entities.Cliente' alias='Cliente'/>
-        <typeAlias type='edu.eci.cvds.samples.entities.Item' alias='Item'/>
-        <typeAlias type='edu.eci.cvds.samples.entities.ItemRentado' alias='ItemRentado'/>
-        <typeAlias type='edu.eci.cvds.samples.entities.TipoItem' alias='TipoItem'/>
+        <typeAlias type="edu.eci.cvds.jtams.model.User" alias="User"/>
+        <typeAlias type="edu.eci.cvds.jtams.model.Initiative" alias="Initiative"/>
+        <typeAlias type="edu.eci.cvds.jtams.model.InitiativeStates" alias="InitiativeStates"/>
     </typeAliases>
 
     <environments default="test">
@@ -24,10 +23,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="mappers/ClienteMapper.xml"></mapper>
-        <mapper resource="mappers/ItemMapper.xml"></mapper>
-        <mapper resource="mappers/ItemRentadoMapper.xml"></mapper>
-        <mapper resource="mappers/TipoItemMapper.xml"></mapper>
+        <mapper resource="mappers/UserMapper.xml"></mapper>
+        <mapper resource="mappers/InitiativeMapper.xml"></mapper>
     </mappers>
 
 </configuration>

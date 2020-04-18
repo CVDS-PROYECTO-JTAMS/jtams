@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.InitiativeMapper">
+<mapper namespace="edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper">
 
     <resultMap type='Initiative' id='InitiativeResult'>
         <id property='id' column='id'/>
@@ -13,17 +13,16 @@
         <result property='creationDate' column='creation_date'/>
         <result property='modifyDate' column='modify_date'/>
         <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
-        <association property='status' javaType='TypeStatus' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper.StatusResult'></association>
+        <association property='status' javaType='InitiativeStates' resultMap='InitiativeStates'></association>
     </resultMap>
 
-    <resultMap type='TypeStatus' id='StatusResult'>
+    <resultMap type='InitiativeStates' id='InitiativeStates'>
         <id property='id' column='id'/>
         <result property='status' column='status'/>
     </resultMap>
 
     <insert id="createInitiative" parameterType="Initiative">
-        INSERT INTO "initiative"
-        (id, description, area,creation_date,User_id,modify_date,type_status_id, "Name")
+        INSERT INTO "initiative" (id, description, area,creation_date,User_id,modify_date,type_status_id, "Name")
         VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{creation},#{idus},#{modification},#{state},#{name})
     </insert>
 

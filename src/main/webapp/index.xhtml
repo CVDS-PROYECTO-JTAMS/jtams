@@ -6,16 +6,45 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:shiro="http://shiro.apache.org/tags"
 lang="es">
 
-<h:head>
-
   <title>Reserva de Recursos ECI</title>
-
-
-
-</h:head>
-
-<h:body>
-
-</h:body>
-
+  <head>
+  <center>
+	<img src="logo.png"></img>
+  </center>
+	  <style>
+		/* Style the header */
+		header {
+		  background-color: #1C70AC;
+		  padding: 30px;
+		  text-align: center;
+		  font-size: 35px;
+		  color: white;
+	}
+	  </style>
+  </head>
+  <body>
+  <center>
+	<header>
+		Bienvenidos
+	</header>
+  </center>
+	<h:form>
+			<p:outputPanel>
+                      <h:outputText value="Usuario:" />
+                      <p:inputText id="userInput" style="width:150px" placeholder="Ingresa tu email" value="#{userBean.username}"/>
+             </p:outputPanel>
+			 <p:outputPanel>
+                      <h:outputText value="Contraseña:" />
+                      <p:inputText type="password" id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{userBean.password}"/>
+             </p:outputPanel>
+			<p:commandButton id="ingresar" action="#{userBean.logIn}" class="navbar-toggler navbar-toggler-right"  value="Ingresar"  />
+			
+		
+	</h:form>
+	
+	
+	
+	
+  </body>
+  
 </html>

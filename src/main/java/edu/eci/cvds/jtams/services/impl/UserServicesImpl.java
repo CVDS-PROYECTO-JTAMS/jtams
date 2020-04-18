@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.PersistenceException;
 
+import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
@@ -11,12 +12,13 @@ import edu.eci.cvds.jtams.persistence.UserDAO;
 import edu.eci.cvds.jtams.services.UserServices;
 
 public class UserServicesImpl implements UserServices{
-	
+
+	@Inject
 	private UserDAO userDao;
 
 	@Override
 	public void createUser(User user) throws JtamsExceptions {
-		if (user== null) {
+		if (user == null) {
 			throw new JtamsExceptions("The User is Null");
 		}else {
 			userDao.createUser(user);
@@ -61,8 +63,11 @@ public class UserServicesImpl implements UserServices{
 		return true;
 	}
 
-	
+	public UserDAO getUserDao() {
+		return userDao;
+	}
 
-	
-
+	public void setUserDao(UserDAO userDao) {
+		this.userDao = userDao;
+	}
 }

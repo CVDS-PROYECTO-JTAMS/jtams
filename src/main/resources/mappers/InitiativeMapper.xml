@@ -12,7 +12,7 @@
         <result property='area' column='area'/>
         <result property='creationDate' column='creation_date'/>
         <result property='modifyDate' column='modify_date'/>
-        <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
+        <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
         <association property='status' javaType='InitiativeStates' resultMap='InitiativeStates'></association>
     </resultMap>
 

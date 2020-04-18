@@ -18,8 +18,9 @@ import edu.eci.cvds.jtams.services.UserServices;
 @SessionScoped
 public class UserBean {
 	
-	//@Inject
-	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
+	@Inject
+	private UserServices userServices;
+	//private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
 	private String username;
 	private String password;
 	

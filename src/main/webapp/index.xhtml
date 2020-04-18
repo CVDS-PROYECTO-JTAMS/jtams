@@ -41,7 +41,7 @@ lang="es">
 			
 		
 	</h:form>
-	
+	<!--
 	<h2>Busqueda de iniciativas por palabras clave</h2>
 	<h:form>
 		<input id="ejemplo" type="text" value="parqueadero" data-role="tagsinput"/>
@@ -49,7 +49,7 @@ lang="es">
 		<p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" actionListener="#{initiativeBean.buscainiciativa(palabraclave.value)}" styleClass="btn btn-primary"></p:commandButton>
 	</h:form>
 
-	<br/><br/>
+	<br></br>
 	
 	<p:dataTable id="tabla_iniciativas var="initiative" iniciativa="#{initiativeBean.buscainiciativa(palabraclave.value)}"> 
 		<p:column headerText="Id">
@@ -71,7 +71,7 @@ lang="es">
 			<h:outputText iniciativa="#{initiative.numVotes }" />
 		</p:column>	
 	</p:dataTable>
-	
+	-->
 	
 	
 	

@@ -1,13 +1,16 @@
 package edu.eci.cvds.jtams.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.PersistenceException;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
+import edu.eci.cvds.jtams.model.Comment;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
+import edu.eci.cvds.jtams.persistence.CommentDAO;
 import edu.eci.cvds.jtams.persistence.UserDAO;
 import edu.eci.cvds.jtams.services.UserServices;
 
@@ -15,6 +18,8 @@ public class UserServicesImpl implements UserServices{
 
 	@Inject
 	private UserDAO userDao;
+	@Inject
+	private CommentDAO comentarioDAO;
 
 	@Override
 	public void createUser(User user) throws JtamsExceptions {
@@ -69,5 +74,16 @@ public class UserServicesImpl implements UserServices{
 
 	public void setUserDao(UserDAO userDao) {
 		this.userDao = userDao;
+	}
+
+	@Override
+	public ArrayList<Comment> getComentariosIniciativa(int idIniciativa) {
+		return comentarioDAO.verComentarios(idIniciativa);
+	}
+
+	@Override
+	public void createComentario(Comment comentario) {
+		comentarioDAO.agregarComentario(comentario);
+		
 	}
 }

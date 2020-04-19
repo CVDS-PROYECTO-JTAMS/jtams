@@ -4,7 +4,7 @@ import edu.eci.cvds.jtams.exceptions.*;
 import java.util.List;
 import java.util.Arrays;
 import edu.eci.cvds.jtams.services.*;
-public class InitiativeBean extends BasePageBean {
+public class InitiativeBean {
 	
 	
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{

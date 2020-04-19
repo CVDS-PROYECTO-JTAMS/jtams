@@ -16,7 +16,7 @@ import edu.eci.cvds.jtams.services.UserServices;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "userBean")
 @SessionScoped
-public class UserBean extends BasePageBean{
+public class UserBean{
 	
 	@Inject
 	private UserServices userServices;

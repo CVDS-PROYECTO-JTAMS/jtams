@@ -15,7 +15,7 @@
         <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
         <association property='status' javaType='InitiativeStates' resultMap='InitiativeStates'></association>
     </resultMap>
-
+    
     <resultMap type='InitiativeStates' id='InitiativeStates'>
         <id property='id' column='id'/>
         <result property='status' column='status'/>

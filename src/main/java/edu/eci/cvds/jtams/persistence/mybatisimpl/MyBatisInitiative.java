@@ -53,7 +53,13 @@ public class MyBatisInitiative implements InitiativeDAO {
 
     }
     public List<Initiative> dariniciativas() throws JtamsExceptions {
-		return initiativeMapper.dariniciativas();
+    	System.out.println("llega a mybatisimpl pero Fail");
+		System.out.println("listar Fail");
+		System.out.println("listar Fail");
+		System.out.println("listar Fail");
+		System.out.println("listar Fail");
+		System.out.println("listar Fail");
+		return null;//initiativeMapper.dariniciativas();
 	}
 
 	@Override

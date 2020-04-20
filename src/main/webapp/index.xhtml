@@ -43,24 +43,24 @@ lang="es">
 	</h:form>
 	<h1>Ultimas Iniciativas Agregadas</h1>
 	
-	<p:dataTable id="tabladeinciativas" var="initiative" iniciativ="#{InitiativeBean.Todasiniciativas()}">
+	<p:dataTable id="tabladeinciativas" var="initiative" value="#{InitiativeBean.Todasiniciativas()}">
 		<p:column headerText="Id">
-			<h:outputText iniciativ="#{initiative.id}" />
+			<h:outputText value="#{initiative.id}" />
 		</p:column>
 		<p:column headerText="Descripcion">
-			<h:outputText iniciativ="#{initiative.description}" />
+			<h:outputText value="#{initiative.description}" />
 		</p:column>
 		<p:column headerText="Area">
-			<h:outputText iniciativ="#{initiative.area}" />
+			<h:outputText value="#{initiative.area}" />
 		</p:column>
 		<p:column headerText="Fecha de creacion">
-			<h:outputText iniciativa="#{initiative.creationDate}" />
+			<h:outputText value="#{initiative.creationDate}" />
 		</p:column>	
 		<p:column headerText="Estado">
-			<h:outputText iniciativ="#{initiative.typeStatusId}" />
+			<h:outputText value="#{initiative.typeStatusId}" />
 		</p:column>
 		<p:column headerText="# de Votos">
-			<h:outputText iniciativ="#{initiative.numVotes}" />
+			<h:outputText value="#{initiative.numVotes}" />
 		</p:column>
 	</p:dataTable>
 	

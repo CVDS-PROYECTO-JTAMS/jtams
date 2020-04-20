@@ -17,10 +17,22 @@ public class InitiativeBean {
 	
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
 		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
+		System.out.println("llega a initiativebean");
+		System.out.println("busqueda Fail");
+		System.out.println("busqueda Fail");
+		System.out.println("busqueda Fail");
+		System.out.println("busqueda Fail");
+		System.out.println("busqueda Fail");
 		return initiativeService.buscainiciativaporpalabra(iniciativas);
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
-		return null;//InitiativeServices.dariniciativas();
+		//System.out.println("llega a initiativebean");
+		//System.out.println("listar Fail");
+		//System.out.println("listar Fail");
+		//System.out.println("listar Fail");
+		//System.out.println("listar Fail");
+		
+		return  initiativeService.dariniciativas();
 	}
 
 }

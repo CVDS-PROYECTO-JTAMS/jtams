@@ -5,9 +5,9 @@ import edu.eci.cvds.jtams.model.*;
 
 public interface CommentDAO {
 
-	public ArrayList<Comment> verComentarios(int idInciativa);
+	public void createComment(Comment comment);
 	
-	public void agregarComentario(Comment comentario);
+	public Comment getComment(int idIniciativa);
 
-	public int getnumComentariosUsuario(String nombre);
+	public int getnumComentariosUsuario(String id);
 }

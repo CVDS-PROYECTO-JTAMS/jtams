@@ -13,21 +13,21 @@
         <result property='creationDate' column='creation_date'/>
         <result property='modifyDate' column='modify_date'/>
         <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
-        <association property='status' javaType='InitiativeStates' resultMap='InitiativeStates'></association>
+        <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
     </resultMap>
     
-    <resultMap type='InitiativeStates' id='InitiativeStates'>
+    <resultMap type='edu.eci.cvds.jtams.model.InitiativeState' id='InitiativeState'>
         <id property='id' column='id'/>
         <result property='status' column='status'/>
     </resultMap>
 
     <insert id="createInitiative" parameterType="Initiative">
-        INSERT INTO "initiative" (id, description, area,creation_date,User_id,modify_date,type_status_id, "Name")
-        VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{creation},#{idus},#{modification},#{state},#{name})
+        INSERT INTO "initiative" (id, description, area, num_votos,creation_date,User_id,modify_date,type_status_id)						
+        VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{numVotes},#{creationDate},#{userId},#{modifyDate},#{typeStatusId})
     </insert>
 
     <select id='getInitiative' resultMap= 'InitiativeResult' parameterType='map'>
-        SELECT distinct on (i.id)
+        SELECT 
         i.id,
         i.num_votos,
         i.description,
@@ -39,18 +39,21 @@
         u.name as user_name,
         u.email as user_email,
         u.type_user as user_type_user,
-        u.password as user_password
+        u.password as user_password,
+        ts.id,
+        ts.status 
         FROM Initiative as i
-        INNER JOIN User as u on u.id = i.user_id
+        INNER JOIN "User" as u on u.id = i.user_id
+        INNER JOIN Type_Status as ts on ts.status = i.type_status_id
         where area = #{area};
     </select>
 
     <update id="updateState">
-        update initiative set type_status_id= #{newStatus} where id= #{id};
+        update initiative set type_status_id= #{state} where id= #{id};
     </update>
 
     <update id="updateInitiative">
-        update initiative set description= #{description}, area= #{area}, description= #{description} where "id"= #{id};
+        update initiative set description= #{description}, area= #{area} where "id"= #{id};
     </update>
 
 </mapper>

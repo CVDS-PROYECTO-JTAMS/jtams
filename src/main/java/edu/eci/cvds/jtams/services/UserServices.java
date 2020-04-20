@@ -22,8 +22,8 @@ public interface UserServices {
 	
 	public UserType updateTypeUser(UserType userType);
 	
-	public ArrayList<Comment> getComentariosIniciativa(int idIniciativa);
-	
-	public void createComentario(Comment comentario);
-	
+//	public Comment getComentario(int idIniciativa);
+//
+//	public void createComentario(Comment comentario);
+//
 }

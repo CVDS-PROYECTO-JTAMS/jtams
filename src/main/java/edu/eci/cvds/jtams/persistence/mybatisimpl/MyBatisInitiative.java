@@ -16,7 +16,7 @@ public class MyBatisInitiative implements InitiativeDAO {
     public void createInitiative(Initiative initiative) throws JtamsExceptions {
         try {
             initiativeMapper.createInitiative(initiative.getId(), initiative.getDescription(), initiative.getArea(),
-                initiative.getNumVotes(), initiative.getCreationDate(), initiative.getUserId(), initiative.getTypeStatusId());
+                initiative.getNumVotes(), initiative.getCreationDate(), initiative.getUserId(), initiative.getTypeStatusId(), initiative.getModifyDate());
         } catch (Exception e) {
             throw new JtamsExceptions("There was an exception persisting the new initiative to the database", e);
         }
@@ -43,8 +43,7 @@ public class MyBatisInitiative implements InitiativeDAO {
     @Override
     public void updateInitiative(Initiative initiative) throws JtamsExceptions {
         try {
-            initiativeMapper.updateInitiative(initiative.getId(), initiative.getDescription(), initiative.getArea(),
-                    initiative.getNumVotes(), initiative.getCreationDate(), initiative.getUserId(), initiative.getTypeStatusId());
+            initiativeMapper.updateInitiative(initiative.getId(), initiative.getDescription(), initiative.getArea());
         } catch (Exception e) {
             throw new JtamsExceptions("There was an exception persisting the initiative to the database", e);
         }

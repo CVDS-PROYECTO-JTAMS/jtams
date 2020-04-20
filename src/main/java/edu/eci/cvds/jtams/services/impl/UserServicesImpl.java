@@ -18,8 +18,8 @@ public class UserServicesImpl implements UserServices{
 
 	@Inject
 	private UserDAO userDao;
-	@Inject
-	private CommentDAO comentarioDAO;
+//	@Inject
+//	private CommentDAO comentarioDAO;
 
 	@Override
 	public void createUser(User user) throws JtamsExceptions {
@@ -76,14 +76,17 @@ public class UserServicesImpl implements UserServices{
 		this.userDao = userDao;
 	}
 
-	@Override
-	public ArrayList<Comment> getComentariosIniciativa(int idIniciativa) {
-		return comentarioDAO.verComentarios(idIniciativa);
-	}
+//	@Override
+//	public Comment getComentario(int idIniciativa) {
+//		return comentarioDAO.getComment(idIniciativa);
+//	}
+//
+//	@Override
+//	public void createComentario(Comment comentario) {
+//		comentarioDAO.createComment(comentario);
+//	}
 
-	@Override
-	public void createComentario(Comment comentario) {
-		comentarioDAO.agregarComentario(comentario);
-		
-	}
+	
+
+	
 }

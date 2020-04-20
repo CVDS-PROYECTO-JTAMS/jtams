@@ -16,11 +16,11 @@ import edu.eci.cvds.jtams.services.UserServices;
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "userBean")
 @SessionScoped
-public class UserBean extends BasePageBean{
+public class UserBean {
 	
-	@Inject
-	private UserServices userServices;
-	//private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
+	//@Inject
+	//private UserServices userServices;
+	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
 	private String username;
 	private String password;
 	
@@ -40,7 +40,7 @@ public class UserBean extends BasePageBean{
 				}
 			} else {
 				System.out.println("Validation Fail");
-				FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
+				FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
 			}
 			
 		} catch (JtamsExceptions e) {

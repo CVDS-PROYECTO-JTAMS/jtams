@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.CommentMapper">
+
+    <resultMap type='Comments' id='CommentsResult'>
+        <id property='id' column='id'/>
+        <result property='fechaCreacion' column='creationDate'/>
+        <result property='fechaModificacion' column='modifyDate'/>
+        <result property='mensaje' column='menssage'/>
+        <association property='usuario' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
+        <association property='iniciativa' javaType='Initiative'  columnPrefix="initiative" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper.InitiativeResult'></association>
+    </resultMap>
+    
+
+    <insert id="createComment" parameterType="Comment">
+        INSERT INTO "comments" (id, initiative, creationDate, modifyDate, message, user)
+        VALUES ((select count(*)+1 from "comments"),#{iniciativa},#{fechaCreacion},#{fechaModificacion},#{mensaje},#{usuario})
+    </insert>
+
+    <select id='getComment' resultMap= 'CommentResult' parameterType='map'>
+        select 
+		i.id,
+		c.initiative
+		from "Comments" as c
+		inner join initiative as i on i.id = c.initiative
+		where initiative = #{idIniciativa}; 
+    </select>
+
+    <update id="getnumComentariosUsuario">
+        select 
+		u.id,
+		c.user
+		from "Comments" as c
+		inner join "User" as u on c."user" = u.id
+		where user = #{id};
+    </update>
+
+</mapper>

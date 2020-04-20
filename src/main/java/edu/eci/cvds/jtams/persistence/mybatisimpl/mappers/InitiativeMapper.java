@@ -11,11 +11,12 @@ public interface InitiativeMapper {
 
     public void createInitiative(@Param("id") int id, @Param("description") String description, @Param("area") String area,
                                  @Param("numVotes") int numVotes, @Param("creationDate") Date creationDate, @Param("userId") int userId,
-                                 @Param("typeStatusId") String typeStatusId);
-    public void updateInitiative (@Param("id") int id, @Param("description") String description, @Param("area") String area,
-                                  @Param("numVotes") int numVotes, @Param("creationDate") Date creationDate, @Param("userId") int userId,
-                                  @Param("typeStatusId") String typeStatusId);
-    public Initiative getInitiative(@Param("area") String area);
+                                 @Param("typeStatusId") String typeStatusId, @Param("modifyDate") Date modifyDate);
+    
+    public void updateInitiative (@Param("id") int id, @Param("description") String description, @Param("area") String area);
+    
     public void updateState (@Param("id") int id, @Param("state") InitiativeStates state);
+    
+    public Initiative getInitiative(@Param("area") String area);
 
 }

@@ -32,7 +32,7 @@ public class InitiativeServicesFactory {
                 setClassPathResource(pathResource);
                 bind(UserDAO.class).to(MyBatisUser.class);
                 bind(InitiativeDAO.class).to(MyBatisInitiative.class);
-                bind(CommentDAO.class).to(MyBatisComment.class);
+                //bind(CommentDAO.class).to(MyBatisComment.class);
                 bind(InitiativeServices.class).to(InitiativeServicesImpl.class);
                 bind(UserServices.class).to(UserServicesImpl.class);
             }

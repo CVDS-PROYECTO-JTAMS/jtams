@@ -27,11 +27,24 @@ CREATE TABLE Type_Status (
    CONSTRAINT Type_Status_pk PRIMARY KEY (id)
 );
 
+create table "Comments"(
+	id int not null,
+	initiative int not null,
+	creationDate date not null,
+	modifyDate date not null,
+	message varchar(150) not null,
+	"user" int not null,
+	constraint Comments_pk primary key (id)
+);
+
+
+
+
 --Foreing Key
 
 ALTER TABLE Initiative ADD CONSTRAINT Initiative_User
    FOREIGN KEY (User_id)
-   REFERENCES "User" (id) 
+   REFERENCES "User" (id)
 ;
 
 ALTER TABLE Initiative ADD CONSTRAINT Initiative_Type_Status
@@ -46,20 +59,13 @@ ALTER TABLE Initiative ADD CONSTRAINT Initiative_Type_Status
  * 2 - Proponente
  * 3 - Publico
  * */
- 
 
-insert into "User" values (111111111,'sebastian','sebasvilla@gmail.com','sebastian1213',2);
-insert into "User" values (1015475102,'nikolai','nikolai9906n@gmail.com','nikolai1213',0);
-insert into "User" values (1015475103,'Verbo','verbo@gmail.com','verbo1213',1);
-insert into "User" values (1015475104,'Juan','juan@gmail.com','juan1213',3);
 
-insert into Initiative (id,description,area,num_votos,creation_date,User_id,modify_date,Type_status_id)
-					values ((select count(*)+1 from "Initiative"),
-						'bajar precios de los k','economia',3,(select now()),
-						123456,(select now()),'En espera de revisión') ;
-						
-				
-insert into Initiative (id,description,area,num_votos,creation_date,User_id,modify_date,Type_status_id)
-					values ((select count(*)+1 from "Initiative"),
-						'dar mas intersemestrales para ing Sistemas','Bienestar U',100,(select now()),
-						1234567,(select now()),'En espera de revisión') ;
+insert into "User" values (1015475102,'nikolai','niko','niko',0);
+insert into "User" values (1015475103,'Verbo','verbo','verbo',2);
+
+insert into type_status values (1,'En revision');
+
+insert into "initiative" (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from "initiative"),'mas parqueaderos','parqueadero',0,(select now()),1015475103,(select now()),'En revision');
+

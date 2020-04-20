@@ -2,45 +2,58 @@
 <html xmlns="http://www.w3c.org/1999/xhtml"
 xmlns:h="http://xmlns.jcp.org/jsf/html"
 xmlns:p="http://primefaces.org/ui"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:shiro="http://shiro.apache.org/tags"
+xmlns:th="http://www.thymeleaf.org"
 lang="es">
 
   <title>Reserva de Recursos ECI</title>
   <head>
-  <center>
-	<img src="logo.png"></img>
-  </center>
-	  <style>
-		/* Style the header */
-		header {
-		  background-color: #1C70AC;
-		  padding: 30px;
-		  text-align: center;
-		  font-size: 35px;
-		  color: white;
-	}
-	  </style>
+	  <!--JQUERY-->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	  <!-- Los iconos tipo Solid de Fontawesome-->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
+	  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	  <!-- Nuestro css-->
+	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
+	  </link>
+
   </head>
   <body>
-  <center>
-	<header>
-		Bienvenidos
-	</header>
-  </center>
+  <div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+        <div class="modal-content">
+            <div class="col-12 user-img">
+	            <img src="img/user.png" th:src="@{/img/user.png}"/>
+            </div>
+
 	<h:form>
 			<p:outputPanel>
-                      <h:outputText value="Usuario:" />
-                      <p:inputText id="userInput" style="width:150px" placeholder="Ingresa tu email" value="#{userBean.username}"/>
-             </p:outputPanel>
+                <div class="form-group" id="user-group">
+                <center>
+                <p:inputText id="userInput"  style="width:150px" class="form-control" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{userBean.username}"/>
+                </center>
+                </div>
+            </p:outputPanel>
 			 <p:outputPanel>
-                      <h:outputText value="Contraseña:" />
-                      <p:inputText type="password" id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{userBean.password}"/>
+                 <div class="form-group" id="contrasena-group">
+                 <center>
+                 <p:inputText type="password" class="form-control" data-validation-required-message="Please enter your password." id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{userBean.password}"/>
+                 </center>
+                 </div>
              </p:outputPanel>
-			<p:commandButton id="ingresar" action="#{userBean.logIn}" class="navbar-toggler navbar-toggler-right"  value="Ingresar"  />
-			
-		
+            <center>
+			<p:commandButton id="ingresar" action="#{userBean.logIn}" class="btn btn-primary"  value="Ingresar"  />
+            </center>
+
+
 	</h:form>
+
+	  <!--
 	<h1>Ultimas Iniciativas Agregadas</h1>
 	
 	<p:dataTable id="tabladeinciativas" var="initiative" iniciativ="#{initiativeBean.Todasiniciativas()}">
@@ -65,6 +78,7 @@ lang="es">
 	</p:dataTable>
 	
 	<br/><br/>
+
 	<h2>Busqueda de iniciativas por palabras clave</h2>
 	<h:form>
 		<input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput"/>
@@ -94,8 +108,10 @@ lang="es">
 			<h:outputText iniciativa="#{initiative.numVotes }" />
 		</p:column>	
 	</p:dataTable>
-	
-	
+	-->
+  			</div>
+  		</div>
+  	</div>
   </body>
   
 </html>

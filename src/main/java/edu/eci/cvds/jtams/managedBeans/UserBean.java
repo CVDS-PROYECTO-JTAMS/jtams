@@ -1,17 +1,14 @@
 package edu.eci.cvds.jtams.managedBeans;
 
-import java.io.IOException;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-
-import com.google.inject.Inject;
-
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import java.io.IOException;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "userBean")
@@ -24,7 +21,7 @@ public class UserBean {
 	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
 	private String username;
 	private String password;
-	
+
 	public void logIn() {
 		
 		try {
@@ -33,11 +30,13 @@ public class UserBean {
 				User user = userServices.getUser(username);
 				switch (user.getUserType()) {
 				case ADMINISTRATOR:FacesContext.getCurrentInstance().getExternalContext().redirect("admin.xhtml");
-					
-					break;
-
-				default:
-					break;
+						break;
+					case PERSONAL:FacesContext.getCurrentInstance().getExternalContext().redirect("personal.xhtml");
+						break;
+					case PROPONENT:FacesContext.getCurrentInstance().getExternalContext().redirect("proponent.xhtml");
+						break;
+					case PUBLIC:FacesContext.getCurrentInstance().getExternalContext().redirect("public.xhtml");
+						break;
 				}
 			} else {
 				System.out.println("Validation Fail");

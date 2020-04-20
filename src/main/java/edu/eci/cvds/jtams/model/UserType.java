@@ -1,7 +1,7 @@
 package edu.eci.cvds.jtams.model;
 
 public enum UserType {
-    ADMINISTRATOR(0);
+    ADMINISTRATOR(0),PERSONAL(1),PROPONENT(2),PUBLIC(3);
 
     private final int id;
 

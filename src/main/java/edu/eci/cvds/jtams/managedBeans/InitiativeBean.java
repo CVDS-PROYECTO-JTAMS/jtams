@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Arrays;
 import edu.eci.cvds.jtams.services.*;
 public class InitiativeBean {
-	
-	
+
+
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
-		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
+		List<String> iniciativas= Arrays.asList(palabra.split(","));
 		return null;//InitiativeServices.buscainiciativaporpalabra(iniciativas);
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{

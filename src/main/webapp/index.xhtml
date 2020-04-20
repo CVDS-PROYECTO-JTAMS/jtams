@@ -43,7 +43,7 @@ lang="es">
 	</h:form>
 	<h1>Ultimas Iniciativas Agregadas</h1>
 	
-	<p:dataTable id="tabladeinciativas" var="initiative" iniciativ="#{initiativeBean.Todasiniciativas()}">
+	<p:dataTable id="tabladeinciativas" var="initiative" iniciativ="#{InitiativeBean.Todasiniciativas()}">
 		<p:column headerText="Id">
 			<h:outputText iniciativ="#{initiative.id}" />
 		</p:column>
@@ -65,16 +65,17 @@ lang="es">
 	</p:dataTable>
 	
 	<br/><br/>
+	
+	
 	<h2>Busqueda de iniciativas por palabras clave</h2>
 	<h:form>
 		<input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput"/>
-		<p:inputText id="keyword" binding="#{palabraclave}" type="hidden"  />
-		<p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" actionListener="#{initiativeBean.buscainiciativa(palabraclave.value)}" styleClass="btn btn-primary"></p:commandButton>
+		<p:inputText id="palabra" binding="#{palabraclave}" type="hidden"  />
+		<p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" actionListener="#{InitiativeBean.buscainiciativa(palabraclave.value)}" ></p:commandButton>
 	</h:form>
-
 	<br></br>
 	
-	<p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{initiativeBean.buscainiciativa(palabraclave.value)}"> 
+	<p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa(palabraclave.value)}"> 
 		<p:column headerText="Id">
 			<h:outputText iniciativa="#{initiative.id}" />
 		</p:column>
@@ -94,7 +95,6 @@ lang="es">
 			<h:outputText iniciativa="#{initiative.numVotes }" />
 		</p:column>	
 	</p:dataTable>
-	
 	
   </body>
   

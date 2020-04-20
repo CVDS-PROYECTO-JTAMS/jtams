@@ -1,7 +1,9 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
@@ -52,6 +54,27 @@ public class MyBatisInitiative implements InitiativeDAO {
     }
     public List<Initiative> dariniciativas() throws JtamsExceptions {
 		return initiativeMapper.dariniciativas();
+	}
+
+	@Override
+	public List<Initiative> buscainiciativaporpalabra(List<String> keywords) throws JtamsExceptions {
+		try {
+			List <Initiative> initiatives=new ArrayList<Initiative>();
+			Set<Integer> tmp = new HashSet<Integer>(); 
+			for(String k:keywords) {
+				for(Initiative i:initiativeMapper.buscainiciativaporpalabra(k)) {
+					if (!tmp.contains(i.getId())) {
+						initiatives.add(i);
+						tmp.add(i.getId());
+					}
+				}
+			}
+			return initiatives;
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new JtamsExceptions("Unable to load initiatives by keywords, persistence error");
+		}
 	}
 
 }

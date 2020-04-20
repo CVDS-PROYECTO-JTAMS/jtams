@@ -44,8 +44,7 @@ public class InitiativeServicesImpl implements InitiativeServices {
 
 	@Override
 	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions {
-		// TODO Auto-generated method stub
-		return null;
+		return initiativeDAO.buscainiciativaporpalabra(iniciativas);
 	}
 
 	

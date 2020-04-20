@@ -66,6 +66,6 @@ insert into "User" values (1015475103,'Verbo','verbo','verbo',2);
 
 insert into type_status values (1,'En revision');
 
-insert into "initiative" (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
-	values ((select count(*)+1 from "initiative"),'mas parqueaderos','parqueadero',0,(select now()),1015475103,(select now()),'En revision');
+insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from initiative),'mas parqueaderos','parqueadero',0,(select now()),1015475103,(select now()),'En revision');
 

@@ -17,6 +17,7 @@ import edu.eci.cvds.jtams.services.UserServices;
 @ManagedBean(name = "userBean")
 @SessionScoped
 public class UserBean {
+
 	
 	//@Inject
 	//private UserServices userServices;

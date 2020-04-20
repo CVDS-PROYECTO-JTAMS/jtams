@@ -9,7 +9,10 @@ public class InitiativeBean {
 	
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
 		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
-		return InitiativeServices.buscainiciativaporpalabra(iniciativas);
+		return null;//InitiativeServices.buscainiciativaporpalabra(iniciativas);
+	}
+	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
+		return null;//InitiativeServices.dariniciativas();
 	}
 
 }

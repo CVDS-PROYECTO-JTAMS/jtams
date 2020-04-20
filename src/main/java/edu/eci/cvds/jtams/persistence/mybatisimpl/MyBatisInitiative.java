@@ -1,6 +1,7 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
 import java.util.Date;
+import java.util.List;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
@@ -49,5 +50,8 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 
     }
+    public List<Initiative> dariniciativas() throws JtamsExceptions {
+		return initiativeMapper.dariniciativas();
+	}
 
 }

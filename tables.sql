@@ -53,5 +53,13 @@ insert into "User" values (1015475102,'nikolai','nikolai9906n@gmail.com','nikola
 insert into "User" values (1015475103,'Verbo','verbo@gmail.com','verbo1213',1);
 insert into "User" values (1015475104,'Juan','juan@gmail.com','juan1213',3);
 
-
+insert into "initiative" (id,description,area,num_votos,creation_date,User_id,modify_date,Type_status_id)
+					values ((select count(*)+1 from "Initiative"),
+						'bajar precios de los k','economia',3,(select now()),
+						123456,(select now()),'En espera de revisión') ;
+						
 				
+insert into "initiative" (id,description,area,num_votos,creation_date,User_id,modify_date,Type_status_id)
+					values ((select count(*)+1 from "Initiative"),
+						'dar mas intersemestrales para ing Sistemas','Bienestar U',100,(select now()),
+						1234567,(select now()),'En espera de revisión') ;

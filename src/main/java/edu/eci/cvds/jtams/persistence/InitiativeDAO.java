@@ -1,5 +1,7 @@
 package edu.eci.cvds.jtams.persistence;
 
+import java.util.List;
+
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
@@ -13,6 +15,8 @@ public interface InitiativeDAO {
 	public void updateState (int id, InitiativeStates state) throws JtamsExceptions;
 	
 	public void updateInitiative (Initiative initiative) throws JtamsExceptions;
+
+	public List<Initiative> dariniciativas() throws JtamsExceptions;
 
 
 }

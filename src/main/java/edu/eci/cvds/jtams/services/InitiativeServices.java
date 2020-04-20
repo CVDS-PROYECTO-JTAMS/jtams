@@ -16,10 +16,8 @@ public interface InitiativeServices {
 	
 	public void updateInitiative (Initiative initiative) throws JtamsExceptions;
 
-	public static List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) {
-		// ACA NO SE QUE MIERDA PONER
-		return null;
-	}
+	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
+	public List<Initiative> dariniciativas() throws JtamsExceptions;
 	
 	
 }

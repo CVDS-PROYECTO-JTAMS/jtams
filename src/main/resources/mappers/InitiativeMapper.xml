@@ -15,6 +15,16 @@
         <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
         <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
     </resultMap>
+
+    <resultMap type='Initiative' id='InitiativeResult1'>
+        <id property='id' column='id'/>
+        <result property='numVotes' column='num_votos'/>
+        <result property='description' column='description'/>
+        <result property='area' column='area'/>
+        <result property='creationDate' column='creation_date'/>
+        <result property='modifyDate' column='modify_date'/>
+        <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
+    </resultMap>
     
     <resultMap type='edu.eci.cvds.jtams.model.InitiativeState' id='InitiativeState'>
         <id property='id' column='id'/>
@@ -55,5 +65,19 @@
     <update id="updateInitiative">
         update initiative set description= #{description}, area= #{area} where "id"= #{id};
     </update>
+    
+    <select id="dariniciativa" resultMap="InitiativeResult1" parameterType="map">
+        SELECT i.id,
+			i.description,
+			i.area,
+			i.creation_date,
+			i.modify_date,
+			i.user_id,
+			i.num_votos,
+            ts.id,
+            ts.status
+        FROM Initiative as i
+        INNER JOIN Type_Status as ts on ts.status = i.type_status_id
+    </select>
 
 </mapper>

@@ -1,10 +1,12 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl.mappers;
 
+import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
+import java.util.List;
 
 public interface InitiativeMapper {
 
@@ -19,4 +21,5 @@ public interface InitiativeMapper {
     
     public Initiative getInitiative(@Param("area") String area);
 
+    public List<Initiative> dariniciativas();
 }

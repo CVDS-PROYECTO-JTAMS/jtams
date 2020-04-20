@@ -52,5 +52,17 @@
     <update id="updateInitiative">
         update initiative set description= #{description}, area= #{area}, description= #{description} where "id"= #{id};
     </update>
+    
+    <select id="dariniciativa" resultMap="InitiativeResult1" parameterType="map">
+        SELECT i.id,
+			i.description,
+			i.area,
+			i.creation_date,
+			i.modify_date,
+			i.user_id,
+			i.num_votos
+	    FROM Initiative as i
+		
+    </select>
 
 </mapper>

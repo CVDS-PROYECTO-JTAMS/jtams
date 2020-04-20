@@ -8,6 +8,7 @@ import javax.persistence.PersistenceException;
 import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Comment;
+import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
 import edu.eci.cvds.jtams.persistence.CommentDAO;
@@ -85,5 +86,16 @@ public class UserServicesImpl implements UserServices{
 	public void createComentario(Comment comentario) {
 		comentarioDAO.agregarComentario(comentario);
 		
+	}
+	@Override
+	public List<Initiative> dariniciativas() throws JtamsExceptions {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

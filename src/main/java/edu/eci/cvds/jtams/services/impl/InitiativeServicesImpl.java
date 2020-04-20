@@ -1,7 +1,7 @@
 package edu.eci.cvds.jtams.services.impl;
 
 import java.util.Date;
-
+import java.util.List;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
@@ -36,6 +36,16 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	public void updateInitiative(Initiative initiative) throws JtamsExceptions {
 		initiativeDAO.updateInitiative(initiative);
 		
+	}
+	@Override
+	public List<Initiative> dariniciativas() throws JtamsExceptions {
+		return initiativeDAO.dariniciativas();
+	}
+
+	@Override
+	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

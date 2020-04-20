@@ -11,5 +11,8 @@ public class InitiativeBean {
 		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
 		return InitiativeServices.buscainiciativaporpalabra(iniciativas);
 	}
+	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
+		return InitiativeServices.dariniciativas();
+	}
 
 }

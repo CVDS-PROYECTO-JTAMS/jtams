@@ -6,6 +6,7 @@ import java.util.List;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.UserType;
 import edu.eci.cvds.jtams.model.Comment;
+import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
 
 public interface UserServices {
@@ -25,5 +26,8 @@ public interface UserServices {
 	public ArrayList<Comment> getComentariosIniciativa(int idIniciativa);
 	
 	public void createComentario(Comment comentario);
+	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
+	public List<Initiative> dariniciativas() throws JtamsExceptions;
+
 	
 }

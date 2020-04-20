@@ -17,6 +17,8 @@ public interface InitiativeDAO {
 	public void updateInitiative (Initiative initiative) throws JtamsExceptions;
 
 	public List<Initiative> dariniciativas() throws JtamsExceptions;
+	
+	public List<Initiative> buscainiciativaporpalabra(List<String> keywords) throws JtamsExceptions;
 
 
 }

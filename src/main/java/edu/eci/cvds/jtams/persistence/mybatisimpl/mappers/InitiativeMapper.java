@@ -22,4 +22,5 @@ public interface InitiativeMapper {
     public Initiative getInitiative(@Param("area") String area);
 
     public List<Initiative> dariniciativas();
+    public List<Initiative> buscainiciativaporpalabra(@Param("keyword") String keyword);
 }

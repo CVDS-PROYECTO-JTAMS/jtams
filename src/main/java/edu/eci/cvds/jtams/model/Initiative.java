@@ -1,6 +1,7 @@
 package edu.eci.cvds.jtams.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Initiative {
 	private int id;
@@ -11,12 +12,14 @@ public class Initiative {
 	private int userId;
 	private Date modifyDate;
 	private String typeStatusId;
+	private List<Keyword> keywords;
 	
 	public Initiative() {
 		
 	}
 	
-	public Initiative(int id, String description, String area, int numVotes, Date creationDate, int userId, Date modifyDate, String typeStatusId) {
+	public Initiative(int id, String description, String area, int numVotes, Date creationDate,
+					  int userId, Date modifyDate, String typeStatusId, List<Keyword> keywords) {
 		this.id = id;
 		this.description = description;
 		this.area = area;
@@ -25,6 +28,15 @@ public class Initiative {
 		this.userId = userId;
 		this.typeStatusId = typeStatusId;
 		this.modifyDate = modifyDate;
+		this.keywords = keywords;
+	}
+
+	public List<Keyword> getKeywords() {
+		return keywords;
+	}
+
+	public void setKeywords(List<Keyword> keywords) {
+		this.keywords = keywords;
 	}
 
 	public int getId() {

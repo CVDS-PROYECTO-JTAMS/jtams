@@ -25,6 +25,18 @@
         <result property='modifyDate' column='modify_date'/>
         <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
     </resultMap>
+
+    <resultMap type='Initiative' id='InitiativeResult2'>
+        <id property='id' column='id'/>
+        <result property='numVotes' column='num_votos'/>
+        <result property='description' column='description'/>
+        <result property='area' column='area'/>
+        <result property='creationDate' column='creation_date'/>
+        <result property='modifyDate' column='modify_date'/>
+        <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
+        <collection property='keywords' ofType='edu.eci.cvds.jtams.model.Keyword'
+                    resultMap="edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.KeywordMapper.KeywordResult" columnPrefix="i_keyword" ></collection>
+    </resultMap>
     
     <resultMap type='edu.eci.cvds.jtams.model.InitiativeState' id='InitiativeState'>
         <id property='id' column='id'/>
@@ -79,5 +91,24 @@
         FROM Initiative as i
         INNER JOIN Type_Status as ts on ts.status = i.type_status_id
     </select>
+
+    <select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="map">
+        select
+        i.id ,
+        i.area ,
+        i.creation_date,
+        i.description,
+        i.modify_date,
+        i.num_votos,
+        t.status as i_State_TStatus,
+        t.id as i_State_id,
+        k.id as i_keyword_id,
+        k.keyWord as i_keyword_keyword
+        from initiative as i
+        inner join type_status as t on i.type_status_id = t.id
+        inner join keywords as k on i.id = k.idInitiative
+        where k.keyword in (#{keyword});
+    </select>
+
 
 </mapper>

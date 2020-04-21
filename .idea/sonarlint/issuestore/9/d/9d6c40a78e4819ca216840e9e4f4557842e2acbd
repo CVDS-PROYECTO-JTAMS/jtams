@@ -1,0 +1,17 @@
+
+M
+java:S11352"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(±‚ôõ
+N
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(òŽœŸüÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+>
+java:S11483"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Z
+java:S21471"DCombine this catch with the one at line 47, which has the same body.(ï­£Ä
+P
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ
+X	java:S125"<This block of commented-out lines of code should be removed.(¢ïÄ8®ìËë™.
+>
+java:S11480"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+N	java:S106+"9Replace this use of System.out or System.err by a logger.(ÜíÝ¿

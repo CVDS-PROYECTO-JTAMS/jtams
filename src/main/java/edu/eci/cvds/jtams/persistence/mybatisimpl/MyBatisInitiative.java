@@ -1,19 +1,28 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
+import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper;
 
-public class MyBatisInitiative implements InitiativeDAO {
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+public class MyBatisInitiative implements InitiativeDAO {
+    @Inject
     private InitiativeMapper initiativeMapper;
+
+    public InitiativeMapper getInitiativeMapper() {
+        return initiativeMapper;
+    }
+
+    public void setInitiativeMapper(InitiativeMapper initiativeMapper) {
+        this.initiativeMapper = initiativeMapper;
+    }
 
     @Override
     public void createInitiative(Initiative initiative) throws JtamsExceptions {
@@ -53,13 +62,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 
     }
     public List<Initiative> dariniciativas() throws JtamsExceptions {
-    	System.out.println("llega a mybatisimpl pero Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		return null;//initiativeMapper.dariniciativas();
+		return initiativeMapper.dariniciativas();
 	}
 
 	@Override
@@ -79,7 +82,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 		
 		}catch(Exception e) {
 			e.printStackTrace();
-			throw new JtamsExceptions("Unable to load initiatives by keywords, persistence error");
+			throw new JtamsExceptions("Unable to load initiatives by keywords, persistence error", e);
 		}
 	}
 

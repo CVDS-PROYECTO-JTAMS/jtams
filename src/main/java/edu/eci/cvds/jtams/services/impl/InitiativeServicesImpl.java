@@ -1,16 +1,26 @@
 package edu.eci.cvds.jtams.services.impl;
 
-import java.util.Date;
-import java.util.List;
+import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 
+import java.util.List;
+
 public class InitiativeServicesImpl implements InitiativeServices {
-	
+
+	@Inject
 	private InitiativeDAO initiativeDAO;
+
+	public InitiativeDAO getInitiativeDAO() {
+		return initiativeDAO;
+	}
+
+	public void setInitiativeDAO(InitiativeDAO initiativeDAO) {
+		this.initiativeDAO = initiativeDAO;
+	}
 
 	@Override
 	public void createInitiative(Initiative initiative) throws JtamsExceptions {

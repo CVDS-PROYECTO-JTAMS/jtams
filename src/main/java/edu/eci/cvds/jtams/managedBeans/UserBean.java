@@ -19,6 +19,7 @@ public class UserBean {
 	//@Inject
 	//private UserServices userServices;
 	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
+
 	private String username;
 	private String password;
 

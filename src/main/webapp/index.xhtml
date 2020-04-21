@@ -53,65 +53,63 @@ lang="es">
 
 	</h:form>
 
-            <!--
-                <h1>Ultimas Iniciativas Agregadas</h1>
+           
+  			</div>
+  		</div>
+  	</div>
+  </body>  <h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
 
                 <p:dataTable id="tabladeinciativas" var="initiative" value="#{InitiativeBean.Todasiniciativas()}">
-                    <p:column headerText="Id">
+                    <p:column headerText="Id" style="color:white;">
                         <h:outputText value="#{initiative.id}" />
                     </p:column>
-                    <p:column headerText="Descripcion">
+                    <p:column headerText="Descripcion" style="color:white;">
                         <h:outputText value="#{initiative.description}" />
                     </p:column>
-                    <p:column headerText="Area">
+                    <p:column headerText="Area" style="color:white;">
                         <h:outputText value="#{initiative.area}" />
                     </p:column>
-                    <p:column headerText="Fecha de creacion">
+                    <p:column headerText="Fecha de creacion" style="color:white;">
                         <h:outputText value="#{initiative.creationDate}" />
                     </p:column>
-                    <p:column headerText="Estado">
+                    <p:column headerText="Estado" style="color:white;">
                         <h:outputText value="#{initiative.typeStatusId}" />
                     </p:column>
-                    <p:column headerText="# de Votos">
+                    <p:column headerText="# de Votos" style="color:white;">
                         <h:outputText value="#{initiative.numVotes}" />
                     </p:column>
                 </p:dataTable>
 
                 <br/><br/>
 
-                <h2>Busqueda de iniciativas por palabras clave</h2>
+                <h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
                 <h:form>
-                    <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput"/>
+                    <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
                     <p:inputText id="palabra" binding="#{palabraclave}" type="hidden"  />
-                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" actionListener="#{InitiativeBean.buscainiciativa(palabraclave.value)}" ></p:commandButton>
+                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa(palabraclave.value)}" style="width:70px; height:35px"></p:commandButton>
                 </h:form>
                 <br></br>
 
                 <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa(palabraclave.value)}">
-                    <p:column headerText="Id">
+                    <p:column headerText="Id" style="color:white;">
                         <h:outputText iniciativa="#{initiative.id}" />
                     </p:column>
-                    <p:column headerText="Descripcion">
+                    <p:column headerText="Descripcion" style="color:white;">
                         <h:outputText iniciativa="#{initiative.description}" />
                     </p:column>
-                    <p:column headerText="Area">
+                    <p:column headerText="Area" style="color:white;">
                         <h:outputText iniciativa="#{initiative.area}" />
                     </p:column>
-                    <p:column headerText="Estado">
+                    <p:column headerText="Estado" style="color:white;">
                         <h:outputText iniciativa="#{initiative.typeStatusId}" />
                     </p:column>
-                    <p:column headerText="Fecha de creacion">
+                    <p:column headerText="Fecha de creacion" style="color:white;">
                         <h:outputText iniciativa="#{initiative.creationDate}" />
                     </p:column>
-                    <p:column headerText="# de votos">
+                    <p:column headerText="# de votos" style="color:white;">
                         <h:outputText iniciativa="#{initiative.numVotes }" />
                     </p:column>
                 </p:dataTable>
-
-                -->
-  			</div>
-  		</div>
-  	</div>
-  </body>
+  
   
 </html>

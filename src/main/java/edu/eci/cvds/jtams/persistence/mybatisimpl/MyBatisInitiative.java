@@ -70,13 +70,19 @@ public class MyBatisInitiative implements InitiativeDAO {
 		try {
 			List <Initiative> initiatives=new ArrayList<Initiative>();
 			Set<Integer> tmp = new HashSet<Integer>(); 
+			System.out.println("llega la busqueda 0");
+			System.out.println(keywords.get(0));
 			for(String k:keywords) {
-				for(Initiative i:initiativeMapper.buscainiciativaporpalabra(k)) {
-					if (!tmp.contains(i.getId())) {
-						initiatives.add(i);
-						tmp.add(i.getId());
-					}
-				}
+				System.out.println("llega la busqueda 1");
+				System.out.println(initiativeMapper.buscainiciativaporpalabra(k).size());
+				//for(Initiative i:initiativeMapper.buscainiciativaporpalabra(k)) {
+					//System.out.println("llega la busqueda 2");
+					//if (!tmp.contains(i.getId())) {
+					//	System.out.println("llega la busqueda 3");
+					//	initiatives.add(i);
+					//	tmp.add(i.getId());
+					//}
+				//}
 			}
 			return initiatives;
 		

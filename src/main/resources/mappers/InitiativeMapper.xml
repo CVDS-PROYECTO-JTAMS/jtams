@@ -92,7 +92,8 @@
         INNER JOIN Type_Status as ts on ts.status = i.type_status_id
     </select>
 
-    <select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="map">
+  
+	<select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="map">
         select
         i.id ,
         i.area ,
@@ -100,14 +101,7 @@
         i.description,
         i.modify_date,
         i.num_votos,
-        t.status as i_State_TStatus,
-        t.id as i_State_id,
-        k.id as i_keyword_id,
-        k.keyWord as i_keyword_keyword
         from initiative as i
-        inner join type_status as t on i.type_status_id = t.id
-        inner join keywords as k on i.id = k.idInitiative
-        where k.keyword in (#{keyword});
     </select>
 
 

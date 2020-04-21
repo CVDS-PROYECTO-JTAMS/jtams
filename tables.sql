@@ -82,6 +82,14 @@ insert into type_status values (1,'En revision');
 
 insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
 	values ((select count(*)+1 from initiative),'mas parqueaderos','parqueadero',0,(select now()),1015475103,(select now()),1);
+insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from initiative),'mas restaurantes','restaurante',0,(select now()),1015475103,(select now()),1);
+insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from initiative),'mas computadores','laboratorio',0,(select now()),1015475103,(select now()),1);
+insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from initiative),'menor precio de parqueadero','parqueadero',0,(select now()),1015475103,(select now()),1);
 
-insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'parqueadero',1);
+insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'parqueadero',1015475103);
+insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'restaurante',1);
+insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'laboratorio',1);
 

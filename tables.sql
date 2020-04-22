@@ -89,7 +89,8 @@ insert into initiative (id,description,area,num_votos,creation_date,user_id,modi
 insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
 	values ((select count(*)+1 from initiative),'menor precio de parqueadero','parqueadero',0,(select now()),1015475103,(select now()),1);
 
-insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'parqueadero',1015475103);
+
 insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'restaurante',1);
 insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'laboratorio',1);
+
 

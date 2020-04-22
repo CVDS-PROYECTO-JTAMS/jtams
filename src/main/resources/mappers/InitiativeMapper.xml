@@ -78,30 +78,20 @@
         update initiative set description= #{description}, area= #{area} where "id"= #{id};
     </update>
     
-    <select id="dariniciativa" resultMap="InitiativeResult1" parameterType="map">
-        SELECT i.id,
-			i.description,
-			i.area,
-			i.creation_date,
-			i.modify_date,
-			i.user_id,
-			i.num_votos,
-            ts.id,
-            ts.status
-        FROM Initiative as i
-        INNER JOIN Type_Status as ts on ts.status = i.type_status_id
+    <select id="dariniciativas" resultMap="InitiativeResult1" parameterType="map">
+        SELECT * FROM Initiative;
     </select>
 
   
 	<select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="map">
         select
-        i.id ,
-        i.area ,
-        i.creation_date,
-        i.description,
-        i.modify_date,
-        i.num_votos,
-        from initiative as i
+        initiative.id ,
+        initiative.area ,
+        initiative.creation_date,
+        initiative.description,
+        initiative.modify_date,
+        initiative.num_votos,
+        from initiative
     </select>
 
 

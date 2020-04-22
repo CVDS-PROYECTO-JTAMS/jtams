@@ -51,7 +51,7 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	public List<Initiative> dariniciativas() throws JtamsExceptions {
 		System.out.println("llega a servicesimpl para listar iniciativas");
 		
-		return null;//initiativeDAO.dariniciativas();
+		return initiativeDAO.dariniciativas();
 	}
 
 	@Override

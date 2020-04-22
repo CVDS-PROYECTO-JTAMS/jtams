@@ -90,6 +90,9 @@ public class Initiative {
 	public String getTypeStatusId() {
 		return typeStatusId;
 	}
+	public String getstatus() {
+		return typeStatusId;
+	}
 
 	public void setTypeStatusId(String typeStatusId) {
 		this.typeStatusId = typeStatusId;

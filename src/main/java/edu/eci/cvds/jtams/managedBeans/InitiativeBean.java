@@ -40,8 +40,8 @@ public class InitiativeBean {
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
-		//return  initiativeService.dariniciativas();
-		return null;
+		return  initiativeService.dariniciativas();
+		//return null;
 	}
 
 }

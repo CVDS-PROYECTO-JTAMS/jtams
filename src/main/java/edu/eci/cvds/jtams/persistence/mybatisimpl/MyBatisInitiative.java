@@ -62,6 +62,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 
     }
     public List<Initiative> dariniciativas() throws JtamsExceptions {
+    	System.out.println("llega a dariniciativas 0");
 		return initiativeMapper.dariniciativas();
 	}
 

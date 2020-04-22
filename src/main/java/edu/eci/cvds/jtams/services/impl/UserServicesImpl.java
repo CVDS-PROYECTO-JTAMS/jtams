@@ -1,19 +1,17 @@
 package edu.eci.cvds.jtams.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.PersistenceException;
-
 import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Comment;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
-import edu.eci.cvds.jtams.persistence.CommentDAO;
 import edu.eci.cvds.jtams.persistence.UserDAO;
 import edu.eci.cvds.jtams.services.UserServices;
+
+import javax.persistence.PersistenceException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserServicesImpl implements UserServices{
 
@@ -38,12 +36,6 @@ public class UserServicesImpl implements UserServices{
 		}else {
 			userDao.updateUser(user);
 		}
-	}
-	
-	@Override
-	public UserType updateTypeUser(UserType userType) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -72,6 +64,15 @@ public class UserServicesImpl implements UserServices{
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public void updateTypeUser(String username, UserType userType) throws JtamsExceptions {
+		if (username == null ){
+			throw new JtamsExceptions("The User is Null");
+		}else {
+			userDao.updateTypeUser(username, userType.getId());
+		}
 	}
 
 	public UserDAO getUserDao() {

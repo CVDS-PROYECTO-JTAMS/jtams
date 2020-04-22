@@ -1,13 +1,13 @@
 package edu.eci.cvds.jtams.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
-import edu.eci.cvds.jtams.model.UserType;
 import edu.eci.cvds.jtams.model.Comment;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
+import edu.eci.cvds.jtams.model.UserType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public interface UserServices {
 	
@@ -21,7 +21,8 @@ public interface UserServices {
 	
 	public boolean validateLogin(String userName, String password) throws JtamsExceptions;
 	
-	public UserType updateTypeUser(UserType userType);
+	public void updateTypeUser(String username,UserType userType) throws JtamsExceptions;
+
 
 //	public Comment getComentario(int idIniciativa);
 //
@@ -30,6 +31,7 @@ public interface UserServices {
 	public ArrayList<Comment> getComentariosIniciativa(int idIniciativa);
 	
 	public void createComentario(Comment comentario);
+
 	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
 	public List<Initiative> dariniciativas() throws JtamsExceptions;
 

@@ -52,15 +52,15 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public UserType getUserType() {
+
+	public UserType getType() {
 		return type;
 	}
 
-	public void setUserType(UserType type) {
+	public void setType(UserType type) {
 		this.type = type;
 	}
-	
+
 	@Override
     public String toString() {
         return "User{" + "name=" + name + ", email=" + email + ", password" + password + '}';

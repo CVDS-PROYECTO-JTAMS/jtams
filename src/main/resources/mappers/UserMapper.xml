@@ -36,6 +36,10 @@
         update "User" set type_user=#{type_user}, email=#{email}, password=#{password}, name=#{name} where id= #{id};
     </update>
 
+    <update id='updateTypeUser'>
+        update "User" set type_user=#{type_user} where email=#{email};
+    </update>
+
     <insert id="createUser" parameterType="User">
         INSERT INTO "User" (id, name, email, password, type_user) VALUES (#{id}, #{name}, #{email}, #{password}, #{type_user});
     </insert>

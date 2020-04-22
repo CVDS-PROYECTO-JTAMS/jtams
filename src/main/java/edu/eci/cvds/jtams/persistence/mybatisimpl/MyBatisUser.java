@@ -16,7 +16,7 @@ public class MyBatisUser implements UserDAO {
     @Override
     public void createUser(User user) throws JtamsExceptions {
         try {
-            userMapper.createUser(user.getId(), user.getEmail(), user.getName(), user.getPassword(), user.getUserType().getId());
+            userMapper.createUser(user.getId(), user.getEmail(), user.getName(), user.getPassword(), user.getType().getId());
         } catch (Exception e) {
             throw new JtamsExceptions("There was an exception persisting the user to the database", e);
         }
@@ -25,7 +25,7 @@ public class MyBatisUser implements UserDAO {
     @Override
     public void updateUser(User user) throws JtamsExceptions {
         try {
-            userMapper.updateUser(user.getId(), user.getEmail(), user.getName(), user.getPassword(), user.getUserType().getId());
+            userMapper.updateUser(user.getId(), user.getEmail(), user.getName(), user.getPassword(), user.getType().getId());
         } catch (Exception e) {
             throw new JtamsExceptions("There was an exception persisting the user to the database", e);
         }
@@ -45,6 +45,15 @@ public class MyBatisUser implements UserDAO {
         try {
             return userMapper.getUser(username);
         } catch (Exception e) {
+            throw new JtamsExceptions("There was an exception retrieving the users from the database", e);
+        }
+    }
+
+    @Override
+    public void updateTypeUser(String email, int userType) throws JtamsExceptions{
+        try {
+            userMapper.updateTypeUser(email, userType);
+        } catch(Exception e) {
             throw new JtamsExceptions("There was an exception retrieving the users from the database", e);
         }
     }

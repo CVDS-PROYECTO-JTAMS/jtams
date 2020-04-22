@@ -1,23 +1,24 @@
 package edu.eci.cvds.jtams.services;
 
-import java.util.List;
-
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
 
+import java.util.List;
+
 public interface InitiativeServices {
 
-	public void createInitiative(Initiative initiative) throws JtamsExceptions;
+	void createInitiative(Initiative initiative) throws JtamsExceptions;
 	
-	public Initiative getInitiative(String area) throws JtamsExceptions;
+	Initiative getInitiative(String area) throws JtamsExceptions;
 	
-	public void updateState (int id, InitiativeStates state) throws JtamsExceptions;
+	void updateState (int id, InitiativeStates state) throws JtamsExceptions;
 	
-	public void updateInitiative (Initiative initiative) throws JtamsExceptions;
+	void updateInitiative (Initiative initiative) throws JtamsExceptions;
 
-	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
-	public List<Initiative> dariniciativas() throws JtamsExceptions;
+	List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
+
+	List<Initiative> dariniciativas() throws JtamsExceptions;
 	
 	
 }

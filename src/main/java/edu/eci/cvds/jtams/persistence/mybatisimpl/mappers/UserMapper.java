@@ -1,7 +1,6 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl.mappers;
 
 import edu.eci.cvds.jtams.model.User;
-import edu.eci.cvds.jtams.model.UserType;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -15,4 +14,6 @@ public interface UserMapper {
     public List<User> getUsers();
 
     public User getUser(@Param("username") String username);
+
+    public void updateTypeUser (@Param("email") String email,@Param("type_user") int userType) ;
 }

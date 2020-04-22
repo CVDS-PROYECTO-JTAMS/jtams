@@ -76,6 +76,12 @@ lang="es">
                         <h:outputText value="#{initiative.creationDate}" />
                         
                     </p:column>
+                    
+                    <p:column headerText="Estado" style="color:white;width:120px; height:35px">
+                        <h:outputText value="#{initiative.typeStatusId}" />
+                    </p:column>
+                    
+                    
                     <p:column headerText="# de Votos" style="color:white" >
                      <center>
                         <h:outputText value="#{initiative.numVotes}" />

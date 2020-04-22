@@ -56,27 +56,35 @@ lang="es">
            
   			</div>
   		</div>
-  	</div>
-  </body>  <h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
-
-                <p:dataTable id="tabladeinciativas" var="initiative" value="#{InitiativeBean.Todasiniciativas()}">
-                    <p:column headerText="Id" style="color:white;">
+  </div>
+  <center>
+  <h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
+                <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
+                    <p:column headerText="Id" style="color:white; width:30px; height:35px" >
                         <h:outputText value="#{initiative.id}" />
                     </p:column>
-                    <p:column headerText="Descripcion" style="color:white;">
-                        <h:outputText value="#{initiative.description}" />
+                    <p:column headerText="Descripcion" style="color:white;width:180px; height:35px" >
+                     
+                        <h:outputText value="#{initiative.description}" align="left"/>
+                        
                     </p:column>
-                    <p:column headerText="Area" style="color:white;">
+                    <p:column headerText="Area" style="color:white;width:120px; height:35px">
                         <h:outputText value="#{initiative.area}" />
                     </p:column>
-                    <p:column headerText="Fecha de creacion" style="color:white;">
+                    <p:column headerText="Fecha de creacion" style="color:white;width:230px; height:35px">
+                    
                         <h:outputText value="#{initiative.creationDate}" />
+                        
                     </p:column>
-                    <p:column headerText="# de Votos" style="color:white;">
+                    <p:column headerText="# de Votos" style="color:white" >
+                     <center>
                         <h:outputText value="#{initiative.numVotes}" />
+                        </center>
                     </p:column>
                 </p:dataTable>
-
+                 </center>
+                	
+ </body>  
                 <br/><br/>
 
                 <h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>

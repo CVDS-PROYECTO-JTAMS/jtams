@@ -49,17 +49,14 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 	@Override
 	public List<Initiative> dariniciativas() throws JtamsExceptions {
-		System.out.println("llega a servicesimpl pero Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		System.out.println("listar Fail");
-		return null;//initiativeDAO.dariniciativas();
+		System.out.println("llega a servicesimpl para listar iniciativas");
+		
+		return initiativeDAO.dariniciativas();
 	}
 
 	@Override
 	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions {
+		System.out.println("llega a servicesimpl para buscar iniciativa");
 		return initiativeDAO.buscainiciativaporpalabra(iniciativas);
 	}
 

@@ -28,16 +28,20 @@ public class InitiativeBean {
 		this.initiativeService = initiativeService;
 	}
 
+
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
+		System.out.println(palabra);
+		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
 		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
 		System.out.println("llega a initiativebean");
-		System.out.println("busqueda Fail");
-		return initiativeService.buscainiciativaporpalabra(iniciativas);
-		//return null;
+		
+		//return initiativeService.buscainiciativaporpalabra(iniciativas);
+		return null;
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
 		return  initiativeService.dariniciativas();
+		//return null;
 	}
 
 }

@@ -89,9 +89,17 @@ public class Initiative {
 
 	public String getTypeStatusId() {
 		return typeStatusId;
+		//return "cargando";
+	}
+	public String getstatus() {
+		return typeStatusId;
+		//return "cargando";
 	}
 
 	public void setTypeStatusId(String typeStatusId) {
+		this.typeStatusId = typeStatusId;
+	}
+	public void setstatus(String typeStatusId) {
 		this.typeStatusId = typeStatusId;
 	}
 	

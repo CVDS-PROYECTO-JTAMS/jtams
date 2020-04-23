@@ -3,6 +3,8 @@ package edu.eci.cvds.jtams.persistence.mybatisimpl.mappers;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
+import edu.eci.cvds.jtams.model.Keyword;
+
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
@@ -19,8 +21,10 @@ public interface InitiativeMapper {
     
     public void updateState (@Param("id") int id, @Param("state") InitiativeStates state);
     
+   
+    
     public Initiative getInitiative(@Param("area") String area);
-
+    public List<Keyword> listKeywords();
     public List<Initiative> dariniciativas();
     public List<Initiative> buscainiciativaporpalabra(@Param("keyword") String keyword);
 }

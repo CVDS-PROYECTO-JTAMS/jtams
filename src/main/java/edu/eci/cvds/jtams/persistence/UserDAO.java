@@ -17,4 +17,6 @@ public interface UserDAO {
 
 	public void updateTypeUser (String email,int userType) throws JtamsExceptions;
 
+	
+
 }

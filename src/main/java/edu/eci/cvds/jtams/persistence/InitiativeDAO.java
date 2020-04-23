@@ -8,7 +8,7 @@ import edu.eci.cvds.jtams.model.InitiativeStates;
 
 public interface InitiativeDAO {
 	
-	public void createInitiative(Initiative initiative) throws JtamsExceptions;
+	public void createInitiative(String description, String area, int idus, List<String> keywords,String name) throws JtamsExceptions;
 	
 	public Initiative getInitiative(String area) throws JtamsExceptions;
 	
@@ -19,6 +19,5 @@ public interface InitiativeDAO {
 	public List<Initiative> dariniciativas() throws JtamsExceptions;
 	
 	public List<Initiative> buscainiciativaporpalabra(List<String> keywords) throws JtamsExceptions;
-
 
 }

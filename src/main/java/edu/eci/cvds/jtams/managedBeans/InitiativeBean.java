@@ -25,11 +25,14 @@ public class InitiativeBean {
 	
 	//@Inject
 	//private InitiativeServices Service;
-	
+	private static final long serialVersionUID = 3594009161252782831L;
 	
 	private InitiativeServices initiativeService = InitiativeServicesFactory.getInstance().getInitiativeServices();
 	
-	
+	private String description ;
+	private  String area ;
+	private  String keyword;
+	private String name;
 	
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
@@ -38,8 +41,36 @@ public class InitiativeBean {
 	public void setInitiativeService(InitiativeServices initiativeService) {
 		this.initiativeService = initiativeService;
 	}
+	public String getDescription() {
+		return description;
+	}
 
+	public void setDescription( String description) {
+		this.description =  description;
+	}
+	public String getArea() {
+		return area;
+	}
 
+	public void setArea( String area) {
+		this.area = area;
+	}
+	
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword( String keyword) {
+		this.keyword = keyword;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String Name) {
+		this.name = name;
+	}
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
 		System.out.println(palabra);
 		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
@@ -54,7 +85,7 @@ public class InitiativeBean {
 		return  initiativeService.dariniciativas();
 		//return null;
 	}
-	public void createIntitative(String description, String area, String keyword, String name) throws IOException, JtamsExceptions {
+	public void createIntitiative() throws JtamsExceptions {
 		
 		System.out.println(area+" "+description+" "+name);
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
@@ -62,7 +93,7 @@ public class InitiativeBean {
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		try {
-			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()), keywords, name);
+			initiativeService.createInitiative(description, area,2 , keywords, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 		}catch (JtamsExceptions ex) {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));

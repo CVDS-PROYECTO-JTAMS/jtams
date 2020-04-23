@@ -15,7 +15,7 @@ public interface InitiativeMapper {
 
     public void createInitiative(@Param("id") int id, @Param("description") String description, @Param("area") String area,
                                  @Param("numVotes") int numVotes, @Param("creationDate") Date creationDate, @Param("userId") int userId,
-                                 @Param("typeStatusId") String typeStatusId, @Param("modifyDate") Date modifyDate);
+                                 @Param("modifyDate") Date modifyDate,@Param("typeStatusId") String typeStatusId);
     
     public void updateInitiative (@Param("id") int id, @Param("description") String description, @Param("area") String area);
     

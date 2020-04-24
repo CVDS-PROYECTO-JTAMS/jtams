@@ -3,7 +3,7 @@ CREATE TABLE "User" (
 	name varchar(50)  NOT NULL,
 	email varchar(100)  NOT NULL,
 	Password varchar(30)  NOT NULL,
-	Type_user int  NOT NULL,
+	Type_user varchar(50)  NOT NULL,
 	CONSTRAINT email UNIQUE (email),
 	CONSTRAINT user_pk PRIMARY KEY (id)
 );
@@ -16,7 +16,7 @@ CREATE TABLE Initiative (
    creation_date date  NOT NULL,
    User_id int  NOT NULL,
    modify_date date  NOT NULL,
-   Type_Status_id int  NOT NULL,
+   Type_Status_id varchar(50)  NOT NULL,
    CONSTRAINT initiative_pk PRIMARY KEY (id)
 );
 

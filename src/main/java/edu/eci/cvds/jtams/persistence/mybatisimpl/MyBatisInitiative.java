@@ -33,7 +33,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
 			
-			initiativeMapper.createInitiative(0,description,area,3, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
+			initiativeMapper.createInitiative(1, description,area,2, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
 			
 			
 		}catch(Exception e) {

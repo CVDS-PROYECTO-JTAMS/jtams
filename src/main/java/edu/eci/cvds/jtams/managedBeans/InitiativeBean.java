@@ -4,6 +4,7 @@ import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
+import edu.eci.cvds.jtams.services.UserServices;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -28,12 +29,20 @@ public class InitiativeBean {
 	private static final long serialVersionUID = 3594009161252782831L;
 	
 	private InitiativeServices initiativeService = InitiativeServicesFactory.getInstance().getInitiativeServices();
+	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
 	
+	private String name;
 	private String description ;
 	private  String area ;
 	private  String keyword;
-	private String name;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
 	}
@@ -64,13 +73,7 @@ public class InitiativeBean {
 		this.keyword = keyword;
 	}
 	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String Name) {
-		this.name = name;
-	}
+	
 	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
 		System.out.println(palabra);
 		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
@@ -88,12 +91,15 @@ public class InitiativeBean {
 	public void createIntitiative() throws JtamsExceptions {
 		
 		System.out.println(area+" "+description+" "+name);
+		
+		
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+		
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		try {
-			initiativeService.createInitiative(description, area,2 , keywords, name);
+			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 		}catch (JtamsExceptions ex) {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));

@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Initiative {
-	private int id;
+	private String id;
 	private String description;
 	private String area;
 	private int numVotes;
@@ -18,15 +18,15 @@ public class Initiative {
 		
 	}
 	
-	public Initiative(int id, String description, String area, int numVotes, Date creationDate,
-					  int userId, Date modifyDate, String typeStatusId, List<Keyword> keywords) {
+	public Initiative(String id, String description, String area, Date creationDate,
+					  int userId, Date modifyDate, List<Keyword> keywords) {
 		this.id = id;
 		this.description = description;
 		this.area = area;
-		this.numVotes = numVotes;
+		this.numVotes = 0;
 		this.creationDate = creationDate;
 		this.userId = userId;
-		this.typeStatusId = typeStatusId;
+		this.typeStatusId = "En Revision";
 		this.modifyDate = modifyDate;
 		this.keywords = keywords;
 	}
@@ -39,11 +39,11 @@ public class Initiative {
 		this.keywords = keywords;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -89,11 +89,6 @@ public class Initiative {
 
 	public String getTypeStatusId() {
 		return typeStatusId;
-		//return "cargando";
-	}
-	public String getstatus() {
-		return typeStatusId;
-		//return "cargando";
 	}
 
 	public void setTypeStatusId(String typeStatusId) {

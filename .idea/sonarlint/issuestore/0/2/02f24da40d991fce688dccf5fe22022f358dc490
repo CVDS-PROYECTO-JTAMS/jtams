@@ -1,11 +1,21 @@
 
-X	java:S125$"<This block of commented-out lines of code should be removed.(„§ñ£8ŒóÕ™.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
-]	java:S125"<This block of commented-out lines of code should be removed.(Ãº¾«üÿÿÿÿ8ŠıÎë™.
+E
+java:S11481"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æÖô™š.
+o	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8ı¸àÏ™.
+X	java:S125;"<This block of commented-out lines of code should be removed.(€˜àÅ8Æ®Õ™š.
 U
-java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8ı¸àÏ™.
-U	java:S106""9Replace this use of System.out or System.err by a logger.(€é‡É8ı¸àÏ™.
-o	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8ı¸àÏ™.
-U	java:S106!"9Replace this use of System.out or System.err by a logger.(ËÆ¬º8ı¸àÏ™.
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8ı¸àÏ™.
+X	java:S125A"<This block of commented-out lines of code should be removed.(„§ñ£8ŒóÕ™.
+]	java:S1256"<This block of commented-out lines of code should be removed.(Å„ÃÜşÿÿÿÿ8ªÒŞ™š.
+v
+java:S1450"YRemove the "initiative" field and declare it as a local variable in the relevant methods.(»‘Ë“8ÙÆ—œš.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+]	java:S125"<This block of commented-out lines of code should be removed.(Ãº¾«üÿÿÿÿ8ŠıÎë™.
+J
+java:S11725".Remove this unused method parameter "palabra".(Ëäg8“‘ß™š.
+\
+java:S1128":Remove this unused import 'edu.eci.cvds.jtams.model.User'.(”È¨íıÿÿÿÿ8À¯š.
 W
-java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8ı¸àÏ™.
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8ı¸àÏ™.
+H
+java:S1168<"+Return an empty collection instead of null.(¥¹ï8Æ®Õ™š.

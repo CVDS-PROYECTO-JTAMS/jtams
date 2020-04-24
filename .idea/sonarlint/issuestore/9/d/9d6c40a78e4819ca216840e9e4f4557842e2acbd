@@ -1,17 +1,33 @@
 
-M
-java:S11352"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(±‚ôõ
+\
+java:S1854a":Remove this useless assignment to local variable "params".(–¢¸¿ùÿÿÿÿ8Ğ‹Õÿ™.
+U
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(òœŸüÿÿÿÿ8÷•ãú™.
+^
+java:S1117m"<Rename "username" which hides the field declared at line 27.(­õÇáÿÿÿÿÿ8öùş™.
+a
+java:S21479"DCombine this catch with the one at line 55, which has the same body.(ï­£Ä8÷•ãú™.
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(Üíİ¿8÷•ãú™.
+T
+java:S1135:"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8÷•ãú™.
 N
-java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(òœŸüÿÿÿÿ
+java:S1172j",Remove this unused method parameter "email".(ÈŠøïùÿÿÿÿ8ÜŠûş™.
+M
+java:S1481a"+Remove this unused "params" local variable.(–¢¸¿ùÿÿÿÿ8Ğ‹Õÿ™.
+E
+java:S1148f"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ìâñ™.
+>
+java:S1148;"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+W
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8÷•ãú™.
+]	java:S125b"<This block of commented-out lines of code should be removed.(ÔİŠ˜øÿÿÿÿ8ñÔÿ™.
+X	java:S125"<This block of commented-out lines of code should be removed.(¢ïÄ8÷•ãú™.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+U	java:S106&"9Replace this use of System.out or System.err by a logger.(±‚ôõ8÷•ãú™.
 >
-java:S11483"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-Z
-java:S21471"DCombine this catch with the one at line 47, which has the same body.(ï­£Ä
-P
-java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ
-X	java:S125"<This block of commented-out lines of code should be removed.(¢ïÄ8®ìËë™.
->
-java:S11480"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-N	java:S106+"9Replace this use of System.out or System.err by a logger.(Üíİ¿
+java:S11488"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+E
+java:S1148I"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8úç…ø™.
+E
+java:S1148q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8öùş™.
+]	java:S125n"<This block of commented-out lines of code should be removed.(Â‹éûÿÿÿÿ8“Æış™.

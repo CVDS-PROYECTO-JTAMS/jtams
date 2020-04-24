@@ -58,6 +58,27 @@ lang="es">
   		</div>
   </div>
   <center>
+      <h:form>
+          <p:outputPanel>
+              <div class="form-group" id="user-group">
+                  <center>
+                      <p:inputText id="userInput"  style="width:150px" class="form-control" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{userBean.username}"/>
+                  </center>
+              </div>
+          </p:outputPanel>
+          <p:outputPanel>
+              <div class="form-group" id="contrasena-group">
+                  <center>
+                      <p:inputText type="password" class="form-control" data-validation-required-message="Please enter your password." id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{userBean.password}"/>
+                  </center>
+              </div>
+          </p:outputPanel>
+          <center>
+              <p:commandButton id="ingresar" action="#{userBean.logIn}" class="btn btn-primary"  value="Ingresar"  />
+          </center>
+
+
+      </h:form>
   <h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
                 <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
                     <p:column headerText="Id" style="color:white; width:30px; height:35px" >
@@ -121,6 +142,8 @@ lang="es">
                         <h:outputText iniciativa="#{initiative.numVotes }" />
                     </p:column>
                 </p:dataTable>
+
+
   
   
 </html>

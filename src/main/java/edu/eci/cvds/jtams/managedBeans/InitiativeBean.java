@@ -2,6 +2,7 @@ package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
+import edu.eci.cvds.jtams.model.UserType;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
@@ -17,6 +18,7 @@ import com.google.inject.Inject;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "InitiativeBean")
@@ -35,6 +37,8 @@ public class InitiativeBean {
 	private String description ;
 	private  String area ;
 	private  String keyword;
+	private String initiativeToUpdate;
+	private String statusToUpdate;
 	
 	public String getName() {
 		return name;
@@ -106,5 +110,48 @@ public class InitiativeBean {
 			throw ex;
 		}
 	}
+	
+	
+	
+	//metodos para cambio de estado
+	
+	
+
+
+	public void updateStatusInitiative(){
+		System.out.println("---------------------------asdasdasdasdasddddddddddddd");
+		System.out.println(this.statusToUpdate);
+		System.out.println( getstatusToUpdate());
+		/*try {
+			
+			initiativeService.updateTypeUser(getInitiativeToUpdate(), getTypeToUpdate());
+		}catch(JtamsExceptions e){
+			e.printStackTrace();
+		}*/
+	}
+	
+	
+	public String getInitiativeToUpdate() {
+		return initiativeToUpdate;
+	}
+
+	public void setInitiativeToUpdate(String initiativeToUpdate) {
+		this.initiativeToUpdate = initiativeToUpdate;
+		
+	}
+
+	public String getstatusToUpdate() {
+		return statusToUpdate;
+	}
+
+	public void setstatusToUpdate(String statusToUpdate) {
+		this.statusToUpdate = statusToUpdate;
+		System.out.println(statusToUpdate);
+		System.out.println("deberia imprimir el nuevo estado");
+		
+	}
+	
+	
+	
 
 }

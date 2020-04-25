@@ -127,6 +127,7 @@ public class UserBean {
 	}
 
 	public void setTypeToUpdate(String typeToUpdate) {
+		
 		this.typeToUpdate = typeToUpdate;
 	}
 }

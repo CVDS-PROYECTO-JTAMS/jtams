@@ -12,6 +12,7 @@ public class Initiative {
 	private int userId;
 	private Date modifyDate;
 	private String typeStatusId;
+	private String status;
 	private List<Keyword> keywords;
 	
 	public Initiative() {
@@ -27,6 +28,7 @@ public class Initiative {
 		this.creationDate = creationDate;
 		this.userId = userId;
 		this.typeStatusId = typeStatusId;
+		this.status = typeStatusId;
 		this.modifyDate = modifyDate;
 		this.keywords = keywords;
 	}
@@ -98,9 +100,11 @@ public class Initiative {
 
 	public void setTypeStatusId(String typeStatusId) {
 		this.typeStatusId = typeStatusId;
+		this.status = typeStatusId;
 	}
 	public void setstatus(String typeStatusId) {
 		this.typeStatusId = typeStatusId;
+		this.status = typeStatusId;
 	}
 	
 	public Date getModifyDate() {

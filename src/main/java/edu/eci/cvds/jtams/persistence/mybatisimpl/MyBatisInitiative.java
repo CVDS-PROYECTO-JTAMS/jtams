@@ -70,7 +70,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 
     }
     public List<Initiative> dariniciativas() throws JtamsExceptions {
-    	System.out.println("llega a dariniciativas 0");
+    	//System.out.println("llega a dariniciativas 0");
 		return initiativeMapper.dariniciativas();
 	}
 
@@ -79,8 +79,8 @@ public class MyBatisInitiative implements InitiativeDAO {
 		try {
 			List <Initiative> initiatives=new ArrayList<Initiative>();
 			Set<Integer> tmp = new HashSet<Integer>(); 
-			System.out.println("llega la busqueda 0");
-			System.out.println(keywords.get(0));
+			//System.out.println("llega la busqueda 0");
+			//System.out.println(keywords.get(0));
 			for(String k:keywords) {
 				System.out.println("llega la busqueda 1");
 				System.out.println(initiativeMapper.buscainiciativaporpalabra(k).size());
@@ -111,5 +111,19 @@ public class MyBatisInitiative implements InitiativeDAO {
         return initiativeMapper.getInitiativesByArea();
     }
 
+	@Override
+	public void updateTypeUser(String initiativeToUpdate, String typeToUpdate) throws JtamsExceptions {
+		try {
+			int id=Integer.parseInt(initiativeToUpdate);
+			//System.out.println("llega y hace la conversion del string a..."+id);
+			initiativeMapper.updateTypeUser(id, typeToUpdate);
+        } catch(Exception e) {
+            throw new JtamsExceptions("hay un error entre mybatis y el mapper", e);
+        }
+		 
+		        
+		    
+		
+	}
 
 }

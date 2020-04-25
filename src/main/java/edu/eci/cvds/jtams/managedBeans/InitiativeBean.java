@@ -2,7 +2,6 @@ package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
-
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
@@ -10,17 +9,10 @@ import edu.eci.cvds.jtams.services.UserServices;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import java.util.ArrayList;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-
-import com.google.inject.Inject;
-
-import java.io.IOException;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "InitiativeBean")
@@ -133,16 +125,21 @@ public class InitiativeBean {
 	
 
 
-	public void updateStatusInitiative(){
-		System.out.println("---------------------------asdasdasdasdasddddddddddddd");
+	public void updateStatusInitiative(String initiativeToUpdate){
+		this.initiativeToUpdate=initiativeToUpdate;
+		System.out.println("Deberia imprimir el estado seleccionado pero no es asi");
 		System.out.println(this.statusToUpdate);
-		System.out.println( getstatusToUpdate());
-		/*try {
+		//System.out.println(this.initiativeToUpdate);
+		//System.out.println( getstatusToUpdate());
+		try {
 			
-			initiativeService.updateTypeUser(getInitiativeToUpdate(), getTypeToUpdate());
+			//initiativeService.updateStatusInitiative(getInitiativeToUpdate(), initiativeToUpdate);
+			initiativeService.updateStatusInitiative(initiativeToUpdate, "En espera revison");
+			
+			
 		}catch(JtamsExceptions e){
 			e.printStackTrace();
-		}*/
+		}
 	}
 	
 	

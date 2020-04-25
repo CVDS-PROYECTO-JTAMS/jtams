@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79d0ba6e-7b07-4276-970c-36f21e3c2878" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Initiative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Initiative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/InitiativeServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/InitiativeServicesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
@@ -42,13 +44,13 @@
         <counts>
           <entry key="css" value="4" />
           <entry key="fxml" value="1" />
-          <entry key="java" value="150" />
+          <entry key="java" value="153" />
           <entry key="jpg" value="2" />
           <entry key="jsp" value="2" />
           <entry key="png" value="2" />
           <entry key="properties" value="1" />
           <entry key="sql" value="6" />
-          <entry key="xhtml" value="48" />
+          <entry key="xhtml" value="49" />
           <entry key="xml" value="26" />
         </counts>
       </usages-collector>
@@ -57,10 +59,10 @@
           <entry key="CSS" value="4" />
           <entry key="DBN-SQL" value="6" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="150" />
+          <entry key="JAVA" value="153" />
           <entry key="JSP" value="2" />
           <entry key="Properties" value="1" />
-          <entry key="XHTML" value="48" />
+          <entry key="XHTML" value="49" />
           <entry key="XML" value="27" />
         </counts>
       </usages-collector>
@@ -70,7 +72,7 @@
           <entry key="java" value="3903" />
           <entry key="sql" value="25" />
           <entry key="txt" value="3" />
-          <entry key="xhtml" value="2261" />
+          <entry key="xhtml" value="2282" />
           <entry key="xml" value="401" />
         </counts>
       </usages-collector>
@@ -80,7 +82,7 @@
           <entry key="DBN-SQL" value="25" />
           <entry key="JAVA" value="3903" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="XHTML" value="2261" />
+          <entry key="XHTML" value="2282" />
           <entry key="XML" value="401" />
         </counts>
       </usages-collector>
@@ -89,36 +91,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
-              <folding>
-                <element signature="e#4174#4175#0" expanded="true" />
-                <element signature="e#4206#4207#0" expanded="true" />
-                <element signature="e#4363#4364#0" expanded="true" />
-                <element signature="e#4391#4392#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="673">
+              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/StatisticBean.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#576#608#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1076#1077#0" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
-                <element signature="e#1208#1209#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
-                <element signature="e#1417#1418#0" expanded="true" />
-                <element signature="e#1219#1220#0" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#4174#4175#0" expanded="true" />
+                <element signature="e#4206#4207#0" expanded="true" />
+                <element signature="e#4363#4364#0" expanded="true" />
+                <element signature="e#4391#4392#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,28 +129,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServicesFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+            <state relative-caret-position="459">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Statistic.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="104" column="46" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
+            <state relative-caret-position="462">
+              <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+              <folding>
+                <element signature="e#3790#3791#0" expanded="true" />
+                <element signature="e#3852#3853#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,12 +153,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="96" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="404">
+              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#p:outputLabel#0;n#h:panelGrid#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p:commandButton#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p:dataTable#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p:dataTable#1;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p:chart#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#center#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p:dataTable#0;n#center#0;n#html#0;n#!!top" expanded="true" />
@@ -187,6 +172,15 @@
                 <element signature="n#style#0;n#p:column#7;n#p:dataTable#0;n#center#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p:commandButton#0;n#p:column#7;n#p:dataTable#0;n#center#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -275,14 +269,10 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/InitiativeStates.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/graphics/graphicView.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/TotalServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Total.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/TotalBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Statistic.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServicesFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/StatisticsServices.java" />
@@ -291,9 +281,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/statistic.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/indexEci.css" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/StatisticBean.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/admin.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Initiative.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
       </list>
     </option>
   </component>
@@ -471,7 +465,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587788631227" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587789657464" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
@@ -544,7 +538,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43365696" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43365696" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -561,12 +555,12 @@
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.329718" />
       <window_info anchor="bottom" id="DB Execution Console" order="6" />
-      <window_info anchor="bottom" auto_hide="true" x="3" y="3" width="1914" height="1034" id="Run" order="7" sideWeight="0.56634307" weight="0.28091106" />
+      <window_info anchor="bottom" auto_hide="true" x="3" y="3" width="1914" height="1034" id="Run" order="7" sideWeight="0.56634307" weight="0.22559653" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Sequence" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Console" order="11" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.30585682" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.40130153" />
       <window_info anchor="bottom" id="SonarLint" order="13" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -724,27 +718,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#p:dataTable#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#4;n#p:dataTable#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#5;n#p:dataTable#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#h:form#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:commandButton#0;n#h:form#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#0;n#p:dataTable#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#1;n#p:dataTable#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#2;n#p:dataTable#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#3;n#p:dataTable#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#4;n#p:dataTable#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:column#5;n#p:dataTable#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/primefaces/primefaces/7.0/primefaces-7.0-sources.jar!/org/primefaces/component/chart/renderer/BarRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -791,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -813,13 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -845,13 +804,6 @@
             <element signature="e#2062#2063#0" expanded="true" />
             <element signature="e#2097#2098#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -888,7 +840,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="687">
-          <caret line="104" column="46" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
+          <caret line="111" column="46" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -952,14 +904,64 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/img/escuela.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Initiative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2124#2125#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#4174#4175#0" expanded="true" />
+            <element signature="e#4206#4207#0" expanded="true" />
+            <element signature="e#4363#4364#0" expanded="true" />
+            <element signature="e#4391#4392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
+          <folding>
+            <element signature="e#3790#3791#0" expanded="true" />
+            <element signature="e#3852#3853#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="404">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#p:outputLabel#0;n#h:panelGrid#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p:commandButton#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p:dataTable#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p:dataTable#1;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p:chart#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#center#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p:dataTable#0;n#center#0;n#html#0;n#!!top" expanded="true" />
@@ -976,28 +978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/Initiative.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-505">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2124#2125#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
-          <folding>
-            <element signature="e#4174#4175#0" expanded="true" />
-            <element signature="e#4206#4207#0" expanded="true" />
-            <element signature="e#4363#4364#0" expanded="true" />
-            <element signature="e#4391#4392#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="673">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
         </state>
       </provider>
     </entry>

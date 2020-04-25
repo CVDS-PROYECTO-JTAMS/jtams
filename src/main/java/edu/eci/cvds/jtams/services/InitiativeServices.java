@@ -20,7 +20,11 @@ public interface InitiativeServices {
 
 	List<Initiative> dariniciativas() throws JtamsExceptions;
 
-	//void updateTypeUser(String initiativeToUpdate, String typeToUpdate)throws JtamsExceptions;
+	
+
+	
+
+	void updateStatusInitiative(String initiativeToUpdate, String initiativeToUpdate2)throws JtamsExceptions;
 
 
 	 

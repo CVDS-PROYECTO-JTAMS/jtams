@@ -35,6 +35,7 @@ public class InitiativeBean {
 	private String description ;
 	private  String area ;
 	private  String keyword;
+	private  String palabra;
 	
 	public String getName() {
 		return name;
@@ -42,6 +43,13 @@ public class InitiativeBean {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getPalabra() {
+		return name;
+	}
+
+	public void setPalabra(String palabra) {
+		this.palabra = palabra;
 	}
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
@@ -74,14 +82,17 @@ public class InitiativeBean {
 	}
 	
 	
-	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
+	public List<Initiative> buscainiciativa() throws JtamsExceptions{
 		System.out.println(palabra);
+		
 		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
+		
 		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
+		
 		System.out.println("llega a initiativebean");
 		
-		//return initiativeService.buscainiciativaporpalabra(iniciativas);
-		return null;
+		return initiativeService.buscainiciativaporpalabra(iniciativas);
+		
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{

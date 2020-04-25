@@ -95,5 +95,55 @@ div.transbox p {
 	</article>
   </h:body>
 
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
+
+
+ <center>
+  <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
+                <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
+                    <p:column headerText="Id" style="width:30px" >
+                        <h:outputText value="#{initiative.id}" />
+                    </p:column>
+                    <p:column headerText="Descripcion" style="width:260px" >
+
+                        <h:outputText value="#{initiative.description}" align="left"/>
+
+                    </p:column>
+                    <p:column headerText="Area" style="width:140px">
+                        <h:outputText value="#{initiative.area}" />
+                    </p:column>
+                    <p:column headerText="Fecha de creacion" style="width:270px">
+
+                        <h:outputText value="#{initiative.creationDate}" />
+
+                    </p:column>
+
+                    <p:column headerText="Estado" style="width:180px">
+                     <center>
+                        <h:outputText value="#{initiative.typeStatusId}" />
+                         </center>
+                    </p:column>
+
+
+                    <p:column headerText="# de Votos" style="width: 70px" >
+                     <center>
+                        <h:outputText value="#{initiative.numVotes}" />
+                        </center>
+                    </p:column>
+					<p:column headerText="Nuevo estado" style="width:180px" >
+						<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
+						<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
+						<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
+						<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
+						<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
+				</h:selectOneMenu>
+                    </p:column>
+					<p:column headerText="Cambiar" style="width: 110px" >
+                     <p:commandButton style="width: 90px" value="Aplicar" id="modificar" action="#{InitiativeBean.updateStatusInitiative}" ajax="true" />
+                    </p:column>
+                </p:dataTable>
+                 </center>
   
 </html>

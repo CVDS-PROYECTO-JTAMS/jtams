@@ -49,7 +49,7 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 	@Override
 	public List<Initiative> dariniciativas() throws JtamsExceptions {
-		System.out.println("llega a servicesimpl para listar iniciativas");
+		
 		
 		return initiativeDAO.dariniciativas();
 	}

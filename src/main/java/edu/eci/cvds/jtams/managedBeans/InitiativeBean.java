@@ -2,8 +2,7 @@ package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
-import edu.eci.cvds.jtams.model.Keyword;
-import edu.eci.cvds.jtams.model.User;
+
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
@@ -21,6 +20,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "InitiativeBean")
@@ -39,6 +39,11 @@ public class InitiativeBean {
 	private String description ;
 	private  String area ;
 	private  String keyword;
+	private String initiativeToUpdate;
+	private String statusToUpdate;
+
+	private  String palabra;
+
 	
 	public String getName() {
 		return name;
@@ -46,6 +51,13 @@ public class InitiativeBean {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getPalabra() {
+		return name;
+	}
+
+	public void setPalabra(String palabra) {
+		this.palabra = palabra;
 	}
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
@@ -75,10 +87,20 @@ public class InitiativeBean {
 	public void setKeyword( String keyword) {
 		this.keyword = keyword;
 	}
-	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
+
+	
+	
+	public List<Initiative> buscainiciativa() throws JtamsExceptions{
+		System.out.println(palabra);
 		
-		//return initiativeService.buscainiciativaporpalabra(iniciativas);
-		return null;
+		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
+		
+		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
+		
+		System.out.println("llega a initiativebean");
+		
+		return initiativeService.buscainiciativaporpalabra(iniciativas);
+		
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
@@ -103,5 +125,48 @@ public class InitiativeBean {
 			throw ex;
 		}
 	}
+	
+	
+	
+	//metodos para cambio de estado
+	
+	
+
+
+	public void updateStatusInitiative(){
+		System.out.println("---------------------------asdasdasdasdasddddddddddddd");
+		System.out.println(this.statusToUpdate);
+		System.out.println( getstatusToUpdate());
+		/*try {
+			
+			initiativeService.updateTypeUser(getInitiativeToUpdate(), getTypeToUpdate());
+		}catch(JtamsExceptions e){
+			e.printStackTrace();
+		}*/
+	}
+	
+	
+	public String getInitiativeToUpdate() {
+		return initiativeToUpdate;
+	}
+
+	public void setInitiativeToUpdate(String initiativeToUpdate) {
+		this.initiativeToUpdate = initiativeToUpdate;
+		
+	}
+
+	public String getstatusToUpdate() {
+		return statusToUpdate;
+	}
+
+	public void setstatusToUpdate(String statusToUpdate) {
+		this.statusToUpdate = statusToUpdate;
+		System.out.println(statusToUpdate);
+		System.out.println("deberia imprimir el nuevo estado");
+		
+	}
+	
+	
+	
 
 }

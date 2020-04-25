@@ -2,7 +2,7 @@ package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
-import edu.eci.cvds.jtams.model.UserType;
+
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
@@ -39,6 +39,9 @@ public class InitiativeBean {
 	private  String keyword;
 	private String initiativeToUpdate;
 	private String statusToUpdate;
+
+	private  String palabra;
+
 	
 	public String getName() {
 		return name;
@@ -46,6 +49,13 @@ public class InitiativeBean {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getPalabra() {
+		return name;
+	}
+
+	public void setPalabra(String palabra) {
+		this.palabra = palabra;
 	}
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
@@ -78,14 +88,17 @@ public class InitiativeBean {
 	}
 	
 	
-	public List<Initiative> buscainiciativa(String palabra) throws JtamsExceptions{
+	public List<Initiative> buscainiciativa() throws JtamsExceptions{
 		System.out.println(palabra);
+		
 		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
+		
 		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
+		
 		System.out.println("llega a initiativebean");
 		
-		//return initiativeService.buscainiciativaporpalabra(iniciativas);
-		return null;
+		return initiativeService.buscainiciativaporpalabra(iniciativas);
+		
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{

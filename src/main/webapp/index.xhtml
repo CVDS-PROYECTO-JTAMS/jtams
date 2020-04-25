@@ -98,8 +98,8 @@ lang="es">
                 <h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
                 <h:form>
                     <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
-                    <p:inputText id="palabra" binding="#{palabraclave}" type="hidden"  />
-                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa(palabraclave.value)}" style="width:70px; height:35px"></p:commandButton>
+                    <p:inputText id="palabra" value="#{InitiativeBean.palabra}" type="hidden"  />
+                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
                 </h:form>
                 <br></br>
 

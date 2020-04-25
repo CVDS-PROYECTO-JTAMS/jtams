@@ -27,4 +27,5 @@ public interface InitiativeMapper {
     public List<Keyword> listKeywords();
     public List<Initiative> dariniciativas();
     public List<Initiative> buscainiciativaporpalabra(@Param("keyword") String keyword);
+	public void updateTypeUser(@Param("id") int id,@Param("typeStatusId") String typeToUpdate);
 }

@@ -47,6 +47,13 @@
         INSERT INTO "initiative" (id, description, area, num_votos,creation_date,User_id,modify_date,type_status_id)						
         VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{numVotes},#{creationDate},#{userId},#{modifyDate},#{typeStatusId})
     </insert>
+    
+    
+    
+    
+    <update id='updateTypeUser'>
+        update "initiative" set Type_Status_id=#{typeStatusId} where id=#{id};
+    </update>
 
     <select id='getInitiative' resultMap= 'InitiativeResult' parameterType='map'>
         SELECT 

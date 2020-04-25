@@ -131,16 +131,21 @@ public class InitiativeBean {
 	
 
 
-	public void updateStatusInitiative(){
-		System.out.println("---------------------------asdasdasdasdasddddddddddddd");
+	public void updateStatusInitiative(String initiativeToUpdate){
+		this.initiativeToUpdate=initiativeToUpdate;
+		System.out.println("Deberia imprimir el estado seleccionado pero no es asi");
 		System.out.println(this.statusToUpdate);
-		System.out.println( getstatusToUpdate());
-		/*try {
+		//System.out.println(this.initiativeToUpdate);
+		//System.out.println( getstatusToUpdate());
+		try {
 			
-			initiativeService.updateTypeUser(getInitiativeToUpdate(), getTypeToUpdate());
+			//initiativeService.updateStatusInitiative(getInitiativeToUpdate(), initiativeToUpdate);
+			initiativeService.updateStatusInitiative(initiativeToUpdate, "En espera revison");
+			
+			
 		}catch(JtamsExceptions e){
 			e.printStackTrace();
-		}*/
+		}
 	}
 	
 	

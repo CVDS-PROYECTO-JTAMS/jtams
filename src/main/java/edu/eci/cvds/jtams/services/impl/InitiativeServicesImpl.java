@@ -60,6 +60,16 @@ public class InitiativeServicesImpl implements InitiativeServices {
 		return initiativeDAO.buscainiciativaporpalabra(iniciativas);
 	}
 
+	@Override
+	public void updateStatusInitiative(String initiativeToUpdate, String typeToUpdate) throws JtamsExceptions {
+		if (initiativeToUpdate == null ){
+			throw new JtamsExceptions("The Initiative is Null");
+		}else {
+			initiativeDAO.updateTypeUser(initiativeToUpdate, typeToUpdate);
+		}
+		
+	}
+
 	
 
 

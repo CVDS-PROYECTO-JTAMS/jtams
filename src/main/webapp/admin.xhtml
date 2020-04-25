@@ -37,7 +37,7 @@ th, td {
   <center>
 	<header>
 		<h:form>
-		<p:dataTable var="user" value="#{userBean.users}">
+		<p:dataTable id="tabla_cambiarEstado" var="user" value="#{userBean.users}">
 			<p:column headerText="Id">
 				<h:outputText value="#{user.id}" />
 			</p:column>
@@ -60,7 +60,7 @@ th, td {
 					<f:selectItem itemLabel="Publico" itemValue="PUBLIC" />
 				</h:selectOneMenu>
 			</h:panelGrid>
-			<p:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}" ajax="true" />
+			<p:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}"   ajax="true" />
 		</h:form>
 	</header>
   </center>
@@ -116,7 +116,7 @@ th, td {
 				</h:selectOneMenu>
                     </p:column>
 					<p:column headerText="Cambiar" style="width: 110px" >
-                     <p:commandButton style="width: 90px" value="Aplicar" id="modificar" action="#{InitiativeBean.updateStatusInitiative}" ajax="true" />
+                     <p:commandButton style="width: 90px" value="Aplicar" id="modificar"  action="#{InitiativeBean.updateStatusInitiative(initiative.id)}" ajax="true" />
                     </p:column>
                 </p:dataTable>
                  </center>

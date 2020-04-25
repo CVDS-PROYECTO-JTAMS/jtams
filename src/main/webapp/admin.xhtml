@@ -17,9 +17,25 @@ th, td {
   padding: 20px;
   text-align: left;
 }
+div.background {
+  border: 0.5px solid black;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #00366E;
+  border: 1px solid black;
+  opacity: 0.6;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
 </style>
-	  <!--JQUERY-->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
@@ -32,26 +48,20 @@ th, td {
 	  <!-- Nuestro css-->
 	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	  </link>
+
+	  <div class="background">
+		  <div class="transbox">
+			  <p>ADMIN</p>
+		  </div>
+	  </div>
   </h:head>
-  <body>
+  <h:body>
   <center>
 	<header>
 		<h:form>
-		<p:dataTable var="user" value="#{userBean.users}">
-			<p:column headerText="Id">
-				<h:outputText value="#{user.id}" />
-			</p:column>
 
-			<p:column headerText="Year">
-				<h:outputText value="#{user.email}" />
-			</p:column>
-
-			<p:column headerText="User Type">
-				<h:outputText value="#{user.type}" />
-			</p:column>
-		</p:dataTable>
 			<h:panelGrid columns="3">
-				<p:outputLabel for="@next" value="Ingresa e email:" />
+				<p:outputLabel for="@next" value="Ingresa un email:" style="color:white	;" />
 				<p:inputText id="userInput" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{userBean.usernameToUpdate}"/>
 				<h:selectOneMenu id="user_select" value="#{userBean.typeToUpdate}">
 					<f:selectItem itemLabel="Administrador" itemValue="ADMINISTRATOR" />
@@ -61,6 +71,20 @@ th, td {
 				</h:selectOneMenu>
 			</h:panelGrid>
 			<p:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}" ajax="true" />
+			<p:dataTable var="user" value="#{userBean.users}" style="height:20vh; width:80vw">
+				<p:column headerText="Id">
+					<h:outputText value="#{user.id}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{user.email}" />
+				</p:column>
+
+				<p:column headerText="Tipo">
+					<h:outputText value="#{user.type}" />
+				</p:column>
+			</p:dataTable>
+			<p:chart type="pie" model="#{StatisticBean.barModel}" responsive="true" style="position: relative; height:40vh; width:80vw; color:black" />
 		</h:form>
 	</header>
   </center>
@@ -69,10 +93,7 @@ th, td {
 			admin
 		</center>
 	</article>
+  </h:body>
 
-
-
-
-  </body>
   
 </html>

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface InitiativeServices {
 
-	void createInitiative(Initiative initiative) throws JtamsExceptions;
+	void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions;
 	
 	Initiative getInitiative(String area) throws JtamsExceptions;
 	
@@ -19,6 +19,9 @@ public interface InitiativeServices {
 	List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
 
 	List<Initiative> dariniciativas() throws JtamsExceptions;
+
+
+	 
 	
 	
 }

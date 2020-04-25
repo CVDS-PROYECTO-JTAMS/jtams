@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Initiative {
-	private String id;
+	private int id;
 	private String description;
 	private String area;
 	private int numVotes;
@@ -18,7 +18,7 @@ public class Initiative {
 		
 	}
 	
-	public Initiative(String id, String description, String area, Date creationDate,
+	public Initiative(int id, String description, String area, Date creationDate,
 					  int userId, Date modifyDate, List<Keyword> keywords) {
 		this.id = id;
 		this.description = description;
@@ -39,11 +39,11 @@ public class Initiative {
 		this.keywords = keywords;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

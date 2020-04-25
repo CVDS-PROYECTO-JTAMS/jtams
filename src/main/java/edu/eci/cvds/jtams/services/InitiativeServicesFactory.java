@@ -1,20 +1,16 @@
 package edu.eci.cvds.jtams.services;
 
-import java.util.Optional;
-
-import org.mybatis.guice.XMLMyBatisModule;
-
-
 import com.google.inject.Injector;
-
-import edu.eci.cvds.jtams.persistence.CommentDAO;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.persistence.UserDAO;
-import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisComment;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisInitiative;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisUser;
 import edu.eci.cvds.jtams.services.impl.InitiativeServicesImpl;
+import edu.eci.cvds.jtams.services.impl.StatisticServicesImpl;
 import edu.eci.cvds.jtams.services.impl.UserServicesImpl;
+import org.mybatis.guice.XMLMyBatisModule;
+
+import java.util.Optional;
 
 import static com.google.inject.Guice.createInjector;
 
@@ -35,6 +31,7 @@ public class InitiativeServicesFactory {
                 //bind(CommentDAO.class).to(MyBatisComment.class);
                 bind(InitiativeServices.class).to(InitiativeServicesImpl.class);
                 bind(UserServices.class).to(UserServicesImpl.class);
+                bind(StatisticsServices.class).to(StatisticServicesImpl.class);
             }
         });
     }
@@ -75,6 +72,13 @@ public class InitiativeServicesFactory {
         }
 
         return optInjector.get().getInstance(UserServices.class);
+    }
+    public StatisticsServices getStatisticsServices(){
+        if (!optInjector.isPresent()) {
+            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+        }
+
+        return optInjector.get().getInstance(StatisticsServices.class);
     }
 
 

@@ -12,8 +12,8 @@
         <result property='area' column='area'/>
         <result property='creationDate' column='creation_date'/>
         <result property='modifyDate' column='modify_date'/>
+        <result property='status' column='Type_Status_id'/>
         <association property='user' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
-        <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
     </resultMap>
 
     <resultMap type='Initiative' id='InitiativeResult1'>
@@ -23,7 +23,7 @@
         <result property='area' column='area'/>
         <result property='creationDate' column='creation_date'/>
         <result property='modifyDate' column='modify_date'/>
-        <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
+        <result property='status' column='Type_Status_id'/>
     </resultMap>
 
     <resultMap type='Initiative' id='InitiativeResult2'>
@@ -33,7 +33,7 @@
         <result property='area' column='area'/>
         <result property='creationDate' column='creation_date'/>
         <result property='modifyDate' column='modify_date'/>
-        <association property='status' javaType='edu.eci.cvds.jtams.model.InitiativeState'  columnPrefix="i_State" resultMap='InitiativeState'></association>
+        <result property='status' column='Type_Status_id'/>
         <collection property='keywords' ofType='edu.eci.cvds.jtams.model.Keyword'
                     resultMap="edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.KeywordMapper.KeywordResult" columnPrefix="i_keyword" ></collection>
     </resultMap>
@@ -82,6 +82,14 @@
         SELECT * FROM Initiative;
     </select>
 
+    <select id="getInitiativesByArea" resultMap="StatisticResult" parameterType="map">
+        select
+        count(i.area ) as total ,
+        i.area
+        from initiative as i
+        group by i.area ;
+    </select>
+
   
 	<select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="map">
         select
@@ -94,5 +102,9 @@
         from initiative
     </select>
 
+    <resultMap type='edu.eci.cvds.jtams.model.Statistic' id='StatisticResult'>
+        <result property='count' column='total'/>
+        <result property='title' column='area'/>
+    </resultMap>
 
 </mapper>

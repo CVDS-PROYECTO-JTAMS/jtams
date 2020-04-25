@@ -4,9 +4,12 @@ import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
+import edu.eci.cvds.jtams.model.Statistic;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -25,13 +28,18 @@ public class MyBatisInitiative implements InitiativeDAO {
     }
 
     @Override
-    public void createInitiative(Initiative initiative) throws JtamsExceptions {
-        try {
-            initiativeMapper.createInitiative(initiative.getId(), initiative.getDescription(), initiative.getArea(),
-                initiative.getNumVotes(), initiative.getCreationDate(), initiative.getUserId(), initiative.getTypeStatusId(), initiative.getModifyDate());
-        } catch (Exception e) {
-            throw new JtamsExceptions("There was an exception persisting the new initiative to the database", e);
-        }
+    public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
+    	try {
+			LocalDate creationDate = LocalDate.now();
+			LocalDate modificationDate = LocalDate.now();
+			
+			initiativeMapper.createInitiative(0, description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new JtamsExceptions("Error trying to insert the initiative");
+		}
     }
 
     @Override
@@ -92,5 +100,16 @@ public class MyBatisInitiative implements InitiativeDAO {
 			throw new JtamsExceptions("Unable to load initiatives by keywords, persistence error", e);
 		}
 	}
+
+    @Override
+    public List<Initiative> totalInitiatives() throws JtamsExceptions {
+        return null;
+    }
+
+    @Override
+    public List<Statistic> getInitiativesByArea() {
+        return initiativeMapper.getInitiativesByArea();
+    }
+
 
 }

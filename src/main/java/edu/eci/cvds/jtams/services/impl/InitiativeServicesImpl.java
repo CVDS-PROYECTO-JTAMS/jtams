@@ -23,11 +23,11 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void createInitiative(Initiative initiative) throws JtamsExceptions {
-		if (initiative == null) {
+	public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
+		if (description == null) {
 			throw new JtamsExceptions("The Initiative is null");
 		}else {
-			initiativeDAO.createInitiative(initiative);
+			initiativeDAO.createInitiative( description, area, idus, keywords,name);
 		}
 	}
 
@@ -59,6 +59,9 @@ public class InitiativeServicesImpl implements InitiativeServices {
 		System.out.println("llega a servicesimpl para buscar iniciativa");
 		return initiativeDAO.buscainiciativaporpalabra(iniciativas);
 	}
+
+	
+
 
 	
 

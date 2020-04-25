@@ -1,21 +1,33 @@
 
-E
-java:S11481"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æÖô™š.
-o	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8ı¸àÏ™.
-X	java:S125;"<This block of commented-out lines of code should be removed.(€˜àÅ8Æ®Õ™š.
-U
-java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8ı¸àÏ™.
-X	java:S125A"<This block of commented-out lines of code should be removed.(„§ñ£8ŒóÕ™.
-]	java:S1256"<This block of commented-out lines of code should be removed.(Å„ÃÜşÿÿÿÿ8ªÒŞ™š.
-v
-java:S1450"YRemove the "initiative" field and declare it as a local variable in the relevant methods.(»‘Ë“8ÙÆ—œš.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
-]	java:S125"<This block of commented-out lines of code should be removed.(Ãº¾«üÿÿÿÿ8ŠıÎë™.
-J
-java:S11725".Remove this unused method parameter "palabra".(Ëäg8“‘ß™š.
-\
-java:S1128":Remove this unused import 'edu.eci.cvds.jtams.model.User'.(”È¨íıÿÿÿÿ8À¯š.
+F
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8½¥Öüš.
+y
+java:S4144/"WUpdate this method so that its implementation is not identical to "getName" on line 40.(§’âûÿÿÿÿ8½¥Öüš.
+U
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8½¥Öüš.
 W
-java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8ı¸àÏ™.
-H
-java:S1168<"+Return an empty collection instead of null.(¥¹ï8Æ®Õ™š.
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8½¥Öüš.
+i
+java:S4275/"GRefactor this getter so that it actually refers to the field "palabra".(§’âûÿÿÿÿ8½¥Öüš.
+U	java:S106V"9Replace this use of System.out or System.err by a logger.(üÈĞ½8½¥Öüš.
+T	java:S106X"9Replace this use of System.out or System.err by a logger.(†ß‰u8½¥Öüš.
+U	java:S106\"9Replace this use of System.out or System.err by a logger.(ËÆ¬º8½¥Öüš.
+o	java:S100b"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8½¥Öüš.
+X
+java:S1854m";Remove this useless assignment to local variable "session".(¦Ÿş´8½¥Öüš.
+V
+java:S1854k"9Remove this useless assignment to local variable "fecha".(‚§Õ8½¥Öüš.
+Z	java:S106h"9Replace this use of System.out or System.err by a logger.(Œû‹Åúÿÿÿÿ8½¥Öüš.
+[	java:S106‚"9Replace this use of System.out or System.err by a logger.(Ö×‡–úÿÿÿÿ8½¥Öüš.
+V	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(Ù½¾¼8½¥Öüš.
+[	java:S106¡"9Replace this use of System.out or System.err by a logger.(öÿÒûÿÿÿÿ8½¥Öüš.
+[	java:S106¢"9Replace this use of System.out or System.err by a logger.(ûı¿øÿÿÿÿ8½¥Öüš.
+G
+java:S1481k"*Remove this unused "fecha" local variable.(‚§Õ8½¥Öüš.
+I
+java:S1481m",Remove this unused "session" local variable.(¦Ÿş´8½¥Öüš.
+]	java:S125"<This block of commented-out lines of code should be removed.(šŞ‘¥üÿÿÿÿ8½¥Öüš.
+X	java:S125d"<This block of commented-out lines of code should be removed.(„§ñ£8½¥Öüš.
+^	java:S125„"<This block of commented-out lines of code should be removed.(ÒÆ’Óşÿÿÿÿ8½¥Öüš.
+Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(ŞğÍ—8½¥Öüš.

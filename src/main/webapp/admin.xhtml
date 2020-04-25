@@ -85,7 +85,8 @@ div.transbox p {
 					<h:outputText value="#{user.type}" />
 				</p:column>
 			</p:dataTable>
-			<p:chart type="pie" model="#{StatisticBean.barModel}" responsive="true" style="position: relative; height:40vh; width:80vw; color:black" />
+			<p:chart type="pie" id="pie" model="#{StatisticBean.barModel}" responsive="true" style="position: relative; height:40vh; width:80vw; color:black" />
+			<p:commandButton style="width: 150px" update="pie" value="Actualizar" id="Actualizar" actionListener="#{StatisticBean.createBarModels()}"   ajax="true" />
 
 		</h:form>
 	</header>

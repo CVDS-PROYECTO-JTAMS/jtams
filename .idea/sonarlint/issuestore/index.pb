@@ -56,3 +56,19 @@ l
 <src/main/java/edu/eci/cvds/jtams/model/InitiativeStates.java,a\b\ab2b4016c9bc9808ede5dcd12051294e6fa5c171
 k
 ;src/main/java/edu/eci/cvds/jtams/model/InitiativeState.java,5\c\5c506f22c2957d5af26e5dacd1c0a74c81b2a338
+o
+?src/main/java/edu/eci/cvds/jtams/managedBeans/BasePageBean.java,8\e\8e5d34a9f53de377f8d42a057fbd26a9fa1f7dd9
+j
+:src/main/java/edu/eci/cvds/jtams/graphics/graphicView.java,f\1\f1bcee4439a155ec9b2a85292470eb111542330f
+e
+5src/main/java/edu/eci/cvds/jtams/model/Statistic.java,3\f\3fccd54d562a66a8a648a6558eab4377c9ff7a27
+y
+Isrc/main/java/edu/eci/cvds/jtams/services/impl/StatisticServicesImpl.java,9\4\948a06d877c51ea7d7408f566ab8793bdd024ee3
+q
+Asrc/main/java/edu/eci/cvds/jtams/services/StatisticsServices.java,5\a\5a20ab9f0b4c77832746ab084c414a81102a367c
+O
+src/main/webapp/statistic.xhtml,9\8\986db8c6960481034da7ebe6ec98923318f9603a
+p
+@src/main/java/edu/eci/cvds/jtams/managedBeans/StatisticBean.java,3\a\3a149b9edab3d15307f39a6e894f551bf0165cd5
+o
+?src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java,7\d\7dbc5748abbaeb0a07d0b7d2d5e644a570917a70

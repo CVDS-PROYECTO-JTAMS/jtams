@@ -1,12 +1,18 @@
 
+Q
+java:S26966"6Make the enclosing method "static" or remove this set.(ñ¡‹Šüÿÿÿÿ
+L
+java:S2696>"6Make the enclosing method "static" or remove this set.(£Ê©­
+i
+java:S1192-"LDefine a constant instead of duplicating this literal "development" 3 times.(£Ê©­8üÓ®ôš.
 C
-java:S3010+"(Remove this assignment of "optInjector".(³Á®íûÿÿÿÿ
-L
-java:S26960"6Make the enclosing method "static" or remove this set.(£Ê©­
+java:S3010("(Remove this assignment of "optInjector".(³Á®íûÿÿÿÿ
+p
+java:S1192-"SDefine a constant instead of duplicating this literal "mybatis-config.xml" 3 times.(£Ê©­8üÓ®ôš.
 Q
-java:S26969"6Make the enclosing method "static" or remove this set.(ñ¡‹Šüÿÿÿÿ
+java:S2696G"6Make the enclosing method "static" or remove this set.(ñ¡‹Šüÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ÀÇâüÿÿÿÿ
 L
-java:S2696A"6Make the enclosing method "static" or remove this set.(£Ê©­
-Q
-java:S2696J"6Make the enclosing method "static" or remove this set.(ñ¡‹Šüÿÿÿÿ
-V	java:S125#"<This block of commented-out lines of code should be removed.(ÀÇâüÿÿÿÿ
+java:S2696-"6Make the enclosing method "static" or remove this set.(£Ê©­
+S
+java:S2696N"6Make the enclosing method "static" or remove this set.(£Ê©­8üÓ®ôš.

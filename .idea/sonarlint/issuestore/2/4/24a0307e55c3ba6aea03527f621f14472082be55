@@ -1,12 +1,3 @@
 
-Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-e
-java:S1192"LDefine a constant instead of duplicating this literal "listar Fail" 5 times.(ÅÝÜøÿÿÿÿÿ
-T	java:S125"<This block of commented-out lines of code should be removed.(£œÜùÿÿÿÿ
-D
-java:S1168"+Return an empty collection instead of null.(£œÜùÿÿÿÿ
-Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-M	java:S1064"9Replace this use of System.out or System.err by a logger.(‹…’j
+U	java:S106;"9Replace this use of System.out or System.err by a logger.(Žý¬£8ˆŽ£ðš.
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(çË±—þÿÿÿÿ

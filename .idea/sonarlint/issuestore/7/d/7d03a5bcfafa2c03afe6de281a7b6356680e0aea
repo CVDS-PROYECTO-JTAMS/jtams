@@ -1,18 +1,21 @@
 
-S	java:S106D"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-S	java:S106F"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-t
-java:S2293N"YReplace the type specification in this constructor call with the diamond operator ("<>").(öÛ‰Õùÿÿÿÿ
-S	java:S106A"9Replace this use of System.out or System.err by a logger.(óÑŠ¹üÿÿÿÿ
-S	java:S106C"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-A
-java:S1168G"+Return an empty collection instead of null.(Õæ¥ð
-S	java:S106B"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-g
-java:S1192B"LDefine a constant instead of duplicating this literal "listar Fail" 5 times.(ÅÝÜøÿÿÿÿÿ
+U	java:S106U"9Replace this use of System.out or System.err by a logger.(¿„›‘8©íðüš.
+]	java:S125W"<This block of commented-out lines of code should be removed.(¿Ýíôùÿÿÿÿ8©íðüš.
+X	java:S125v"<This block of commented-out lines of code should be removed.(Ð“Ý¿8©íðüš.
+{
+java:S2293Q"YReplace the type specification in this constructor call with the diamond operator ("<>").(öÛ‰Õùÿÿÿÿ8©íðüš.
 >
-java:S1148Z"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-S	java:S106E"9Replace this use of System.out or System.err by a logger.(ÅÝÜøÿÿÿÿÿ
-Q	java:S125G"<This block of commented-out lines of code should be removed.(Õæ¥ð
-o
-java:S2293M"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž¾ÚÆ
+java:S1148("#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+v
+java:S2293P"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž¾ÚÆ8©íðüš.
+]	java:S125I"<This block of commented-out lines of code should be removed.(èã¼±ûÿÿÿÿ8©íðüš.
+Y
+java:S1854Q"7Remove this useless assignment to local variable "tmp".(öÛ‰Õùÿÿÿÿ8©íðüš.
+]	java:S125R"<This block of commented-out lines of code should be removed.(üóÓüÿÿÿÿ8©íðüš.
+H
+java:S1168j"+Return an empty collection instead of null.(¥¹ï8©íðüš.
+E
+java:S1148c"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8©íðüš.
+U	java:S106V"9Replace this use of System.out or System.err by a logger.(¢œ¿¶8©íðüš.
+J
+java:S1481Q"(Remove this unused "tmp" local variable.(öÛ‰Õùÿÿÿÿ8©íðüš.

@@ -7,13 +7,13 @@ import edu.eci.cvds.jtams.services.StatisticsServices;
 import org.primefaces.model.chart.PieChartModel;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "StatisticBean")
-@SessionScoped
+@RequestScoped
 public class StatisticBean {
 
     private StatisticsServices statisticService = InitiativeServicesFactory.getInstance().getStatisticsServices();;
@@ -33,12 +33,12 @@ public class StatisticBean {
     }
 
     @PostConstruct
-    private void createBarModels() {
+    public void createBarModels() {
         createBarModel();
     }
 
     private void createBarModel() {
-        barModel = initBarModel();
+        barModel = loadData();
         barModel.setTitle("Cantidad de Iniciativas");
         barModel.setLegendPosition("e");
         barModel.setShowDataLabels(true);
@@ -47,7 +47,7 @@ public class StatisticBean {
         barModel.setDataLabelFormatString("%dI");
     }
 
-    private PieChartModel initBarModel() {
+    private PieChartModel loadData() {
         try {
             PieChartModel model = new PieChartModel();
             List<Statistic> statistics = statisticService.getStatistics();

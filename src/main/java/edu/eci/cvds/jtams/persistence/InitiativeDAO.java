@@ -19,7 +19,7 @@ public interface InitiativeDAO {
 
 	public List<Initiative> dariniciativas() throws JtamsExceptions;
 	
-	public List<Initiative> buscainiciativaporpalabra(List<String> keywords) throws JtamsExceptions;
+	public List<Initiative> buscainiciativaporpalabra(String palabra) throws JtamsExceptions;
 
 	public List<Initiative> totalInitiatives()throws JtamsExceptions;
 

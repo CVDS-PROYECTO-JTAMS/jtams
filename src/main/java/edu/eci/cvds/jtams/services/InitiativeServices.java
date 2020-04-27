@@ -16,7 +16,7 @@ public interface InitiativeServices {
 	
 	void updateInitiative (Initiative initiative) throws JtamsExceptions;
 
-	List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
+	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
 
 	List<Initiative> dariniciativas() throws JtamsExceptions;
 

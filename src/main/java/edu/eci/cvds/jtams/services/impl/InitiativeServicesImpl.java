@@ -7,7 +7,10 @@ import edu.eci.cvds.jtams.model.InitiativeStates;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.ibatis.exceptions.PersistenceException;
 
 public class InitiativeServicesImpl implements InitiativeServices {
 
@@ -55,9 +58,20 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 
 	@Override
-	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions {
-		System.out.println("llega a servicesimpl para buscar iniciativa");
-		return initiativeDAO.buscainiciativaporpalabra(iniciativas);
+	public List<Initiative> buscainiciativaporpalabra(List<String> palabras) throws JtamsExceptions {
+		try{
+            List<Initiative> iniciativas = new ArrayList<>();
+            for(int i=0 ; i<palabras.size() ; i++){
+                List<Initiative> iniciativasTemporales = initiativeDAO.buscainiciativaporpalabra(palabras.get(i));
+                for(int j=0 ; j<iniciativasTemporales.size() ; j++){
+                    iniciativas.add(iniciativasTemporales.get(j));
+                        
+                }
+            }
+            return iniciativas;
+        } catch (javax.persistence.PersistenceException | PersistenceException e) {
+            throw new  JtamsExceptions("T:((((((((((((((");
+        }
 	}
 
 	@Override

@@ -75,30 +75,13 @@ public class MyBatisInitiative implements InitiativeDAO {
 	}
 
 	@Override
-	public List<Initiative> buscainiciativaporpalabra(List<String> keywords) throws JtamsExceptions {
-		try {
-			List <Initiative> initiatives=new ArrayList<Initiative>();
-			Set<Integer> tmp = new HashSet<Integer>(); 
-			//System.out.println("llega la busqueda 0");
-			//System.out.println(keywords.get(0));
-			for(String k:keywords) {
-				System.out.println("llega la busqueda 1");
-				System.out.println(initiativeMapper.buscainiciativaporpalabra(k).size());
-				//for(Initiative i:initiativeMapper.buscainiciativaporpalabra(k)) {
-					//System.out.println("llega la busqueda 2");
-					//if (!tmp.contains(i.getId())) {
-					//	System.out.println("llega la busqueda 3");
-					//	initiatives.add(i);
-					//	tmp.add(i.getId());
-					//}
-				//}
-			}
-			return initiatives;
-		
-		}catch(Exception e) {
-			e.printStackTrace();
-			throw new JtamsExceptions("Unable to load initiatives by keywords, persistence error", e);
-		}
+	public List<Initiative> buscainiciativaporpalabra(String keyword) throws JtamsExceptions {
+		try{
+            List<Initiative> iniciativas= initiativeMapper.buscainiciativaporpalabra(keyword);
+            return iniciativas;
+        } catch (javax.persistence.PersistenceException e){
+            throw new javax.persistence.PersistenceException(e.getMessage(),e);
+        }
 	}
 
     @Override

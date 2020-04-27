@@ -33,14 +33,20 @@ public class InitiativeBean {
 	private  String keyword;
 	private String initiativeToUpdate;
 	private String statusToUpdate;
-
+	private List<Initiative> iniciativaPorPalabra;
 	private  String palabra;
 
 	
 	public String getName() {
 		return name;
 	}
-
+	 public List<Initiative> getIniciatiaPorPalabra() {
+	        return iniciativaPorPalabra;
+	    }
+	 public void setIniciativasPorPalabra(List<Initiative> iniciativaPorPalabra) {
+	        this.iniciativaPorPalabra = iniciativaPorPalabra;
+	    }
+	 
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -83,16 +89,16 @@ public class InitiativeBean {
 	
 	
 	public List<Initiative> buscainiciativa() throws JtamsExceptions{
-		System.out.println(palabra);
 		
-		System.out.println("aqui arriba deberia imprimir la puta palabra y solo imprime un espacio :C ");
-		
-		List<String> iniciativas= Arrays.asList(palabra.split(",")); 
-		
-		System.out.println("llega a initiativebean");
-		
-		return initiativeService.buscainiciativaporpalabra(iniciativas);
-		
+		try {
+			System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
+			System.out.println(keyword);
+            List<String> palabrasListas = Arrays.asList(keyword.split(","));
+            this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
+            return  iniciativaPorPalabra;
+        } catch (JtamsExceptions ex){
+            throw new JtamsExceptions("No se encuentran iniciativas con esas palabras clave");
+        }
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{

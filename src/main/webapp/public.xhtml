@@ -39,5 +39,32 @@ lang="es">
 	
 	
   </body>
-  
+  				<h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
+	                <h:form>
+	                    <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
+	                    <p:inputText id="palabra" value="#{InitiativeBean.keyword}" type="hidden"  />
+	                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
+	                </h:form>
+	                <br></br>
+	
+	                <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa()}">
+	                    <p:column headerText="Id" style="color:white;">
+	                        <h:outputText iniciativa="#{initiative.id}" />
+	                    </p:column>
+	                    <p:column headerText="Descripcion" style="color:white;">
+	                        <h:outputText iniciativa="#{initiative.description}" />
+	                    </p:column>
+	                    <p:column headerText="Area" style="color:white;">
+	                        <h:outputText iniciativa="#{initiative.area}" />
+	                    </p:column>
+	                    <p:column headerText="Estado" style="color:white;">
+	                        <h:outputText iniciativa="#{initiative.typeStatusId}" />
+	                    </p:column>
+	                    <p:column headerText="Fecha de creacion" style="color:white;">
+	                        <h:outputText iniciativa="#{initiative.creationDate}" />
+	                    </p:column>
+	                    <p:column headerText="# de votos" style="color:white;">
+	                        <h:outputText iniciativa="#{initiative.numVotes }" />
+	                    </p:column>
+                	</p:dataTable>
 </html>

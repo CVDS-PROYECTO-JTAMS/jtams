@@ -2,11 +2,35 @@
 <html xmlns="http://www.w3c.org/1999/xhtml"
 xmlns:h="http://xmlns.jcp.org/jsf/html"
 xmlns:p="http://primefaces.org/ui"
+xmlns:f="http://java.sun.com/jsf/core"
 xmlns:th="http://www.thymeleaf.org"
+xmlns:ui="http://java.sun.com/jsf/facelets"
 lang="es">
 
   <title>Reserva de Recursos ECI</title>
-  <head>
+  <h:head>
+  	  <style>
+table, th, td {
+  border: 3px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 20px;
+  text-align: left;
+}
+div.background {
+  border: 0.5px solid White;
+}
+
+
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+</style>
 	  <!--JQUERY-->
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -22,7 +46,7 @@ lang="es">
 	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	  </link>
 
-  </head>
+  </h:head>
   <body>
   <div class="modal-dialog text-center">
     <div class="col-sm-8 main-section">
@@ -57,6 +81,38 @@ lang="es">
   			</div>
   		</div>
   </div>
+  <h:form>
+<center>
+  <h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
+                <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"  style="margin-bottom:20px" 
+				 rows="10"
+                 paginator="true"
+                 paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                 currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+                 rowsPerPageTemplate="5,10,15,20">				>
+				
+                    <p:column headerText="Id" style="color:black;" columnIndexVar="colIndex" sortBy="#{initiative[column.property]}" filterBy="#{initiative[column.property]}">
+	                        <h:outputText value="#{initiative.id}" />
+	                    </p:column>
+	                    <p:column headerText="Descripcion" style="color:black;">
+	                        <h:outputText value="#{initiative.description}" />
+	                    </p:column>
+	                    <p:column headerText="Area" style="color:black;">
+	                        <h:outputText value="#{initiative.area}" />
+	                    </p:column>
+	                    <p:column headerText="Estado" style="color:black;">
+	                        <h:outputText value="#{initiative.typeStatusId}" />
+	                    </p:column>
+	                    <p:column headerText="Fecha de creacion" style="color:black;">
+	                        <h:outputText value="#{initiative.creationDate}" />
+	                    </p:column>
+	                    <p:column headerText="# de votos" style="color:black;">
+	                        <h:outputText value="#{initiative.numVotes }" />
+	                    </p:column>
+						
+                </p:dataTable>
+                 </center>
+	</h:form>
 
  </body>
 

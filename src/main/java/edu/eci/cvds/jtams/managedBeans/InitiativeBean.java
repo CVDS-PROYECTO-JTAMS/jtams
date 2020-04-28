@@ -34,6 +34,7 @@ public class InitiativeBean {
 	private String initiativeToUpdate;
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
+	private List<Initiative> iniciativas;
 	private  String palabra;
 	private Initiative selectedInitiative;
 
@@ -105,6 +106,7 @@ public class InitiativeBean {
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
+		iniciativas= initiativeService.dariniciativas();
 		return  initiativeService.dariniciativas();
 		//return null;
 	}
@@ -170,7 +172,14 @@ public class InitiativeBean {
 		this.selectedInitiative = selectedInitiative;
 	}
 	
-	
+	 public void doSomething() {  
+	        try {  
+	            // simulate a long running request  
+	            Thread.sleep(500);  
+	        } catch (final Exception e) {  
+	            // ignore  
+	        }  
+	    }  
 	
 
 }

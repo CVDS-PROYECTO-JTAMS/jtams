@@ -7,7 +7,7 @@ xmlns:shiro="http://shiro.apache.org/tags"
 lang="es">
 
   <title>Reserva de Recursos ECI</title>
-  <head>
+  <h:head>
 	  <!--JQUERY-->
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -22,29 +22,18 @@ lang="es">
 	  <!-- Nuestro css-->
 	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	  </link>
-  </head>
-  <body>
+  </h:head>
+  <h:body>
   <center>
 	<header>
+		<h:form>
 		Bienvenidos
-	</header>
-  </center>
-	<article>
-		<center>
-			Public
-		</center>
-	</article>
-	
-	
-	
-	
-  </body>
-  				<h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
-	                <h:form>
-	                    <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
-	                    <p:inputText id="palabra" value="#{InitiativeBean.keyword}" type="hidden"  />
-	                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
-	                </h:form>
+		<h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
+	                
+	                 	<input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
+	                    <p:inputText id="palabra" value="#{InitiativeBean.palabra}" type="hidden"  />
+                    <p:commandButton id="buscar_keyword" value = "Buscar"  action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
+	                
 	                <br></br>
 	
 	                <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa()}">
@@ -67,4 +56,19 @@ lang="es">
 	                        <h:outputText iniciativa="#{initiative.numVotes }" />
 	                    </p:column>
                 	</p:dataTable>
+		</h:form>
+	</header>
+  </center>
+	<article>
+		<center>
+			Public
+		</center>
+	</article>
+	
+	
+	
+	
+
+  				
+  </h:body>
 </html>

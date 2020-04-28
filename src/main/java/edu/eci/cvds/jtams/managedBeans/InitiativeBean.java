@@ -29,12 +29,13 @@ public class InitiativeBean {
 	
 	private String name;
 	private String description ;
-	private  String area ;
-	private  String keyword;
+	private String area ;
+	private String keyword;
 	private String initiativeToUpdate;
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
 	private  String palabra;
+	private Initiative selectedInitiative;
 
 	
 	public String getName() {
@@ -54,8 +55,9 @@ public class InitiativeBean {
 		return name;
 	}
 
-	public void setPalabra(String palabra) {
-		this.palabra = palabra;
+	public void setPalabra(String palabran) {
+		System.out.println(palabran);
+		this.palabra = palabran;
 	}
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
@@ -84,6 +86,7 @@ public class InitiativeBean {
 
 	public void setKeyword( String keyword) {
 		this.keyword = keyword;
+		System.out.println(keyword);
 	}
 
 	
@@ -92,8 +95,8 @@ public class InitiativeBean {
 		
 		try {
 			System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
-			System.out.println(keyword);
-            List<String> palabrasListas = Arrays.asList(keyword.split(","));
+			System.out.println(palabra);
+            List<String> palabrasListas = Arrays.asList(palabra.split(","));
             this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
             return  iniciativaPorPalabra;
         } catch (JtamsExceptions ex){
@@ -131,23 +134,17 @@ public class InitiativeBean {
 	
 
 
-	public void updateStatusInitiative(String initiativeToUpdate){
-		this.initiativeToUpdate=initiativeToUpdate;
-		System.out.println("Deberia imprimir el estado seleccionado pero no es asi");
-		System.out.println(this.statusToUpdate);
-		//System.out.println(this.initiativeToUpdate);
-		//System.out.println( getstatusToUpdate());
+	public void updateStatusInitiative(){
+		this.initiativeToUpdate=String.valueOf(selectedInitiative.getId());
 		try {
-			
-			//initiativeService.updateStatusInitiative(getInitiativeToUpdate(), initiativeToUpdate);
-			initiativeService.updateStatusInitiative(initiativeToUpdate, "En espera revison");
+			initiativeService.updateStatusInitiative(initiativeToUpdate, statusToUpdate);
 			
 			
 		}catch(JtamsExceptions e){
 			e.printStackTrace();
 		}
 	}
-	
+
 	
 	public String getInitiativeToUpdate() {
 		return initiativeToUpdate;
@@ -164,9 +161,13 @@ public class InitiativeBean {
 
 	public void setstatusToUpdate(String statusToUpdate) {
 		this.statusToUpdate = statusToUpdate;
-		System.out.println(statusToUpdate);
-		System.out.println("deberia imprimir el nuevo estado");
 		
+	}
+	public Initiative getSelectedInitiative() {
+		return selectedInitiative;
+	}
+	public void setSelectedInitiative(Initiative selectedInitiative) {
+		this.selectedInitiative = selectedInitiative;
 	}
 	
 	

@@ -71,9 +71,9 @@ div.transbox p {
 				</h:selectOneMenu>
 				
 			</h:panelGrid>
-			<p:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}"   ajax="true" />
+			<h:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}"  update=":tablausuarios" />
 
-			<p:dataTable var="user" value="#{userBean.users}" style="height:20vh; width:80vw">
+			<p:dataTable id="tablausuarios" var="user" value="#{userBean.users}" style="height:20vh; width:80vw">
 				<p:column headerText="Id">
 					<h:outputText value="#{user.id}" />
 				</p:column>
@@ -132,11 +132,11 @@ div.transbox p {
 					<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
 					<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
 				</h:selectOneMenu>
-           		 <p:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update="@form" ajax="true" />
+           		 <h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update=":tablaIniciativa" ajax="true" />
         		</f:facet>
                 </p:dataTable>
                  </center>
-	               
+				 	               
 		</h:form>
 
 	</header>

@@ -87,7 +87,7 @@ public class InitiativeBean {
 
 	public void setKeyword( String keyword) {
 		this.keyword = keyword;
-		System.out.println(keyword);
+		//System.out.println(keyword);
 	}
 
 	

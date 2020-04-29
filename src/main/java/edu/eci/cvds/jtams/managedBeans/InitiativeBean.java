@@ -30,7 +30,7 @@ public class InitiativeBean {
 	private String name;
 	private String description ;
 	private String area ;
-	private String keyword;
+	private String keyword="";
 	private String initiativeToUpdate;
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;

@@ -32,4 +32,5 @@ public interface InitiativeMapper {
     List<Statistic> getInitiativesByArea();
 
 	public void updateTypeUser(@Param("id") int id,@Param("typeStatusId") String typeToUpdate);
+
 }

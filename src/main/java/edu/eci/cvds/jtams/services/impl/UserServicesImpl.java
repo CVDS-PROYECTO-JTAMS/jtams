@@ -83,16 +83,6 @@ public class UserServicesImpl implements UserServices{
 		this.userDao = userDao;
 	}
 
-//	@Override
-//	public Comment getComentario(int idIniciativa) {
-//		return comentarioDAO.getComment(idIniciativa);
-//	}
-//
-//	@Override
-//	public void createComentario(Comment comentario) {
-//		comentarioDAO.createComment(comentario);
-//	}
-
 	@Override
 	public void createComentario(Comment comentario) {
 		//comentarioDAO.agregarComentario(comentario);

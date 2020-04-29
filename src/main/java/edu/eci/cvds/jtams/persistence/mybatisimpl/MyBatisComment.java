@@ -1,10 +1,13 @@
 package edu.eci.cvds.jtams.persistence.mybatisimpl;
 
 import com.google.inject.Inject;
-
+import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Comment;
 import edu.eci.cvds.jtams.persistence.CommentDAO;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.CommentMapper;
+
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class MyBatisComment implements CommentDAO {
 
@@ -12,25 +15,34 @@ public class MyBatisComment implements CommentDAO {
 	private CommentMapper commentMapper;
 
 	@Override
-	public void createComment(Comment comment) {
-		commentMapper.createComment(comment.getId(),comment.getSugerencia(),comment.getFechaCreacion(),comment.getFechaModificacion(),comment.getMensaje(),comment.getUsuario());
+	public void createComment(int iniciativa, String mensaje, int usuario) throws JtamsExceptions {
+		try {
+			LocalDate fechaCreacion = LocalDate.now();
+			LocalDate fechaModificacion = LocalDate.now();
+			commentMapper.createComment(0, iniciativa, Date.valueOf(fechaCreacion), Date.valueOf(fechaModificacion), mensaje, usuario);
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new JtamsExceptions("Error trying to insert the initiative");
+		}
 	}
-
 	@Override
 	public Comment getComment(int idIniciativa) {
-		return commentMapper.getComment(idIniciativa);
+		return null;//commentMapper.getComment(idIniciativa);
 		
 	}
 
 	@Override
 	public int getnumComentariosUsuario(String id) {
-		return commentMapper.getnumComentariosUsuario(id);
+		return 0;
+		//commentMapper.getnumComentariosUsuario(id);
 	}
 
 
+	public CommentMapper getCommentMapper() {
+		return commentMapper;
+	}
 
-
-	
-	
-
+	public void setCommentMapper(CommentMapper commentMapper) {
+		this.commentMapper = commentMapper;
+	}
 }

@@ -6,16 +6,16 @@ import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.services.InitiativeServices;
+import org.apache.ibatis.exceptions.PersistenceException;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.ibatis.exceptions.PersistenceException;
 
 public class InitiativeServicesImpl implements InitiativeServices {
 
 	@Inject
 	private InitiativeDAO initiativeDAO;
+
 
 	public InitiativeDAO getInitiativeDAO() {
 		return initiativeDAO;
@@ -84,9 +84,10 @@ public class InitiativeServicesImpl implements InitiativeServices {
 		
 	}
 
-	
+	@Override
+	public void addComment(String comment) throws JtamsExceptions {
 
+	}
 
-	
 
 }

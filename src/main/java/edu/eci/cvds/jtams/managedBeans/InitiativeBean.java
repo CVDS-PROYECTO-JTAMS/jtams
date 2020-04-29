@@ -26,6 +26,7 @@ public class InitiativeBean {
 	
 	private InitiativeServices initiativeService = InitiativeServicesFactory.getInstance().getInitiativeServices();
 	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
+	//private CommentServices commentServices = InitiativeServicesFactory.getInstance().getCommentServices();
 	
 	private String name;
 	private String description ;
@@ -105,6 +106,7 @@ public class InitiativeBean {
 		return  initiativeService.dariniciativas();
 		//return null;
 	}
+
 	public void createIntitiative() throws JtamsExceptions {
 		
 		System.out.println(area+" "+description+" "+name);
@@ -113,7 +115,7 @@ public class InitiativeBean {
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
-		
+
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		try {
 			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
@@ -169,7 +171,16 @@ public class InitiativeBean {
 		
 	}
 	
-	
+	public void addComment (String comment){
+		try {
+
+			initiativeService.addComment(comment);
+
+			} catch (JtamsExceptions jtamsExceptions) {
+				jtamsExceptions.printStackTrace();
+			}
+		}
+
 	
 
 }

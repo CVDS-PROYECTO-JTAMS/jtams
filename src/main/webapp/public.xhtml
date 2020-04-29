@@ -1,70 +1,129 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:p="http://primefaces.org/ui"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:shiro="http://shiro.apache.org/tags"
-lang="es">
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  lang="es">
 
   <title>Reserva de Recursos ECI</title>
-  <head>
-	  <!--JQUERY-->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <h:head>
 
-	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	  <style>
+		table, th, td {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		}
+		th, td {
+		  padding: 20px;
+		  text-align: left;
+		}
+		div.background {
+		  border: 0.5px solid black;
+		}
 
-	  <!-- Los iconos tipo Solid de Fontawesome-->
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
-	  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+		div.transbox {
+		  margin: 30px;
+		  background-color: #00366E;
+		  border: 1px solid black;
+		  opacity: 0.6;
+		}
+
+		div.transbox p {
+		  margin: 5%;
+		  font-weight: bold;
+		  color: #ffffff;
+		  text-align: center;
+		}
+		</style>
+
+
+
 
 	  <!-- Nuestro css-->
 	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	  </link>
-  </head>
-  <body>
-  <center>
-	<header>
-		Bienvenidos
-	</header>
-  </center>
-	<article>
-		<center>
-			Public
-		</center>
-	</article>
-	
-	
-	
-	
-  </body>
-  				<h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
-	                <h:form>
-	                    <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
-	                    <p:inputText id="palabra" value="#{InitiativeBean.keyword}" type="hidden"  />
-	                    <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
-	                </h:form>
-	                <br></br>
-	
-	                <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa()}">
-	                    <p:column headerText="Id" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.id}" />
-	                    </p:column>
-	                    <p:column headerText="Descripcion" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.description}" />
-	                    </p:column>
-	                    <p:column headerText="Area" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.area}" />
-	                    </p:column>
-	                    <p:column headerText="Estado" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.typeStatusId}" />
-	                    </p:column>
-	                    <p:column headerText="Fecha de creacion" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.creationDate}" />
-	                    </p:column>
-	                    <p:column headerText="# de votos" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.numVotes }" />
-	                    </p:column>
-                	</p:dataTable>
+  </h:head>
+  <h:body>
+	  <h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
+	  <h:form>
+		  <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
+		  <p:inputText id="palabra" value="#{InitiativeBean.keyword}" type="hidden"  />
+		  <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
+	  </h:form>
+	  <br></br>
+
+	  <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa()}">
+		  <p:column headerText="Id" style="color:white;">
+			  <h:outputText iniciativa="#{initiative.id}" />
+		  </p:column>
+		  <p:column headerText="Descripcion" style="color:white;">
+			  <h:outputText iniciativa="#{initiative.description}" />
+		  </p:column>
+		  <p:column headerText="Area" style="color:white;">
+			  <h:outputText iniciativa="#{initiative.area}" />
+		  </p:column>
+		  <p:column headerText="Estado" style="color:white;">
+			  <h:outputText iniciativa="#{initiative.typeStatusId}" />
+		  </p:column>
+		  <p:column headerText="Fecha de creacion" style="color:white;">
+			  <h:outputText iniciativa="#{initiative.creationDate}" />
+		  </p:column>
+		  <p:column headerText="# de votos" style="color:white;">
+			  <h:outputText iniciativa="#{initiative.numVotes }" />
+		  </p:column>
+	  </p:dataTable>
+
+  </h:body>
+
+
+	  <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
+	  <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
+		  <p:column headerText="Id" style="width:10px" >
+			  <h:outputText value="#{initiative.id}" />
+		  </p:column>
+		  <p:column headerText="Descripcion" style="width:100px" >
+
+			  <h:outputText value="#{initiative.description}" align="left"/>
+
+		  </p:column>
+		  <p:column headerText="Area" style="width:50px">
+			  <center>
+			  	<h:outputText value="#{initiative.area}" />
+			  </center>
+		  </p:column>
+		  <p:column headerText="Fecha de creacion" style="width:100px">
+
+			  <h:outputText value="#{initiative.creationDate}" />
+
+		  </p:column>
+
+		  <p:column headerText="Estado" style="width:40px">
+			  <center>
+				  <h:outputText value="#{initiative.typeStatusId}" />
+			  </center>
+		  </p:column>
+		  <p:column headerText="#Votos" style="width: 20px" >
+			  <center>
+				  <h:outputText value="#{initiative.numVotes}" />
+			  </center>
+		  </p:column>
+
+		  <p:column headerText="Comentario" style="width: 35px">
+			  <center>
+			  <p:commandButton value="Comment" type="button" onclick="PF('dlg2').show();" />
+				  <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+					  <br>
+					  <p:inputTextarea rows="4" cols="20" value="#{Comment.mensaje}"></p:inputTextarea>
+					  </br>
+					  <br>
+					  <p:inputNumber id="input1" value="#{Comment.usuario}" padControl="false ">
+					  </p:inputNumber>
+					  </br>
+					  <p:commandButton value="Send" type="button" actionListener="#{CommentBean.createComment(initiative.id)}" />
+				  </p:dialog>
+			  </center>
+		  </p:column>
+
+	  </p:dataTable>
 </html>

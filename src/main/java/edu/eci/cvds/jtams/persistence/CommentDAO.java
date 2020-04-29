@@ -1,12 +1,12 @@
 package edu.eci.cvds.jtams.persistence;
-import java.util.ArrayList;
-
-import edu.eci.cvds.jtams.model.*;
+import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
+import edu.eci.cvds.jtams.model.Comment;
 
 public interface CommentDAO {
 
-	public void createComment(Comment comment);
-	
+	public void createComment(int iniciativa, String mensaje, int usuario) throws JtamsExceptions;
+
+
 	public Comment getComment(int idIniciativa);
 
 	public int getnumComentariosUsuario(String id);

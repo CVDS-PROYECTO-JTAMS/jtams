@@ -1,10 +1,15 @@
 package edu.eci.cvds.jtams.services;
 
 import com.google.inject.Injector;
+import edu.eci.cvds.jtams.authenticator.SessionLogger;
+import edu.eci.cvds.jtams.authenticator.ShiroSession;
+import edu.eci.cvds.jtams.persistence.CommentDAO;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.persistence.UserDAO;
+import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisComment;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisInitiative;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.MyBatisUser;
+import edu.eci.cvds.jtams.services.impl.CommentServicesImpl;
 import edu.eci.cvds.jtams.services.impl.InitiativeServicesImpl;
 import edu.eci.cvds.jtams.services.impl.StatisticServicesImpl;
 import edu.eci.cvds.jtams.services.impl.UserServicesImpl;
@@ -28,10 +33,12 @@ public class InitiativeServicesFactory {
                 setClassPathResource(pathResource);
                 bind(UserDAO.class).to(MyBatisUser.class);
                 bind(InitiativeDAO.class).to(MyBatisInitiative.class);
-                //bind(CommentDAO.class).to(MyBatisComment.class);
+                bind(CommentDAO.class).to(MyBatisComment.class);
                 bind(InitiativeServices.class).to(InitiativeServicesImpl.class);
                 bind(UserServices.class).to(UserServicesImpl.class);
                 bind(StatisticsServices.class).to(StatisticServicesImpl.class);
+                bind(SessionLogger.class).to(ShiroSession.class);
+                bind(CommentServices.class).to(CommentServicesImpl.class);
             }
         });
     }
@@ -40,6 +47,21 @@ public class InitiativeServicesFactory {
         optInjector = Optional.empty();
     }
 
+
+    public CommentServices getCommentServices(){
+        if (!optInjector.isPresent()) {
+            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+        }
+
+        return optInjector.get().getInstance(CommentServices.class);
+    }
+    public SessionLogger getLoginServices(){
+        if (!optInjector.isPresent()) {
+            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+        }
+
+        return optInjector.get().getInstance(SessionLogger.class);
+    }
     public InitiativeServices getInitiativeServices(){
         if (!optInjector.isPresent()) {
             optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));

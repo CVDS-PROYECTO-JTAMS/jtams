@@ -10,10 +10,7 @@ import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class MyBatisInitiative implements InitiativeDAO {
     @Inject

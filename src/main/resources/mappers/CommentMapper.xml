@@ -5,37 +5,37 @@
 
 <mapper namespace="edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.CommentMapper">
 
-    <resultMap type='Comments' id='CommentsResult'>
+    <resultMap type='edu.eci.cvds.jtams.model.Comment' id='CommentsResult'>
         <id property='id' column='id'/>
         <result property='fechaCreacion' column='creationDate'/>
         <result property='fechaModificacion' column='modifyDate'/>
         <result property='mensaje' column='menssage'/>
-        <association property='usuario' javaType='User' columnPrefix="user_" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
-        <association property='iniciativa' javaType='Initiative'  columnPrefix="initiative" resultMap='edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper.InitiativeResult'></association>
+        <result property='iniciativa' column='initiative'/>
+        <result property='usuario' column='user'/>
     </resultMap>
     
 
-    <insert id="createComment" parameterType="Comment">
-        INSERT INTO "comments" (id, initiative, creationDate, modifyDate, message, user)
-        VALUES ((select count(*)+1 from "comments"),#{iniciativa},#{fechaCreacion},#{fechaModificacion},#{mensaje},#{usuario})
+    <insert id="createComment" parameterType="map">
+        INSERT INTO "Comments" (id, initiative, creationDate, modifyDate, message, user)
+        VALUES ((select count(*)+1 from "Comments"),#{iniciativa},#{fechaCreacion},#{fechaModificacion},#{mensaje},#{usuario})
     </insert>
 
-    <select id='getComment' resultMap= 'CommentResult' parameterType='map'>
-        select 
-		i.id,
-		c.initiative
-		from "Comments" as c
-		inner join initiative as i on i.id = c.initiative
-		where initiative = #{idIniciativa}; 
-    </select>
+    <!--<select id='getComment' resultMap= 'CommentResult' parameterType='map'>-->
+        <!--select -->
+		<!--i.id,-->
+		<!--c.initiative-->
+		<!--from "Comments" as c-->
+		<!--inner join initiative as i on i.id = c.initiative-->
+		<!--where initiative = #{idIniciativa}; -->
+    <!--</select>-->
 
-    <update id="getnumComentariosUsuario">
-        select 
-		u.id,
-		c.user
-		from "Comments" as c
-		inner join "User" as u on c."user" = u.id
-		where user = #{id};
-    </update>
+    <!--<update id="getnumComentariosUsuario">-->
+        <!--select -->
+		<!--u.id,-->
+		<!--c.user-->
+		<!--from "Comments" as c-->
+		<!--inner join "User" as u on c."user" = u.id-->
+		<!--where user = #{id};-->
+    <!--</update>-->
 
 </mapper>

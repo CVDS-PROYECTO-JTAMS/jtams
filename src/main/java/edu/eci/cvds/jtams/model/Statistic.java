@@ -31,7 +31,7 @@ package edu.eci.cvds.jtams.model;
 
         @Override
         public String toString() {
-            return "Statistic{" + "count="
+            return "Statistic {" + "count="
                     + count + ", area=" + title + '}';
         }
     }

@@ -19,14 +19,11 @@ public interface InitiativeServices {
 	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
 
 	List<Initiative> dariniciativas() throws JtamsExceptions;
-
-	
-
 	
 
 	void updateStatusInitiative(String initiativeToUpdate, String initiativeToUpdate2)throws JtamsExceptions;
 
-
+	void addComment(String comment) throws JtamsExceptions;
 	 
 	
 	

@@ -1,0 +1,19 @@
+
+a
+java:S2147P"DCombine this catch with the one at line 74, which has the same body.(”ı¾8»—Òó›.
+E
+java:S1148O"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8õù­ó›.
+E
+java:S1148R"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8êÆ®ó›.
+…
+java:S1488!"cImmediately return this expression instead of assigning it to the temporary variable "currentUser".(Îï£¡ıÿÿÿÿ8¯­‰é›.
+E
+java:S1948"(Make "logger" transient or serializable.(½¢¶×8òÒĞó›.
+U
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(ÖšŞİüÿÿÿÿ8»—Òó›.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+W	java:S125"<This block of commented-out lines of code should be removed.(ß–óN8»—Òó›.
+E
+java:S1148L"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ù”­ó›.
+a
+java:S2147M"DCombine this catch with the one at line 74, which has the same body.(ï­£Ä8»—Òó›.

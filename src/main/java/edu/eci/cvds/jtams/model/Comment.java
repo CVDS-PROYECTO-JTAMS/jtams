@@ -1,15 +1,18 @@
 package edu.eci.cvds.jtams.model;
-import java.sql.Date;
+
+import java.util.Date;
+
+;
 public class Comment {
 	private int id;
-	private Initiative iniciativa;
+	private int iniciativa;
 	private Date fechaCreacion;
 	private Date fechaModificacion;
 	private String mensaje;
-	private User usuario;
+	private int usuario;
 
-	public Comment(int id, Initiative iniciativa, Date fechaCreacion, String mensaje,
-			User usuario) {
+	public Comment(int id, int iniciativa, Date fechaCreacion, String mensaje,
+			int usuario) {
 		this.id = id;
 		this.iniciativa= iniciativa;
 		this.fechaCreacion = fechaCreacion;
@@ -26,11 +29,11 @@ public class Comment {
 		this.id = id;
 	}
 
-	public Initiative getSugerencia() {
+	public int getSugerencia() {
 		return iniciativa;
 	}
 
-	public void setSugerencia(Initiative Initiative) {
+	public void setSugerencia(int Initiative) {
 		this.iniciativa = Initiative;
 	}
 
@@ -58,11 +61,11 @@ public class Comment {
 		this.mensaje = mensaje;
 	}
 
-	public User getUsuario() {
+	public int getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(User usuario) {
+	public void setUsuario(int usuario) {
 		this.usuario = usuario;
 	}
 }

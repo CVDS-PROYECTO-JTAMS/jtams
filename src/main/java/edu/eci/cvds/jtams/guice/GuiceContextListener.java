@@ -1,15 +1,9 @@
 package edu.eci.cvds.jtams.guice;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-
-import org.mybatis.guice.XMLMyBatisModule;
-import org.mybatis.guice.datasource.helper.JdbcHelper;
-
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-
-import edu.eci.cvds.jtams.model.Initiative;
+import edu.eci.cvds.jtams.authenticator.SessionLogger;
+import edu.eci.cvds.jtams.authenticator.ShiroSession;
 import edu.eci.cvds.jtams.persistence.CommentDAO;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.persistence.UserDAO;
@@ -20,6 +14,11 @@ import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.UserServices;
 import edu.eci.cvds.jtams.services.impl.InitiativeServicesImpl;
 import edu.eci.cvds.jtams.services.impl.UserServicesImpl;
+import org.mybatis.guice.XMLMyBatisModule;
+import org.mybatis.guice.datasource.helper.JdbcHelper;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
 
 public class GuiceContextListener {
 
@@ -42,6 +41,7 @@ public class GuiceContextListener {
                 bind(CommentDAO.class).to(MyBatisComment.class);
                 bind(InitiativeServices.class).to(InitiativeServicesImpl.class);
                 bind(UserServices.class).to(UserServicesImpl.class);
+                bind(SessionLogger.class).to(ShiroSession.class);
             }
         });
 

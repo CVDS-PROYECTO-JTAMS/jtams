@@ -45,38 +45,6 @@
 	  </link>
   </h:head>
   <h:body>
-	  <h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
-	  <h:form>
-		  <input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
-		  <p:inputText id="palabra" value="#{InitiativeBean.keyword}" type="hidden"  />
-		  <p:commandButton id="buscar_keyword" value = "Buscar" update=":tabla_iniciativas" action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
-	  </h:form>
-	  <br></br>
-
-	  <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa()}">
-		  <p:column headerText="Id" style="color:white;">
-			  <h:outputText iniciativa="#{initiative.id}" />
-		  </p:column>
-		  <p:column headerText="Descripcion" style="color:white;">
-			  <h:outputText iniciativa="#{initiative.description}" />
-		  </p:column>
-		  <p:column headerText="Area" style="color:white;">
-			  <h:outputText iniciativa="#{initiative.area}" />
-		  </p:column>
-		  <p:column headerText="Estado" style="color:white;">
-			  <h:outputText iniciativa="#{initiative.typeStatusId}" />
-		  </p:column>
-		  <p:column headerText="Fecha de creacion" style="color:white;">
-			  <h:outputText iniciativa="#{initiative.creationDate}" />
-		  </p:column>
-		  <p:column headerText="# de votos" style="color:white;">
-			  <h:outputText iniciativa="#{initiative.numVotes }" />
-		  </p:column>
-	  </p:dataTable>
-
-  </h:body>
-
-
 	  <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
 	  <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
 		  <p:column headerText="Id" style="width:10px" >
@@ -126,4 +94,80 @@
 		  </p:column>
 
 	  </p:dataTable>
+  		<div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		     <div class= "modal-header">
+		     	<h4>palabraClave</h4>
+		     </div>
+		     <div class= "modal-body">
+		     	<h:form id="createInitiative">
+		     	  <p:messages autoUpdate="true" />
+		     	  
+				  <div class="form-group" id="cont">
+				  	<label for="NuevoRol2">keyword</label>
+					<h:inputText id="keywordIn" value="#{InitiativeBean.keyword}" styleClass="form-control" required="true"/>
+					
+					<h:commandButton  id="ingresar"  action="#{InitiativeBean.buscainiciativa()}"  styleClass="btn btn-primary" value = "Buscar" update=":tabla_iniciativas"/>
+
+				  </div>
+                 
+				</h:form>
+		     </div>
+		    </div>
+		  </div>
+		    <center>
+				<h1 style="color:white;">Iniciativas Buscadas</h1>
+		    </center>
+				<p:dataTable id="tabla_iniciativas" var="initiative" value="#{InitiativeBean.buscainiciativa()}"  style="margin-bottom: 1%; 
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
+					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+					rowsPerPageTemplate="5,10,15,20">				>
+				
+				
+						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}" filterMatchMode="contains" >
+							<f:facet name="header">
+								<h:outputText value="ID" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.id}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" filterMatchMode="startsWith">
+							<f:facet name="header">
+								<h:outputText value="Descripcion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.description}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" filterMatchMode="startsWith">
+							<f:facet name="header">
+								<h:outputText value="Area" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.area}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+							<f:facet name="header">
+								<h:outputText value="Estado" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.typeStatusId}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+							<f:facet name="header">
+								<h:outputText value="Fecha de creacion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.creationDate}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+							<f:facet name="header">
+								<h:outputText value="# de votos" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.numVotes }" />
+	                    </p:column>
+						
+                </p:dataTable>
+
+  </h:body>
 </html>

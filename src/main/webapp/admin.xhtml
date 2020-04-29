@@ -76,10 +76,11 @@
 					<f:selectItem itemLabel="Proponente" itemValue="PROPONENT" />
 					<f:selectItem itemLabel="Publico" itemValue="PUBLIC" />
 				</h:selectOneMenu>
+				
 			</h:panelGrid>
-			<p:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}"   ajax="true" />
+			<h:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser}"  update=":tablausuarios" />
 
-			<p:dataTable var="user" value="#{userBean.users}" style="height:20vh; width:80vw">
+			<p:dataTable id="tablausuarios" var="user" value="#{userBean.users}" style="height:20vh; width:80vw">
 				<p:column headerText="Id">
 					<h:outputText value="#{user.id}" />
 				</p:column>
@@ -94,25 +95,13 @@
 			</p:dataTable>
 			<p:chart type="pie" id="pie" model="#{StatisticBean.barModel}" responsive="true" style="position: relative; height:40vh; width:80vw; color:black" />
 			<p:commandButton style="width: 150px" update="pie" value="Actualizar" id="Actualizar" actionListener="#{StatisticBean.createBarModels()}"   ajax="true" />
-
-		</h:form>
-	</header>
-  </center>
-	<article>
+			 <br/><br/>
+  <br/><br/>
+  <br/><br/>
 		<center>
-			admin
-		</center>
-	</article>
-  </h:body>
-
-  <br/><br/>
-  <br/><br/>
-  <br/><br/>
-
-
- <center>
-  <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
-                <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
+			<h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
+  				
+                <p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" >
                     <p:column headerText="Id" style="width:30px" >
                         <h:outputText value="#{initiative.id}" />
                     </p:column>
@@ -142,18 +131,33 @@
                         <h:outputText value="#{initiative.numVotes}" />
                         </center>
                     </p:column>
-					<p:column headerText="Nuevo estado" style="width:180px" >
-						<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
-						<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
-						<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
-						<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
-						<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
+					                   
+                    <f:facet name="footer">
+                    <h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
+					<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
+					<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
+					<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
+					<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
 				</h:selectOneMenu>
-                    </p:column>
-					<p:column headerText="Cambiar" style="width: 110px" >
-                     <p:commandButton style="width: 90px" value="Aplicar" id="modificar"  action="#{InitiativeBean.updateStatusInitiative(initiative.id)}" ajax="true" />
-                    </p:column>
+           		 <h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update=":tablaIniciativa" ajax="true" />
+        		</f:facet>
                 </p:dataTable>
                  </center>
-  
+				 	               
+		</h:form>
+
+	</header>
+  </center>
+  </h:body>
+	<article>
+		<center>
+			admin
+		</center>
+	</article>
+ 
+
+ 
+
+
+ 
 </html>

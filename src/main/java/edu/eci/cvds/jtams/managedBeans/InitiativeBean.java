@@ -30,12 +30,14 @@ public class InitiativeBean {
 	
 	private String name;
 	private String description ;
-	private  String area ;
-	private  String keyword;
+	private String area ;
+	private String keyword="";
 	private String initiativeToUpdate;
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
+	private List<Initiative> iniciativas;
 	private  String palabra;
+	private Initiative selectedInitiative;
 
 	
 	public String getName() {
@@ -55,8 +57,9 @@ public class InitiativeBean {
 		return name;
 	}
 
-	public void setPalabra(String palabra) {
-		this.palabra = palabra;
+	public void setPalabra(String palabran) {
+		
+		this.palabra = palabran;
 	}
 	public InitiativeServices getInitiativeService() {
 		return initiativeService;
@@ -85,6 +88,7 @@ public class InitiativeBean {
 
 	public void setKeyword( String keyword) {
 		this.keyword = keyword;
+		//System.out.println(keyword);
 	}
 
 	
@@ -92,24 +96,25 @@ public class InitiativeBean {
 	public List<Initiative> buscainiciativa() throws JtamsExceptions{
 		
 		try {
-			System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
-			System.out.println(keyword);
-            List<String> palabrasListas = Arrays.asList(keyword.split(","));
+			
+            List<String> palabrasListas = Arrays.asList(keyword.split(","));         
             this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
+            
             return  iniciativaPorPalabra;
-        } catch (JtamsExceptions ex){
+       } catch (JtamsExceptions ex){
             throw new JtamsExceptions("No se encuentran iniciativas con esas palabras clave");
-        }
-
+       }
 	}
+
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
+		iniciativas= initiativeService.dariniciativas();
 		return  initiativeService.dariniciativas();
 		//return null;
 	}
 
 	public void createIntitiative() throws JtamsExceptions {
 		
-		System.out.println(area+" "+description+" "+name);
+		
 		
 		
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
@@ -133,23 +138,17 @@ public class InitiativeBean {
 	
 
 
-	public void updateStatusInitiative(String initiativeToUpdate){
-		this.initiativeToUpdate=initiativeToUpdate;
-		System.out.println("Deberia imprimir el estado seleccionado pero no es asi");
-		System.out.println(this.statusToUpdate);
-		//System.out.println(this.initiativeToUpdate);
-		//System.out.println( getstatusToUpdate());
+	public void updateStatusInitiative(){
+		this.initiativeToUpdate=String.valueOf(selectedInitiative.getId());
 		try {
-			
-			//initiativeService.updateStatusInitiative(getInitiativeToUpdate(), initiativeToUpdate);
-			initiativeService.updateStatusInitiative(initiativeToUpdate, "En espera revison");
+			initiativeService.updateStatusInitiative(initiativeToUpdate, statusToUpdate);
 			
 			
 		}catch(JtamsExceptions e){
 			e.printStackTrace();
 		}
 	}
-	
+
 	
 	public String getInitiativeToUpdate() {
 		return initiativeToUpdate;
@@ -166,11 +165,15 @@ public class InitiativeBean {
 
 	public void setstatusToUpdate(String statusToUpdate) {
 		this.statusToUpdate = statusToUpdate;
-		System.out.println(statusToUpdate);
-		System.out.println("deberia imprimir el nuevo estado");
 		
 	}
-	
+	public Initiative getSelectedInitiative() {
+		return selectedInitiative;
+	}
+	public void setSelectedInitiative(Initiative selectedInitiative) {
+		this.selectedInitiative = selectedInitiative;
+	}
+
 	public void addComment (String comment){
 		try {
 
@@ -181,6 +184,14 @@ public class InitiativeBean {
 			}
 		}
 
+	 public void doSomething() {  
+	        try {  
+	            // simulate a long running request  
+	            Thread.sleep(500);  
+	        } catch (final Exception e) {  
+	            // ignore  
+	        }  
+	    }
 	
 
 }

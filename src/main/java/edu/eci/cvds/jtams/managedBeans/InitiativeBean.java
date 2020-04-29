@@ -57,7 +57,7 @@ public class InitiativeBean {
 	}
 
 	public void setPalabra(String palabran) {
-		System.out.println(palabran);
+		
 		this.palabra = palabran;
 	}
 	public InitiativeServices getInitiativeService() {
@@ -95,16 +95,16 @@ public class InitiativeBean {
 	public List<Initiative> buscainiciativa() throws JtamsExceptions{
 		
 		try {
-			System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
-			System.out.println(palabra);
-            List<String> palabrasListas = Arrays.asList(palabra.split(","));
+			
+            List<String> palabrasListas = Arrays.asList(keyword.split(","));         
             this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
+            
             return  iniciativaPorPalabra;
-        } catch (JtamsExceptions ex){
+       } catch (JtamsExceptions ex){
             throw new JtamsExceptions("No se encuentran iniciativas con esas palabras clave");
-        }
-
+       }
 	}
+
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
 		iniciativas= initiativeService.dariniciativas();
 		return  initiativeService.dariniciativas();
@@ -112,7 +112,7 @@ public class InitiativeBean {
 	}
 	public void createIntitiative() throws JtamsExceptions {
 		
-		System.out.println(area+" "+description+" "+name);
+		
 		
 		
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());

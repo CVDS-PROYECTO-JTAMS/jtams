@@ -22,10 +22,10 @@ CREATE TABLE Initiative (
 
 create table Keywords (
 	id int not null,
-	keyWord varchar(50) not null,
+	keyword varchar(50) not null,
 	idInitiative int not null,
 	constraint keyword_pk primary key (id),
-	constraint id_key unique (keyWord,idinitiative)
+	constraint id_key unique (keyword,idinitiative)
 );
 
 CREATE TABLE Type_Status (

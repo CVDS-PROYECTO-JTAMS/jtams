@@ -32,9 +32,10 @@ public class MyBatisInitiative implements InitiativeDAO {
     	try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
-			
 			initiativeMapper.createInitiative(0, description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
-			
+			for(String k: keywords) {
+				initiativeMapper.createKeyword(k);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -74,10 +75,11 @@ public class MyBatisInitiative implements InitiativeDAO {
 		return initiativeMapper.dariniciativas();
 	}
 
-	@Override
+    @Override
 	public List<Initiative> buscainiciativaporpalabra(String keyword) throws JtamsExceptions {
 		try{
             List<Initiative> iniciativas= initiativeMapper.buscainiciativaporpalabra(keyword);
+            
             return iniciativas;
         } catch (javax.persistence.PersistenceException e){
             throw new javax.persistence.PersistenceException(e.getMessage(),e);

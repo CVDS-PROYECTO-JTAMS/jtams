@@ -26,6 +26,8 @@ public interface InitiativeMapper {
     public List<Keyword> listKeywords();
     public List<Initiative> dariniciativas();
     public List<Initiative> buscainiciativaporpalabra(@Param("keyword") String keyword);
+    
+    public void createKeyword(@Param("keyword") String keyword);
 
     public List<Initiative> totalInitiatives();
 

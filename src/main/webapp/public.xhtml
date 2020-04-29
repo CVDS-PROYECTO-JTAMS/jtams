@@ -24,44 +24,37 @@ lang="es">
 	  </link>
   </h:head>
   <h:body>
+  		<div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		     <div class= "modal-header">
+		     	<h4>palabraClave</h4>
+		     </div>
+		     <div class= "modal-body">
+		     	<h:form id="createInitiative">
+		     	  <p:messages autoUpdate="true" />
+		     	  
+				  <div class="form-group" id="cont">
+				  	<label for="NuevoRol2">keyword</label>
+					<p:inputText id="keywordIn" value="#{InitiativeBean.keyword}" styleClass="form-control" required="true"/>
+					
+					<p:commandButton  id="ingresar" action="#{InitiativeBean.buscainiciativa()}"  styleClass="btn btn-primary" value = "Buscar" />
+
+				  </div>
+				</h:form>
+		     </div>
+		    </div>
+		  </div>
   <center>
 	<header>
-		<h:form>
+		
 		Bienvenidos
-		<h2 style="color:white;">Busqueda de iniciativas por palabras clave</h2>
-	                
-	                 	<input id="ejemplo" type="text" value="ingrese palabra " data-role="tagsinput" style="width:200px; height:35px" />
-	                    <p:inputText id="palabra" value="#{InitiativeBean.palabra}" type="hidden"  />
-                    <p:commandButton id="buscar_keyword" value = "Buscar"  action="#{InitiativeBean.buscainiciativa()}" style="width:70px; height:35px"></p:commandButton>
-	                
-	                <br></br>
-	
-	                <p:dataTable id="tabla_iniciativas" var="initiative" iniciativa="#{InitiativeBean.buscainiciativa()}">
-	                    <p:column headerText="Id" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.id}" />
-	                    </p:column>
-	                    <p:column headerText="Descripcion" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.description}" />
-	                    </p:column>
-	                    <p:column headerText="Area" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.area}" />
-	                    </p:column>
-	                    <p:column headerText="Estado" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.typeStatusId}" />
-	                    </p:column>
-	                    <p:column headerText="Fecha de creacion" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.creationDate}" />
-	                    </p:column>
-	                    <p:column headerText="# de votos" style="color:white;">
-	                        <h:outputText iniciativa="#{initiative.numVotes }" />
-	                    </p:column>
-                	</p:dataTable>
-		</h:form>
+		
 	</header>
   </center>
 	<article>
 		<center>
-			Public
+			
+				  	
 		</center>
 	</article>
 	

@@ -56,24 +56,23 @@ public class InitiativeServicesImpl implements InitiativeServices {
 		
 		return initiativeDAO.dariniciativas();
 	}
-
 	@Override
 	public List<Initiative> buscainiciativaporpalabra(List<String> palabras) throws JtamsExceptions {
+		
 		try{
             List<Initiative> iniciativas = new ArrayList<>();
-            for(int i=0 ; i<palabras.size() ; i++){
+            for(int i=0 ; i<palabras.size(); i++){
+            	
                 List<Initiative> iniciativasTemporales = initiativeDAO.buscainiciativaporpalabra(palabras.get(i));
                 for(int j=0 ; j<iniciativasTemporales.size() ; j++){
-                    iniciativas.add(iniciativasTemporales.get(j));
-                        
+                    iniciativas.add(iniciativasTemporales.get(j)); 
                 }
             }
             return iniciativas;
         } catch (javax.persistence.PersistenceException | PersistenceException e) {
-            throw new  JtamsExceptions("T:((((((((((((((");
+	   throw new  JtamsExceptions(":((");
         }
 	}
-
 	@Override
 	public void updateStatusInitiative(String initiativeToUpdate, String typeToUpdate) throws JtamsExceptions {
 		if (initiativeToUpdate == null ){

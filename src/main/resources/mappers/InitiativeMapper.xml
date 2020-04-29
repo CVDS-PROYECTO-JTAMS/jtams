@@ -48,7 +48,9 @@
         VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{numVotes},#{creationDate},#{userId},#{modifyDate},#{typeStatusId})
     </insert>
     
-    
+    <insert id="createKeyword" parameterType="String">
+    	INSERT INTO "keywords" (id ,keyword,idInitiative) VALUES((select count(*)+1 from "keywords"),#{keyword},(select count(*) from "initiative"));
+    </insert>
     
     
     <update id='updateTypeUser'>
@@ -98,15 +100,16 @@
     </select>
 
   
-	<select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="map">
-        select
+	<select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="String">
+        SELECT
         initiative.id ,
         initiative.area ,
         initiative.creation_date,
         initiative.description,
         initiative.modify_date,
-        initiative.num_votos,
-        from initiative
+        initiative.num_votos
+        FROM initiative LEFT JOIN keywords on initiative.id = keywords.idInitiative
+        WHERE keywords.keyword= #{keyword};
     </select>
 
     <resultMap type='edu.eci.cvds.jtams.model.Statistic' id='StatisticResult'>

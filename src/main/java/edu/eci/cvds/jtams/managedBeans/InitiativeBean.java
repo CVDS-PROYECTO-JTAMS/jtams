@@ -30,11 +30,10 @@ public class InitiativeBean {
 	private String name;
 	private String description ;
 	private String area ;
-	private String keyword;
+	private String keyword="parqueadero";
 	private String initiativeToUpdate;
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
-	private List<Initiative> iniciativas;
 	private  String palabra;
 	private Initiative selectedInitiative;
 
@@ -96,9 +95,15 @@ public class InitiativeBean {
 		
 		try {
 			System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
-			System.out.println(palabra);
-            List<String> palabrasListas = Arrays.asList(palabra.split(","));
+			System.out.println(keyword);
+            List<String> palabrasListas = Arrays.asList(keyword.split(","));
+            System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
+            System.out.println(iniciativaPorPalabra.get(0)+" ");
+            
             this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
+            
+           
+            
             return  iniciativaPorPalabra;
         } catch (JtamsExceptions ex){
             throw new JtamsExceptions("No se encuentran iniciativas con esas palabras clave");
@@ -106,14 +111,14 @@ public class InitiativeBean {
 
 	}
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
-		iniciativas= initiativeService.dariniciativas();
 		return  initiativeService.dariniciativas();
 		//return null;
 	}
 	public void createIntitiative() throws JtamsExceptions {
 		
 		System.out.println(area+" "+description+" "+name);
-		
+		System.out.println("la palabra essssssssssssssssssssssssss:"+" ");
+		System.out.println(keyword);
 		
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
 		FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -172,14 +177,7 @@ public class InitiativeBean {
 		this.selectedInitiative = selectedInitiative;
 	}
 	
-	 public void doSomething() {  
-	        try {  
-	            // simulate a long running request  
-	            Thread.sleep(500);  
-	        } catch (final Exception e) {  
-	            // ignore  
-	        }  
-	    }  
+	
 	
 
 }

@@ -5,8 +5,8 @@ import edu.eci.cvds.jtams.model.InitiativeStates;
 import edu.eci.cvds.jtams.model.Keyword;
 import edu.eci.cvds.jtams.model.Statistic;
 import org.apache.ibatis.annotations.Param;
+import java.sql.Date;
 
-import java.util.Date;
 import java.util.List;
 
 public interface InitiativeMapper {
@@ -20,12 +20,13 @@ public interface InitiativeMapper {
     
     public void updateState (@Param("id") int id, @Param("state") InitiativeStates state);
     
-   
-    
     public Initiative getInitiative(@Param("area") String area);
     public List<Keyword> listKeywords();
     public List<Initiative> dariniciativas();
+    
     public List<Initiative> buscainiciativaporpalabra(@Param("keyword") String keyword);
+    
+    public void createKeyword(@Param("id") int id,@Param("keyword") String keyword,@Param("idInitiative") int idInitiative);
 
     public List<Initiative> totalInitiatives();
 

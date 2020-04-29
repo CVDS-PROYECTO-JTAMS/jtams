@@ -4,9 +4,11 @@ import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.InitiativeStates;
+import edu.eci.cvds.jtams.model.Keyword;
 import edu.eci.cvds.jtams.model.Statistic;
 import edu.eci.cvds.jtams.persistence.InitiativeDAO;
 import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.InitiativeMapper;
+import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.KeywordMapper;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -18,6 +20,8 @@ import java.util.Set;
 public class MyBatisInitiative implements InitiativeDAO {
     @Inject
     private InitiativeMapper initiativeMapper;
+    
+  
 
     public InitiativeMapper getInitiativeMapper() {
         return initiativeMapper;
@@ -32,9 +36,10 @@ public class MyBatisInitiative implements InitiativeDAO {
     	try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
-			
 			initiativeMapper.createInitiative(0, description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
-			
+			for(String k: keywords) {
+				initiativeMapper.createKeyword(3, k,0);
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();

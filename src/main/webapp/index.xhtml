@@ -94,21 +94,21 @@ div.transbox p {
 					rowsPerPageTemplate="5,10,15,20">				>
 				
 				
-						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}" filterMatchMode="contains" >
+						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
 							<f:facet name="header">
 								<h:outputText value="ID" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.id}" />
 	                    </p:column>
 						
-	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" filterMatchMode="startsWith">
+	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
 							<f:facet name="header">
 								<h:outputText value="Descripcion" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.description}" />
 	                    </p:column>
 						
-	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" filterMatchMode="startsWith">
+	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
 							<f:facet name="header">
 								<h:outputText value="Area" />
 							</f:facet>

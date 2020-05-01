@@ -27,7 +27,11 @@ create table Keywords (
 	constraint keyword_pk primary key (id),
 	constraint id_key unique (keyword,idinitiative)
 );
-
+CREATE TABLE InitiativeRelations(
+   initiative int not null references Initiative(id) ,
+   iniRelation int not null references Initiative(id),
+   primary key (initiative,iniRelation)
+);
 CREATE TABLE Type_Status (
    id int  NOT NULL,
    status varchar(50)  NOT NULL,

@@ -70,6 +70,122 @@
 
 	</header>
   </center>
+ 
+	
+	<h:form>
+	<p:dataTable id="tablain" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selection="#{InitiativeBean.listaIniciativasParaAgrupar}" style="margin-bottom: 1%; 
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10" rowKey="#{initiative.id}"
+					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+					rowsPerPageTemplate="5,10,15,20">				>
+					
+					<f:facet name="header">
+					AGRUPAR INICIATIVAS
+					</f:facet>
+						<p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+				
+						<p:column  style="color:black;width:16px;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
+							<f:facet name="header">
+								<h:outputText value="ID" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.id}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;width:86px;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
+							<f:facet name="header">
+								<h:outputText value="Descripcion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.description}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;width:56px;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
+							<f:facet name="header">
+								<h:outputText value="Area" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.area}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;width:96px;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+							<f:facet name="header">
+								<h:outputText value="Estado" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.typeStatusId}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;width:106px;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+							<f:facet name="header">
+								<h:outputText value="Fecha de creacion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.creationDate}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;width:26px;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+							<f:facet name="header">
+								<h:outputText value="# de votos" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.numVotes }" />
+	                    </p:column>
+						<f:facet name="footer">
+							<h:commandButton process="tablain"  value="Agrupar" update=":tablainiciativasR" ajax="true" />
+						</f:facet>
+						
+                </p:dataTable>
+				
+				<h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
+  
+  
+  
+                <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.Todasiniciativas()}"  style="margin-bottom: 1%; 
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
+					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+					rowsPerPageTemplate="5,10,15,20">				>
+				
+				
+						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
+							<f:facet name="header">
+								<h:outputText value="ID" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.id}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
+							<f:facet name="header">
+								<h:outputText value="Descripcion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.description}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
+							<f:facet name="header">
+								<h:outputText value="Area" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.area}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+							<f:facet name="header">
+								<h:outputText value="Estado" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.typeStatusId}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+							<f:facet name="header">
+								<h:outputText value="Fecha de creacion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.creationDate}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+							<f:facet name="header">
+								<h:outputText value="# de votos" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.numVotes }" />
+	                    </p:column>
+						
+                </p:dataTable>
+	</h:form>
   </h:body>
 
 

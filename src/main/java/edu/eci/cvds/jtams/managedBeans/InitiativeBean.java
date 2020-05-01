@@ -36,6 +36,7 @@ public class InitiativeBean {
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
+	private List<Initiative> listaIniciativasParaAgrupar;
 	private  String palabra;
 	private Initiative selectedInitiative;
 	 private List<Integer> agruparIniciativasList;
@@ -46,6 +47,23 @@ public class InitiativeBean {
 	 public void getAgruparIniciativasList( List<Integer> agruparIniciativasList){
 		this.agruparIniciativasList=agruparIniciativasList;
 	 }
+	 
+	 
+	 public List<Initiative> getlistaIniciativasParaAgrupar() {
+	        return listaIniciativasParaAgrupar;
+	    }
+	 
+	    public void setlistaIniciativasParaAgrupar(List<Initiative> i) {
+	        this.listaIniciativasParaAgrupar = i;
+	        System.out.println(listaIniciativasParaAgrupar.size()+"  esta es la perra longitud");
+	        System.out.println("aca esta tu perra lista guillo");
+	        for (int j = 0; j < listaIniciativasParaAgrupar.size(); j++) {
+	        	System.out.println(listaIniciativasParaAgrupar.get(j).getId()+"  esta perra fue elegida");
+	        	
+	        }
+	    }
+	 
+	 
 	
 	public String getName() {
 		return name;

@@ -42,6 +42,16 @@ public class InitiativeServicesImpl implements InitiativeServices {
         }
 	}
 	@Override
+	public List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions {
+		try {
+			
+			    return initiativeDAO.busaIniciativaRelacionadas(idIniciativa);
+			
+		} catch (JtamsExceptions ex) {
+			throw new  JtamsExceptions("error al consultar el id de la iniciativa");
+		}
+	}
+	@Override
 	public Initiative getInitiative(String area) throws JtamsExceptions {
 		return initiativeDAO.getInitiative(area);
 	}

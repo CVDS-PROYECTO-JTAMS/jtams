@@ -41,6 +41,7 @@ public class InitiativeBean {
 	private  String palabra;
 	private Initiative selectedInitiative;
 	 private List<Integer> agruparIniciativasList;
+	 private int idIniciativa;
 		
 	 public List<Integer> getAgruparIniciativasList(){
 		 return agruparIniciativasList;
@@ -57,11 +58,8 @@ public class InitiativeBean {
 	    public void setlistaIniciativasParaAgrupar(List<Initiative> i) {
 	        this.listaIniciativasParaAgrupar = i;
 	        this.iniciativasAgrupadasFront=i;
-	        System.out.println("aca esta tu perra lista guillo");
-	        for (int j = 0; j < listaIniciativasParaAgrupar.size(); j++) {
-	        	System.out.println(listaIniciativasParaAgrupar.get(j).getId()+"  esta perra fue elegida");
-	        	
-	        }
+	        
+	       
 	    }
 	 
 	 
@@ -164,10 +162,10 @@ public class InitiativeBean {
 			
 			try {
 				
-		        for (int i = 0; i < agruparIniciativasList.size(); i++) {
-				    for(int j = 0; j < agruparIniciativasList.size(); j++){
+		        for (int i = 0; i < listaIniciativasParaAgrupar.size(); i++) {
+				    for(int j = 0; j < listaIniciativasParaAgrupar.size(); j++){
 				        if(i != j){
-				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(agruparIniciativasList.get(i),agruparIniciativasList.get(j));
+				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(listaIniciativasParaAgrupar.get(i).getId(),agruparIniciativasList.get(j));
 				        }
 				    }
 				}
@@ -177,7 +175,18 @@ public class InitiativeBean {
 				throw ex;
 		    }
 		 }
-	
+	 public List<Initiative> busaIniciativaRelacionadas() throws JtamsExceptions{
+			
+
+		try {
+				
+	            List<Initiative> ListaIniciativas= initiativeService.busaIniciativaRelacionadas(idIniciativa);
+	            
+	            return  ListaIniciativas;
+	      } catch (JtamsExceptions ex){
+	            throw new JtamsExceptions("No se encuentran iniciativas relacionadas");
+	       }
+		}
 	//metodos para cambio de estado
 	
 	

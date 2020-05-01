@@ -48,6 +48,14 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 		
 	}
+    @Override
+	public List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions {
+    	try {
+            return initiativeMapper.busaIniciativaRelacionadas(idIniciativa);
+        } catch (Exception e) {
+            throw new JtamsExceptions("no se pudo encontrar iniciativas relacionadas con este id", e);
+        }
+	}
     
     @Override
     public Initiative getInitiative(String area) throws JtamsExceptions {

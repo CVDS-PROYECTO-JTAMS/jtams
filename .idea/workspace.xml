@@ -2,37 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79d0ba6e-7b07-4276-970c-36f21e3c2878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02f24da40d991fce688dccf5fe22022f358dc490" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02f24da40d991fce688dccf5fe22022f358dc490" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/28e089a3bc9ccc368eb9799fa8f32e856353430b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/28e089a3bc9ccc368eb9799fa8f32e856353430b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4574401716cf6e13e4464c4b3e76884247dc2247" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4574401716cf6e13e4464c4b3e76884247dc2247" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d3b77462a18c90c9b819020638741d13064918b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d3b77462a18c90c9b819020638741d13064918b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4eb9af06807c44d4d0e1aeb45f01eb7d9a13efc6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4eb9af06807c44d4d0e1aeb45f01eb7d9a13efc6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/529ffe59343393e1b107122692a4c780b59045a0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/529ffe59343393e1b107122692a4c780b59045a0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d03a5bcfafa2c03afe6de281a7b6356680e0aea" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d03a5bcfafa2c03afe6de281a7b6356680e0aea" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7fd576e8411a6512f80f1fd1140b417df6ad0564" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7fd576e8411a6512f80f1fd1140b417df6ad0564" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d6c40a78e4819ca216840e9e4f4557842e2acbd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d6c40a78e4819ca216840e9e4f4557842e2acbd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8238b295d4210b8416b1a5ed6de081769a9f2ec" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8238b295d4210b8416b1a5ed6de081769a9f2ec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb585a12746e3c58077a000cb566d3b2b7ff11e3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb585a12746e3c58077a000cb566d3b2b7ff11e3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c4c28ef3a3c3cfb4cb730566d3213edc679e9935" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c4c28ef3a3c3cfb4cb730566d3213edc679e9935" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServicesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServicesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/UserServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/UserServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/UserServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personal.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/proponent.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/proponent.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/mybatis-config-h2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/mybatis-config-h2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,7 +51,7 @@
           <entry key="png" value="2" />
           <entry key="properties" value="1" />
           <entry key="sql" value="8" />
-          <entry key="xhtml" value="83" />
+          <entry key="xhtml" value="85" />
           <entry key="xml" value="54" />
         </counts>
       </usages-collector>
@@ -89,7 +64,7 @@
           <entry key="JSP" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
-          <entry key="XHTML" value="83" />
+          <entry key="XHTML" value="85" />
           <entry key="XML" value="55" />
         </counts>
       </usages-collector>
@@ -117,7 +92,29 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1139">
+              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#p:menuitem#4;n#p:tabMenu#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -200,9 +197,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/modifyStateIni.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/public.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/Statistics.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/modifyUserType.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin.xhtml" />
       </list>
     </option>
@@ -402,7 +399,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588300635975" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588302098520" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
@@ -518,7 +515,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43365696" visible="true" weight="0.17857143" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43365696" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -537,11 +534,11 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" auto_hide="true" x="3" y="3" width="1914" height="1034" id="Run" order="8" sideWeight="0.56634307" weight="0.4815618" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.54121476" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.54121476" />
       <window_info anchor="bottom" id="Sequence" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Console" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.37744033" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.329718" />
       <window_info anchor="bottom" id="SonarLint" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -998,13 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="64" column="89" selection-start-line="64" selection-start-column="89" selection-end-line="64" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-435">
@@ -1019,10 +1009,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="1139">
+          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#p:menuitem#4;n#p:tabMenu#0;n#h:form#0;n#header#0;n#center#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

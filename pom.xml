@@ -100,10 +100,15 @@
 
     <build>
         <plugins>
-            <!-- clean project (also local H2 database)-->
+
+
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.6.1</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <retryOnError>true</retryOnError>
+                </configuration>
                 <executions>
                     <execution>
                         <id>auto-clean</id>
@@ -114,7 +119,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <!-- create local H2 database -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

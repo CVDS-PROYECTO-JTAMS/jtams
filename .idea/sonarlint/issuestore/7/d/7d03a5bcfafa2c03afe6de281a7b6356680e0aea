@@ -1,9 +1,9 @@
 
-€
-java:S1488M"cImmediately return this expression instead of assigning it to the temporary variable "iniciativas".(³úä»8§¤«™œ.
+X	java:S125d"<This block of commented-out lines of code should be removed.(Ð“Ý¿8©íðüš.
 H
-java:S1168V"+Return an empty collection instead of null.(¥¹ï8©íðüš.
+java:S1168X"+Return an empty collection instead of null.(¥¹ï8©íðüš.
 >
-java:S1148%"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
-]	java:S125F"<This block of commented-out lines of code should be removed.(èã¼±ûÿÿÿÿ8©íðüš.
-X	java:S125b"<This block of commented-out lines of code should be removed.(Ð“Ý¿8©íðüš.
+java:S1148&"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+€
+java:S1488N"cImmediately return this expression instead of assigning it to the temporary variable "iniciativas".(³úä»8§¤«™œ.
+]	java:S125G"<This block of commented-out lines of code should be removed.(èã¼±ûÿÿÿÿ8©íðüš.

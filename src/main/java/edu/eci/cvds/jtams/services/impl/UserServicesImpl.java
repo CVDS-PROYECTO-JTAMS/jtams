@@ -2,7 +2,6 @@ package edu.eci.cvds.jtams.services.impl;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
-import edu.eci.cvds.jtams.model.Comment;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
@@ -10,7 +9,6 @@ import edu.eci.cvds.jtams.persistence.UserDAO;
 import edu.eci.cvds.jtams.services.UserServices;
 
 import javax.persistence.PersistenceException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserServicesImpl implements UserServices{
@@ -36,11 +34,6 @@ public class UserServicesImpl implements UserServices{
 		}else {
 			userDao.updateUser(user);
 		}
-	}
-
-	@Override
-	public ArrayList<Comment> getComentariosIniciativa(int idIniciativa) {
-		return null;
 	}
 
 	@Override
@@ -83,11 +76,6 @@ public class UserServicesImpl implements UserServices{
 		this.userDao = userDao;
 	}
 
-	@Override
-	public void createComentario(Comment comentario) {
-		//comentarioDAO.agregarComentario(comentario);
-		
-	}
 	@Override
 	public List<Initiative> dariniciativas() throws JtamsExceptions {
 		// TODO Auto-generated method stub

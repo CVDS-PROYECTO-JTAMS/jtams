@@ -6,9 +6,9 @@
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  lang="es">
 
-  <title>Reserva de Recursos ECI</title>
-  <h:head>
-	  <style>
+<title>Reserva de Recursos ECI</title>
+<h:head>
+	<style>
 		table, th, td {
 		  border: 3px solid black;
 		  border-collapse: collapse;
@@ -37,88 +37,95 @@
 		</style>
 
 
-	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-	  <!-- Los iconos tipo Solid de Fontawesome-->
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
-	  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<!-- Los iconos tipo Solid de Fontawesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
-	  <!-- Nuestro css-->
-	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
-	  </link>
+	<!-- Nuestro css-->
+	<link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
+	</link>
 
-	  <div class="background">
-		  <div class="transbox">
-			  <p>ADMIN</p>
-		  </div>
-	  </div>
-  </h:head>
-  <h:body>
-  <center>
-	<header>
-		<h:form>
-			<p:tabMenu activeIndex="0">
-				<p:menuitem value="Datos del usuario" outcome="admin.xhtml" icon="ui-icon-document">
-				</p:menuitem>
-				<p:menuitem value="Busqueda de iniciativas" outcome="public.xhtml" icon="ui-icon-script">
-				</p:menuitem>
-				<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 825px;"></p:menuitem>
-			</p:tabMenu>
+	<div class="background">
+		<div class="transbox">
+			<p>ADMIN</p>
+		</div>
+	</div>
+</h:head>
+<h:body>
+	<center>
+		<header>
+			<h:form>
+				<p:tabMenu activeIndex="-1">
+					<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
+					<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
+					<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
+					<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
+					<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
+				</p:tabMenu>
+				<center>
+					<h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
+
+					<p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" >
+						<p:column headerText="Id" style="width:30px" >
+							<h:outputText value="#{initiative.id}" />
+						</p:column>
+						<p:column headerText="Descripcion" style="width:260px" >
+
+							<h:outputText value="#{initiative.description}" align="left"/>
+
+						</p:column>
+						<p:column headerText="Area" style="width:140px">
+							<h:outputText value="#{initiative.area}" />
+						</p:column>
+						<p:column headerText="Fecha de creacion" style="width:270px">
+
+							<h:outputText value="#{initiative.creationDate}" />
+
+						</p:column>
+
+						<p:column headerText="Estado" style="width:180px">
+							<center>
+								<h:outputText value="#{initiative.typeStatusId}" />
+							</center>
+						</p:column>
+
+
+						<p:column headerText="# de Votos" style="width: 70px" >
+							<center>
+								<h:outputText value="#{initiative.numVotes}" />
+							</center>
+						</p:column>
+
+						<f:facet name="footer">
+							<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
+								<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
+								<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
+								<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
+								<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
+							</h:selectOneMenu>
+							<h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update=":tablaIniciativa" ajax="true" />
+						</f:facet>
+					</p:dataTable>
+				</center>
 
 			</h:form>
-	</header>
-  </center>
-  </h:body>
 
-  <br/><br/>
- <center>
-  <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
-                <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"   style="margin-bottom:20px"  >
-                    <p:column headerText="Id" style="width:30px" >
-                        <h:outputText value="#{initiative.id}" />
-                    </p:column>
-                    <p:column headerText="Descripcion" style="width:260px" >
-
-                        <h:outputText value="#{initiative.description}" align="left"/>
-
-                    </p:column>
-                    <p:column headerText="Area" style="width:140px">
-                        <h:outputText value="#{initiative.area}" />
-                    </p:column>
-                    <p:column headerText="Fecha de creacion" style="width:270px">
-
-                        <h:outputText value="#{initiative.creationDate}" />
-
-                    </p:column>
-
-                    <p:column headerText="Estado" style="width:180px">
-                     <center>
-                        <h:outputText value="#{initiative.typeStatusId}" />
-                         </center>
-                    </p:column>
+		</header>
+	</center>
+</h:body>
+<article>
+	<center>
+		admin
+	</center>
+</article>
 
 
-                    <p:column headerText="#Votos" style="width: 70px" >
-                     <center>
-                        <h:outputText value="#{initiative.numVotes}" />
-                        </center>
-                    </p:column>
-					<p:column headerText="Nuevo estado" style="width:180px" >
-						<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
-						<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
-						<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
-						<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
-						<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
-				</h:selectOneMenu>
-                    </p:column>
-					<p:column headerText="Cambiar" style="width: 110px" >
-						<center>
-                     		<p:commandButton style="width: 90px" value="Aplicar" id="modificar"  action="#{InitiativeBean.updateStatusInitiative(initiative.id)}" ajax="true" />
-						</center>
-                    </p:column>
-                </p:dataTable>
-                 </center>
-  
+
+
+
+
 </html>

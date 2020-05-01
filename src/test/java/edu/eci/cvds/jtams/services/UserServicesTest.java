@@ -1,6 +1,7 @@
 package edu.eci.cvds.jtams.services;
 
 
+import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
@@ -10,10 +11,15 @@ import org.junit.Test;
 import java.util.Random;
 
 public class UserServicesTest {
+
+    @Inject
     private UserServices userService;
+    private InitiativeServices initiativeServices;
+    private CommentServices commentServices;
     private Random random = new Random();
 
     public UserServicesTest() {
+
         userService = InitiativeServicesFactory.getInstance().getUserServicesTesting();
     }
 

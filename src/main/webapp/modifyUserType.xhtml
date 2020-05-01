@@ -67,14 +67,33 @@
 				<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
 			</p:tabMenu>
 
+			<h:panelGrid columns="3">
+				<p:outputLabel for="@next" value="Ingresa un email:" style="color:white	;" />
+				<p:inputText id="userInput" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{userBean.usernameToUpdate}"/>
+				<h:selectOneMenu id="user_select" value="#{userBean.typeToUpdate}">
+					<f:selectItem itemLabel="Administrador" itemValue="ADMINISTRATOR" />
+					<f:selectItem itemLabel="Personal" itemValue="PERSONAL" />
+					<f:selectItem itemLabel="Proponente" itemValue="PROPONENT" />
+					<f:selectItem itemLabel="Publico" itemValue="PUBLIC" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+			<h:commandButton style="width: 150px" value="Modificar" id="modificar" action="#{userBean.updateTypeUser()}"  update=":tablausuarios" />
 
+			<p:dataTable id="tablausuarios" var="user" value="#{userBean.users}" style="height:20vh; width:80vw">
+				<p:column headerText="Id">
+					<h:outputText value="#{user.id}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{user.email}" />
+				</p:column>
+
+				<p:column headerText="Tipo">
+					<h:outputText value="#{user.type}" />
+				</p:column>
+			</p:dataTable>
 		</h:form>
-
 	</header>
   </center>
   </h:body>
-
-
-
- 
 </html>

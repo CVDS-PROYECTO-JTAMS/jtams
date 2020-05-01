@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      lang="es">
+
+<title>Reserva de Recursos ECI</title>
+<h:head>
+
+    <style>
+		table, th, td {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		}
+		th, td {
+		  padding: 20px;
+		  text-align: left;
+		}
+		div.background {
+		  border: 0.5px solid black;
+		}
+
+		div.transbox {
+		  margin: 30px;
+		  background-color: #00366E;
+		  border: 1px solid black;
+		  opacity: 0.6;
+		}
+
+		div.transbox p {
+		  margin: 5%;
+		  font-weight: bold;
+		  color: #ffffff;
+		  text-align: center;
+		}
+
+    </style>
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="/css/indexEci.css">
+    </link>
+</h:head>
+<h:body>
+    <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
+    <h:form>
+        <p:tabMenu activeIndex="-1">
+            <p:menuitem value="Consultar Iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-document"/>
+            <p:menuitem value="Comentar Iniciativas" outcome="addComment.xhtml" icon="ui-icon-document"/>
+            <p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Estadisticas" outcome="statistic.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 900px;"></p:menuitem>
+        </p:tabMenu>
+        <br></br>
+        <br></br>
+        <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}" style="margin-bottom:20px">
+            <p:column headerText="Id" style="width:10px">
+                <h:outputText value="#{initiative.id}"/>
+            </p:column>
+            <p:column headerText="Descripcion" style="width:100px">
+
+                <h:outputText value="#{initiative.description}" align="left"/>
+
+            </p:column>
+            <p:column headerText="Area" style="width:50px">
+                <center>
+                    <h:outputText value="#{initiative.area}"/>
+                </center>
+            </p:column>
+            <p:column headerText="Fecha de creacion" style="width:100px">
+
+                <h:outputText value="#{initiative.creationDate}"/>
+
+            </p:column>
+
+            <p:column headerText="Estado" style="width:40px">
+                <center>
+                    <h:outputText value="#{initiative.typeStatusId}"/>
+                </center>
+            </p:column>
+            <p:column headerText="#Votos" style="width: 20px">
+                <center>
+                    <h:outputText value="#{initiative.numVotes}"/>
+                </center>
+            </p:column>
+
+            <p:column headerText="Comentario" style="width: 35px">
+                <center>
+                    <p:commandButton value="Comment" actionListener="#{CommentBean.selectInitiative(initiative.id)}"/>
+                </center>
+            </p:column>
+
+        </p:dataTable>
+
+        <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+            <br>
+                <p:inputTextarea rows="4" cols="20" value="#{CommentBean.mensaje}"/>
+            </br>
+            <br>
+                <p:inputNumber id="input1" value="#{CommentBean.usuario}" padControl="false ">
+                </p:inputNumber>
+            </br>
+            <p:commandButton value="Send" actionListener="#{CommentBean.createComment()}"/>
+        </p:dialog>
+    </h:form>
+</h:body>
+</html>

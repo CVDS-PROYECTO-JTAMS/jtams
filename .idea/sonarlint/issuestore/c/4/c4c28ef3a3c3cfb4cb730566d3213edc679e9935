@@ -1,15 +1,12 @@
 
-A
-java:S1168+"+Return an empty collection instead of null.(•πÔç
-Q	java:S125X"<This block of commented-out lines of code should be removed.(ôÙ—Ù
-A
-java:S1168d"+Return an empty collection instead of null.(•πÔç
 M
-java:S1135c"2Complete the task associated to this TODO comment.(ª†Êûˇˇˇˇˇ
-A
-java:S1168^"+Return an empty collection instead of null.(•πÔç
-V	java:S125"<This block of commented-out lines of code should be removed.(§”ú“˝ˇˇˇˇ
+java:S1135Q"2Complete the task associated to this TODO comment.(ª†Êûˇˇˇˇˇ
+M
+java:S1135W"2Complete the task associated to this TODO comment.(ª†Êûˇˇˇˇˇ
 W
-java:S1126?"AReplace this if-then-else statement by a single return statement.(ù∫Å·
-M
-java:S1135]"2Complete the task associated to this TODO comment.(ª†Êûˇˇˇˇˇ
+java:S11268"AReplace this if-then-else statement by a single return statement.(ù∫Å·
+A
+java:S1168R"+Return an empty collection instead of null.(•πÔç
+A
+java:S1168X"+Return an empty collection instead of null.(•πÔç
+V	java:S125"<This block of commented-out lines of code should be removed.(§”ú“˝ˇˇˇˇ

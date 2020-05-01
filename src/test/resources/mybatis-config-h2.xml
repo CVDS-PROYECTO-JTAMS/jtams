@@ -25,6 +25,7 @@
     <mappers>
         <mapper resource="mappers/UserMapper.xml"></mapper>
         <mapper resource="mappers/InitiativeMapper.xml"></mapper>
+        <mapper resource="mappers/CommentMapper.xml"></mapper>
     </mappers>
 
 </configuration>

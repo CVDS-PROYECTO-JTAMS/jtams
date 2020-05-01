@@ -11,7 +11,6 @@ public class CommentServicesImpl implements CommentServices {
 
     @Inject
     private CommentDAO commentDAO;
-
     private InitiativeDAO initiativeDAO;
 
 

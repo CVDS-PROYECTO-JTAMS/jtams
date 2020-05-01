@@ -113,10 +113,6 @@ public class InitiativeBean {
 	}
 
 	public void createIntitiative() throws JtamsExceptions {
-		
-		
-		
-		
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);

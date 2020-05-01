@@ -21,8 +21,7 @@ public class MyBatisComment implements CommentDAO {
 			LocalDate fechaModificacion = LocalDate.now();
 			commentMapper.createComment(0, iniciativa, Date.valueOf(fechaCreacion), Date.valueOf(fechaModificacion), mensaje, usuario);
 		}catch(Exception e) {
-			e.printStackTrace();
-			throw new JtamsExceptions("Error trying to insert the initiative");
+			throw new JtamsExceptions("Error trying to insert the comment", e);
 		}
 	}
 	@Override

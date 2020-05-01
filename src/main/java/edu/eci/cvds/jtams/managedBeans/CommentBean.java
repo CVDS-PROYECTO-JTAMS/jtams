@@ -3,12 +3,12 @@ package edu.eci.cvds.jtams.managedBeans;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.services.CommentServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
+import org.primefaces.PrimeFaces;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 
@@ -26,6 +26,7 @@ public class CommentBean {
 	private Date fechaModificacion;
 	private String mensaje;
 	private int usuario;
+	private int initiativeId;
 
 	public CommentServices getCommentServices() {
 		return commentServices;
@@ -75,17 +76,30 @@ public class CommentBean {
 		this.usuario = usuario;
 	}
 
-	public void createComment (int initiativeId) throws JtamsExceptions {
-		FacesContext facesContext = FacesContext.getCurrentInstance();
-		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+	public void createComment () throws JtamsExceptions {
 		try {
 			commentServices.createComment(initiativeId, mensaje, usuario);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
-
+			PrimeFaces current = PrimeFaces.current();
+			current.executeScript("PF('dlg2').hide();");
 		}catch (JtamsExceptions ex){
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));
 			throw ex;
 		}
 
+	}
+	public void selectInitiative(int initiativeId) {
+		this.initiativeId = initiativeId;
+		System.out.println("Iniciativa = " +initiativeId);
+		PrimeFaces current = PrimeFaces.current();
+		current.executeScript("PF('dlg2').show();");
+	}
+
+	public int getInitiativeId() {
+		return initiativeId;
+	}
+
+	public void setInitiativeId(int initiativeId) {
+		this.initiativeId = initiativeId;
 	}
 }

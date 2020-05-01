@@ -15,8 +15,8 @@
     </resultMap>
     
 
-    <insert id="createComment" parameterType="map">
-        INSERT INTO "Comments" (id, initiative, creationDate, modifyDate, message, user)
+    <insert id="createComment" parameterType="edu.eci.cvds.jtams.model.Comment">
+        INSERT INTO "Comments" (id, initiative, creationDate, modifyDate, message, "user")
         VALUES ((select count(*)+1 from "Comments"),#{iniciativa},#{fechaCreacion},#{fechaModificacion},#{mensaje},#{usuario})
     </insert>
 

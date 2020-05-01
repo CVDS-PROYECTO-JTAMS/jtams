@@ -12,6 +12,7 @@
     <typeAliases>
         <typeAlias type="edu.eci.cvds.jtams.model.User" alias="User"/>
         <typeAlias type="edu.eci.cvds.jtams.model.Initiative" alias="Initiative"/>
+        <typeAlias type="edu.eci.cvds.jtams.model.Comment" alias="Comment"/>
     </typeAliases>
 
     <environments default="development">

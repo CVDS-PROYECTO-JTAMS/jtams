@@ -55,6 +55,13 @@ public class InitiativeServicesFactory {
 
         return optInjector.get().getInstance(CommentServices.class);
     }
+    public CommentServices getCommentServicesTesting(){
+        if (!optInjector.isPresent()) {
+            optInjector = Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
+        }
+
+        return optInjector.get().getInstance(CommentServices.class);
+    }
     public SessionLogger getLoginServices(){
         if (!optInjector.isPresent()) {
             optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));

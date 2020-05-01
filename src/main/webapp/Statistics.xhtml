@@ -68,13 +68,12 @@
 			</p:tabMenu>
 
 
+			<p:chart type="pie" id="pie" model="#{StatisticBean.barModel}" responsive="true" style="position: relative; height:40vh; width:80vw; color:black" />
+			<p:commandButton style="width: 150px" update="pie" value="Actualizar" id="Actualizar" actionListener="#{StatisticBean.createBarModels()}"   ajax="true" />
 		</h:form>
 
 	</header>
   </center>
   </h:body>
-
-
-
  
 </html>

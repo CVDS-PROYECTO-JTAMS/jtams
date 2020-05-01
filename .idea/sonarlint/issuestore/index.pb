@@ -90,3 +90,9 @@ w
 Gsrc/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java,4\c\4c773cce8b48f9ad932b74948c30974f466f0efe
 n
 >src/main/java/edu/eci/cvds/jtams/services/CommentServices.java,9\8\987d56f3a8b956e80d632aa2ee77ca399923c61e
+[
++src/main/webapp/ModifyStateInitiative.xhtml,e\9\e9de0f4cb7bc98bcd8a599378c161d7e3a3e551e
+o
+?src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java,6\8\68e2ebe0f26b49b4f92fc48af5122a14450aca99
+O
+src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392

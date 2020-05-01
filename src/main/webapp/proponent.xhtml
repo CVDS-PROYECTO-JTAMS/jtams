@@ -7,9 +7,35 @@ xmlns:shiro="http://shiro.apache.org/tags"
 lang="es">
 
   <title>Reserva de Recursos ECI</title>
-  <head>
-	  <!--JQUERY-->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <h:head>
+	  <style>
+		table, th, td {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		}
+		th, td {
+		  padding: 20px;
+		  text-align: left;
+		}
+		div.background {
+		  border: 0.5px solid black;
+		}
+
+		div.transbox {
+		  margin: 30px;
+		  background-color: #00366E;
+		  border: 1px solid black;
+		  opacity: 0.6;
+		}
+
+		div.transbox p {
+		  margin: 5%;
+		  font-weight: bold;
+		  color: #ffffff;
+		  text-align: center;
+		}
+		</style>
+
 
 	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
@@ -22,22 +48,22 @@ lang="es">
 	  <!-- Nuestro css-->
 	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	  </link>
-  </head>
+
+	  <div class="background">
+		  <div class="transbox">
+			  <p>PROPONENT</p>
+		  </div>
+	  </div>
+  </h:head>
   <body>
-  <center>
-	<header>
-		Bienvenidos
-	</header>
-  </center>
-	<article>
-		<center>
-			Proponent
-		</center>
-	</article>
-	
-	
-	
-	
+  <h:form>
+	  <p:tabMenu activeIndex="0">
+		  <p:menuitem value="Agregar Iniciativa" outcome="addInitiative.xhtml" icon="ui-icon-document"/>
+		  <p:menuitem value="Consultar Iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-document"/>
+		  <p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
+		  <p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 825px;"></p:menuitem>
+	  </p:tabMenu>
+  </h:form>
   </body>
   
 </html>

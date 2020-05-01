@@ -35,4 +35,5 @@ public interface InitiativeMapper {
 
 	public void updateTypeUser(@Param("id") int id,@Param("typeStatusId") String typeToUpdate);
 
+	public void agregarIniciativaRelacionadaAIniciativa(@Param("initiative")int initiative,@Param("iniRelatione") int iniRelatione);
 }

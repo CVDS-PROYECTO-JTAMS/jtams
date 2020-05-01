@@ -33,7 +33,14 @@ public class InitiativeServicesImpl implements InitiativeServices {
 			initiativeDAO.createInitiative( description, area, idus, keywords,name);
 		}
 	}
-
+	@Override
+	public void agregarIniciativaRelacionadaAIniciativa(int initiative,int iniRelatione) throws JtamsExceptions {
+		try{
+            initiativeDAO.agregarIniciativaRelacionadaAIniciativa(initiative, iniRelatione);
+        } catch (JtamsExceptions ex){
+        	throw new  JtamsExceptions("error al insertar, puede que ya este relacionada, o no se encuentre el id");
+        }
+	}
 	@Override
 	public Initiative getInitiative(String area) throws JtamsExceptions {
 		return initiativeDAO.getInitiative(area);

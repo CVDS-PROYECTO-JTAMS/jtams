@@ -52,7 +52,9 @@
     	INSERT INTO "keywords" (id ,keyword,idInitiative) VALUES((select count(*)+1 from "keywords"),#{keyword},(select count(*) from "initiative"));
     </insert>
     
-    
+    <insert id="agregarIniciativaRelacionadaAIniciativa" parameterType="map">
+    	INSERT INTO "initiativerelations" (initiative,iniRelation) VALUES(#{initiative},#{iniRelatione});
+    </insert>
     <update id='updateTypeUser'>
         update "initiative" set Type_Status_id=#{typeStatusId} where id=#{id};
     </update>

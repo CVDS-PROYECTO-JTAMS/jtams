@@ -38,7 +38,14 @@ public class InitiativeBean {
 	private List<Initiative> listaIniciativas;
 	private  String palabra;
 	private Initiative selectedInitiative;
-
+	 private List<Integer> agruparIniciativasList;
+		
+	 public List<Integer> getAgruparIniciativasList(){
+		 return agruparIniciativasList;
+	 }
+	 public void getAgruparIniciativasList( List<Integer> agruparIniciativasList){
+		this.agruparIniciativasList=agruparIniciativasList;
+	 }
 	
 	public String getName() {
 		return name;
@@ -134,7 +141,23 @@ public class InitiativeBean {
 		}
 	}
 	
-	
+	 public void agregarIniciativaRelacionadaAIniciativa() throws JtamsExceptions{
+			
+			try {
+				
+		        for (int i = 0; i < agruparIniciativasList.size(); i++) {
+				    for(int j = 0; j < agruparIniciativasList.size(); j++){
+				        if(i != j){
+				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(agruparIniciativasList.get(i),agruparIniciativasList.get(j));
+				        }
+				    }
+				}
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se agruparon las iniciativas correctamente"));
+		    }catch(JtamsExceptions ex) {
+		    	FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"error al insertar, puede que ya este relacionada, o no se encuentre el id","Error"));
+				throw ex;
+		    }
+		 }
 	
 	//metodos para cambio de estado
 	

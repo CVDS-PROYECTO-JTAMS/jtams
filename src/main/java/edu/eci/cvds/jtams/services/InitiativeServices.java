@@ -24,6 +24,8 @@ public interface InitiativeServices {
 	void updateStatusInitiative(String initiativeToUpdate, String initiativeToUpdate2)throws JtamsExceptions;
 
 	void addComment(String comment) throws JtamsExceptions;
+
+	void agregarIniciativaRelacionadaAIniciativa(int initiative, int iniRelatione) throws JtamsExceptions;
 	 
 	
 	

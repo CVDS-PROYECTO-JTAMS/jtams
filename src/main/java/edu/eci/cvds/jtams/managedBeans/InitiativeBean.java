@@ -37,6 +37,7 @@ public class InitiativeBean {
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
 	private List<Initiative> listaIniciativasParaAgrupar;
+	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
 	private Initiative selectedInitiative;
 	 private List<Integer> agruparIniciativasList;
@@ -55,7 +56,7 @@ public class InitiativeBean {
 	 
 	    public void setlistaIniciativasParaAgrupar(List<Initiative> i) {
 	        this.listaIniciativasParaAgrupar = i;
-	        System.out.println(listaIniciativasParaAgrupar.size()+"  esta es la perra longitud");
+	        this.iniciativasAgrupadasFront=i;
 	        System.out.println("aca esta tu perra lista guillo");
 	        for (int j = 0; j < listaIniciativasParaAgrupar.size(); j++) {
 	        	System.out.println(listaIniciativasParaAgrupar.get(j).getId()+"  esta perra fue elegida");
@@ -236,6 +237,12 @@ public class InitiativeBean {
 	            // ignore  
 	        }  
 	    }
+	public List<Initiative> getIniciativasAgrupadasFront() {
+		return iniciativasAgrupadasFront;
+	}
+	public void setIniciativasAgrupadasFront(List<Initiative> iniciativasAgrupadasFront) {
+		this.iniciativasAgrupadasFront = iniciativasAgrupadasFront;
+	}
 	
 
 }

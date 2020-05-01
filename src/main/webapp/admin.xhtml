@@ -131,11 +131,11 @@
 						
                 </p:dataTable>
 				
-				<h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
+				<h1 style="color:white;">Ultimas Iniciativas Agrupadas</h1>
   
   
   
-                <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.Todasiniciativas()}"  style="margin-bottom: 1%; 
+                <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.iniciativasAgrupadasFront}"  style="margin-bottom: 1%; 
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
 					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
 					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"

@@ -1,6 +1,7 @@
 package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
+import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.model.UserType;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
@@ -26,7 +27,7 @@ public class UserBean {
 
 	private String username;
 	private String password;
-
+	private User selectedUser;
 	private String usernameToUpdate;
 	private String typeToUpdate;
 
@@ -97,7 +98,7 @@ public class UserBean {
 			Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 			//String username = params.get("usernameToUpdate");
 			//String type = params.get("typeToUpdate");
-			userServices.updateTypeUser(usernameToUpdate, UserType.valueOf(typeToUpdate));
+			userServices.updateTypeUser(selectedUser.getEmail(), UserType.valueOf(typeToUpdate));
 		}catch(JtamsExceptions e){
 			e.printStackTrace();
 		}
@@ -129,5 +130,11 @@ public class UserBean {
 	public void setTypeToUpdate(String typeToUpdate) {
 		
 		this.typeToUpdate = typeToUpdate;
+	}
+	public User getSelectedUser() {
+		return selectedUser;
+	}
+	public void setSelectedUser(User selectedUser) {
+		this.selectedUser = selectedUser;
 	}
 }

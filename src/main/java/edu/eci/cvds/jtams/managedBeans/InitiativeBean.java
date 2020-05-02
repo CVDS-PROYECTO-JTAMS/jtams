@@ -135,6 +135,7 @@ public class InitiativeBean {
             if(listaIniciativas == null){
             	listaIniciativas = initiativeService.dariniciativas();
             }
+       
             return listaIniciativas;
         } catch (JtamsExceptions ex) {
             throw ex;
@@ -142,6 +143,7 @@ public class InitiativeBean {
 		
 		
 	}
+	
 
 	public void createIntitiative() throws JtamsExceptions {
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
@@ -159,7 +161,7 @@ public class InitiativeBean {
 	}
 	
 	 public void agregarIniciativaRelacionadaAIniciativa() throws JtamsExceptions{
-		 System.out.println("lo llamaron");
+		 //System.out.println("lo llamaron");
 			
 			try {
 				//System.out.println(listaIniciativasParaAgrupar.size());
@@ -167,7 +169,7 @@ public class InitiativeBean {
 				    for(int j = 0; j < listaIniciativasParaAgrupar.size(); j++){
 				        if(i != j){
 				        	//System.out.println(listaIniciativasParaAgrupar.get(i).getId());
-				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(listaIniciativasParaAgrupar.get(i).getId(),agruparIniciativasList.get(j));
+				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(listaIniciativasParaAgrupar.get(i).getId(),listaIniciativasParaAgrupar.get(j).getId());
 				        }
 				    }
 				}
@@ -184,13 +186,20 @@ public class InitiativeBean {
 
 		try {
 				//System.out.println(idIniciativa+"  --- este fue el numero ingresado");
-	            List<Initiative> ListaIniciativas= initiativeService.busaIniciativaRelacionadas(idIniciativa);
-	            
-	            return  ListaIniciativas;
+	            List<Initiative> iniciativasAgrupadasFront= initiativeService.busaIniciativaRelacionadas(idIniciativa);
+	            //inicia machete <3 :) 
+	            for(int i=0; i < listaIniciativas.size(); i++) {
+	            	if(listaIniciativas.get(i).getId()==idIniciativa) {
+	            		iniciativasAgrupadasFront.add(listaIniciativas.get(i));
+	            	}
+	            }
+	            return  iniciativasAgrupadasFront;
 	      } catch (JtamsExceptions ex){
 	            throw new JtamsExceptions("No se encuentran iniciativas relacionadas");
 	       }
 		}
+	 
+	 
 	//metodos para cambio de estado
 	
 	
@@ -199,13 +208,15 @@ public class InitiativeBean {
 	public int getIdIniciativa() {
 		return idIniciativa;
 	}
-	public void setIdIniciativa(int idIniciativa) {
+	public void setIdIniciativa(int idIniciativa) throws JtamsExceptions {
 		this.idIniciativa = idIniciativa;
+		buscaIniciativaRelacionadas();
 	}
 	public void updateStatusInitiative(){
 		this.initiativeToUpdate=String.valueOf(selectedInitiative.getId());
 		try {
 			initiativeService.updateStatusInitiative(initiativeToUpdate, statusToUpdate);
+			listaIniciativas = initiativeService.dariniciativas();
 			
 			
 		}catch(JtamsExceptions e){

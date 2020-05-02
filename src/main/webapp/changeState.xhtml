@@ -51,7 +51,7 @@
 
 	  <div class="background">
 		  <div class="transbox">
-			  <p>ADMIN</p>
+			  <p>PERSONAL</p>
 		  </div>
 	  </div>
   </h:head>
@@ -64,7 +64,10 @@
 		<center>
 			<h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
   				
-                <p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" >
+                <p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" 
+				selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" paginator="true"  rows="10"
+				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                     currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
                     <p:column headerText="Id" style="width:30px" >
                         <h:outputText value="#{initiative.id}" />
                     </p:column>

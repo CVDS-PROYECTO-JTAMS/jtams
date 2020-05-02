@@ -71,7 +71,9 @@
 	</header>
   </center>
  
-	
+	<br></br>
+	<br></br>
+	<br></br>
 	<h:form>
 	<p:dataTable id="tablain" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selection="#{InitiativeBean.listaIniciativasParaAgrupar}" style="margin-bottom: 1%; 
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10" rowKey="#{initiative.id}"
@@ -126,16 +128,26 @@
 	                        <h:outputText value="#{initiative.numVotes }" />
 	                    </p:column>
 						<f:facet name="footer">
-							<h:commandButton process="tablain"  value="Agrupar" update=":tablainiciativasR" ajax="true" />
+							<h:commandButton process="tablain"  action="#{InitiativeBean.agregarIniciativaRelacionadaAIniciativa()}" value="Agrupar" update=":tablainiciativasR" ajax="true" />
 						</f:facet>
 						
                 </p:dataTable>
 				
-				<h1 style="color:white;">Ultimas Iniciativas Agrupadas</h1>
+				<br></br>
+				<br></br>
+				<br></br>
+				<div class="form-group" id="cont">
+						<h1 style="color:white;">Realice la busqueda por medio de: ID iniciativa</h1>
+                       <h:inputText id="IDin" value="#{InitiativeBean.idIniciativa}" styleClass="form-control" required="true"/>
+                       <br></br>
+                       <h:commandButton  id="boton" update=":tablainiciativasR"   styleClass="btn btn-primary" value = "Buscar" />
+
+                </div>
+				<h1 style="color:white;">Iniciativas Agrupadas con el ID ingresado</h1>
   
   
   
-                <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.iniciativasAgrupadasFront}"  style="margin-bottom: 1%; 
+                <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.buscaIniciativaRelacionadas()}"  style="margin-bottom: 1%; 
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
 					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
 					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"

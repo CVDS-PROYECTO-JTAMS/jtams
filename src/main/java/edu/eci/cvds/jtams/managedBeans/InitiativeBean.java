@@ -40,8 +40,8 @@ public class InitiativeBean {
 	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
 	private Initiative selectedInitiative;
-	 private List<Integer> agruparIniciativasList;
-	 private int idIniciativa;
+	private List<Integer> agruparIniciativasList;
+	private int idIniciativa;
 		
 	 public List<Integer> getAgruparIniciativasList(){
 		 return agruparIniciativasList;
@@ -159,12 +159,14 @@ public class InitiativeBean {
 	}
 	
 	 public void agregarIniciativaRelacionadaAIniciativa() throws JtamsExceptions{
+		 System.out.println("lo llamaron");
 			
 			try {
-				
+				//System.out.println(listaIniciativasParaAgrupar.size());
 		        for (int i = 0; i < listaIniciativasParaAgrupar.size(); i++) {
 				    for(int j = 0; j < listaIniciativasParaAgrupar.size(); j++){
 				        if(i != j){
+				        	//System.out.println(listaIniciativasParaAgrupar.get(i).getId());
 				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(listaIniciativasParaAgrupar.get(i).getId(),agruparIniciativasList.get(j));
 				        }
 				    }
@@ -175,11 +177,13 @@ public class InitiativeBean {
 				throw ex;
 		    }
 		 }
-	 public List<Initiative> busaIniciativaRelacionadas() throws JtamsExceptions{
+	 
+	 
+	 public List<Initiative> buscaIniciativaRelacionadas() throws JtamsExceptions{
 			
 
 		try {
-				
+				//System.out.println(idIniciativa+"  --- este fue el numero ingresado");
 	            List<Initiative> ListaIniciativas= initiativeService.busaIniciativaRelacionadas(idIniciativa);
 	            
 	            return  ListaIniciativas;
@@ -192,6 +196,12 @@ public class InitiativeBean {
 	
 
 
+	public int getIdIniciativa() {
+		return idIniciativa;
+	}
+	public void setIdIniciativa(int idIniciativa) {
+		this.idIniciativa = idIniciativa;
+	}
 	public void updateStatusInitiative(){
 		this.initiativeToUpdate=String.valueOf(selectedInitiative.getId());
 		try {

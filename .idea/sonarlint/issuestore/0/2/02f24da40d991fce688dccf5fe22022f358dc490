@@ -1,35 +1,35 @@
 
-i
-java:S42758"GRefactor this getter so that it actually refers to the field "palabra".(§’âûÿÿÿÿ8¾œ–¿œ.
-|
-java:S1450&"ZRemove the "iniciativas" field and declare it as a local variable in the relevant methods.(¬½èÔúÿÿÿÿ8¾œ–¿œ.
-U
-java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8½¥Öüš.
-I
-java:S1481z",Remove this unused "session" local variable.(¦Ÿş´8¾œ–¿œ.
-A
-java:S1148·"#Use a logger to log this exception.(–â¤º8¾œ–¿œ.
-Q
-java:S1068&"/Remove this unused "iniciativas" private field.(¬½èÔúÿÿÿÿ8¾œ–¿œ.
-X	java:S125p"<This block of commented-out lines of code should be removed.(„§ñ£8¾œ–¿œ.
-]	java:S125"<This block of commented-out lines of code should be removed.(Òàé·ûÿÿÿÿ8­‹É“œ.
-X
-java:S1854z";Remove this useless assignment to local variable "session".(¦Ÿş´8¾œ–¿œ.
-G
-java:S1481x"*Remove this unused "fecha" local variable.(‚§Õ8¾œ–¿œ.
-F
-java:S1148”"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¾œ–¿œ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+w
+java:S4144"WUpdate this method so that its implementation is not identical to "getName" on line 43.(§’âûÿÿÿÿ8¾œ–¿œ.
+K
+java:S1068"+Remove this unused "palabra" private field.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
+O
+java:S1068"/Remove this unused "iniciativas" private field.(¬½èÔúÿÿÿÿ8¾œ–¿œ.
 W
 java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8½¥Öüš.
-W	java:S125["<This block of commented-out lines of code should be removed.(ùã½~8¾œ–¿œ.
-M
-java:S1068'"+Remove this unused "palabra" private field.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
-x
-java:S1450'"VRemove the "palabra" field and declare it as a local variable in the relevant methods.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
-o	java:S100m"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8¾œ–¿œ.
-V
-java:S1854x"9Remove this useless assignment to local variable "fecha".(‚§Õ8¾œ–¿œ.
-y
-java:S41448"WUpdate this method so that its implementation is not identical to "getName" on line 43.(§’âûÿÿÿÿ8¾œ–¿œ.
+z
+java:S1450"ZRemove the "iniciativas" field and declare it as a local variable in the relevant methods.(¬½èÔúÿÿÿÿ8¾œ–¿œ.
 ]	java:S125"<This block of commented-out lines of code should be removed.(šŞ‘¥üÿÿÿÿ8½¥Öüš.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+U	java:S125"<This block of commented-out lines of code should be removed.(ùã½~8¾œ–¿œ.
+m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8¾œ–¿œ.
+v
+java:S1450"VRemove the "palabra" field and declare it as a local variable in the relevant methods.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
+]	java:S125"<This block of commented-out lines of code should be removed.(Òàé·ûÿÿÿÿ8­‹É“œ.
+V	java:S125"<This block of commented-out lines of code should be removed.(„§ñ£8¾œ–¿œ.
+g
+java:S4275"GRefactor this getter so that it actually refers to the field "palabra".(§’âûÿÿÿÿ8¾œ–¿œ.
+U
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8½¥Öüš.
+F
+java:S1148—"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÑ´íœ.
+A
+java:S1148º"#Use a logger to log this exception.(–â¤º8ÍÑ´íœ.
+X
+java:S1854}";Remove this useless assignment to local variable "session".(¦Ÿş´8ÍÑ´íœ.
+V
+java:S1854{"9Remove this useless assignment to local variable "fecha".(‚§Õ8ÍÑ´íœ.
+G
+java:S1481{"*Remove this unused "fecha" local variable.(‚§Õ8ÍÑ´íœ.
+I
+java:S1481}",Remove this unused "session" local variable.(¦Ÿş´8ÍÑ´íœ.

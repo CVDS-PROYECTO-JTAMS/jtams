@@ -1,8 +1,8 @@
 
+X	java:S125"<This block of commented-out lines of code should be removed.(¨ë³š8ÄŠÛ‘œ.
 U	java:S106]"9Replace this use of System.out or System.err by a logger.(ÖÜ¥8¢»ØÄœ.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
 P
 java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(†ëÌÄ8œ­²œ.
 W
 java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8œ­²œ.
-X	java:S125"<This block of commented-out lines of code should be removed.(¨ë³š8ÄŠÛ‘œ.

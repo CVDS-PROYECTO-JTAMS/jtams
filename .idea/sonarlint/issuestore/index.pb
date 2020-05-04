@@ -96,3 +96,15 @@ o
 ?src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java,6\8\68e2ebe0f26b49b4f92fc48af5122a14450aca99
 O
 src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+Q
+!src/main/webapp/changeState.xhtml,2\b\2bd10c36338790bfa609f141789f267da96a5d90
+V
+&src/main/webapp/searchInitiative.xhtml,e\e\eedc99942fe2b1752cf3e626e7e91e2b0ee3f6d0
+P
+ src/main/webapp/addComment.xhtml,2\1\21b88a54119329a84f11e756ec7755231f74c050
+S
+#src/main/webapp/addInitiative.xhtml,8\b\8b534f7d84e2ff041c8cd1ce551e37503672180b
+P
+ src/main/webapp/Statistics.xhtml,5\d\5dfe08254ea2628c2f385699b477a7d5db63f2af
+T
+$src/main/webapp/modifyUserType.xhtml,8\1\81bab4eaad0d61a3d1436d3472549c39cc2898dc

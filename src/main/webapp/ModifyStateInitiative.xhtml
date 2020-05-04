@@ -64,12 +64,17 @@
 					<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
 					<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
 					<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
+					<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
+					<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
 					<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
 				</p:tabMenu>
 				<center>
 					<h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
 
-					<p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" >
+					<p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" 
+					selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" 
+					paginator="true"  rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                     currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
 						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
 							<f:facet name="header">
 								<h:outputText value="ID" />

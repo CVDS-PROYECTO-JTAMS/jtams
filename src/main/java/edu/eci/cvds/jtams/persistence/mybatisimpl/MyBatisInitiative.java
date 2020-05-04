@@ -39,7 +39,24 @@ public class MyBatisInitiative implements InitiativeDAO {
 			throw new JtamsExceptions("Error trying to insert the initiative");
 		}
     }
-
+    @Override
+	public void agregarIniciativaRelacionadaAIniciativa(int initiative, int iniRelatione) throws JtamsExceptions {
+    	try{
+            initiativeMapper.agregarIniciativaRelacionadaAIniciativa(initiative,iniRelatione);
+        } catch (javax.persistence.PersistenceException e ){
+            throw new javax.persistence.PersistenceException(e.getMessage(), e);
+        }
+		
+	}
+    @Override
+	public List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions {
+    	try {
+            return initiativeMapper.busaIniciativaRelacionadas(idIniciativa);
+        } catch (Exception e) {
+            throw new JtamsExceptions("no se pudo encontrar iniciativas relacionadas con este id", e);
+        }
+	}
+    
     @Override
     public Initiative getInitiative(String area) throws JtamsExceptions {
         try {

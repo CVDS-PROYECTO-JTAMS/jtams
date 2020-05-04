@@ -52,7 +52,9 @@
     	INSERT INTO "keywords" (id ,keyword,idInitiative) VALUES((select count(*)+1 from "keywords"),#{keyword},(select count(*) from "initiative"));
     </insert>
     
-    
+    <insert id="agregarIniciativaRelacionadaAIniciativa" parameterType="map">
+    	INSERT INTO "initiativerelations" (initiative,iniRelation) VALUES(#{initiative},#{iniRelatione});
+    </insert>
     <update id='updateTypeUser'>
         update "initiative" set Type_Status_id=#{typeStatusId} where id=#{id};
     </update>
@@ -105,6 +107,11 @@
         FROM initiative LEFT JOIN keywords on initiative.id = keywords.idInitiative
         WHERE keywords.keyword= #{keyword};
     </select>
+    <select id="busaIniciativaRelacionadas" resultMap="InitiativeResult1" parameterType="map">
+        SELECT *
+        FROM initiative LEFT JOIN initiativerelations on initiative.id = initiativerelations.iniRelation WHERE  initiativerelations.initiative = #{initiative};
+    </select>
+
 
     <resultMap type='edu.eci.cvds.jtams.model.Statistic' id='StatisticResult'>
         <result property='count' column='total'/>

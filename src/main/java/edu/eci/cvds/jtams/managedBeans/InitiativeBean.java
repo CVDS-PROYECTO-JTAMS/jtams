@@ -36,9 +36,33 @@ public class InitiativeBean {
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
+	private List<Initiative> listaIniciativasParaAgrupar;
+	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
 	private Initiative selectedInitiative;
-
+	private List<Integer> agruparIniciativasList;
+	private int idIniciativa;
+		
+	 public List<Integer> getAgruparIniciativasList(){
+		 return agruparIniciativasList;
+	 }
+	 public void getAgruparIniciativasList( List<Integer> agruparIniciativasList){
+		this.agruparIniciativasList=agruparIniciativasList;
+	 }
+	 
+	 
+	 public List<Initiative> getlistaIniciativasParaAgrupar() {
+	        return listaIniciativasParaAgrupar;
+	    }
+	 
+	    public void setlistaIniciativasParaAgrupar(List<Initiative> i) {
+	        this.listaIniciativasParaAgrupar = i;
+	        this.iniciativasAgrupadasFront=i;
+	        
+	       
+	    }
+	 
+	 
 	
 	public String getName() {
 		return name;
@@ -111,6 +135,7 @@ public class InitiativeBean {
             if(listaIniciativas == null){
             	listaIniciativas = initiativeService.dariniciativas();
             }
+       
             return listaIniciativas;
         } catch (JtamsExceptions ex) {
             throw ex;
@@ -118,6 +143,7 @@ public class InitiativeBean {
 		
 		
 	}
+	
 
 	public void createIntitiative() throws JtamsExceptions {
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
@@ -134,17 +160,63 @@ public class InitiativeBean {
 		}
 	}
 	
-	
-	
+	 public void agregarIniciativaRelacionadaAIniciativa() throws JtamsExceptions{
+		 //System.out.println("lo llamaron");
+			
+			try {
+				//System.out.println(listaIniciativasParaAgrupar.size());
+		        for (int i = 0; i < listaIniciativasParaAgrupar.size(); i++) {
+				    for(int j = 0; j < listaIniciativasParaAgrupar.size(); j++){
+				        if(i != j){
+				        	//System.out.println(listaIniciativasParaAgrupar.get(i).getId());
+				        	initiativeService.agregarIniciativaRelacionadaAIniciativa(listaIniciativasParaAgrupar.get(i).getId(),listaIniciativasParaAgrupar.get(j).getId());
+				        }
+				    }
+				}
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se agruparon las iniciativas correctamente"));
+		    }catch(JtamsExceptions ex) {
+		    	FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"error al insertar, puede que ya este relacionada, o no se encuentre el id","Error"));
+				throw ex;
+		    }
+		 }
+	 
+	 
+	 public List<Initiative> buscaIniciativaRelacionadas() throws JtamsExceptions{
+			
+
+		try {
+				//System.out.println(idIniciativa+"  --- este fue el numero ingresado");
+	            List<Initiative> iniciativasAgrupadasFront= initiativeService.busaIniciativaRelacionadas(idIniciativa);
+	            //inicia machete <3 :) 
+	            for(int i=0; i < listaIniciativas.size(); i++) {
+	            	if(listaIniciativas.get(i).getId()==idIniciativa) {
+	            		iniciativasAgrupadasFront.add(listaIniciativas.get(i));
+	            	}
+	            }
+	            return  iniciativasAgrupadasFront;
+	      } catch (JtamsExceptions ex){
+	            throw new JtamsExceptions("No se encuentran iniciativas relacionadas");
+	       }
+		}
+	 
+	 
 	//metodos para cambio de estado
 	
 	
 
 
+	public int getIdIniciativa() {
+		return idIniciativa;
+	}
+	public void setIdIniciativa(int idIniciativa) throws JtamsExceptions {
+		this.idIniciativa = idIniciativa;
+		buscaIniciativaRelacionadas();
+	}
 	public void updateStatusInitiative(){
 		this.initiativeToUpdate=String.valueOf(selectedInitiative.getId());
 		try {
 			initiativeService.updateStatusInitiative(initiativeToUpdate, statusToUpdate);
+			listaIniciativas = initiativeService.dariniciativas();
 			
 			
 		}catch(JtamsExceptions e){
@@ -195,6 +267,12 @@ public class InitiativeBean {
 	            // ignore  
 	        }  
 	    }
+	public List<Initiative> getIniciativasAgrupadasFront() {
+		return iniciativasAgrupadasFront;
+	}
+	public void setIniciativasAgrupadasFront(List<Initiative> iniciativasAgrupadasFront) {
+		this.iniciativasAgrupadasFront = iniciativasAgrupadasFront;
+	}
 	
 
 }

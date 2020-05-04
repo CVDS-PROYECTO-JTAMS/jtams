@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  lang="es">
+
+  <title>Reserva de Recursos ECI</title>
+  <h:head>
+	  <style>
+		table, th, td {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		}
+		th, td {
+		  padding: 20px;
+		  text-align: left;
+		}
+		div.background {
+		  border: 0.5px solid black;
+		}
+
+		div.transbox {
+		  margin: 30px;
+		  background-color: #00366E;
+		  border: 1px solid black;
+		  opacity: 0.6;
+		}
+
+		div.transbox p {
+		  margin: 5%;
+		  font-weight: bold;
+		  color: #ffffff;
+		  text-align: center;
+		}
+		</style>
+
+
+	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	  <!-- Los iconos tipo Solid de Fontawesome-->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
+	  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	  <!-- Nuestro css-->
+	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
+	  </link>
+
+	  <div class="background">
+		  <div class="transbox">
+			  <p>ADMIN</p>
+		  </div>
+	  </div>
+  </h:head>
+  <h:body>
+  <center>
+	<header>
+		<h:form>
+			<p:tabMenu activeIndex="-1">
+				<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
+				<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
+			</p:tabMenu>
+			
+			
+		</h:form>
+	</header>
+  </center>
+  <h:form>
+	<div class="form-group" id="cont">
+						<h1 style="color:white;">Realice la busqueda por medio de: ID iniciativa</h1>
+						
+						<h:panelGrid columns="2">
+						<h:inputText id="IDin" value="#{InitiativeBean.idIniciativa}" styleClass="form-control" required="true"/>
+                       
+						<h:commandButton  id="boton"  actionListener="#{InitiativeBean.buscaIniciativaRelacionadas()}" update=":tablainiciativasR" value = "Buscar"  styleClass="btn btn-primary"  />
+			</h:panelGrid>
+                       
+
+                </div>
+				<h1 style="color:white;">Iniciativas Agrupadas con el ID ingresado</h1>
+  
+  
+  
+                <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.buscaIniciativaRelacionadas()}"  style="margin-bottom: 1%; 
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
+					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+					rowsPerPageTemplate="5,10,15,20">				>
+				
+				
+						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
+							<f:facet name="header">
+								<h:outputText value="ID" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.id}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
+							<f:facet name="header">
+								<h:outputText value="Descripcion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.description}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
+							<f:facet name="header">
+								<h:outputText value="Area" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.area}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+							<f:facet name="header">
+								<h:outputText value="Estado" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.typeStatusId}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+							<f:facet name="header">
+								<h:outputText value="Fecha de creacion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.creationDate}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+							<f:facet name="header">
+								<h:outputText value="# de votos" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.numVotes }" />
+	                    </p:column>
+						
+                </p:dataTable>
+	</h:form>
+				
+  </h:body>
+</html>

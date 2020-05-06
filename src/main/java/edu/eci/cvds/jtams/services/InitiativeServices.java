@@ -28,6 +28,8 @@ public interface InitiativeServices {
 	void agregarIniciativaRelacionadaAIniciativa(int initiative, int iniRelatione) throws JtamsExceptions;
 
 	List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions;
+
+	List<Initiative> buscaEstadoIniciativa(String Type_Status_id)throws JtamsExceptions;
 	 
 	
 	

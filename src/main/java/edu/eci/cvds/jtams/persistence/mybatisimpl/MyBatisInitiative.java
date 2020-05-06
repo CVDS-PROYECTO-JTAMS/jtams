@@ -125,4 +125,13 @@ public class MyBatisInitiative implements InitiativeDAO {
 		
 	}
 
+	@Override
+	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id) throws JtamsExceptions {
+		try {
+            return initiativeMapper.buscaEstadoIniciativa(Type_Status_id);
+        } catch (Exception e) {
+            throw new JtamsExceptions("There was an exception persisting the initiative to the database", e);
+        }
+	}
+
 }

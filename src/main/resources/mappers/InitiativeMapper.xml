@@ -111,7 +111,11 @@
         SELECT *
         FROM initiative LEFT JOIN initiativerelations on initiative.id = initiativerelations.iniRelation WHERE  initiativerelations.initiative = #{initiative};
     </select>
-
+    
+	<select id="buscaEstadoIniciativa" resultMap="InitiativeResult1" parameterType="map">
+        SELECT *
+        FROM initiative  WHERE   initiative.Type_Status_id= #{Type_Status_id};
+    </select>
 
     <resultMap type='edu.eci.cvds.jtams.model.Statistic' id='StatisticResult'>
         <result property='count' column='total'/>

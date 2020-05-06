@@ -87,7 +87,7 @@ public class InitiativeServicesImpl implements InitiativeServices {
             }
             return iniciativas;
         } catch (javax.persistence.PersistenceException | PersistenceException e) {
-	   throw new  JtamsExceptions(":((");
+        	throw new  JtamsExceptions(":((");
         }
 	}
 	@Override
@@ -103,6 +103,17 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	@Override
 	public void addComment(String comment) throws JtamsExceptions {
 
+	}
+
+	@Override
+	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id) throws JtamsExceptions {
+		try {
+			
+		    return initiativeDAO.buscaEstadoIniciativa(Type_Status_id);
+		
+	} catch (JtamsExceptions ex) {
+		throw new  JtamsExceptions("error al consultar el estado de la iniciativa");
+	}
 	}
 
 

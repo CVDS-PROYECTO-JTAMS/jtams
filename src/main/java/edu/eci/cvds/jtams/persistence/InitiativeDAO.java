@@ -30,4 +30,6 @@ public interface InitiativeDAO {
 	public void agregarIniciativaRelacionadaAIniciativa(int initiative, int iniRelatione) throws JtamsExceptions;
 
 	public List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions;
+
+	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id)throws JtamsExceptions;
 }

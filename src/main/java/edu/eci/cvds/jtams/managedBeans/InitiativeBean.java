@@ -32,6 +32,7 @@ public class InitiativeBean {
 	private String description ;
 	private String area ;
 	private String keyword="";
+	private String estado="";
 	private String initiativeToUpdate;
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
@@ -39,10 +40,20 @@ public class InitiativeBean {
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
+	
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
 		
+	
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		
+		this.estado = estado;
+	}
 	 public List<Integer> getAgruparIniciativasList(){
 		 return agruparIniciativasList;
 	 }
@@ -58,18 +69,16 @@ public class InitiativeBean {
 	    public void setlistaIniciativasParaAgrupar(List<Initiative> i) {
 	        this.listaIniciativasParaAgrupar = i;
 	        this.iniciativasAgrupadasFront=i;
-	        
-	       
 	    }
-	 
-	 
-	
+	    
 	public String getName() {
 		return name;
 	}
+	
 	 public List<Initiative> getIniciatiaPorPalabra() {
 	        return iniciativaPorPalabra;
 	    }
+	 
 	 public void setIniciativasPorPalabra(List<Initiative> iniciativaPorPalabra) {
 	        this.iniciativaPorPalabra = iniciativaPorPalabra;
 	    }
@@ -114,7 +123,18 @@ public class InitiativeBean {
 		this.keyword = keyword;
 		//System.out.println(keyword);
 	}
-
+	
+	public List<Initiative> buscaEstadoIniciativas() throws JtamsExceptions{
+		
+		try {
+		       
+            this.iniciativaPorPalabra = initiativeService.buscaEstadoIniciativa(estado);
+            
+            return  iniciativaPorPalabra;
+       } catch (JtamsExceptions ex){
+            throw new JtamsExceptions("No se encuentran iniciativas con ese tipo de estado");
+       }
+	}
 	
 	
 	public List<Initiative> buscainiciativa() throws JtamsExceptions{
@@ -123,13 +143,13 @@ public class InitiativeBean {
 			
             List<String> palabrasListas = Arrays.asList(keyword.split(","));         
             this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
-            
+      
             return  iniciativaPorPalabra;
        } catch (JtamsExceptions ex){
             throw new JtamsExceptions("No se encuentran iniciativas con esas palabras clave");
        }
 	}
-
+	
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
 		try {
             if(listaIniciativas == null){

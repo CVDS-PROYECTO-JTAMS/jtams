@@ -38,4 +38,8 @@ public interface InitiativeMapper {
 	public void agregarIniciativaRelacionadaAIniciativa(@Param("initiative")int initiative,@Param("iniRelatione") int iniRelatione);
 	
 	public List<Initiative> busaIniciativaRelacionadas(@Param("initiative") int initiative);
+
+	public List<Initiative> buscaEstadoIniciativa(@Param("Type_Status_id") String Type_Status_id);
+
+	
 }

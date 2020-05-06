@@ -60,24 +60,27 @@
 
     <div class="background">
         <div class="transbox">
-            <p>SEARCH INITIATIVES</p>
+            <p>ADMIN</p>
         </div>
     </div>
 </h:head>
 <h:body>
-	<p:tabMenu activeIndex="-1">
-		<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
-		<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
-		<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
-		<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
-		<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
-		<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
-		<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
-	</p:tabMenu>
+    <h:form>
+        <p:tabMenu activeIndex="2">
+            <p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
+            <p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
+            <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 400px;"></p:menuitem>
+        </p:tabMenu>
+    </h:form>
+
     <center>
     <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
     </center>
-    <h:form>
+
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class= "modal-header">
@@ -86,7 +89,6 @@
                     </center>
                 </div>
                 <div class= "modal-body">
-                    <h:form id="createInitiative">
                         <p:messages autoUpdate="true" />
 
                         <div class="form-group" id="cont">
@@ -97,7 +99,7 @@
 
                         </div>
 
-                    </h:form>
+
                 </div>
             </div>
         </div>
@@ -154,6 +156,6 @@
             </p:column>
 
         </p:dataTable>
-    </h:form>
+
 </h:body>
 </html>

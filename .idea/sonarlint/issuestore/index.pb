@@ -76,8 +76,6 @@ p
 @src/main/java/edu/eci/cvds/jtams/guice/GuiceContextListener.java,c\5\c56340b45f91e02b606f9db37674d14b5904079b
 p
 @src/main/java/edu/eci/cvds/jtams/authenticator/ShiroSession.java,c\d\cdd4f265a68d287f60c9fdbe36e1639cd2d62866
-L
-src/main/resources/shiro.ini,c\4\c493cce27e5aea4db5bddadab92273fea0877a8f
 l
 <src/main/java/edu/eci/cvds/jtams/managedBeans/LoginBean.java,2\a\2aa203a800fe37955890d040c0ff07dfcfca7b0e
 c
@@ -108,3 +106,5 @@ P
  src/main/webapp/Statistics.xhtml,5\d\5dfe08254ea2628c2f385699b477a7d5db63f2af
 T
 $src/main/webapp/modifyUserType.xhtml,8\1\81bab4eaad0d61a3d1436d3472549c39cc2898dc
+Q
+!src/main/webapp/WEB-INF/shiro.ini,1\4\14520b864b1fb602e35e2dd983e58c62418be710

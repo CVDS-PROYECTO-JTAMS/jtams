@@ -1,22 +1,23 @@
 package edu.eci.cvds.jtams.managedBeans;
 
-import com.google.inject.Inject;
 import edu.eci.cvds.jtams.authenticator.SessionLogger;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
+import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresGuest;
 import org.apache.shiro.subject.Subject;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
 
 @SuppressWarnings("deprecation")
 @ManagedBean(name="LoginBean")
-
-public class LoginBean extends BasePageBean{
+@SessionScoped
+public class LoginBean {
 
 
     private static final long serialVersionUID = -2084921068710522276L;
@@ -25,9 +26,9 @@ public class LoginBean extends BasePageBean{
     private String password;
     private boolean rememberMe;
 
-    @Inject
-    private SessionLogger logger;
-    //private SessionLogger logger = InitiativeServicesFactory.getInstance().getLoginServices();
+    //@Inject
+    //private SessionLogger logger;
+    private SessionLogger logger = InitiativeServicesFactory.getInstance().getLoginServices();
 
     public Subject getCurrentUser(){
         Subject currentUser = SecurityUtils.getSubject();
@@ -67,10 +68,18 @@ public class LoginBean extends BasePageBean{
     }
 
     @RequiresGuest
-    public void login(String correo,String password,boolean rememberMe) throws JtamsExceptions {
+    public void login() throws JtamsExceptions {
         try {
-            logger.login(correo,password,rememberMe);
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/admin.xhtml");
+            switch (logger.login(username,password,rememberMe)){
+                case ADMINISTRATOR:FacesContext.getCurrentInstance().getExternalContext().redirect("/admin/admin.xhtml");
+                break;
+                case PERSONAL:FacesContext.getCurrentInstance().getExternalContext().redirect("/personal/personal.xhtml");
+                    break;
+                case PROPONENT:FacesContext.getCurrentInstance().getExternalContext().redirect("/proponent/proponent.xhtml");
+                    break;
+                case PUBLIC:FacesContext.getCurrentInstance().getExternalContext().redirect("/public/public.xhtml");
+                    break;
+            }
         } catch (JtamsExceptions e) {
             LoginBean.setErrorMessage(e);
             e.printStackTrace();
@@ -82,8 +91,12 @@ public class LoginBean extends BasePageBean{
             e.printStackTrace();
         }
 
-
     }
+    public void activeSession () throws IOException {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        facesContext.getExternalContext().redirect("");
+    }
+
     public void devolver(){
         if (isLogged()){
             try{
@@ -94,7 +107,6 @@ public class LoginBean extends BasePageBean{
         }
     }
     public boolean isLogged(){
-
         return logger.isLogged();
     }
 

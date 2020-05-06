@@ -59,78 +59,83 @@
   <center>
 	<header>
 		<h:form>
-			<p:tabMenu activeIndex="-1">
+			<p:tabMenu activeIndex="5">
 				<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
 				<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
 				<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
 				<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
 				<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
 				<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
-				<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
+				<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 400px;"></p:menuitem>
 			</p:tabMenu>
-			
-			
 		</h:form>
 	</header>
   </center>
   <h:form>
-	<p:dataTable id="tablain" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selection="#{InitiativeBean.listaIniciativasParaAgrupar}" style="margin-bottom: 1%; 
-					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10" rowKey="#{initiative.id}"
+	  <br></br>
+	  <br></br>
+	<div class="form-group" id="cont">
+		<center>
+		<h1 style="color:white;">Realice la busqueda por medio de: ID iniciativa</h1>
+			<h:panelGrid columns="2">
+				<h:inputText id="IDin" value="#{InitiativeBean.idIniciativa}" styleClass="form-control" required="true"/>
+				<h:commandButton  id="boton"  actionListener="#{InitiativeBean.buscaIniciativaRelacionadas()}" update=":tablainiciativasR" value = "Buscar"  styleClass="btn btn-primary"  />
+			</h:panelGrid>
+		</center>
+	</div>
+	  <center>
+	  <h1 style="color:white;">Iniciativas Agrupadas con el ID ingresado</h1>
+	  </center>
+	  <p:dataTable id="tablainiciativasR" var="initiative" value="#{InitiativeBean.buscaIniciativaRelacionadas()}"  style="margin-bottom: 1%;
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
 					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
 					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
 					rowsPerPageTemplate="5,10,15,20">				>
-					
-					<f:facet name="header">
-					AGRUPAR INICIATIVAS
-					</f:facet>
-						<p:column selectionMode="multiple" style="width:16px;text-align:center"/>
 				
-						<p:column  style="color:black;width:16px;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
+				
+						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
 							<f:facet name="header">
 								<h:outputText value="ID" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.id}" />
 	                    </p:column>
 						
-	                    <p:column style="color:black;width:86px;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
+	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
 							<f:facet name="header">
 								<h:outputText value="Descripcion" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.description}" />
 	                    </p:column>
 						
-	                    <p:column style="color:black;width:56px;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
+	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
 							<f:facet name="header">
 								<h:outputText value="Area" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.area}" />
 	                    </p:column>
 						
-	                    <p:column style="color:black;width:96px;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+	                    <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
 							<f:facet name="header">
 								<h:outputText value="Estado" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.typeStatusId}" />
 	                    </p:column>
 						
-	                    <p:column  style="color:black;width:106px;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+	                    <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
 							<f:facet name="header">
 								<h:outputText value="Fecha de creacion" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.creationDate}" />
 	                    </p:column>
 						
-	                    <p:column  style="color:black;width:26px;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+	                    <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
 							<f:facet name="header">
 								<h:outputText value="# de votos" />
 							</f:facet>
 	                        <h:outputText value="#{initiative.numVotes }" />
 	                    </p:column>
-						<f:facet name="footer">
-							<h:commandButton process="tablain"  action="#{InitiativeBean.agregarIniciativaRelacionadaAIniciativa()}" value="Agrupar" update=":tablainiciativasR" ajax="true" />
-						</f:facet>
 						
-                </p:dataTable>
+	  </p:dataTable>
 	</h:form>
 				
   </h:body>

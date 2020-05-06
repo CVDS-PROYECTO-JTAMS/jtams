@@ -51,7 +51,7 @@
 
 	<div class="background">
 		<div class="transbox">
-			<p>ADMIN</p>
+			<p>PROPONENT</p>
 		</div>
 	</div>
 </h:head>
@@ -59,15 +59,13 @@
 	<center>
 		<header>
 			<h:form>
-				<p:tabMenu activeIndex="-1">
-					<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
-					<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
-					<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
-					<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
-					<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
-					<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
-					<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 1125px;"></p:menuitem>
+				<p:tabMenu activeIndex="2">
+					<p:menuitem value="Agregar Iniciativa" outcome="addInitiative.xhtml" icon="ui-icon-document"/>
+					<p:menuitem value="Consultar Iniciativas" outcome="searchInitiativeProponent.xhtml" icon="ui-icon-document"/>
+					<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiativeProponent.xhtml" icon="ui-icon-document"/>
+					<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 1100px;"/>
 				</p:tabMenu>
+			</h:form>
 				<center>
 					<h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
 
@@ -128,8 +126,6 @@
 						</f:facet>
 					</p:dataTable>
 				</center>
-
-			</h:form>
 
 		</header>
 	</center>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:p="http://primefaces.org/ui"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:shiro="http://shiro.apache.org/tags"
-lang="es">
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  lang="es">
 
   <title>Reserva de Recursos ECI</title>
   <h:head>
@@ -51,19 +51,33 @@ lang="es">
 
 	  <div class="background">
 		  <div class="transbox">
-			  <p>PROPONENT</p>
+			  <p>ADMIN</p>
 		  </div>
 	  </div>
   </h:head>
-  <body>
-  <h:form>
-	  <p:tabMenu activeIndex="0">
-		  <p:menuitem value="Agregar Iniciativa" outcome="addInitiative.xhtml" icon="ui-icon-document"/>
-		  <p:menuitem value="Consultar Iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-document"/>
-		  <p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
-		  <p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 825px;"></p:menuitem>
-	  </p:tabMenu>
-  </h:form>
-  </body>
-  
+  <h:body>
+  <center>
+	<header>
+		<h:form>
+			<p:tabMenu activeIndex="-1">
+				<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
+				<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
+				<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 400px;"></p:menuitem>
+			</p:tabMenu>
+		</h:form>
+
+	</header>
+  </center>
+ 
+
+				
+  </h:body>
+
+
+
+ 
 </html>

@@ -58,10 +58,10 @@ lang="es">
   </h:head>
   <body>
   	<h:form>
-		<p:tabMenu activeIndex="0">
-			<p:menuitem value="Consultar Iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-document"/>
+		<p:tabMenu activeIndex="-1">
+			<p:menuitem value="Consultar Iniciativas" outcome="searchInitiativePersonal.xhtml" icon="ui-icon-document"/>
 			<p:menuitem value="Cambiar Estado de iniciativa" outcome="changeState.xhtml" icon="ui-icon-document"/>
-			<p:menuitem value="Salir" outcome="index.xhtml" icon="ui-icon-close" style="position: absolute; left: 825px;"></p:menuitem>
+			<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 1300px;"/>
 		</p:tabMenu>
 	</h:form>
 	

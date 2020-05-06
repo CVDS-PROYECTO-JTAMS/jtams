@@ -39,7 +39,6 @@ public class StatisticBean {
 
     private void createBarModel() {
         barModel = loadData();
-        barModel.setTitle("Cantidad de Iniciativas");
         barModel.setLegendPosition("e");
         barModel.setShowDataLabels(true);
         barModel.setShadow(false);

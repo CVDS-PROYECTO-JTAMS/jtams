@@ -60,20 +60,26 @@ div.transbox p {
 			<p:outputPanel>
                 <div class="form-group" id="user-group">
                 <center>
-                <p:inputText id="userInput"  style="width:150px" class="form-control" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{userBean.username}"/>
+                <p:inputText id="userInput"  style="width:150px" class="form-control" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{LoginBean.username}"/>
                 </center>
                 </div>
             </p:outputPanel>
 			 <p:outputPanel>
                  <div class="form-group" id="contrasena-group">
                  <center>
-                 <p:inputText type="password" class="form-control" data-validation-required-message="Please enter your password." id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{userBean.password}"/>
+                 <p:inputText type="password" class="form-control" data-validation-required-message="Please enter your password." id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{LoginBean.password}"/>
                  </center>
                  </div>
              </p:outputPanel>
+			<div class="control-group">
+				<div class="form-group floating-label-form-group controls">
+					<p:selectBooleanCheckbox itemLabel="Recuerdame" value="#{LoginBean.rememberMe}"/>
+				</div>
+			</div>
             <center>
-			<p:commandButton id="ingresar" action="#{userBean.logIn}" class="btn btn-primary"  value="Ingresar"  />
+			<p:commandButton id="ingresar" action="#{LoginBean.login}" class="btn btn-primary"  value="Ingresar"  />
             </center>
+
 
 
 	</h:form>

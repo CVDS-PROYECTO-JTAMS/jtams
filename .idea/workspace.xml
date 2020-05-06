@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79d0ba6e-7b07-4276-970c-36f21e3c2878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/InitiativeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisInitiative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/mappers/InitiativeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/InitiativeServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/InitiativeServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/InitiativeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal/personal.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personal/personal.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,10 +47,10 @@
           <entry key="jpg" value="3" />
           <entry key="jsp" value="2" />
           <entry key="png" value="3" />
-          <entry key="properties" value="1" />
+          <entry key="properties" value="2" />
           <entry key="sql" value="8" />
           <entry key="xhtml" value="163" />
-          <entry key="xml" value="57" />
+          <entry key="xml" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -70,9 +61,9 @@
           <entry key="JAVA" value="350" />
           <entry key="JSP" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Properties" value="1" />
+          <entry key="Properties" value="2" />
           <entry key="XHTML" value="163" />
-          <entry key="XML" value="58" />
+          <entry key="XML" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -83,7 +74,7 @@
           <entry key="sql" value="25" />
           <entry key="txt" value="3" />
           <entry key="xhtml" value="4988" />
-          <entry key="xml" value="571" />
+          <entry key="xml" value="581" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -93,20 +84,43 @@
           <entry key="JAVA" value="6575" />
           <entry key="PLAIN_TEXT" value="183" />
           <entry key="XHTML" value="4988" />
-          <entry key="XML" value="571" />
+          <entry key="XML" value="581" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+            <state relative-caret-position="340">
+              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="135" column="70" selection-start-line="135" selection-start-column="70" selection-end-line="135" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -169,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/ModifyStateInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/StatisticBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/LoginBean.java" />
@@ -196,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -284,6 +298,13 @@
               <item name="jtams" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,7 +330,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588736136636" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588736659138" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
@@ -433,7 +454,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43365696" visible="true" weight="0.15085287" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43365696" visible="true" weight="0.15085287" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -452,11 +473,11 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" auto_hide="true" x="3" y="3" width="1914" height="1034" id="Run" order="8" sideWeight="0.56634307" weight="0.37093276" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.37093276" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.07266811" />
       <window_info anchor="bottom" id="Sequence" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Console" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.22776572" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.22776572" />
       <window_info anchor="bottom" id="SonarLint" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -514,13 +535,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/mybatis-config-h2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -539,13 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -589,13 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="52" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -931,8 +931,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+        <state relative-caret-position="340">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="135" column="70" selection-start-line="135" selection-start-column="70" selection-end-line="135" selection-end-column="70" />
         </state>
       </provider>
     </entry>

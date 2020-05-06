@@ -131,6 +131,14 @@
                         <version>1.4.184</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <driver>org.h2.Driver</driver>
+                    <url>jdbc:h2:file:./target/db/testdb;MODE=MYSQL</url>
+                    <username>sa</username>
+                    <password></password>
+                    <autocommit>false</autocommit>
+                    <skip>${maven.test.skip}</skip>
+                </configuration>
                 <executions>
                     <execution>
                         <id>create-db</id>

@@ -58,12 +58,14 @@
   <h:body>
   <center>
 	<header>
-		<h:form>
+        <h:form>
             <p:tabMenu activeIndex="1">
                 <p:menuitem value="Consultar Iniciativas" outcome="searchInitiativePersonal.xhtml" icon="ui-icon-document"/>
                 <p:menuitem value="Cambiar Estado de iniciativa" outcome="changeState.xhtml" icon="ui-icon-document"/>
-                <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 1300px;"></p:menuitem>
+                <p:menuitem value="Consultar Iniciativas por estado" outcome="searchInitiativeStatusPersonal.xhtml" icon="ui-icon-document"/>
+                <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 950px;"/>
             </p:tabMenu>
+        </h:form>
             <br/><br/>
             <center>
                 <h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
@@ -113,9 +115,6 @@
                     </f:facet>
                     </p:dataTable>
                      </center>
-				 	               
-		</h:form>
-
 	</header>
   </center>
   </h:body>

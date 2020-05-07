@@ -40,7 +40,8 @@ public class InitiativeBean {
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
-	
+	private int idInitiativelike;
+	private int idInitiativeDislike;
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
@@ -292,6 +293,15 @@ public class InitiativeBean {
 	}
 	public void setIniciativasAgrupadasFront(List<Initiative> iniciativasAgrupadasFront) {
 		this.iniciativasAgrupadasFront = iniciativasAgrupadasFront;
+	}
+	
+	public void darVoto(int id1) {
+		idInitiativelike=id1;
+		System.out.println("voto el hp a la iniciativa con id == "+idInitiativelike);
+	}
+	public void quitarVoto(int id) {
+		idInitiativeDislike=id;
+		System.out.println("quito el hp voto de la iniciativa == "+idInitiativeDislike);
 	}
 	
 

@@ -42,4 +42,6 @@ public interface InitiativeMapper {
 	public List<Initiative> buscaEstadoIniciativa(@Param("Type_Status_id") String Type_Status_id);
 
 	
+
+	
 }

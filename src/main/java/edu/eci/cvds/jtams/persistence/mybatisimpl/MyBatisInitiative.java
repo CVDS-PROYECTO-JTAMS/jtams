@@ -25,7 +25,7 @@ public class MyBatisInitiative implements InitiativeDAO {
     }
 
     @Override
-    public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
+    public void createInitiative(String description, String area, int idus, List<String> keywords,List<Integer> votos, String name) throws JtamsExceptions {
     	try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
@@ -33,6 +33,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 			for(String k: keywords) {
 				initiativeMapper.createKeyword(k);
 			}
+			//initiativeMapper.createVotes();
 			
 		}catch(Exception e) {
 			e.printStackTrace();

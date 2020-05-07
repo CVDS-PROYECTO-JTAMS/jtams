@@ -172,8 +172,9 @@ public class InitiativeBean {
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
+		List<Integer> votos= Arrays.asList(); 
 		try {
-			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
+			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords,votos, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 		}catch (JtamsExceptions ex) {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));
@@ -294,14 +295,29 @@ public class InitiativeBean {
 	public void setIniciativasAgrupadasFront(List<Initiative> iniciativasAgrupadasFront) {
 		this.iniciativasAgrupadasFront = iniciativasAgrupadasFront;
 	}
+	//metodos para votar y quitar voto
 	
-	public void darVoto(int id1) {
+	public void darVoto(int id1) throws JtamsExceptions {
 		idInitiativelike=id1;
-		System.out.println("voto el hp a la iniciativa con id == "+idInitiativelike);
+		//1015475103 id del usuario publico (verbo)
+		//votar(userServices.getUser(name).getId(),idInitiativelike);
+		votar(1015475103,idInitiativelike);
 	}
-	public void quitarVoto(int id) {
+	public void quitarVoto(int id) throws JtamsExceptions {
 		idInitiativeDislike=id;
-		System.out.println("quito el hp voto de la iniciativa == "+idInitiativeDislike);
+		//1015475103 id del usuario publico (verbo)
+		//quitarVoto(userServices.getUser(name).getId(),idInitiativelike);
+		quitarVoto(1015475103,idInitiativelike);
+	}
+	
+	public void votar(int idUser,int idInitiative) {
+		System.out.println("voto el hp "+idUser+"a la iniciativa con id == "+idInitiativelike);
+		
+		
+	}
+	public void quitarVoto(int idUser,int idInitiative) {
+		System.out.println(idUser+"quito el hp voto de la iniciativa == "+idInitiativeDislike);
+		
 	}
 	
 

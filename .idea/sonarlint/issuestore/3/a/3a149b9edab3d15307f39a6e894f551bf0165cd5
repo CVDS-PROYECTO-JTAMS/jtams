@@ -1,10 +1,10 @@
 
-E
-java:S1148;"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8²îùš.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
 >
 java:S1116"Remove this empty statement.(¨–Ë¥şÿÿÿÿ8²îùš.
+h
+java:S2259*"FA "NullPointerException" could be thrown; "barModel" is nullable here.(»ãöúùÿÿÿÿ8Êå·.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
 P
 java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(­³‘ß8¥æœôš.
-h
-java:S2259*"FA "NullPointerException" could be thrown; "barModel" is nullable here.(¼¦ÜÆÿÿÿÿÿ8Óãşš.
+E
+java:S1148:"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ŸÑç·.

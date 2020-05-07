@@ -7,14 +7,6 @@ k
 ;src/main/java/edu/eci/cvds/jtams/services/UserServices.java,4\e\4eb9af06807c44d4d0e1aeb45f01eb7d9a13efc6
 k
 ;src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java,9\d\9d6c40a78e4819ca216840e9e4f4557842e2acbd
-N
-src/main/webapp/personal.xhtml,6\b\6bf1cff552142ea11b907ea943d8646281d7e161
-O
-src/main/webapp/proponent.xhtml,6\b\6bba0aed9cb142b77774923a36a9bf72487a6553
-L
-src/main/webapp/public.xhtml,5\2\529ffe59343393e1b107122692a4c780b59045a0
-K
-src/main/webapp/admin.xhtml,7\f\7fd576e8411a6512f80f1fd1140b417df6ad0564
 d
 4src/main/java/edu/eci/cvds/jtams/model/UserType.java,6\8\68b4362190eb0746ee06c0c2cc977308523fb11d
 P
@@ -64,8 +56,6 @@ y
 Isrc/main/java/edu/eci/cvds/jtams/services/impl/StatisticServicesImpl.java,9\4\948a06d877c51ea7d7408f566ab8793bdd024ee3
 q
 Asrc/main/java/edu/eci/cvds/jtams/services/StatisticsServices.java,5\a\5a20ab9f0b4c77832746ab084c414a81102a367c
-O
-src/main/webapp/statistic.xhtml,9\8\986db8c6960481034da7ebe6ec98923318f9603a
 p
 @src/main/java/edu/eci/cvds/jtams/managedBeans/StatisticBean.java,3\a\3a149b9edab3d15307f39a6e894f551bf0165cd5
 o
@@ -88,24 +78,10 @@ w
 Gsrc/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java,4\c\4c773cce8b48f9ad932b74948c30974f466f0efe
 n
 >src/main/java/edu/eci/cvds/jtams/services/CommentServices.java,9\8\987d56f3a8b956e80d632aa2ee77ca399923c61e
-[
-+src/main/webapp/ModifyStateInitiative.xhtml,e\9\e9de0f4cb7bc98bcd8a599378c161d7e3a3e551e
 o
 ?src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java,6\8\68e2ebe0f26b49b4f92fc48af5122a14450aca99
 O
 src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
-Q
-!src/main/webapp/changeState.xhtml,2\b\2bd10c36338790bfa609f141789f267da96a5d90
-V
-&src/main/webapp/searchInitiative.xhtml,e\e\eedc99942fe2b1752cf3e626e7e91e2b0ee3f6d0
-P
- src/main/webapp/addComment.xhtml,2\1\21b88a54119329a84f11e756ec7755231f74c050
-S
-#src/main/webapp/addInitiative.xhtml,8\b\8b534f7d84e2ff041c8cd1ce551e37503672180b
-P
- src/main/webapp/Statistics.xhtml,5\d\5dfe08254ea2628c2f385699b477a7d5db63f2af
-T
-$src/main/webapp/modifyUserType.xhtml,8\1\81bab4eaad0d61a3d1436d3472549c39cc2898dc
 Q
 !src/main/webapp/WEB-INF/shiro.ini,1\4\14520b864b1fb602e35e2dd983e58c62418be710
 p

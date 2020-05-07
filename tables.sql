@@ -27,17 +27,18 @@ create table Keywords (
 	constraint keyword_pk primary key (id),
 	constraint id_key unique (keyword,idinitiative)
 );
+create table Votes (
+	id int not null,
+	user_id int not null references "User"(id),
+	ini_id int not null references Initiative(id)
+);
+
 CREATE TABLE InitiativeRelations(
    initiative int not null references Initiative(id) ,
    iniRelation int not null references Initiative(id),
    primary key (initiative,iniRelation)
 );
-CREATE TABLE Type_Status (
-   id int  NOT NULL,
-   status varchar(50)  NOT NULL,
-   CONSTRAINT Type_Status_uk UNIQUE (status),
-   CONSTRAINT Type_Status_pk PRIMARY KEY (id)
-);
+
 
 create table "Comments"(
 	id int not null,
@@ -59,14 +60,18 @@ ALTER TABLE Initiative ADD CONSTRAINT Initiative_User
    REFERENCES "User" (id)
 ;
 
-ALTER TABLE Initiative ADD CONSTRAINT Initiative_Type_Status
-   FOREIGN KEY (Type_Status_id)
-   REFERENCES Type_Status (id)
-;
-
 alter table keywords add constraint keyword_initiative
 	foreign key (idInitiative)
 	references Initiative(id)
+;
+
+alter table "Comments" add constraint comment_initiative
+	foreign key (initiative)
+	references Initiative (id)
+;
+alter table "Comments" add constraint comment_user
+	foreign key ("user")
+	references "User" (id)
 ;
 
 /*
@@ -81,20 +86,22 @@ alter table keywords add constraint keyword_initiative
 
 insert into "User" values (1015475102,'nikolai','niko','niko',0);
 insert into "User" values (1015475103,'Verbo','verbo','verbo',2);
+insert into "User" values (1015475104,'Juan','juan','juan',2);
+insert into "User" values (1015475105,'Sebastian','proponente@prueba.com','proponente',2);
 
-insert into type_status values (1,'En revision');
+insert into Initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from Initiative),'mas parqueaderos','parqueadero',0,(select now()),1015475103,(select now()),'En Revision');
 
-insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
-	values ((select count(*)+1 from initiative),'mas parqueaderos','parqueadero',0,(select now()),1015475103,(select now()),1);
-insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
-	values ((select count(*)+1 from initiative),'mas restaurantes','restaurante',0,(select now()),1015475103,(select now()),1);
-insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
-	values ((select count(*)+1 from initiative),'mas computadores','laboratorio',0,(select now()),1015475103,(select now()),1);
-insert into initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
-	values ((select count(*)+1 from initiative),'menor precio de parqueadero','parqueadero',0,(select now()),1015475103,(select now()),1);
+insert into Initiative (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+	values ((select count(*)+1 from Initiative),'Mas mesas en los kioskos','Kioskos',0,(select now()),1015475104,(select now()),'En Revision');
 
+insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'parqueadero',1);
+insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'carros',1);
 
-insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'restaurante',1);
-insert into Keywords (id,keyword ,idinitiative ) values ((select count(*)+1 from Keywords),'laboratorio',1);
+INSERT INTO "Comments" (id, initiative, creationDate, modifyDate, message, "user")
+        VALUES ((select count(*)+1 from "Comments"),1,(select now()),(select now()),'Me gusta la idea, la apoyo',1015475104);
+
+insert into initiativerelations values (1,2);
+insert into initiativerelations values (2,1);
 
 

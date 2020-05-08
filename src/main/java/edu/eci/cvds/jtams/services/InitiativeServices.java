@@ -30,6 +30,8 @@ public interface InitiativeServices {
 	List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions;
 
 	List<Initiative> buscaEstadoIniciativa(String Type_Status_id)throws JtamsExceptions;
+
+	void darlike(int idUser, int idInitiative) throws JtamsExceptions;
 	 
 	
 	

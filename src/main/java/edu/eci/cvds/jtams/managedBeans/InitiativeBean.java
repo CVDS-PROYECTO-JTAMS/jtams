@@ -45,8 +45,24 @@ public class InitiativeBean {
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
+	private int idUser;
+	private int idInitiative;
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
 		
-	
+		this.idUser = idUser;
+	}
+	public int getIdInitiative() {
+		return idInitiative;
+	}
+
+	public void setIdInitiative(int idInitiative) {
+		
+		this.idInitiative = idInitiative;
+	}
 	public String getEstado() {
 		return estado;
 	}
@@ -298,23 +314,29 @@ public class InitiativeBean {
 	//metodos para votar y quitar voto
 	
 	public void darVoto(int id1) throws JtamsExceptions {
-		idInitiativelike=id1;
+		//idInitiativelike=id1;
 		//1015475103 id del usuario publico (verbo)
 		//votar(userServices.getUser(name).getId(),idInitiativelike);
-		votar(1015475103,idInitiativelike);
+		//votar(1015475103,idInitiativelike);
 	}
 	public void quitarVoto(int id) throws JtamsExceptions {
-		idInitiativeDislike=id;
+		//idInitiativeDislike=id;
 		//1015475103 id del usuario publico (verbo)
 		//quitarVoto(userServices.getUser(name).getId(),idInitiativelike);
-		quitarVoto(1015475103,idInitiativelike);
+		//quitarVoto(1015475103,idInitiativelike);
 	}
+	//AQUI YA PUEDE DAR LIKE A LA INICIATIVA
+	public void votar(){
+		try {
+		initiativeService.darlike(idUser,idInitiative);
+
+		} catch (JtamsExceptions jtamsExceptions) {
+			jtamsExceptions.printStackTrace();
+		}
+	}
+		
+		
 	
-	public void votar(int idUser,int idInitiative) {
-		System.out.println("voto el hp "+idUser+"a la iniciativa con id == "+idInitiativelike);
-		
-		
-	}
 	public void quitarVoto(int idUser,int idInitiative) {
 		System.out.println(idUser+"quito el hp voto de la iniciativa == "+idInitiativeDislike);
 		

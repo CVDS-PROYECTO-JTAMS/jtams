@@ -55,6 +55,13 @@
     <insert id="agregarIniciativaRelacionadaAIniciativa" parameterType="map">
     	INSERT INTO "initiativerelations" (initiative,iniRelation) VALUES(#{initiative},#{iniRelatione});
     </insert>
+    <insert id="darlike" parameterType="map">
+    	INSERT INTO "votes" (id,user_id,ini_id) VALUES((select count(*)+1 from "votes"),#{user_id},#{ini_id});
+    </insert>
+    <delete id="quitarlike" parameterType="map">
+    	DELETE FROM "votes" WHERE votes.ini_id = #{ini_id} and votes.user_id=#{user_id};
+    </delete>
+    
     <update id='updateTypeUser'>
         update "initiative" set Type_Status_id=#{typeStatusId} where id=#{id};
     </update>
@@ -111,7 +118,10 @@
         SELECT *
         FROM initiative LEFT JOIN initiativerelations on initiative.id = initiativerelations.iniRelation WHERE  initiativerelations.initiative = #{initiative};
     </select>
-    
+    <select id="consultarLike" resultMap="InitiativeResult1" parameterType="map">
+        SELECT *
+        FROM initiative LEFT JOIN votes on initiative.id = votes.ini_id WHERE votes.ini_id = #{ini_id} and  votes.user_id=#{user_id};
+    </select>
 	<select id="buscaEstadoIniciativa" resultMap="InitiativeResult1" parameterType="map">
         SELECT *
         FROM initiative  WHERE   initiative.Type_Status_id= #{Type_Status_id};

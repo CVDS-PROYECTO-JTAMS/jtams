@@ -135,4 +135,19 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 	}
 
+	@Override
+	public void darlike(int user_id, int ini_id) throws JtamsExceptions {
+		try {
+			Initiative verificar= initiativeMapper.consultarLike(user_id, ini_id);
+			if(verificar==null) {
+				initiativeMapper.darlike(user_id, ini_id);
+			}else {
+				initiativeMapper.quitarlike(user_id, ini_id);
+			}
+        } catch(Exception e) {
+            throw new JtamsExceptions("hay un error entre mybatis y el mapper en like de la iniciativa", e);
+        }
+		
+	}
+
 }

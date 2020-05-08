@@ -34,4 +34,6 @@ public interface InitiativeDAO {
 	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id)throws JtamsExceptions;
 
 	public void darlike(int idUser, int idInitiative) throws JtamsExceptions;
+
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions;
 }

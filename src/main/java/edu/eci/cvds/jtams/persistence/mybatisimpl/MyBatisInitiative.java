@@ -152,4 +152,14 @@ public class MyBatisInitiative implements InitiativeDAO {
 		
 	}
 
+	@Override
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions {
+		try {
+			
+			return initiativeMapper.consultarIniciativaProponente(User_id);
+		} catch(Exception e) {
+	           throw new JtamsExceptions("hay un error en el mappers ", e);
+	       }
+	}
+
 }

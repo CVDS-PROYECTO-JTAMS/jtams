@@ -37,6 +37,7 @@ public class InitiativeBean {
 	private String statusToUpdate;
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
+	private List<Initiative> listaIniciativasProponente;
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
@@ -45,8 +46,9 @@ public class InitiativeBean {
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
-	private int idUser=1015475103;
-	private int idInitiative=1;
+	private int idUser;
+
+	private int idInitiative;
 	public int getIdUser() {
 		return idUser;
 	}
@@ -337,8 +339,15 @@ public class InitiativeBean {
 			jtamsExceptions.printStackTrace();
 		}
 	}
-		
-		
+	//CONSULTA INCICIATIVA ECHA POR EL PROPONENTE 
+	public List<Initiative> consultarIniciativaProponente() throws JtamsExceptions{
+		try {
+			listaIniciativasProponente=initiativeService.consultarIniciativaProponente(idUser);
+            return  listaIniciativasProponente;
+      } catch (JtamsExceptions ex){
+            throw new JtamsExceptions("No se encuentran iniciativas");
+       }
+	}
 	
 
 }

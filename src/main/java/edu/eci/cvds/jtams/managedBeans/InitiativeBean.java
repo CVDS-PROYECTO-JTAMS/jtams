@@ -45,8 +45,8 @@ public class InitiativeBean {
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
-	private int idUser;
-	private int idInitiative;
+	private int idUser=1015475103;
+	private int idInitiative=1;
 	public int getIdUser() {
 		return idUser;
 	}

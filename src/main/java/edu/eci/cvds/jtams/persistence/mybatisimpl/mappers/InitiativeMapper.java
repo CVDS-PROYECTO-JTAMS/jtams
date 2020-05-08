@@ -47,6 +47,10 @@ public interface InitiativeMapper {
 
 	public void quitarlike(@Param("user_id")int user_id,@Param("ini_id")int ini_id);
 
+	public void sumarLike(@Param("id") int id);
+
+	public void restarLike(@Param("id") int id);
+
 	
 
 	

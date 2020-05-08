@@ -95,7 +95,12 @@
     <update id="updateInitiative">
         update initiative set description= #{description}, area= #{area} where "id"= #{id};
     </update>
-    
+    <update id="sumarLike">
+        update initiative set num_votos=num_votos+1 where "id"= #{id};
+    </update>
+     <update id="restarLike">
+        update initiative set num_votos=num_votos-1 where "id"= #{id};
+    </update>
     <select id="dariniciativas" resultMap="InitiativeResult1" parameterType="map">
         SELECT * FROM Initiative;
     </select>

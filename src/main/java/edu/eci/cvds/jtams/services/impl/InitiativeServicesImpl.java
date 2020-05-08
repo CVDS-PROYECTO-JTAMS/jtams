@@ -118,11 +118,11 @@ public class InitiativeServicesImpl implements InitiativeServices {
 
 	@Override
 	public void darlike(int idUser, int idInitiative)throws JtamsExceptions {
-		try {
+		//try {
 		    initiativeDAO.darlike(idUser,idInitiative);
-		}catch (JtamsExceptions ex) {
-			throw new JtamsExceptions("error al dar like en iniciativa");
-		}
+		//}catch (JtamsExceptions ex) {
+			//throw new JtamsExceptions("error al dar like en iniciativa");
+		//}
 	}
 
 

@@ -314,21 +314,24 @@ public class InitiativeBean {
 	//metodos para votar y quitar voto
 	
 	public void darVoto(int id1) throws JtamsExceptions {
-		//idInitiativelike=id1;
+		idInitiativelike=id1;
+		votar();
 		//1015475103 id del usuario publico (verbo)
-		//votar(userServices.getUser(name).getId(),idInitiativelike);
+		
 		//votar(1015475103,idInitiativelike);
 	}
 	public void quitarVoto(int id) throws JtamsExceptions {
-		//idInitiativeDislike=id;
+		idInitiativelike=id;
+		votar();
 		//1015475103 id del usuario publico (verbo)
-		//quitarVoto(userServices.getUser(name).getId(),idInitiativelike);
+		
 		//quitarVoto(1015475103,idInitiativelike);
 	}
 	//AQUI YA PUEDE DAR LIKE A LA INICIATIVA
 	public void votar(){
 		try {
-		initiativeService.darlike(idUser,idInitiative);
+		initiativeService.darlike(idUser,idInitiativelike);
+		listaIniciativas = initiativeService.dariniciativas();
 
 		} catch (JtamsExceptions jtamsExceptions) {
 			jtamsExceptions.printStackTrace();
@@ -336,11 +339,6 @@ public class InitiativeBean {
 	}
 		
 		
-	
-	public void quitarVoto(int idUser,int idInitiative) {
-		System.out.println(idUser+"quito el hp voto de la iniciativa == "+idInitiativeDislike);
-		
-	}
 	
 
 }

@@ -68,7 +68,6 @@
 				<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
 				<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 400px;"></p:menuitem>
 			</p:tabMenu>
-		</h:form>
 		<br></br>
 		<br></br>
 		<h1 style="color:white">Seleccione el nuevo Rol del usuario seleccionado</h1>
@@ -98,6 +97,7 @@
 					<h:outputText value="#{user.type}" />
 				</p:column>
 			</p:dataTable>
+		</h:form>
 
 	</header>
   </center>

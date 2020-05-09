@@ -26,11 +26,11 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void createInitiative(String description, String area, int idus, List<String> keywords,List<Integer> votos, String name) throws JtamsExceptions {
+	public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
 		if (description == null) {
 			throw new JtamsExceptions("The Initiative is null");
 		}else {
-			initiativeDAO.createInitiative( description, area, idus, keywords,votos,name);
+			initiativeDAO.createInitiative( description, area, idus, keywords,name);
 		}
 	}
 	@Override

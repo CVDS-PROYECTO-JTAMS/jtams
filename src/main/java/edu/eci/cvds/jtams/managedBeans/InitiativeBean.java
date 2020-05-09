@@ -192,7 +192,7 @@ public class InitiativeBean {
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		List<Integer> votos= Arrays.asList(); 
 		try {
-			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords,votos, name);
+			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 		}catch (JtamsExceptions ex) {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));

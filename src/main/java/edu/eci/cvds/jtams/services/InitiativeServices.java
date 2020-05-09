@@ -35,6 +35,8 @@ public interface InitiativeServices {
 
 	List<Initiative> consultarIniciativaProponente(int idUser) throws JtamsExceptions;
 
+	void editarIniciativas(int id, String area2, String descripcion)throws JtamsExceptions;
+
 	
 	 
 	

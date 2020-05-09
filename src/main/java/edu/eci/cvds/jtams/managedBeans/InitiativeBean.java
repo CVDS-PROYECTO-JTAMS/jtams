@@ -374,19 +374,18 @@ public class InitiativeBean {
 		//System.out.println(narea);
 	}
 	//<p:rowEditor />
-	public void editInitiative() {
-		//idEdit=idedit;
-		System.out.println("edito");
-		System.out.println("edito la iniciativa "+idEdit.getId()+"  nueva area = "+area2+" nueva descripcion = "+descripcion);
-		System.out.println("nuevo nombre "+namenuevo);
+	public void editInitiative() throws JtamsExceptions {
+		
 		try {
-			//guillo aca llamas el metodo service para el resto del back
-			//esos de arriba son los nuevos datos de la iniciativa y el id es idEdit.getId()
-			//initiativeService......nombre del metodo.....();
-			listaIniciativas = initiativeService.dariniciativas();
+		if(idEdit.getTypeStatusId().equals("En espera revision")) {
+			initiativeService.editarIniciativas(idEdit.getId(),area2,descripcion);
+		}else {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("El estado de la iniciativa no se encuentra en revision"));
+		}
+
 		} catch (JtamsExceptions e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			 
+			throw new JtamsExceptions("upsiii");
 		}
 		 
 	}

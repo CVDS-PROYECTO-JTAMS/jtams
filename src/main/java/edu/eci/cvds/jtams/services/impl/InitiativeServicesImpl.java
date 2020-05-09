@@ -136,5 +136,14 @@ public class InitiativeServicesImpl implements InitiativeServices {
 		
 	}
 
+	@Override
+	public void editarIniciativas(int id, String area2, String descripcion) throws JtamsExceptions {
+		try {
+			initiativeDAO.editarIniciativas(id,area2,descripcion);
+		}catch (JtamsExceptions ex) {
+			throw new JtamsExceptions("error al editar en iniciativa");
+		}
+	}
+
 
 }

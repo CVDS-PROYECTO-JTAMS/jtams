@@ -162,4 +162,13 @@ public class MyBatisInitiative implements InitiativeDAO {
 	       }
 	}
 
+	@Override
+	public void editarIniciativas(int id, String area, String description) throws JtamsExceptions {
+		try {
+			initiativeMapper.editarIniciativas(id,description,area);
+		} catch(Exception e) {
+	         throw new JtamsExceptions("hay un error en el mappers ", e);
+	     }
+	}
+
 }

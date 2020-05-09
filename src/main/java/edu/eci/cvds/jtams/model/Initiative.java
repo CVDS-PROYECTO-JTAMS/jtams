@@ -21,7 +21,7 @@ public class Initiative {
 	}
 	
 	public Initiative(int id, String description, String area, Date creationDate,
-					  int userId, Date modifyDate, List<Keyword> keywords,List<Votes> votos) {
+					  int userId, Date modifyDate, List<Keyword> keywords) {
 		this.id = id;
 		this.description = description;
 		this.area = area;

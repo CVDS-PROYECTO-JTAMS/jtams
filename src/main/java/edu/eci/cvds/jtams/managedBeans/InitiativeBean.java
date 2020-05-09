@@ -11,6 +11,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+
+import org.primefaces.event.RowEditEvent;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,6 +38,10 @@ public class InitiativeBean {
 	private String estado="";
 	private String initiativeToUpdate;
 	private String statusToUpdate;
+	private String namenuevo;
+	private String descripcion ;
+	private String area2 ;
+	private Initiative idEdit;
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
 	private List<Initiative> listaIniciativasParaAgrupar;
@@ -337,8 +344,61 @@ public class InitiativeBean {
 			jtamsExceptions.printStackTrace();
 		}
 	}
-		
-		
+//metodos para editar iniciativa
+	public String getnamenuevo() {
+		return namenuevo;
+	}
+
+	public void setnamenuevo(String nname) {
+		namenuevo = nname;
+	}
+
+	public String getdescripcion() {
+		return descripcion;
+	}
+
+	public void setdescripcion(String ndescription) {
+		descripcion = ndescription;
+		//System.out.println(ndescription);
+	}
+
+	public String getarea2() {
+		return area2;
+	}
+
+	public void setarea2(String narea) {
+		area2 = narea;
+		//System.out.println(narea);
+	}
+	//<p:rowEditor />
+	public void editInitiative() {
+		//idEdit=idedit;
+		System.out.println("edito");
+		System.out.println("edito la iniciativa "+idEdit.getId()+"  nueva area = "+area2+" nueva descripcion = "+descripcion);
+		System.out.println("nuevo nombre "+namenuevo);
+		try {
+			//guillo aca llamas el metodo service para el resto del back
+			//esos de arriba son los nuevos datos de la iniciativa y el id es idEdit.getId()
+			//initiativeService......nombre del metodo.....();
+			listaIniciativas = initiativeService.dariniciativas();
+		} catch (JtamsExceptions e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+	}
+
+	public Initiative getIdEdit() {
+		return idEdit;
+	}
+
+	public void setIdEdit(Initiative idEdit) {
+		this.idEdit = idEdit;
+	}
+
 	
+
+		
+	//proponente@prueba.com
 
 }

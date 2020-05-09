@@ -346,7 +346,7 @@ public class InitiativeBean {
 			jtamsExceptions.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
+
 //metodos para editar iniciativa
 	public String getnamenuevo() {
 		return namenuevo;
@@ -399,7 +399,7 @@ public class InitiativeBean {
 		this.idEdit = idEdit;
 	}
 
-=======
+
 	//CONSULTA INCICIATIVA ECHA POR EL PROPONENTE 
 	public List<Initiative> consultarIniciativaProponente() throws JtamsExceptions{
 		try {
@@ -409,7 +409,7 @@ public class InitiativeBean {
             throw new JtamsExceptions("No se encuentran iniciativas");
        }
 	}
->>>>>>> 787268188c9c825cd3208f63aa16ccda304f0ea5
+
 	
 
 		

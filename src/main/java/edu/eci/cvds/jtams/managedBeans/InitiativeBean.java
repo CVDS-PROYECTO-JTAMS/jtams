@@ -11,6 +11,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+
+import org.primefaces.event.RowEditEvent;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,8 +38,13 @@ public class InitiativeBean {
 	private String estado="";
 	private String initiativeToUpdate;
 	private String statusToUpdate;
+	private String namenuevo;
+	private String descripcion ;
+	private String area2 ;
+	private Initiative idEdit;
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
+	private List<Initiative> listaIniciativasProponente;
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
@@ -45,8 +53,25 @@ public class InitiativeBean {
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
+	private int idUser;
+
+	private int idInitiative;
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
 		
-	
+		this.idUser = idUser;
+	}
+	public int getIdInitiative() {
+		return idInitiative;
+	}
+
+	public void setIdInitiative(int idInitiative) {
+		
+		this.idInitiative = idInitiative;
+	}
 	public String getEstado() {
 		return estado;
 	}
@@ -172,6 +197,7 @@ public class InitiativeBean {
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
+		List<Integer> votos= Arrays.asList(); 
 		try {
 			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
@@ -294,15 +320,99 @@ public class InitiativeBean {
 	public void setIniciativasAgrupadasFront(List<Initiative> iniciativasAgrupadasFront) {
 		this.iniciativasAgrupadasFront = iniciativasAgrupadasFront;
 	}
+	//metodos para votar y quitar voto
 	
-	public void darVoto(int id1) {
+	public void darVoto(int id1) throws JtamsExceptions {
 		idInitiativelike=id1;
-		System.out.println("voto el hp a la iniciativa con id == "+idInitiativelike);
+		votar();
+		//1015475103 id del usuario publico (verbo)
+		
+		//votar(1015475103,idInitiativelike);
 	}
-	public void quitarVoto(int id) {
-		idInitiativeDislike=id;
-		System.out.println("quito el hp voto de la iniciativa == "+idInitiativeDislike);
+	public void quitarVoto(int id) throws JtamsExceptions {
+		idInitiativelike=id;
+		votar();
+		//1015475103 id del usuario publico (verbo)
+		
+		//quitarVoto(1015475103,idInitiativelike);
 	}
+	//AQUI YA PUEDE DAR LIKE A LA INICIATIVA
+	public void votar(){
+		try {
+		initiativeService.darlike(idUser,idInitiativelike);
+		listaIniciativas = initiativeService.dariniciativas();
+
+		} catch (JtamsExceptions jtamsExceptions) {
+			jtamsExceptions.printStackTrace();
+		}
+	}
+
+//metodos para editar iniciativa
+	public String getnamenuevo() {
+		return namenuevo;
+	}
+
+	public void setnamenuevo(String nname) {
+		namenuevo = nname;
+	}
+
+	public String getdescripcion() {
+		return descripcion;
+	}
+
+	public void setdescripcion(String ndescription) {
+		descripcion = ndescription;
+		//System.out.println(ndescription);
+	}
+
+	public String getarea2() {
+		return area2;
+	}
+
+	public void setarea2(String narea) {
+		area2 = narea;
+		//System.out.println(narea);
+	}
+	//<p:rowEditor />
+	public void editInitiative() {
+		//idEdit=idedit;
+		System.out.println("edito");
+		System.out.println("edito la iniciativa "+idEdit.getId()+"  nueva area = "+area2+" nueva descripcion = "+descripcion);
+		System.out.println("nuevo nombre "+namenuevo);
+		try {
+			//guillo aca llamas el metodo service para el resto del back
+			//esos de arriba son los nuevos datos de la iniciativa y el id es idEdit.getId()
+			//initiativeService......nombre del metodo.....();
+			listaIniciativas = initiativeService.dariniciativas();
+		} catch (JtamsExceptions e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+	}
+
+	public Initiative getIdEdit() {
+		return idEdit;
+	}
+
+	public void setIdEdit(Initiative idEdit) {
+		this.idEdit = idEdit;
+	}
+
+
+	//CONSULTA INCICIATIVA ECHA POR EL PROPONENTE 
+	public List<Initiative> consultarIniciativaProponente() throws JtamsExceptions{
+		try {
+			listaIniciativasProponente=initiativeService.consultarIniciativaProponente(idUser);
+            return  listaIniciativasProponente;
+      } catch (JtamsExceptions ex){
+            throw new JtamsExceptions("No se encuentran iniciativas");
+       }
+	}
+
 	
+
+		
+	//proponente@prueba.com
 
 }

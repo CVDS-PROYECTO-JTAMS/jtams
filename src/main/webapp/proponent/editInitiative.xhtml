@@ -3,7 +3,8 @@
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:shiro="http://shiro.apache.org/tags"
+	  xmlns:th="http://www.thymeleaf.org"
 	  lang="es">
 
 <title>Reserva de Recursos ECI</title>
@@ -34,6 +35,15 @@
 		  color: #ffffff;
 		  text-align: center;
 		}
+		h4 {
+		  display: block;
+		  font-size: 1em;
+		  margin-top: 1.33em;
+		  margin-bottom: 1.33em;
+		  margin-left: 250px;
+		  margin-right: 0;
+		  font-weight: bold;
+}
 		</style>
 
 
@@ -48,31 +58,55 @@
 	<!-- Nuestro css-->
 	<link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	</link>
-
 	<div class="background">
 		<div class="transbox">
 			<p>PROPONENT</p>
 		</div>
 	</div>
 </h:head>
-<h:body>
-	<center>
-		<header>
-			<h:form>
-				<p:tabMenu activeIndex="2">
-					<p:menuitem value="Agregar Iniciativa" outcome="addInitiative.xhtml" icon="ui-icon-document"/>
-					<p:menuitem value="Editar Iniciativa" outcome="editInitiative.xhtml" icon="ui-icon-document"/>
-					<p:menuitem value="Consultar Iniciativas" outcome="searchInitiativeProponent.xhtml" icon="ui-icon-document"/>
-					<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiativeProponent.xhtml" icon="ui-icon-document"/>
-					<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 1100px;"/>
-				</p:tabMenu>
-			</h:form>
-			<br> <br>
-				<center>
-					<h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
+<body>
+<h:form>
+	<p:tabMenu activeIndex="0">
+		<p:menuitem value="Agregar Iniciativa" outcome="addInitiative.xhtml" icon="ui-icon-document"/>
+		<p:menuitem value="Editar Iniciativa" outcome="editInitiative.xhtml" icon="ui-icon-document"/>
+		<p:menuitem value="Consultar Iniciativas" outcome="searchInitiativeProponent.xhtml" icon="ui-icon-document"/>
+		<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiativeProponent.xhtml" icon="ui-icon-document"/>
+		<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 1100px;"/>
+	</p:tabMenu>
+</h:form>
+<br> </br>
 
-					<p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" 
-					selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" 
+<h:form>
+	<div class="modal-content">
+		<center>
+		<div class= "modal-header">
+			<h2 style="color:white;">Editando iniciativa</h2>
+		</div>
+		</center>
+	
+				<p:messages autoUpdate="true" />
+				<center>
+					<div class="form-group">
+						<label for="Nombre" style="color:white;">Nombre</label>
+						<p:inputText id="nam1" value="#{InitiativeBean.namenuevo}" styleClass="form-control" required="true"/>
+					</div>
+					<div class="form-group">
+						<label for="Email1" style="color:white;">Descripcion</label>
+						<p:inputText id="desc2" value="#{InitiativeBean.descripcion}" styleClass="form-control" required="true" />
+					</div>
+					<div class="form-group">
+						<label for="NuevoRol" style="color:white;">Area</label>
+						<p:inputText id="desc" value="#{InitiativeBean.area2}" styleClass="form-control" required="true"/>
+					</div>
+				</center>
+		
+	</div>
+
+ <center>
+    <h1 style="color:white">Escoja la iniciativa a editar</h1>
+    </center>
+				<p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single" 
+					selection="#{InitiativeBean.idEdit}" rowKey="#{initiative.id}" 
 					paginator="true"  rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
                      currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
 						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
@@ -118,29 +152,12 @@
 						</p:column>
 
 						<f:facet name="footer">
-							<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
-								<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
-								<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
-								<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
-								<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
-							</h:selectOneMenu>
-							<h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update=":tablaIniciativa" ajax="true" />
+							
+							<p:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.editInitiative}" update=":@form" ajax="true" />
 						</f:facet>
 					</p:dataTable>
-				</center>
 
-		</header>
-	</center>
-</h:body>
-<article>
-	<center>
-		admin
-	</center>
-</article>
-
-
-
-
-
+</h:form>
+</body>
 
 </html>

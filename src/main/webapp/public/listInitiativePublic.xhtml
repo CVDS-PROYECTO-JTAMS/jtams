@@ -137,8 +137,8 @@
 								<h:outputText value="Votar" />
 							</f:facet>
 	                       
-							<p:commandButton action="#{InitiativeBean.darVoto(initiative.id)}" id="iconOnly" style="margin-right:20px;" icon="pi pi-check" title="votar" />
-							<p:commandButton action="#{InitiativeBean.quitarVoto(initiative.id)}" id="iconOnly2" style="margin-right:20px;" icon="pi pi-times" title="quitar voto" />
+							<p:commandButton action="#{InitiativeBean.darVoto(initiative.id)}" update=":@form" id="iconOnly" style="margin-right:20px;" icon="pi pi-check" title="votar" />
+							<p:commandButton action="#{InitiativeBean.quitarVoto(initiative.id)}" update=":@form" id="iconOnly2" style="margin-right:20px;" icon="pi pi-times" title="quitar voto" />
 							
 	                    </p:column>
 						

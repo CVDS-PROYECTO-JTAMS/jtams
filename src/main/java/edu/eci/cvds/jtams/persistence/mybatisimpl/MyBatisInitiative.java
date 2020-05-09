@@ -33,6 +33,7 @@ public class MyBatisInitiative implements InitiativeDAO {
 			for(String k: keywords) {
 				initiativeMapper.createKeyword(k);
 			}
+			//initiativeMapper.createVotes();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -132,6 +133,33 @@ public class MyBatisInitiative implements InitiativeDAO {
         } catch (Exception e) {
             throw new JtamsExceptions("There was an exception persisting the initiative to the database", e);
         }
+	}
+
+	@Override
+	public void darlike(int user_id, int ini_id) throws JtamsExceptions {
+		try {
+			Initiative verificar= initiativeMapper.consultarLike(user_id, ini_id);
+			if(verificar==null) {
+				initiativeMapper.darlike(user_id, ini_id);
+				initiativeMapper.sumarLike(ini_id);
+			}else {
+				initiativeMapper.quitarlike(user_id, ini_id);
+				initiativeMapper.restarLike(ini_id);
+			}
+      } catch(Exception e) {
+           throw new JtamsExceptions("hay un error entre mybatis y el mapper en like de la iniciativa", e);
+       }
+		
+	}
+
+	@Override
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions {
+		try {
+			
+			return initiativeMapper.consultarIniciativaProponente(User_id);
+		} catch(Exception e) {
+	           throw new JtamsExceptions("hay un error en el mappers ", e);
+	       }
 	}
 
 }

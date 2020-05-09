@@ -15,6 +15,7 @@ public class Initiative {
 	private String status;
 	private List<Keyword> keywords;
 	
+	
 	public Initiative() {
 		
 	}

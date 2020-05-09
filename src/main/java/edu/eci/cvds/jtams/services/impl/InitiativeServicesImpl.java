@@ -116,5 +116,25 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 	}
 
+	@Override
+	public void darlike(int idUser, int idInitiative)throws JtamsExceptions {
+		try {
+		    initiativeDAO.darlike(idUser,idInitiative);
+		}catch (JtamsExceptions ex) {
+			throw new JtamsExceptions("error al dar like en iniciativa");
+		}
+	}
+
+	@Override
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions {
+		try {
+			return initiativeDAO.consultarIniciativaProponente(User_id);
+		}catch (JtamsExceptions ex) {
+			throw new JtamsExceptions("error al dar like en iniciativa");
+		}
+	
+		
+	}
+
 
 }

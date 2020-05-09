@@ -385,7 +385,7 @@ public class InitiativeBean {
 
 		} catch (JtamsExceptions e) {
 			 
-			throw new JtamsExceptions("upsiii");
+			throw new JtamsExceptions("No se pudo editar la iniciativa o propuesta");
 		}
 		 
 	}

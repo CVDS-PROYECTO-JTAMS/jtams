@@ -14,7 +14,7 @@ public class Initiative {
 	private String typeStatusId;
 	private String status;
 	private List<Keyword> keywords;
-	private List<Votes> votos;
+	
 	
 	public Initiative() {
 		
@@ -115,14 +115,6 @@ public class Initiative {
     public String toString() {
         return "Initiative{" + "description=" + description + ", area=" + area + ", numVotes" + numVotes + ", creationDate" + creationDate + ", userId" + userId + '}';
     }
-
-	public List<Votes> getVotos() {
-		return votos;
-	}
-
-	public void setVotos(List<Votes> votos) {
-		this.votos = votos;
-	}
 
 	
 	

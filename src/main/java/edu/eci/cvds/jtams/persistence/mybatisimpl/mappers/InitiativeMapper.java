@@ -51,6 +51,9 @@ public interface InitiativeMapper {
 
 	public void restarLike(@Param("id") int id);
 
+	public List<Initiative> consultarIniciativaProponente(@Param("User_id")int User_id);
+
+
 	
 
 	

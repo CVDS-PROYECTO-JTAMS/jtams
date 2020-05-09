@@ -25,7 +25,7 @@ public class MyBatisInitiative implements InitiativeDAO {
     }
 
     @Override
-    public void createInitiative(String description, String area, int idus, List<String> keywords,List<Integer> votos, String name) throws JtamsExceptions {
+    public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
     	try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
@@ -150,6 +150,16 @@ public class MyBatisInitiative implements InitiativeDAO {
            throw new JtamsExceptions("hay un error entre mybatis y el mapper en like de la iniciativa", e);
        }
 		
+	}
+
+	@Override
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions {
+		try {
+			
+			return initiativeMapper.consultarIniciativaProponente(User_id);
+		} catch(Exception e) {
+	           throw new JtamsExceptions("hay un error en el mappers ", e);
+	       }
 	}
 
 }

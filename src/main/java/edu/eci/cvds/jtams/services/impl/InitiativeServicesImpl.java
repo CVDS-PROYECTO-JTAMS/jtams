@@ -26,11 +26,11 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void createInitiative(String description, String area, int idus, List<String> keywords,List<Integer> votos, String name) throws JtamsExceptions {
+	public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
 		if (description == null) {
 			throw new JtamsExceptions("The Initiative is null");
 		}else {
-			initiativeDAO.createInitiative( description, area, idus, keywords,votos,name);
+			initiativeDAO.createInitiative( description, area, idus, keywords,name);
 		}
 	}
 	@Override
@@ -118,11 +118,22 @@ public class InitiativeServicesImpl implements InitiativeServices {
 
 	@Override
 	public void darlike(int idUser, int idInitiative)throws JtamsExceptions {
-		//try {
+		try {
 		    initiativeDAO.darlike(idUser,idInitiative);
-		//}catch (JtamsExceptions ex) {
-			//throw new JtamsExceptions("error al dar like en iniciativa");
-		//}
+		}catch (JtamsExceptions ex) {
+			throw new JtamsExceptions("error al dar like en iniciativa");
+		}
+	}
+
+	@Override
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions {
+		try {
+			return initiativeDAO.consultarIniciativaProponente(User_id);
+		}catch (JtamsExceptions ex) {
+			throw new JtamsExceptions("error al dar like en iniciativa");
+		}
+	
+		
 	}
 
 

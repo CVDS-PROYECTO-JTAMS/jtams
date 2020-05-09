@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface InitiativeServices {
 
-	void createInitiative(String description, String area, int idus, List<String> keywords, List<Integer> votos, String name) throws JtamsExceptions;
+	void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions;
 	
 	Initiative getInitiative(String area) throws JtamsExceptions;
 	
@@ -32,6 +32,10 @@ public interface InitiativeServices {
 	List<Initiative> buscaEstadoIniciativa(String Type_Status_id)throws JtamsExceptions;
 
 	void darlike(int idUser, int idInitiative) throws JtamsExceptions;
+
+	List<Initiative> consultarIniciativaProponente(int idUser) throws JtamsExceptions;
+
+	
 	 
 	
 	

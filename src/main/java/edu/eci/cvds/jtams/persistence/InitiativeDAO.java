@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface InitiativeDAO {
 	
-	public void createInitiative(String description, String area, int idus, List<String> keywords,List<Integer> votos, String name) throws JtamsExceptions;
+	public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions;
 	
 	public Initiative getInitiative(String area) throws JtamsExceptions;
 	
@@ -34,4 +34,6 @@ public interface InitiativeDAO {
 	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id)throws JtamsExceptions;
 
 	public void darlike(int idUser, int idInitiative) throws JtamsExceptions;
+
+	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions;
 }

@@ -44,6 +44,7 @@ public class InitiativeBean {
 	private Initiative idEdit;
 	private List<Initiative> iniciativaPorPalabra;
 	private List<Initiative> listaIniciativas;
+	private List<Initiative> listaIniciativasProponente;
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
 	private  String palabra;
@@ -52,8 +53,9 @@ public class InitiativeBean {
 	private Initiative selectedInitiative;
 	private List<Integer> agruparIniciativasList;
 	private int idIniciativa;
-	private int idUser=1015475103;
-	private int idInitiative=1;
+	private int idUser;
+
+	private int idInitiative;
 	public int getIdUser() {
 		return idUser;
 	}
@@ -197,7 +199,7 @@ public class InitiativeBean {
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		List<Integer> votos= Arrays.asList(); 
 		try {
-			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords,votos, name);
+			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 		}catch (JtamsExceptions ex) {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));
@@ -344,6 +346,7 @@ public class InitiativeBean {
 			jtamsExceptions.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 //metodos para editar iniciativa
 	public String getnamenuevo() {
 		return namenuevo;
@@ -396,6 +399,17 @@ public class InitiativeBean {
 		this.idEdit = idEdit;
 	}
 
+=======
+	//CONSULTA INCICIATIVA ECHA POR EL PROPONENTE 
+	public List<Initiative> consultarIniciativaProponente() throws JtamsExceptions{
+		try {
+			listaIniciativasProponente=initiativeService.consultarIniciativaProponente(idUser);
+            return  listaIniciativasProponente;
+      } catch (JtamsExceptions ex){
+            throw new JtamsExceptions("No se encuentran iniciativas");
+       }
+	}
+>>>>>>> 787268188c9c825cd3208f63aa16ccda304f0ea5
 	
 
 		

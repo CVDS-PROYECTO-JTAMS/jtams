@@ -14,14 +14,14 @@ public class Initiative {
 	private String typeStatusId;
 	private String status;
 	private List<Keyword> keywords;
-	private List<Votes> votos;
+	
 	
 	public Initiative() {
 		
 	}
 	
 	public Initiative(int id, String description, String area, Date creationDate,
-					  int userId, Date modifyDate, List<Keyword> keywords,List<Votes> votos) {
+					  int userId, Date modifyDate, List<Keyword> keywords) {
 		this.id = id;
 		this.description = description;
 		this.area = area;
@@ -115,14 +115,6 @@ public class Initiative {
     public String toString() {
         return "Initiative{" + "description=" + description + ", area=" + area + ", numVotes" + numVotes + ", creationDate" + creationDate + ", userId" + userId + '}';
     }
-
-	public List<Votes> getVotos() {
-		return votos;
-	}
-
-	public void setVotos(List<Votes> votos) {
-		this.votos = votos;
-	}
 
 	
 	

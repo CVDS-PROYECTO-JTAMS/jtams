@@ -83,7 +83,11 @@
 				  <div style="float:right;padding-top: 5px;">
 					  <h:commandLink>
 						  <p:graphicImage url="/img/excel.png" width="24"/>
-						  <p:dataExporter type="xls" target="tbl" fileName="cars" />
+						  <p:dataExporter type="xls" target="tabla_iniciativas" fileName="Iniciativas" pageOnly="true" />
+					  </h:commandLink>
+					  <h:commandLink>
+						  <p:graphicImage url="/img/pdf.png" width="24"/>
+						  <p:dataExporter type="pdf" target="tabla_iniciativas" fileName="Iniciativas" pageOnly="true" />
 					  </h:commandLink>
 				  </div>
 			  </f:facet>

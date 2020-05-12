@@ -66,14 +66,50 @@
   </h:head>
   <h:body>
 	  <h:form>
-		  <p:tabMenu activeIndex="3">
+		  <p:tabMenu activeIndex="4">
 			  <p:menuitem value="Consultar Iniciativas" outcome="searchInitiativePublic.xhtml" icon="ui-icon-document"/>
 			  <p:menuitem value="Listar Iniciativas" outcome="listInitiativePublic.xhtml" icon="ui-icon-document"/>
 			  <p:menuitem value="Comentar Iniciativas" outcome="addComment.xhtml" icon="ui-icon-document"/>
 			  <p:menuitem value="Busqueda de iniciativas" outcome="otherSearchInitiativePublic.xhtml" icon="ui-icon-script"/>
 			  <p:menuitem value="Estadisticas" outcome="statistic.xhtml" icon="ui-icon-script"/>
-			  <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 950px;"></p:menuitem>
+			  <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 800px;"></p:menuitem>
 		  </p:tabMenu>
+		  <br></br>
+		  <p:dataTable id="tabla_iniciativas" var="initiative" value="#{InitiativeBean.Todasiniciativas()}"
+					   paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+					   paginator="true" rows="10" style="margin-bottom:20px">
+
+			  <f:facet name="{Exporters}">
+				  <div style="float:right;padding-top: 5px;">
+					  <h:commandLink>
+						  <p:graphicImage url="/img/excel.png" width="24"/>
+						  <p:dataExporter type="xls" target="tbl" fileName="cars" />
+					  </h:commandLink>
+				  </div>
+			  </f:facet>
+
+			  <p:column>
+				  <f:facet name="header">
+					  <h:outputText value="Id" />
+				  </f:facet>
+				  <h:outputText value="#{initiative.id}" />
+			  </p:column>
+
+			  <p:column>
+				  <f:facet name="header">
+					  <h:outputText value="Description"/>
+				  </f:facet>
+				  <h:outputText value="#{initiative.description}" />
+			  </p:column>
+
+			  <p:column>
+				  <f:facet name="header">
+					  <h:outputText value="Area" />
+				  </f:facet>
+				  <h:outputText value="#{initiative.area}" />
+			  </p:column>
+
+		  </p:dataTable>
 	  </h:form>
 	  <p:chart type="pie" model="#{StatisticBean.barModel}" responsive="true"/>
 	  <p:chart type="pie" model="#{StatisticBean.barModel}" responsive="true"/>

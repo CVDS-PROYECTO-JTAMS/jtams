@@ -68,12 +68,14 @@
 <h:form>
 	<p:tabMenu activeIndex="0">
 		<p:menuitem value="Agregar Iniciativa" outcome="addInitiative.xhtml" icon="ui-icon-document"/>
+		<p:menuitem value="Editar Iniciativa" outcome="editInitiative.xhtml" icon="ui-icon-document"/>
 		<p:menuitem value="Consultar Iniciativas" outcome="searchInitiativeProponent.xhtml" icon="ui-icon-document"/>
 		<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiativeProponent.xhtml" icon="ui-icon-document"/>
-		<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 1100px;"/>
-	</p:tabMenu>
+		<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 900px;"/>
+</p:tabMenu>
 </h:form>
 
+<h:form>
 <div class="modal-dialog modal-lg" role="document">
 	<div class="modal-content">
 		<div class= "modal-header">
@@ -106,7 +108,7 @@
 		</div>
 	</div>
 </div>
-
+</h:form>
 </body>
 
 </html>

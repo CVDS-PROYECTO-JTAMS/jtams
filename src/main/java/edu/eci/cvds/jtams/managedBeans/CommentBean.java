@@ -3,6 +3,8 @@ package edu.eci.cvds.jtams.managedBeans;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.services.CommentServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.primefaces.PrimeFaces;
 
 import javax.faces.application.FacesMessage;
@@ -78,7 +80,9 @@ public class CommentBean {
 
 	public void createComment () throws JtamsExceptions {
 		try {
-			commentServices.createComment(initiativeId, mensaje, usuario);
+			Subject currentUser = SecurityUtils.getSubject();
+			String email = currentUser.getPrincipal().toString();
+			commentServices.createComment(initiativeId, mensaje, email);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 			PrimeFaces current = PrimeFaces.current();
 			current.executeScript("PF('dlg2').hide();");
@@ -90,7 +94,6 @@ public class CommentBean {
 	}
 	public void selectInitiative(int initiativeId) {
 		this.initiativeId = initiativeId;
-		System.out.println("Iniciativa = " +initiativeId);
 		PrimeFaces current = PrimeFaces.current();
 		current.executeScript("PF('dlg2').show();");
 	}

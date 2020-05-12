@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79d0ba6e-7b07-4276-970c-36f21e3c2878" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d1e85dc09cd034463fbedf9d4e05d6dba53977d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d1e85dc09cd034463fbedf9d4e05d6dba53977d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2aa203a800fe37955890d040c0ff07dfcfca7b0e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2aa203a800fe37955890d040c0ff07dfcfca7b0e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4574401716cf6e13e4464c4b3e76884247dc2247" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4574401716cf6e13e4464c4b3e76884247dc2247" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4ad9097a9676a09399bb02cd67aaae93ae341ca5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4ad9097a9676a09399bb02cd67aaae93ae341ca5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d19a0fc9e85a92251c4c600003c1ac3ecda9cc9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d19a0fc9e85a92251c4c600003c1ac3ecda9cc9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d3b77462a18c90c9b819020638741d13064918b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d3b77462a18c90c9b819020638741d13064918b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/55f54a1745c8fbcaacb6b1f5153458aa35347c54" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/55f54a1745c8fbcaacb6b1f5153458aa35347c54" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/66e28bfe49f4bc4d5a00ea8bb7640465de6b02a9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/66e28bfe49f4bc4d5a00ea8bb7640465de6b02a9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b023ab3e5a86d28d46f92a0f5d22bdf8e651206" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b023ab3e5a86d28d46f92a0f5d22bdf8e651206" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/8654d3d94eab47f034a80bb74ff5d33defadb9cf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/8654d3d94eab47f034a80bb74ff5d33defadb9cf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d6c40a78e4819ca216840e9e4f4557842e2acbd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9d6c40a78e4819ca216840e9e4f4557842e2acbd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb585a12746e3c58077a000cb566d3b2b7ff11e3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb585a12746e3c58077a000cb566d3b2b7ff11e3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a72df3bf937c8e1d63a50ab946cd76f68aa272ee" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a72df3bf937c8e1d63a50ab946cd76f68aa272ee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b7c59ab605c33c52b307db2b633f5eb06155484a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b7c59ab605c33c52b307db2b633f5eb06155484a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e542a7a1c29776487899ecc61c7559d5c3819ec2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e542a7a1c29776487899ecc61c7559d5c3819ec2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/4/f48af90db43d5391074ad01f894e6df4e45ede2d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/4/f48af90db43d5391074ad01f894e6df4e45ede2d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/ModifyStateInitiative.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ModifyStateInitiative.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/modifyUserType.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/modifyUserType.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/searchInitiative.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/searchInitiative.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/CommentServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/CommentServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/proponent/ModifyStateInitiativeProponent.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/proponent/ModifyStateInitiativeProponent.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/proponent/addInitiative.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/proponent/addInitiative.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/proponent/editInitiative.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/proponent/editInitiative.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/proponent/searchInitiativeProponent.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/proponent/searchInitiativeProponent.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/addComment.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/addComment.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/listInitiativePublic.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/listInitiativePublic.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/otherSearchInitiativePublic.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/otherSearchInitiativePublic.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/public.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/public.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/searchInitiativePublic.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/searchInitiativePublic.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +48,7 @@
     <session id="1102408780">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.140" value="1" />
@@ -38,12 +61,13 @@
           <entry key="project.open.time.58" value="2" />
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.open.time.63" value="1" />
+          <entry key="project.open.time.63" value="2" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.89" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.open.time.93" value="1" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -53,14 +77,14 @@
           <entry key="css" value="4" />
           <entry key="fxml" value="1" />
           <entry key="ini" value="3" />
-          <entry key="java" value="354" />
+          <entry key="java" value="362" />
           <entry key="jpg" value="3" />
           <entry key="jsp" value="2" />
           <entry key="png" value="3" />
           <entry key="properties" value="2" />
           <entry key="sql" value="9" />
-          <entry key="xhtml" value="166" />
-          <entry key="xml" value="60" />
+          <entry key="xhtml" value="187" />
+          <entry key="xml" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -69,22 +93,22 @@
           <entry key="CSS" value="4" />
           <entry key="DBN-SQL" value="9" />
           <entry key="Image" value="6" />
-          <entry key="JAVA" value="354" />
+          <entry key="JAVA" value="362" />
           <entry key="JSP" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Properties" value="2" />
-          <entry key="XHTML" value="166" />
-          <entry key="XML" value="61" />
+          <entry key="XHTML" value="187" />
+          <entry key="XML" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="89" />
           <entry key="ini" value="180" />
-          <entry key="java" value="6575" />
+          <entry key="java" value="6775" />
           <entry key="sql" value="29" />
           <entry key="txt" value="3" />
-          <entry key="xhtml" value="5010" />
+          <entry key="xhtml" value="5293" />
           <entry key="xml" value="588" />
         </counts>
       </usages-collector>
@@ -92,9 +116,9 @@
         <counts>
           <entry key="CSS" value="89" />
           <entry key="DBN-SQL" value="29" />
-          <entry key="JAVA" value="6575" />
+          <entry key="JAVA" value="6775" />
           <entry key="PLAIN_TEXT" value="183" />
-          <entry key="XHTML" value="5010" />
+          <entry key="XHTML" value="5293" />
           <entry key="XML" value="588" />
         </counts>
       </usages-collector>
@@ -104,35 +128,54 @@
     <favorites_list name="jtams" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/modifyUserType.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ModifyStateInitiative.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/searchInitiative.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="789">
-              <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="442">
+                  <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+                  <folding>
+                    <element signature="n#style#0;n#p:menuitem#5;n#p:tabMenu#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p:dataTable#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#f:facet#0;n#p:dataTable#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/public/listInitiativePublic.xhtml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1173">
+                  <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="76" selection-end-column="20" />
+                  <folding>
+                    <element signature="n#style#0;n#p:menuitem#5;n#p:tabMenu#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/public/listInitiativePublic.xhtml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="214">
+                  <caret line="85" column="114" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="114" />
+                  <folding>
+                    <element signature="n#style#0;n#p:menuitem#5;n#p:tabMenu#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -170,14 +213,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/InitiativeServicesFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/eci/cvds/jtams/services/UserServicesTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/mybatis-config-h2.xml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisComment.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/CommentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/searchInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/changeState.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java" />
@@ -202,25 +240,30 @@
         <option value="$PROJECT_DIR$/src/main/webapp/admin/Statistics.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/AgroupInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/ConsultInitiative.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/public/public.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/public/addComment.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/public/searchInitiativePublic.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/public/otherSearchInitiativePublic.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/proponent/proponent.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/proponent/searchInitiativeProponent.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/proponent/ModifyStateInitiativeProponent.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/proponent/addInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/personal/personal.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativeStatusPersonal.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/tables.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/modifyUserType.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/ModifyStateInitiative.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/searchInitiative.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/public/searchInitiativePublic.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/public/listInitiativePublic.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/public/otherSearchInitiativePublic.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/public/public.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/proponent/editInitiative.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/proponent/searchInitiativeProponent.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/proponent/addInitiative.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/proponent/ModifyStateInitiativeProponent.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/CommentServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/public/addComment.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml" />
       </list>
     </option>
   </component>
@@ -243,6 +286,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -315,6 +359,14 @@
               <item name="jtams" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -323,7 +375,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtams" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jtams" type="b2602c69:ProjectViewProjectNode" />
@@ -342,11 +402,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588987117652" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589003235048" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
@@ -470,7 +529,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46312365" visible="true" weight="0.15565032" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46312365" visible="true" weight="0.12739871" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -483,12 +542,12 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38286334" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.7494577" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
-      <window_info anchor="bottom" auto_hide="true" x="3" y="3" width="1914" height="1034" id="Run" order="8" sideWeight="0.56634307" weight="0.45227766" />
+      <window_info anchor="bottom" auto_hide="true" x="3" y="3" width="1914" height="1034" id="Run" order="8" sideWeight="0.56634307" weight="0.2407809" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.10954447" />
       <window_info anchor="bottom" id="Sequence" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
@@ -525,12 +584,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/LoginBean.java</url>
-          <line>113</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java</url>
           <line>100</line>
           <properties />
@@ -563,6 +616,16 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>currentUser.getPrincipal()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ex.printStackTrace();</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>e.printStackTrace();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -575,63 +638,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/InitiativeBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="114" column="33" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/modifyStateIni.xhtml" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/model/UserType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/guice/GuiceContextListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/8.0/javaee-api-8.0-sources.jar!/javax/servlet/ServletContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="699" column="18" selection-start-line="699" selection-start-column="18" selection-end-line="699" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/BasePageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0-sources.jar!/org/apache/shiro/subject/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="331" column="9" selection-start-line="331" selection-start-column="9" selection-end-line="331" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0-sources.jar!/org/apache/shiro/subject/support/DelegatingSubject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -705,23 +711,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="60" column="8" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="70" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Statistics.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
-          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/AgroupInitiative.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
           <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
         </state>
       </provider>
@@ -733,41 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/public.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/searchInitiativePublic.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/addComment.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/otherSearchInitiativePublic.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="73" column="44" selection-start-line="73" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/proponent.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
@@ -775,52 +732,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/addInitiative.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/searchInitiativeProponent.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1061">
-          <caret line="76" column="15" lean-forward="true" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/ModifyStateInitiativeProponent.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/personal.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="64" column="40" selection-start-line="64" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/searchInitiativeStatusPersonal.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -883,16 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/LoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/UserBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -902,22 +807,187 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/modifyUserType.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+        <state relative-caret-position="1683">
+          <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/ModifyStateInitiative.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
+        <state relative-caret-position="2227">
           <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/searchInitiative.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+        <state relative-caret-position="347">
+          <caret line="136" column="117" selection-start-line="136" selection-start-column="117" selection-end-line="136" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/AgroupInitiative.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="60" column="8" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="70" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/changeState.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/searchInitiativePersonal.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/searchInitiativePublic.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/otherSearchInitiativePublic.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="75" column="123" selection-start-line="75" selection-start-column="123" selection-end-line="75" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/public.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/editInitiative.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/searchInitiativeProponent.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/ModifyStateInitiativeProponent.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/proponent/addInitiative.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/personal/personal.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="64" column="93" lean-forward="true" selection-start-line="64" selection-start-column="93" selection-end-line="64" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/CommentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/addComment.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="82" column="110" lean-forward="true" selection-start-line="82" selection-start-column="110" selection-end-line="82" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/CommentServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/services/impl/CommentServicesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/persistence/mybatisimpl/MyBatisComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/LoginBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/eci/cvds/jtams/managedBeans/CommentBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/statistic.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#p:menuitem#5;n#p:tabMenu#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p:dataTable#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#f:facet#0;n#p:dataTable#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/public/listInitiativePublic.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="85" column="114" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="114" />
+          <folding>
+            <element signature="n#style#0;n#p:menuitem#5;n#p:tabMenu#0;n#h:form#0;n#h:body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

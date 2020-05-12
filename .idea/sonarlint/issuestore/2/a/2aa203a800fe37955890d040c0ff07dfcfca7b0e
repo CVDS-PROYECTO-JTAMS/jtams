@@ -1,19 +1,19 @@
 
-a
-java:S2147V"DCombine this catch with the one at line 83, which has the same body.(ï­£Ä8»—Òó›.
 E
 java:S1148U"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ù”­ó›.
-…
-java:S1488""cImmediately return this expression instead of assigning it to the temporary variable "currentUser".(Îï£¡ýÿÿÿÿ8¯­‰é›.
-E
-java:S1148["#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8êÆ®ó›.
-W
-java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8“˜––ž.
 E
 java:S1148X"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8õù­ó›.
+…
+java:S1488""cImmediately return this expression instead of assigning it to the temporary variable "currentUser".(Îï£¡ýÿÿÿÿ8¯­‰é›.
 U
 java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(ÖšÞÝüÿÿÿÿ8»—Òó›.
-]	java:S125"<This block of commented-out lines of code should be removed.(Û‹¼‚ûÿÿÿÿ8‹ÞŽ–ž.
+E
+java:S1148["#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8êÆ®ó›.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+W
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8“˜––ž.
+a
+java:S2147V"DCombine this catch with the one at line 83, which has the same body.(ï­£Ä8»—Òó›.
+]	java:S125"<This block of commented-out lines of code should be removed.(Û‹¼‚ûÿÿÿÿ8‹ÞŽ–ž.
 a
 java:S2147Y"DCombine this catch with the one at line 83, which has the same body.(”ý¾8»—Òó›.

@@ -128,3 +128,7 @@ Z
 *src/main/webapp/personal/changeState.xhtml,7\b\7b023ab3e5a86d28d46f92a0f5d22bdf8e651206
 8
 Procfile,b\c\bc3c68e880d1a01632bce79f69dd1387c7ba9c54
+^
+.src/main/webapp/proponent/editInitiative.xhtml,0\e\0e8f5b1688387637441291a58762120e1ec304da
+a
+1src/main/webapp/public/listInitiativePublic.xhtml,6\f\6f834b931d8c8a37e8ceb09dc1f9f7355840ac73

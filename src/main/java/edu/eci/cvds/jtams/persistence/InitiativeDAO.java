@@ -36,4 +36,6 @@ public interface InitiativeDAO {
 	public void darlike(int idUser, int idInitiative) throws JtamsExceptions;
 
 	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions;
+
+	public void editarIniciativas(int id, String area2, String descripcion)throws JtamsExceptions;
 }

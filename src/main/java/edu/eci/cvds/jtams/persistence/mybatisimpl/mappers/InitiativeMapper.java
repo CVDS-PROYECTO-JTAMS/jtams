@@ -53,6 +53,8 @@ public interface InitiativeMapper {
 
 	public List<Initiative> consultarIniciativaProponente(@Param("User_id")int User_id);
 
+	public void editarIniciativas(@Param("id") int id, @Param("description") String description, @Param("area") String area);
+
 
 	
 

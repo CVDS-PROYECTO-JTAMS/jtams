@@ -2,6 +2,7 @@ package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Initiative;
+import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
@@ -13,7 +14,8 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import org.primefaces.event.RowEditEvent;
-
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,6 +49,7 @@ public class InitiativeBean {
 	private List<Initiative> listaIniciativasProponente;
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
+	private List<User> listaUsuarios;
 	private  String palabra;
 	private int idInitiativelike;
 	private int idInitiativeDislike;
@@ -138,6 +141,7 @@ public class InitiativeBean {
 		return area;
 	}
 	public void setArea( String area) {
+		//System.out.println("edito area");
 		this.area = area;
 	}
 	
@@ -199,8 +203,16 @@ public class InitiativeBean {
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		List<Integer> votos= Arrays.asList(); 
 		try {
-			initiativeService.createInitiative(description, area,userServices.getUser(name).getId(), keywords, name);
+			//System.out.println("va a crear iniciativa  "+area);
+			//System.out.println("va a crear iniciativa  "+description);
+			//System.out.println("va a crear iniciativa  "+keywords);
+			//System.out.println("va a crear iniciativa  "+name);
+			Subject currentUser = SecurityUtils.getSubject();
+			String email = currentUser.getPrincipal().toString();
+			ponerId(email);
+			initiativeService.createInitiative(description, area,idUser, keywords, name);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
+			updateTabla();
 		}catch (JtamsExceptions ex) {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Existio un error al guardar","Error"));
 			throw ex;
@@ -264,6 +276,8 @@ public class InitiativeBean {
 		try {
 			initiativeService.updateStatusInitiative(initiativeToUpdate, statusToUpdate);
 			listaIniciativas = initiativeService.dariniciativas();
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("El estado ha sido actualizado con exito"));
+			//System.out.println("cambio estado");
 			
 			
 		}catch(JtamsExceptions e){
@@ -286,6 +300,7 @@ public class InitiativeBean {
 	}
 
 	public void setstatusToUpdate(String statusToUpdate) {
+		//System.out.println(statusToUpdate);
 		this.statusToUpdate = statusToUpdate;
 		
 	}
@@ -336,15 +351,37 @@ public class InitiativeBean {
 		
 		//quitarVoto(1015475103,idInitiativelike);
 	}
+	private void updateTabla() throws JtamsExceptions {
+		listaIniciativas = initiativeService.dariniciativas();
+		
+	}
 	//AQUI YA PUEDE DAR LIKE A LA INICIATIVA
 	public void votar(){
 		try {
+		Subject currentUser = SecurityUtils.getSubject();
+		String email = currentUser.getPrincipal().toString();
+		ponerId(email);
+		//System.out.println(idUser);
 		initiativeService.darlike(idUser,idInitiativelike);
-		listaIniciativas = initiativeService.dariniciativas();
+		
+		updateTabla();
 
 		} catch (JtamsExceptions jtamsExceptions) {
 			jtamsExceptions.printStackTrace();
 		}
+	}
+	public void ponerId(String ema) throws JtamsExceptions {
+		listaUsuarios=userServices.getUsers();
+		//System.out.println(listaUsuarios.size());
+		for(int i=0; i < listaUsuarios.size(); i++) {
+			//System.out.println(listaUsuarios.get(i).getEmail());
+			//System.out.println(ema);
+        	if(listaUsuarios.get(i).getEmail().equals(ema)) {
+        		//System.out.println("lo encuentra");
+        		setIdUser(listaUsuarios.get(i).getId());
+        		break;
+        	}
+        }
 	}
 
 //metodos para editar iniciativa
@@ -375,10 +412,14 @@ public class InitiativeBean {
 	}
 	//<p:rowEditor />
 	public void editInitiative() throws JtamsExceptions {
-		
+		//System.out.println("llama el metodo");
+		//System.out.println(idEdit.getTypeStatusId());
 		try {
 		if(idEdit.getTypeStatusId().equals("En espera revision")) {
+			//System.out.println("el area es "+area2);
 			initiativeService.editarIniciativas(idEdit.getId(),area2,descripcion);
+			updateTabla();
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 		}else {
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("El estado de la iniciativa no se encuentra en revision"));
 		}
@@ -402,6 +443,9 @@ public class InitiativeBean {
 	//CONSULTA INCICIATIVA ECHA POR EL PROPONENTE 
 	public List<Initiative> consultarIniciativaProponente() throws JtamsExceptions{
 		try {
+			Subject currentUser = SecurityUtils.getSubject();
+			String email = currentUser.getPrincipal().toString();
+			ponerId(email);
 			listaIniciativasProponente=initiativeService.consultarIniciativaProponente(idUser);
             return  listaIniciativasProponente;
       } catch (JtamsExceptions ex){

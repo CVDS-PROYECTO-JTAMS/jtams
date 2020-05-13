@@ -16,7 +16,7 @@ import java.util.List;
 @RequestScoped
 public class StatisticBean {
 
-    private StatisticsServices statisticService = InitiativeServicesFactory.getInstance().getStatisticsServices();;
+    private StatisticsServices statisticService = InitiativeServicesFactory.getInstance().getStatisticsServices();
     private PieChartModel barModel;
     private PieChartModel barModelState;
 
@@ -78,7 +78,6 @@ public class StatisticBean {
     public void createBarModelsStatus() {
         createBarModelStatus();
     }
-
     private void createBarModelStatus() {
         barModelState = loadDataStatus();
         barModelState.setLegendPosition("e");

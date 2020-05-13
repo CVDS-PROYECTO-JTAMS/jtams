@@ -9,5 +9,9 @@ public interface StatisticsServices {
 
     List<Statistic> getStatistics() throws JtamsExceptions;
 
+    List<Statistic> getStatisticsStatus() throws JtamsExceptions;
+
+
+
 
 }

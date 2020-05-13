@@ -1,35 +1,58 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
-w
-java:S4144"WUpdate this method so that its implementation is not identical to "getName" on line 43.(§’âûÿÿÿÿ8¾œ–¿œ.
-K
-java:S1068"+Remove this unused "palabra" private field.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
-O
-java:S1068"/Remove this unused "iniciativas" private field.(¬½èÔúÿÿÿÿ8¾œ–¿œ.
-W
-java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8½¥Öüš.
-z
-java:S1450"ZRemove the "iniciativas" field and declare it as a local variable in the relevant methods.(¬½èÔúÿÿÿÿ8¾œ–¿œ.
-]	java:S125"<This block of commented-out lines of code should be removed.(šŞ‘¥üÿÿÿÿ8½¥Öüš.
-U	java:S125"<This block of commented-out lines of code should be removed.(ùã½~8¾œ–¿œ.
-m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8¾œ–¿œ.
-v
-java:S1450"VRemove the "palabra" field and declare it as a local variable in the relevant methods.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
-]	java:S125"<This block of commented-out lines of code should be removed.(Òàé·ûÿÿÿÿ8­‹É“œ.
-V	java:S125"<This block of commented-out lines of code should be removed.(„§ñ£8¾œ–¿œ.
-g
-java:S4275"GRefactor this getter so that it actually refers to the field "palabra".(§’âûÿÿÿÿ8¾œ–¿œ.
+X	java:S125–"<This block of commented-out lines of code should be removed.(ùã½~8¾œ–¿œ.
+x
+java:S14502"VRemove the "palabra" field and declare it as a local variable in the relevant methods.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
 U
-java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8½¥Öüš.
+java:S1874"3Remove this use of "ManagedBean"; it is deprecated.(‰ã¼úÿÿÿÿ8½¥Öüš.
+H
+java:S1481Ã"*Remove this unused "fecha" local variable.(‚§Õ8ÍÑ´íœ.
+Y
+java:S1854Å";Remove this useless assignment to local variable "session".(¦Ÿş´8ÍÑ´íœ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³îµ
+]	java:S125"<This block of commented-out lines of code should be removed.(šŞ‘¥üÿÿÿÿ8½¥Öüš.
+z
+java:S4144s"XUpdate this method so that its implementation is not identical to "getName" on line 100.(§’âûÿÿÿÿ8¾œ–¿œ.
+i
+java:S4275s"GRefactor this getter so that it actually refers to the field "palabra".(§’âûÿÿÿÿ8¾œ–¿œ.
 F
-java:S1148—"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÑ´íœ.
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÍÑ´íœ.
 A
-java:S1148º"#Use a logger to log this exception.(–â¤º8ÍÑ´íœ.
-X
-java:S1854}";Remove this useless assignment to local variable "session".(¦Ÿş´8ÍÑ´íœ.
-V
-java:S1854{"9Remove this useless assignment to local variable "fecha".(‚§Õ8ÍÑ´íœ.
-G
-java:S1481{"*Remove this unused "fecha" local variable.(‚§Õ8ÍÑ´íœ.
-I
-java:S1481}",Remove this unused "session" local variable.(¦Ÿş´8ÍÑ´íœ.
+java:S1148±"#Use a logger to log this exception.(–â¤º8ÍÑ´íœ.
+M
+java:S10682"+Remove this unused "palabra" private field.(ÃÙÜÊøÿÿÿÿ8¾œ–¿œ.
+p	java:S100³"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùêŸıûÿÿÿÿ8¾œ–¿œ.
+]	java:S125 "<This block of commented-out lines of code should be removed.(Òàé·ûÿÿÿÿ8­‹É“œ.
+W
+java:S1874"5Remove this use of "SessionScoped"; it is deprecated.(¢ÈŸ×øÿÿÿÿ8½¥Öüš.
+W
+java:S1854Ã"9Remove this useless assignment to local variable "fecha".(‚§Õ8ÍÑ´íœ.
+J
+java:S1481Å",Remove this unused "session" local variable.(¦Ÿş´8ÍÑ´íœ.
+A
+java:S1148Ú"#Use a logger to log this exception.(–â¤º8õ£õ´ .
+[
+java:S1128">Remove this unused import 'org.primefaces.event.RowEditEvent'.(ÆÌË²8õ£õ´ .
+‹
+java:S1450/"iRemove the "listaIniciativasProponente" field and declare it as a local variable in the relevant methods.(›¬ö©ÿÿÿÿÿ8õ£õ´ .
+z
+java:S2737»"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(¤­—Îşÿÿÿÿ8õ£õ´ .
+W
+java:S1854È"9Remove this useless assignment to local variable "votos".(ü¼üÖ8õ£õ´ .
+p
+java:S1117ì"MRename "iniciativasAgrupadasFront" which hides the field declared at line 49.(Èó£×üÿÿÿÿ8õ£õ´ .
+¥
+java:S1130Å"†Remove the declaration of thrown exception 'edu.eci.cvds.jtams.exceptions.JtamsExceptions', as it cannot be thrown from method's body.(ó…¿8õ£õ´ .
+ª
+java:S1130Ì"†Remove the declaration of thrown exception 'edu.eci.cvds.jtams.exceptions.JtamsExceptions', as it cannot be thrown from method's body.(›ß–íûÿÿÿÿ8õ£õ´ .
+H
+java:S1481È"*Remove this unused "votos" local variable.(ü¼üÖ8õ£õ´ .
+Y
+java:S10684"7Remove this unused "idInitiativeDislike" private field.(ŸùôÂşÿÿÿÿ8õ£õ´ .
+^	java:S125Ó"<This block of commented-out lines of code should be removed.(„Í¢åşÿÿÿÿ8õ£õ´ .
+Y	java:S125Ö"<This block of commented-out lines of code should be removed.(éÍÆË8õ£õ´ .
+Y	java:S125Ú"<This block of commented-out lines of code should be removed.(ã­œã8õ£õ´ .
+^	java:S125ë"<This block of commented-out lines of code should be removed.(ŸÛÁãşÿÿÿÿ8õ£õ´ .
+Y	java:S125Ê"<This block of commented-out lines of code should be removed.(ÏŠ¢¿8õ£õ´ .
+Y	java:S125Ñ"<This block of commented-out lines of code should be removed.(Æ²º¶8õ£õ´ .
+Y	java:S125í"<This block of commented-out lines of code should be removed.(¼ùÁÖ8õ£õ´ .
+^	java:S125ö"<This block of commented-out lines of code should be removed.(ÊæÒÑùÿÿÿÿ8õ£õ´ .

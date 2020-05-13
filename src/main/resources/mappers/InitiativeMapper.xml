@@ -118,6 +118,14 @@
         group by i.area ;
     </select>
 
+    <select id="getInitiativesByStatus" resultMap="StatisticResult2" parameterType="map">
+        select
+        count(i.Type_Status_id) as total ,
+        i.Type_Status_id
+        from initiative as i
+        group by i.Type_Status_id ;
+    </select>
+
   
 	<select id="buscainiciativaporpalabra" resultMap="InitiativeResult1" parameterType="String">
         SELECT *
@@ -143,6 +151,10 @@
     <resultMap type='edu.eci.cvds.jtams.model.Statistic' id='StatisticResult'>
         <result property='count' column='total'/>
         <result property='title' column='area'/>
+    </resultMap>
+    <resultMap type='edu.eci.cvds.jtams.model.Statistic' id='StatisticResult2'>
+        <result property='scount' column='total'/>
+        <result property='typeStatusId' column='Type_Status_id'/>
     </resultMap>
 
 </mapper>

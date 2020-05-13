@@ -66,7 +66,7 @@
   </h:head>
   <h:body>
 	  <h:form>
-		  <p:tabMenu activeIndex="4">
+		  <p:tabMenu activeIndex="5">
 			  <p:menuitem value="Consultar Iniciativas" outcome="searchInitiativePublic.xhtml" icon="ui-icon-document"/>
 			  <p:menuitem value="Listar Iniciativas" outcome="listInitiativePublic.xhtml" icon="ui-icon-document"/>
 			  <p:menuitem value="Comentar Iniciativas" outcome="addComment.xhtml" icon="ui-icon-document"/>
@@ -84,11 +84,11 @@
 				  <div style="float:right;padding-top: 5px;">
 					  <h:commandLink>
 						  <p:graphicImage url="/img/excel.png" width="24"/>
-						  <p:dataExporter type="xls" target="tabla_iniciativas" fileName="Estadisticas areas Iniciativas" pageOnly="true" />
+						  <p:dataExporter type="xls" target="tabla_iniciativas" fileName="Estadisticas estado Iniciativas" pageOnly="true" />
 					  </h:commandLink>
 					  <h:commandLink>
 						  <p:graphicImage url="/img/pdf.png" width="24"/>
-						  <p:dataExporter type="pdf" target="tabla_iniciativas" fileName="Estadisticas areas Iniciativas" pageOnly="true" />
+						  <p:dataExporter type="pdf" target="tabla_iniciativas" fileName="Estadisticas estado Iniciativas" pageOnly="true" />
 					  </h:commandLink>
 				  </div>
 			  </f:facet>
@@ -109,13 +109,13 @@
 
 			  <p:column>
 				  <f:facet name="header">
-					  <h:outputText value="Area" />
+					  <h:outputText value="Estado" />
 				  </f:facet>
-				  <h:outputText value="#{initiative.area}" />
+				  <h:outputText value="#{initiative.typeStatusId}" />
 			  </p:column>
 
 		  </p:dataTable>
 	  </h:form>
-	  <p:chart type="pie" model="#{StatisticBean.barModel}" responsive="true"/>
+	  <p:chart type="pie" model="#{StatisticBean.barModelState}" responsive="true"/>
   </h:body>
 </html>

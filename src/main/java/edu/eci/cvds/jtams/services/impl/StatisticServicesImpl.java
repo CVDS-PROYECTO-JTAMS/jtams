@@ -29,4 +29,11 @@ public class StatisticServicesImpl implements StatisticsServices {
     public List<Statistic> getStatistics() throws JtamsExceptions {
         return initiativeDAO.getInitiativesByArea();
     }
+
+    @Override
+    public List<Statistic> getStatisticsStatus() throws JtamsExceptions {
+        return initiativeDAO.getInitiativesByStatus();
+    }
+
+
 }

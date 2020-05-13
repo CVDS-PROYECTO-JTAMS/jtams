@@ -18,6 +18,7 @@ public class StatisticBean {
 
     private StatisticsServices statisticService = InitiativeServicesFactory.getInstance().getStatisticsServices();;
     private PieChartModel barModel;
+    private PieChartModel barModelState;
 
 
     public StatisticsServices getStatisticService() {
@@ -32,6 +33,18 @@ public class StatisticBean {
         return barModel;
     }
 
+    public void setBarModel(PieChartModel barModel) {
+        this.barModel = barModel;
+    }
+
+    public PieChartModel getBarModelState() {
+        return barModelState;
+    }
+
+    public void setBarModelState(PieChartModel barModelState) {
+        this.barModelState = barModelState;
+    }
+
     @PostConstruct
     public void createBarModels() {
         createBarModel();
@@ -43,7 +56,7 @@ public class StatisticBean {
         barModel.setShowDataLabels(true);
         barModel.setShadow(false);
         barModel.setDataFormat("value");
-        barModel.setDataLabelFormatString("%dI");
+        barModel.setDataLabelFormatString("%d");
     }
 
     private PieChartModel loadData() {
@@ -54,6 +67,35 @@ public class StatisticBean {
                 model.set(s.getTittle(),s.getCount());
             }
             return model;
+        }catch( JtamsExceptions e){
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+    @PostConstruct
+    public void createBarModelsStatus() {
+        createBarModelStatus();
+    }
+
+    private void createBarModelStatus() {
+        barModelState = loadDataStatus();
+        barModelState.setLegendPosition("e");
+        barModelState.setShowDataLabels(true);
+        barModelState.setShadow(false);
+        barModelState.setDataFormat("value");
+        barModelState.setDataLabelFormatString("%d");
+    }
+
+    private PieChartModel loadDataStatus() {
+        try {
+            PieChartModel modelStatus = new PieChartModel();
+            List<Statistic> statisticsStatus = statisticService.getStatisticsStatus();
+            for (Statistic s: statisticsStatus ){
+                modelStatus.set(s.getTypeStatusId(),s.getScount());
+            }
+            return modelStatus;
         }catch( JtamsExceptions e){
             e.printStackTrace();
         }

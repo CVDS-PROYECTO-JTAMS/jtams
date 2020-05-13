@@ -120,11 +120,13 @@ public class MyBatisInitiative implements InitiativeDAO {
         } catch(Exception e) {
             throw new JtamsExceptions("hay un error entre mybatis y el mapper", e);
         }
-		 
-		        
-		    
-		
+
 	}
+
+	@Override
+    public List<Statistic> getInitiativesByStatus() {
+        return initiativeMapper.getInitiativesByStatus();
+    }
 
 	@Override
 	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id) throws JtamsExceptions {

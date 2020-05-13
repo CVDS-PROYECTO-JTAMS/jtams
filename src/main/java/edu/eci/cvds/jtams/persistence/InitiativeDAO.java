@@ -25,6 +25,8 @@ public interface InitiativeDAO {
 
 	public List<Statistic> getInitiativesByArea();
 
+	public List<Statistic> getInitiativesByStatus();
+
 	public void updateTypeUser(String initiativeToUpdate, String typeToUpdate)throws JtamsExceptions;
 	
 	public void agregarIniciativaRelacionadaAIniciativa(int initiative, int iniRelatione) throws JtamsExceptions;

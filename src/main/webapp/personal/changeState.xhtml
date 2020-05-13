@@ -66,6 +66,36 @@
                 <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 950px;"/>
             </p:tabMenu>
             <br/><br/>
+	<div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class= "modal-header">
+                <center>
+                    <h4 style="color:white ; text-align:center">Cambio estado de iniciativa</h4>
+                </center>
+            </div>
+            <div class= "modal-body">
+                
+                    <p:messages autoUpdate="true" />
+
+                    <div class="form-group" id="cont">
+                        <label style="color:white" for="NuevoRol2">Escoja el nuevo estado para la iniciativa : </label>
+                      
+						<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}" styleClass="form-control">
+							<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
+							<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
+							<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
+							<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
+						</h:selectOneMenu>
+                        <br></br>
+                       
+
+                    </div>
+
+              
+            </div>
+        </div>
+    </div>
+			
             <center>
                 <h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
 
@@ -102,15 +132,9 @@
                             <h:outputText value="#{initiative.numVotes}" />
                             </center>
                         </p:column>
-
-                        <f:facet name="footer">
-                        <h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
-                        <f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
-                        <f:selectItem itemLabel="En Revision" itemValue="En Revision" />
-                        <f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
-                        <f:selectItem itemLabel="Declinada" itemValue="Declinada" />
-                    </h:selectOneMenu>
-                     <h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update=":tablaIniciativa" ajax="true" />
+						<f:facet name="footer">
+                        
+                     <h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}"  update=":@form" ajax="true" />
                     </f:facet>
                     </p:dataTable>
                      </center>
@@ -126,3 +150,9 @@
 
  
 </html>
+
+                    
+                     
+						
+
+

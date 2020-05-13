@@ -115,14 +115,16 @@
 							</f:facet>
 							<h:outputText value="#{initiative.numVotes }" />
 						</p:column>
+						<br/><br/>
 
 						<f:facet name="footer">
-							<h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
-								<f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
+							<h:selectOneMenu styleClass="form-control" id="initiative_estado" value="#{InitiativeBean.statusToUpdate}">
+								<f:selectItem itemLabel="En espera revision" itemValue="En espera revision" />
 								<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
 								<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
 								<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
-							</h:selectOneMenu>
+							</h:selectOneMenu> 
+							
 							<h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}" update=":tablaIniciativa" ajax="true" />
 						</f:facet>
 					</p:dataTable>

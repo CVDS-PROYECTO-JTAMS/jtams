@@ -85,10 +85,16 @@
                     <p:messages autoUpdate="true" />
 
                     <div class="form-group" id="cont">
-                        <label style="color:white" for="NuevoRol2">Realice la busqueda por medio de: Estado</label>
-                        <h:inputText id="EstadoIn" value="#{InitiativeBean.estado}" styleClass="form-control" required="true"/>
+                        <label style="color:white" for="NuevoRol2">Escoja el estado que desea buscar : </label>
+                      
+						<h:selectOneMenu id="EstadoIn" value="#{InitiativeBean.estado}" styleClass="form-control" required="true">
+								<f:selectItem itemLabel="En espera revision" itemValue="En espera revision" />
+								<f:selectItem itemLabel="En Revision" itemValue="En Revision" />
+								<f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
+								<f:selectItem itemLabel="Declinada" itemValue="Declinada" />
+						</h:selectOneMenu>
                         <br></br>
-                        <h:commandButton  id="ingresar"  action="#{InitiativeBean.buscaEstadoIniciativas()}"  styleClass="btn btn-primary" value = "Buscar" update=":tabla_iniciativas"/>
+                        <h:commandButton  id="ingresar"  action="#{InitiativeBean.buscaEstadoIniciativas()}"  styleClass="btn btn-primary" value = "Buscar" update=":@form"/>
 
                     </div>
 

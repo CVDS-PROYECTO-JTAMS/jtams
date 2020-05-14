@@ -7,6 +7,9 @@ import edu.eci.cvds.jtams.model.UserType;
 
 import java.util.List;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 public interface UserServices {
 	
 	public void createUser (User user) throws JtamsExceptions;
@@ -24,5 +27,5 @@ public interface UserServices {
 	public List<Initiative> buscainiciativaporpalabra(List<String> iniciativas) throws JtamsExceptions;
 	public List<Initiative> dariniciativas() throws JtamsExceptions;
 
-
+	
 }

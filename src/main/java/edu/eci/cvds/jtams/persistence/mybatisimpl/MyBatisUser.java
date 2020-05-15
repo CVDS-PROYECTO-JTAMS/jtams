@@ -12,7 +12,11 @@ public class MyBatisUser implements UserDAO {
 
     @Inject
     private UserMapper userMapper;
-
+    /**
+	  *Registra un usuario
+	  *
+	  * @param user Usuario al que se le realizar el registro
+	  */
     @Override
     public void createUser(User user) throws JtamsExceptions {
         try {
@@ -21,7 +25,11 @@ public class MyBatisUser implements UserDAO {
             throw new JtamsExceptions("There was an exception persisting the user to the database", e);
         }
     }
-
+    /**
+	  *Actualiza un usuario
+	  *
+	  *@param user Usuario al que se desea realizar la actualizacion
+	  */
     @Override
     public void updateUser(User user) throws JtamsExceptions {
         try {
@@ -48,7 +56,11 @@ public class MyBatisUser implements UserDAO {
             throw new JtamsExceptions("There was an exception retrieving the users from the database", e);
         }
     }
-
+    /**
+	  *Actualiza el tipo de usuario
+	  * @param email correpondiente al usuario 
+	  * @param userType nuevo tipo de usuario valido 
+	  */
     @Override
     public void updateTypeUser(String email, int userType) throws JtamsExceptions{
         try {

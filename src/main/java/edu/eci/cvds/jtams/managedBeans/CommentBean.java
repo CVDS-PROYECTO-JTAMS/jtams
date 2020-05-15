@@ -77,7 +77,10 @@ public class CommentBean {
 	public void setUsuario(int usuario) {
 		this.usuario = usuario;
 	}
-
+	/**
+	  * Registra un comentario 
+	  * 
+	  */
 	public void createComment () throws JtamsExceptions {
 		try {
 			Subject currentUser = SecurityUtils.getSubject();
@@ -92,6 +95,10 @@ public class CommentBean {
 		}
 
 	}
+	/**
+	  * selecciona una iniciativa
+	  * 
+	  */
 	public void selectInitiative(int initiativeId) {
 		this.initiativeId = initiativeId;
 		PrimeFaces current = PrimeFaces.current();

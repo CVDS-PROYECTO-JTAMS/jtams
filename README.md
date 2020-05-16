@@ -55,10 +55,10 @@ En este sprint quedaron varias tareas abiertas debido a tuvimos problemas dentro
 
 # Sprint2
 
-En este sprint  no se presentaron muchos inconveniente en el equipo ni en el proyecto debido a esto pudimos de una manera adecuada y completar casi todos lo propuesto. Cada integrante del equipo trato cumplir en su debido tiempo las tareas asignadas. y adelantar y corregir tareas del sprint1 que aun estaban incompletas, completando asi todo el sprint 1 y dejandonos unas tareas baiertas del sprint2.
+En este sprint  no se presentaron muchos inconveniente en el equipo ni en el proyecto debido a esto pudimos de una manera adecuada completar casi todos lo propuesto. Cada integrante del equipo trato cumplir en su debido tiempo las tareas asignadas. y adelantar y corregir tareas del sprint1 que aun estaban incompletas, completando asi todo el sprint 1 y dejandonos unas tareas baiertas del sprint2.
 
 
 # Sprint3
 
-Finalmente, en este sprint se completaron todas las tareas pendientes del segundo sprint, y se realizó correctamente el resto de tareas asignadas para este sprint. contemplamos con seguridad que se cumplieron con todas las tareas solcitadas, y que el proyecto está en un excelente estado en cuanto a funcionalidad y calidad. Demostrando asi  en este resultado nuestrotrabajo como equipo.
+Finalmente, en este sprint se completaron todas las tareas pendientes del segundo sprint, y se realizó correctamente el resto de tareas asignadas para este sprint. contemplamos con seguridad que se cumplieron con todas las tareas solcitadas, y que el proyecto está en un excelente estado en cuanto a funcionalidad y calidad. Demostrando asi  en este resultado nuestro trabajo como equipo.
 

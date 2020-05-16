@@ -5,7 +5,10 @@ import org.apache.ibatis.annotations.Param;
 import java.util.Date;
 
 public interface CommentMapper {
-	
+	/**
+	  *Registra un comentario nuevo
+	  * 
+	  */
 	public void createComment(@Param("id") int id, @Param("iniciativa") int iniciativa,
 			@Param("fechaCreacion") Date fechaCreacion, @Param("fechaModificacion") Date fechaModificacion, 
 			@Param("mensaje") String mensaje, @Param("usuario") int usuario);

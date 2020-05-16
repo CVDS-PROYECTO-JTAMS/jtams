@@ -29,7 +29,7 @@ public class LoginBean {
     //@Inject
     //private SessionLogger logger;
     private SessionLogger logger = InitiativeServicesFactory.getInstance().getLoginServices();
-
+    
     public Subject getCurrentUser(){
         Subject currentUser = SecurityUtils.getSubject();
         return currentUser;

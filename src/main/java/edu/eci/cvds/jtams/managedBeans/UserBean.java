@@ -30,7 +30,10 @@ public class UserBean {
 	private User selectedUser;
 	private String usernameToUpdate;
 	private String typeToUpdate;
-
+	/**
+	  *Realiza la validación del usuario y le da ingreso a la pagina correspondiente 
+	  * 
+	  */
 	public void logIn() {
 
 		
@@ -92,6 +95,10 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	/**
+	  *Actualiza el tipo del usuario
+	  * 
+	  */
 
 	public void updateTypeUser(){
 		try {
@@ -103,6 +110,11 @@ public class UserBean {
 			e.printStackTrace();
 		}
 	}
+	/**
+	  *Actualiza el tipo de usuario por email y el tipo de usuario
+	  * @param email Email del usuario
+      * @param type Tipo de usuario
+	  */
 
 	public void updateTypeUser(String email, String type){
 		try {

@@ -140,7 +140,6 @@ public class InitiativeBean {
 		return area;
 	}
 	public void setArea( String area) {
-		//System.out.println("edito area");
 		this.area = area;
 	}
 	
@@ -150,8 +149,8 @@ public class InitiativeBean {
 
 	public void setKeyword( String keyword) {
 		this.keyword = keyword;
-		//System.out.println(keyword);
 	}
+
 
     public List<Initiative> buscaAreaIniciativas() throws JtamsExceptions{
 
@@ -167,6 +166,12 @@ public class InitiativeBean {
         }
     }
 
+	 /**
+     * Busca todas las inciativas con un Estado en especifico
+     *
+     * @return Lista de iniciativas
+     */
+
 	public List<Initiative> buscaEstadoIniciativas() throws JtamsExceptions{
 		
 		try {
@@ -178,7 +183,11 @@ public class InitiativeBean {
             throw new JtamsExceptions("No se encuentran iniciativas con ese tipo de estado");
        }
 	}
-	
+	/**
+     * Busca todas las inciativas por palabras clave
+     *
+     * @return Lista de iniciativas 
+     */
 	
 	public List<Initiative> buscainiciativa() throws JtamsExceptions{
 		
@@ -192,7 +201,11 @@ public class InitiativeBean {
             throw new JtamsExceptions("No se encuentran iniciativas con esas palabras clave");
        }
 	}
-	
+	/**
+     * Busca todas las iniciativas
+     *
+     * @return Lista de iniciativas 
+     */
 	public List<Initiative> Todasiniciativas() throws JtamsExceptions{
 		try {
             if(listaIniciativas == null){
@@ -206,7 +219,9 @@ public class InitiativeBean {
 		
 		
 	}
-	
+	/**
+     * Registra una nueva iniciativa
+     */
 
 	public void createIntitiative() throws JtamsExceptions {
 		java.sql.Date fecha = new java.sql.Date(System.currentTimeMillis());
@@ -216,10 +231,6 @@ public class InitiativeBean {
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		List<Integer> votos= Arrays.asList(); 
 		try {
-			//System.out.println("va a crear iniciativa  "+area);
-			//System.out.println("va a crear iniciativa  "+description);
-			//System.out.println("va a crear iniciativa  "+keywords);
-			//System.out.println("va a crear iniciativa  "+name);
 			Subject currentUser = SecurityUtils.getSubject();
 			String email = currentUser.getPrincipal().toString();
 			ponerId(email);
@@ -231,12 +242,15 @@ public class InitiativeBean {
 			throw ex;
 		}
 	}
+	/**
+     * Agrupa Iniciativas relacionadas
+     */
 	
 	 public void agregarIniciativaRelacionadaAIniciativa() throws JtamsExceptions{
-		 //System.out.println("lo llamaron");
+		
 			
 			try {
-				//System.out.println(listaIniciativasParaAgrupar.size());
+				
 		        for (int i = 0; i < listaIniciativasParaAgrupar.size(); i++) {
 				    for(int j = 0; j < listaIniciativasParaAgrupar.size(); j++){
 				        if(i != j){
@@ -252,7 +266,11 @@ public class InitiativeBean {
 		    }
 		 }
 	 
-	 
+	 /**
+	  * Busca una nueva iniciativa relacionada a la obtenida
+	  * 
+	  * @return Lista de iniciativas 
+	  */
 	 public List<Initiative> buscaIniciativaRelacionadas() throws JtamsExceptions{
 			
 
@@ -272,7 +290,6 @@ public class InitiativeBean {
 		}
 	 
 	 
-	//metodos para cambio de estado
 	
 	
 
@@ -284,6 +301,10 @@ public class InitiativeBean {
 		this.idIniciativa = idIniciativa;
 		buscaIniciativaRelacionadas();
 	}
+	 /**
+	  * Actualiza Una iniciativa por su numero ID
+	  * 
+	  */
 	public void updateStatusInitiative(){
 		this.initiativeToUpdate=String.valueOf(selectedInitiative.getId());
 		try {
@@ -323,7 +344,10 @@ public class InitiativeBean {
 	public void setSelectedInitiative(Initiative selectedInitiative) {
 		this.selectedInitiative = selectedInitiative;
 	}
-
+	 /**
+	  * Registra un comentario en una iniciativa
+	  * 
+	  */
 	public void addComment (String comment){
 		try {
 
@@ -349,7 +373,10 @@ public class InitiativeBean {
 		this.iniciativasAgrupadasFront = iniciativasAgrupadasFront;
 	}
 	//metodos para votar y quitar voto
-	
+	/**
+	  * Registra un voto a una iniciativa
+	  * 
+	  */
 	public void darVoto(int id1) throws JtamsExceptions {
 		idInitiativelike=id1;
 		votar();
@@ -368,6 +395,10 @@ public class InitiativeBean {
 		listaIniciativas = initiativeService.dariniciativas();
 		
 	}
+	/**
+	  * Ayuda a registra un voto a una iniciativa
+	  * 
+	  */
 	//AQUI YA PUEDE DAR LIKE A LA INICIATIVA
 	public void votar(){
 		try {
@@ -383,6 +414,10 @@ public class InitiativeBean {
 			jtamsExceptions.printStackTrace();
 		}
 	}
+	/**
+	  * Registrar un ID de un usuario
+	  * 
+	  */
 	public void ponerId(String ema) throws JtamsExceptions {
 		listaUsuarios=userServices.getUsers();
 		//System.out.println(listaUsuarios.size());
@@ -397,7 +432,10 @@ public class InitiativeBean {
         }
 	}
 
-//metodos para editar iniciativa
+	/**
+	  * mayor parte de metodos para editacion de una iniciativa
+	  * 
+	  */
 	public String getnamenuevo() {
 		return namenuevo;
 	}
@@ -424,6 +462,10 @@ public class InitiativeBean {
 		//System.out.println(narea);
 	}
 	//<p:rowEditor />
+	/**
+	  * Editar(actualizar) una iniciativa
+	  * 
+	  */
 	public void editInitiative() throws JtamsExceptions {
 		//System.out.println("llama el metodo");
 		//System.out.println(idEdit.getTypeStatusId());
@@ -453,7 +495,10 @@ public class InitiativeBean {
 	}
 
 
-	//CONSULTA INCICIATIVA ECHA POR EL PROPONENTE 
+	/**
+	  * Consulta iniciativa del Usuario que sea proponente
+	  * 
+	  */
 	public List<Initiative> consultarIniciativaProponente() throws JtamsExceptions{
 		try {
 			Subject currentUser = SecurityUtils.getSubject();

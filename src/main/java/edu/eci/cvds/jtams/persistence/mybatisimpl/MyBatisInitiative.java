@@ -22,8 +22,17 @@ public class MyBatisInitiative implements InitiativeDAO {
 
     public void setInitiativeMapper(InitiativeMapper initiativeMapper) {
         this.initiativeMapper = initiativeMapper;
-    }
-
+    }	
+    /**
+	  *Registra una nueva Iniciativa
+	  * 
+	  * @param name Nombre de la iniciativa
+	  * @param description Descripcion de la iniciativa
+      * @param idus ID del usuario que propone la iniciativa
+      * @param area Area a la que pertenece la iniciativa
+      * @param keyword lista de palabras clave de la inciativa separadas por coma
+      * 
+	*/
     @Override
     public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws JtamsExceptions {
     	try {
@@ -40,6 +49,12 @@ public class MyBatisInitiative implements InitiativeDAO {
 			throw new JtamsExceptions("Error trying to insert the initiative");
 		}
     }
+    /**
+	  *Registra una nueva Iniciativa relacionada con otra iniciativa 
+	  * 
+	  * @param initiative ID de la iniciatiiva
+	  * @param iniRelation ID de la iniciativa a la cual se relacionara
+	*/
     @Override
 	public void agregarIniciativaRelacionadaAIniciativa(int initiative, int iniRelatione) throws JtamsExceptions {
     	try{
@@ -49,6 +64,11 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 		
 	}
+    /**
+	  *Busca las iniciativas relacionadas a una iniciativa en especifico
+	  * 
+	  * @param idIniniciativa ID de la iniciativa
+	*/
     @Override
 	public List<Initiative> busaIniciativaRelacionadas(int idIniciativa) throws JtamsExceptions {
     	try {
@@ -66,7 +86,12 @@ public class MyBatisInitiative implements InitiativeDAO {
             throw new JtamsExceptions("There was an exception persisting the new initiative state to the database", e);
         }
     }
-
+    /**
+	  *Actualiza el estado de la iniciativa buscandola por su ID
+	  * 
+	  * @param id ID de la iniciativa
+	  * @param state Nuevo estado de la iniciativa
+	*/
     @Override
     public void updateState(int id, InitiativeStates state) throws JtamsExceptions {
         try {
@@ -75,7 +100,11 @@ public class MyBatisInitiative implements InitiativeDAO {
             throw new JtamsExceptions("There was an exception persisting the new initiative state to the database", e);
         }
     }
-
+    /**
+	  *Actualiza una iniciativa dada
+	  * 
+	  * @param initiative Iniciativa que se desea actualizar 
+	*/
     @Override
     public void updateInitiative(Initiative initiative) throws JtamsExceptions {
         try {
@@ -85,11 +114,20 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 
     }
+    /**
+	  *Retorna todas las iniciativas
+	  *
+	  *@return Lista de todas las iniciativas
+	*/
     public List<Initiative> dariniciativas() throws JtamsExceptions {
     	//System.out.println("llega a dariniciativas 0");
 		return initiativeMapper.dariniciativas();
 	}
-
+    /**
+	  *Busca todas las iniciativas que tengan una palabra clave en especifico
+	  * 
+	  * @param keyword Palabra Clave
+	*/
     @Override
 	public List<Initiative> buscainiciativaporpalabra(String keyword) throws JtamsExceptions {
 		try{
@@ -110,6 +148,12 @@ public class MyBatisInitiative implements InitiativeDAO {
     public List<Statistic> getInitiativesByArea() {
         return initiativeMapper.getInitiativesByArea();
     }
+    /**
+	  *Actualiza el tipo de usuario 
+	  * 
+	  * @param initiativeToUpdate Id de la iniciativa que se quiere actualizar 
+	  * @param typeToUpdate El nuevo tipo de usuario valido
+	*/
 
 	@Override
 	public void updateTypeUser(String initiativeToUpdate, String typeToUpdate) throws JtamsExceptions {
@@ -122,11 +166,17 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 
 	}
+	 
 
 	@Override
     public List<Statistic> getInitiativesByStatus() {
         return initiativeMapper.getInitiativesByStatus();
     }
+	/**
+	  *Busca las iniciativas por un estado en especifico.
+	  * 
+	  * @return Lista de iniciativas
+	*/
 
 	@Override
 	public List<Initiative> buscaEstadoIniciativa(String Type_Status_id) throws JtamsExceptions {
@@ -136,6 +186,11 @@ public class MyBatisInitiative implements InitiativeDAO {
             throw new JtamsExceptions("There was an exception persisting the initiative to the database", e);
         }
 	}
+	/**
+	 *Busca las iniciativas por un area en especifico.
+	 *
+	 * @return Lista de iniciativas
+	 */
 
     @Override
     public List<Initiative> buscaAreaIniciativa(String area) throws JtamsExceptions {
@@ -146,7 +201,13 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
     }
 
-    @Override
+	/**
+	  *Registra un like para una iniciativa
+	  * 
+	  * @param user_id Id del usuario que realizara el like
+	  * @param user_id Id de la iniciativa a la cual se le asignara el like 
+	*/
+	@Override
 	public void darlike(int user_id, int ini_id) throws JtamsExceptions {
 		try {
 			Initiative verificar= initiativeMapper.consultarLike(user_id, ini_id);
@@ -162,7 +223,11 @@ public class MyBatisInitiative implements InitiativeDAO {
        }
 		
 	}
-
+	/**
+	  *Busca las iniciativas del usuario que sea de tipo proponente
+	  * 
+	  * @return Lista de iniciativas
+	*/
 	@Override
 	public List<Initiative> consultarIniciativaProponente(int User_id) throws JtamsExceptions {
 		try {
@@ -172,6 +237,13 @@ public class MyBatisInitiative implements InitiativeDAO {
 	           throw new JtamsExceptions("hay un error en el mappers ", e);
 	       }
 	}
+	/**
+	  *Actualiza las iniciativas en cuanto su area y su descripcion
+	  * 
+	  * @param id Id de la iniciativa que se quiere actualizar 
+	  * @param area Nueva area de la iniciativa
+	  * @param description Nueva description de la iniciativa
+	*/
 
 	@Override
 	public void editarIniciativas(int id, String area, String description) throws JtamsExceptions {

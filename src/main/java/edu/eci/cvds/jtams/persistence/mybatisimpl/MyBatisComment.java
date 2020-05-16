@@ -13,7 +13,10 @@ public class MyBatisComment implements CommentDAO {
 
 	@Inject
 	private CommentMapper commentMapper;
-
+	/**
+	  *Registra un comentario
+	  * 
+	  */
 	@Override
 	public void createComment(int iniciativa, String mensaje, int usuario) throws JtamsExceptions {
 		try {

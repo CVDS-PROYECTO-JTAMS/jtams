@@ -14,6 +14,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
 	<link rel="stylesheet" href="css/main.css" />
+	<style>
+		.boton{
+			text-align: center;
+  			position: -webkit-sticky;
+  			left: 560px;
+  			top: -200px;
+
+
+
+		}
+	</style>
 </h:head>
 <h:body class="is-preload">
 
@@ -29,14 +40,11 @@
 		<p:inputText type="email" name="email" id="email" placeholder="Email Address" value="#{LoginBean.username}"/><br/>
 		<p:inputText type="password" name="password" id="password" placeholder="Password"  value="#{LoginBean.password}"/>
 		<p:commandButton type="submit" value="Entrar" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
+		<p:commandButton  type="submit" value="Ver Iniciativas" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton"  action="#{LoginBean.initiative()}"/>
+
 	</h:form>
-	<p:commandButton  value="Ver Iniciativas" style="background:#00468D; margin-top: 10%; height:35px; width:200px; font-size:20px; left: 560px;  top: -200px;"  action="#{LoginBean.initiative()}"/>
 	<br>
-		<div class="control-group">
-			<div class="form-group floating-label-form-group controls">
-				<p:selectBooleanCheckbox itemLabel="Recuerdame" value="#{LoginBean.rememberMe}" style="position: absolute; left: 150px; top: -265px;"/>
-			</div>
-		</div>
+				<p:selectBooleanCheckbox itemLabel="Recuerdame" value="#{LoginBean.rememberMe}" style="position: sticky; left: 150px; top: -800px;"/>
 	</br>
 
 	<!-- Footer -->

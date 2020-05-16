@@ -1,8 +1,10 @@
 package edu.eci.cvds.jtams.managedBeans;
 
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
+import edu.eci.cvds.jtams.model.Comment;
 import edu.eci.cvds.jtams.model.Initiative;
 import edu.eci.cvds.jtams.model.User;
+import edu.eci.cvds.jtams.services.CommentServices;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
@@ -29,6 +31,7 @@ public class InitiativeBean {
 	
 	private InitiativeServices initiativeService = InitiativeServicesFactory.getInstance().getInitiativeServices();
 	private UserServices userServices = InitiativeServicesFactory.getInstance().getUserServices();
+	private CommentServices commentService = InitiativeServicesFactory.getInstance().getCommentServices();
 	//private CommentServices commentServices = InitiativeServicesFactory.getInstance().getCommentServices();
 	
 	private String name;
@@ -48,6 +51,7 @@ public class InitiativeBean {
 	private List<Initiative> listaIniciativasProponente;
 	private List<Initiative> listaIniciativasParaAgrupar;
 	private List<Initiative> iniciativasAgrupadasFront;
+	private List<Comment> comentarios;
 	private List<User> listaUsuarios;
 	private  String palabra;
 	private int idInitiativelike;
@@ -360,7 +364,12 @@ public class InitiativeBean {
 				jtamsExceptions.printStackTrace();
 			}
 		}
-
+	public List<Comment> todosComentarios() throws JtamsExceptions{
+		comentarios=commentService.todosComentarios();
+		//System.out.println(comentarios.get(0).getMensaje());
+			return comentarios;
+	
+		}
 	 public void doSomething() {  
 	        try {  
 	            // simulate a long running request  

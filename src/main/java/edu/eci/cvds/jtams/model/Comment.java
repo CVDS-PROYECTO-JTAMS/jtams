@@ -10,7 +10,9 @@ public class Comment {
 	private Date fechaModificacion;
 	private String mensaje;
 	private int usuario;
-
+	public Comment() {
+		
+	}
 	public Comment(int id, int iniciativa, Date fechaCreacion, String mensaje,
 			int usuario) {
 		this.id = id;

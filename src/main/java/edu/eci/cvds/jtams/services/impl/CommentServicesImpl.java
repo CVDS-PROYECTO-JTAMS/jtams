@@ -1,5 +1,7 @@
 package edu.eci.cvds.jtams.services.impl;
 
+import java.util.List;
+
 import com.google.inject.Inject;
 import edu.eci.cvds.jtams.exceptions.JtamsExceptions;
 import edu.eci.cvds.jtams.model.Comment;
@@ -60,4 +62,9 @@ public class CommentServicesImpl implements CommentServices {
     public void setInitiativeDAO(InitiativeDAO initiativeDAO) {
         this.initiativeDAO = initiativeDAO;
     }
+
+	@Override
+	public List<Comment> todosComentarios() throws JtamsExceptions {
+		return commentDAO.todosComentarios();
+	}
 }

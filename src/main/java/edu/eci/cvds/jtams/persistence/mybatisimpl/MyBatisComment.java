@@ -8,6 +8,7 @@ import edu.eci.cvds.jtams.persistence.mybatisimpl.mappers.CommentMapper;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 public class MyBatisComment implements CommentDAO {
 
@@ -46,5 +47,9 @@ public class MyBatisComment implements CommentDAO {
 
 	public void setCommentMapper(CommentMapper commentMapper) {
 		this.commentMapper = commentMapper;
+	}
+	@Override
+	public List<Comment> todosComentarios() throws JtamsExceptions {
+		return commentMapper.todosComentarios();
 	}
 }

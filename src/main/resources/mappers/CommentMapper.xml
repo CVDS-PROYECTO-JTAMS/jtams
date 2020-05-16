@@ -9,7 +9,7 @@
         <id property='id' column='id'/>
         <result property='fechaCreacion' column='creationDate'/>
         <result property='fechaModificacion' column='modifyDate'/>
-        <result property='mensaje' column='menssage'/>
+        <result property='mensaje' column='message'/>
         <result property='iniciativa' column='initiative'/>
         <result property='usuario' column='user'/>
     </resultMap>
@@ -19,7 +19,9 @@
         INSERT INTO "Comments" (id, initiative, creationDate, modifyDate, message, "user")
         VALUES ((select count(*)+1 from "Comments"),#{iniciativa},#{fechaCreacion},#{fechaModificacion},#{mensaje},#{usuario})
     </insert>
-
+	<select id='todosComentarios' resultMap= 'CommentsResult' parameterType='map'>
+		 SELECT * FROM "Comments";
+	</select>
     <!--<select id='getComment' resultMap= 'CommentResult' parameterType='map'>-->
         <!--select -->
 		<!--i.id,-->

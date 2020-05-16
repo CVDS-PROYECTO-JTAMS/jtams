@@ -155,9 +155,35 @@
                 <br>
                     <p:inputTextarea rows="4" cols="30" value="#{CommentBean.mensaje}"/>
                 </br>
-                    <p:commandButton value="Send" actionListener="#{CommentBean.createComment()}"/>
+                    <p:commandButton value="Send" actionListener="#{CommentBean.createComment()}" update=":@form"/>
             </center>
         </p:dialog>
+		<br></br>
+		<center>
+			<h1 style="color:white">Ultimos Comentarios Agregadas</h1>
+		</center>
+        <br></br>
+		 <p:dataTable var="Comment" value="#{InitiativeBean.todosComentarios()}" style="margin-bottom:20px"
+					 paginator="true"  rows="10" 
+                     paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                     currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+                     rowsPerPageTemplate="5,10,15,20">>
+            <p:column headerText="Id usuario" style="width:10px" sortBy="#{Comment.id}">
+                <h:outputText value="#{Comment.usuario}"/>
+            </p:column>
+			<p:column headerText="Iniciativa" style="width:100px" sortBy="#{Comment.sugerencia}">
+
+                <h:outputText value="#{Comment.sugerencia}" align="left"/>
+
+            </p:column>
+            <p:column headerText="Comentario" style="width:100px" sortBy="#{Comment.mensaje}">
+
+                <h:outputText value="#{Comment.mensaje}" align="left"/>
+
+            </p:column>
+			
+
+        </p:dataTable>
     </h:form>
 </h:body>
 </html>

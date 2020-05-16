@@ -136,42 +136,42 @@
                      rowsPerPageTemplate="5,10,15,20">				>
 
 
-            <p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}" filterMatchMode="contains" >
+            <p:column  style="color:black;"  filterMatchMode="contains" >
                 <f:facet name="header">
                     <h:outputText value="ID" />
                 </f:facet>
                 <h:outputText value="#{initiative.id}" />
             </p:column>
 
-            <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" filterMatchMode="startsWith">
+            <p:column style="color:black;"  filterMatchMode="startsWith">
                 <f:facet name="header">
                     <h:outputText value="Descripcion" />
                 </f:facet>
                 <h:outputText value="#{initiative.description}" />
             </p:column>
 
-            <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" filterMatchMode="startsWith">
+            <p:column style="color:black;"  filterMatchMode="startsWith">
                 <f:facet name="header">
                     <h:outputText value="Area" />
                 </f:facet>
                 <h:outputText value="#{initiative.area}" />
             </p:column>
 
-            <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+            <p:column style="color:black;" >
                 <f:facet name="header">
                     <h:outputText value="Estado" />
                 </f:facet>
                 <h:outputText value="#{initiative.typeStatusId}" />
             </p:column>
 
-            <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+            <p:column  style="color:black;" >
                 <f:facet name="header">
                     <h:outputText value="Fecha de creacion" />
                 </f:facet>
                 <h:outputText value="#{initiative.creationDate}" />
             </p:column>
 
-            <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+            <p:column  style="color:black;" >
                 <f:facet name="header">
                     <h:outputText value="# de votos" />
                 </f:facet>

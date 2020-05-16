@@ -192,9 +192,12 @@ public class InitiativeBean {
 	public List<Initiative> buscainiciativa() throws JtamsExceptions{
 		
 		try {
-			
-            List<String> palabrasListas = Arrays.asList(keyword.split(","));         
-            this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
+			List<String> palabrasListas = Arrays.asList(keyword.split(",")); 
+			if(this.iniciativaPorPalabra==null) {this.iniciativaPorPalabra=initiativeService.buscainiciativaporpalabra(palabrasListas);}
+			else {
+				this.iniciativaPorPalabra = initiativeService.buscainiciativaporpalabra(palabrasListas);
+			}
+            
       
             return  iniciativaPorPalabra;
        } catch (JtamsExceptions ex){
@@ -234,7 +237,7 @@ public class InitiativeBean {
 			Subject currentUser = SecurityUtils.getSubject();
 			String email = currentUser.getPrincipal().toString();
 			ponerId(email);
-			initiativeService.createInitiative(description, area,idUser, keywords, name);
+			initiativeService.createInitiative(description, area,idUser, keywords, email);
 			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Los datos han sido guardados con exito"));
 			updateTabla();
 		}catch (JtamsExceptions ex) {
@@ -272,23 +275,23 @@ public class InitiativeBean {
 	  * @return Lista de iniciativas 
 	  */
 	 public List<Initiative> buscaIniciativaRelacionadas() throws JtamsExceptions{
-			
+		 updateTabla();
 
-		try {
-				//System.out.println(idIniciativa+"  --- este fue el numero ingresado");
-	            List<Initiative> iniciativasAgrupadasFront= initiativeService.busaIniciativaRelacionadas(idIniciativa);
-	            //inicia machete <3 :) 
-	            for(int i=0; i < listaIniciativas.size(); i++) {
-	            	if(listaIniciativas.get(i).getId()==idIniciativa) {
-	            		iniciativasAgrupadasFront.add(listaIniciativas.get(i));
-	            	}
-	            }
-	            return  iniciativasAgrupadasFront;
-	      } catch (JtamsExceptions ex){
-	            throw new JtamsExceptions("No se encuentran iniciativas relacionadas");
-	       }
-		}
-	 
+			try {
+					//System.out.println(idIniciativa+"  --- este fue el numero ingresado");
+		            List<Initiative> iniciativasAgrupadasFront= initiativeService.busaIniciativaRelacionadas(idIniciativa);
+		            //inicia machete <3 :) 
+		            for(int i=0; i < listaIniciativas.size(); i++) {
+		            	if(listaIniciativas.get(i).getId()==idIniciativa) {
+		            		iniciativasAgrupadasFront.add(listaIniciativas.get(i));
+		            	}
+		            }
+		            return  iniciativasAgrupadasFront;
+		      } catch (JtamsExceptions ex){
+		            throw new JtamsExceptions("No se encuentran iniciativas relacionadas");
+		       }
+			}
+		 
 	 
 	
 	

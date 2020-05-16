@@ -105,13 +105,13 @@
         <br>            </br>
         <br></br>
         <br></br>
-        <p:dataTable id="tablain" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selection="#{InitiativeBean.listaIniciativasParaAgrupar}" style="margin-bottom: 1%;
+        <p:dataTable id="tablain" var="initiative" value="#{InitiativeBean.Todasiniciativas()}"  style="margin-bottom: 1%;
 					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10" rowKey="#{initiative.id}"
                      paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
                      currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
                      rowsPerPageTemplate="5,10,15,20">				>
 
-            <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+            
 
             <p:column  style="color:black;width:16px;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
                 <f:facet name="header">

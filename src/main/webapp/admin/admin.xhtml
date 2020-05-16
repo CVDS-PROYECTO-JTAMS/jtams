@@ -6,8 +6,40 @@
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  lang="es">
 
-  <title>Reserva de Recursos ECI</title>
   <h:head>
+	  <title>Home</title>
+	  <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	  <style>
+		body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+		  overflow: hidden;
+		  background-color:#DDDDDD;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: black;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #B70000;
+		  color: white;
+		}
+
+		.topnav a.active {
+		  background-color: #AD0000;
+		  color: white;
+		}
+		</style>
 	  <style>
 		table, th, td {
 		  border: 3px solid black;
@@ -23,15 +55,13 @@
 
 		div.transbox {
 		  margin: 30px;
-		  background-color: #00366E;
-		  border: 1px solid black;
-		  opacity: 0.6;
+		  background-color: #ffffff;
+		  border: 0.5px solid black;
+		  opacity: 0.8;
 		}
 
-		div.transbox p {
-		  margin: 5%;
-		  font-weight: bold;
-		  color: #ffffff;
+		div.imagen {
+		  left: 30px;
 		  text-align: center;
 		}
 		</style>
@@ -51,33 +81,28 @@
 
 	  <div class="background">
 		  <div class="transbox">
-			  <p>ADMIN</p>
+			  <div class ="imagen">
+			  	<img src="../img/pruebaFinal.png" style="width:1858px;height:200px;" />
+			  </div>
 		  </div>
 	  </div>
   </h:head>
   <h:body>
-  <center>
-	<header>
-		<h:form>
-			<p:tabMenu activeIndex="-1">
-				<p:menuitem value="Asignar perfil usuarios" outcome="modifyUserType.xhtml" icon="ui-icon-script"/>
-				<p:menuitem value="Modificar Estado Iniciativa" outcome="ModifyStateInitiative.xhtml" icon="ui-icon-document"/>
-				<p:menuitem value="Busqueda de iniciativas" outcome="searchInitiative.xhtml" icon="ui-icon-script"/>
-				<p:menuitem value="Estadisticas" outcome="Statistics.xhtml" icon="ui-icon-script"/>
-				<p:menuitem value="Agrupar Iniciativas" outcome="AgroupInitiative.xhtml" icon="ui-icon-script"/>
-				<p:menuitem value="Consultar Iniciativas Agrupadas" outcome="ConsultInitiative.xhtml" icon="ui-icon-script"/>
-				<p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 400px;"></p:menuitem>
-			</p:tabMenu>
-		</h:form>
+	  <header>
+		  <h:form>
+			  <div class="topnav">
+				  <a class="active" href="admin.xhtml">Home</a>
+				  <a href="modifyUserType.xhtml">Asignar perfil usuarios</a>
+				  <a href="ModifyStateInitiative.xhtml">Modificar Estado Iniciativa</a>
+				  <a href="AgroupInitiative.xhtml">Agrupar Iniciativas</a>
+				  <a href="ConsultInitiative.xhtml">Consultar Iniciativias Agrupadas</a>
+				  <p:commandButton value="Cerrar sesión"
+								   class="btn btn-rose btn-simple btn-wd btn-lg"
+								   action="#{LoginBean.logout}" style="position: absolute; left: 1950px; width:150px; height:35px; font-size:18px; padding: 0px; top: 270px ; background:#AD0000; color:white;"/>
 
-	</header>
-  </center>
- 
+			  </div>
+		  </h:form>
+	  </header>
 
-				
   </h:body>
-
-
-
- 
 </html>

@@ -43,6 +43,8 @@ public interface InitiativeMapper {
 
 	public List<Initiative> buscaEstadoIniciativa(@Param("Type_Status_id") String Type_Status_id);
 
+	public List<Initiative> buscaAreaIniciativa(@Param("area") String area);
+
 	public void darlike(@Param("user_id")int user_id,@Param("ini_id")int ini_id);
 
 	public Initiative consultarLike(@Param("user_id")int user_id,@Param("ini_id")int ini_id);

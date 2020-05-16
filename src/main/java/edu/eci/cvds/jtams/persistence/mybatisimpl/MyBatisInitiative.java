@@ -137,7 +137,16 @@ public class MyBatisInitiative implements InitiativeDAO {
         }
 	}
 
-	@Override
+    @Override
+    public List<Initiative> buscaAreaIniciativa(String area) throws JtamsExceptions {
+        try {
+            return initiativeMapper.buscaAreaIniciativa(area);
+        } catch (Exception e) {
+            throw new JtamsExceptions("There was an exception persisting the initiative to the database", e);
+        }
+    }
+
+    @Override
 	public void darlike(int user_id, int ini_id) throws JtamsExceptions {
 		try {
 			Initiative verificar= initiativeMapper.consultarLike(user_id, ini_id);

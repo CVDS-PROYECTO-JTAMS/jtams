@@ -1,7 +1,7 @@
 
-|
-java:S4144d"_Update this method so that its implementation is not identical to "setTypeStatusId" on line 96.(àÀı8è®Æüš.
 Œ
-java:S4165"jRemove this useless assignment; "typeStatusId" already holds the assigned value along all execution paths.(÷´Áøùÿÿÿÿ8è®Æüš.
+java:S4165"jRemove this useless assignment; "typeStatusId" already holds the assigned value along all execution paths.(÷´Áøùÿÿÿÿ8è®Æüš.
+|
+java:S4144e"_Update this method so that its implementation is not identical to "setTypeStatusId" on line 97.(àÀı8è®Æüš.
 L
 java:S1068"*Remove this unused "status" private field.(¦­œ˜ÿÿÿÿÿ8è®Æüš.

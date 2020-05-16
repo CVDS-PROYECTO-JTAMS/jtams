@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      lang="es">
+
+<h:head>
+    <style>
+		table, th, td {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		  width: 600px;
+		}
+		th, td {
+		  padding: 20px;
+		  text-align: left;
+		}
+		div.background {
+		  border: 0.5px solid black;
+		}
+
+		div.transbox {
+		  margin: 30px;
+		  background-color: #00366E;
+		  border: 1px solid black;
+		  opacity: 0.6;
+		}
+
+		div.transbox p {
+		  margin: 5%;
+		  font-weight: bold;
+		  color: #ffffff;
+		  text-align: center;
+		}
+		.modal-header{
+		    left: 15px;
+		}
+		</style>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Stylish Portfolio - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="../css/stylish-portfolio.min.css" rel="stylesheet"/>
+
+    <!-- Menu Bar -->
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
+    </link>
+
+
+</h:head>
+
+<h:body id="page-top">
+
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="searchInitiativePersonal.xhtml">Start Bootstrap</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#page-top">Home</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <h:form>
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class= "modal-header">
+                    <center>
+                        <p style="color:white ; font-size:40px; ">Cambio estado de iniciativa</p>
+                    </center>
+                </div>
+                <div class= "modal-body">
+
+                    <p:messages autoUpdate="true" />
+
+                    <div class="form-group" id="cont">
+                        <label style="color:white" for="NuevoRol2">Escoja el nuevo estado para la iniciativa : </label>
+
+                        <h:selectOneMenu id="initiative_estado" value="#{InitiativeBean.statusToUpdate}" styleClass="form-control">
+                            <f:selectItem itemLabel="En espera revison" itemValue="En espera revison" />
+                            <f:selectItem itemLabel="En Revision" itemValue="En Revision" />
+                            <f:selectItem itemLabel="Aceptada" itemValue="Aceptada" />
+                            <f:selectItem itemLabel="Declinada" itemValue="Declinada" />
+                        </h:selectOneMenu>
+                        <br></br>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+            <center>
+                <h1 style="color:white">Seleccione la Iniciativa para cambiar estado</h1>
+
+                <p:dataTable id="tablaIniciativa" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selectionMode="single"
+                             selection="#{InitiativeBean.selectedInitiative}" rowKey="#{initiative.id}" paginator="true"  rows="10"
+                             paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+                             currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
+                    <p:column headerText="Id" style="width:30px" >
+                        <h:outputText value="#{initiative.id}" />
+                    </p:column>
+                    <p:column headerText="Descripcion" style="width:260px" >
+
+                        <h:outputText value="#{initiative.description}" align="left"/>
+
+                    </p:column>
+                    <p:column headerText="Area" style="width:140px">
+                        <h:outputText value="#{initiative.area}" />
+                    </p:column>
+                    <p:column headerText="Fecha de creacion" style="width:270px">
+
+                        <h:outputText value="#{initiative.creationDate}" />
+
+                    </p:column>
+
+                    <p:column headerText="Estado" style="width:180px">
+                        <center>
+                            <h:outputText value="#{initiative.typeStatusId}" />
+                        </center>
+                    </p:column>
+
+
+                    <p:column headerText="# de Votos" style="width: 70px" >
+                        <center>
+                            <h:outputText value="#{initiative.numVotes}" />
+                        </center>
+                    </p:column>
+                    <f:facet name="footer">
+
+                        <h:commandButton style="width: 90px" value="Aplicar" id="modificar"   actionListener="#{InitiativeBean.updateStatusInitiative()}"  update=":@form" ajax="true" />
+                    </f:facet>
+                </p:dataTable>
+            </center>
+        </h:form>
+
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#">
+                        <i class="icon-social-facebook"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#">
+                        <i class="icon-social-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#">
+                        <i class="icon-social-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright Your Website 2019</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="../js/stylish-portfolio.min.js"></script>
+
+</h:body>
+
+</html>

@@ -17,8 +17,10 @@ import java.util.List;
 public class StatisticBean {
 
     private StatisticsServices statisticService = InitiativeServicesFactory.getInstance().getStatisticsServices();
-    private PieChartModel barModel;
-    private PieChartModel barModelState;
+    private StatisticsServices statisticServiceStatus = InitiativeServicesFactory.getInstance().getStatisticsServices();
+
+    private PieChartModel pieModel;
+    private PieChartModel pieModelStatus;
 
 
     public StatisticsServices getStatisticService() {
@@ -29,34 +31,43 @@ public class StatisticBean {
         this.statisticService = statisticService;
     }
 
-    public PieChartModel getBarModel() {
-        return barModel;
+    public StatisticsServices getStatisticServiceStatus() {
+        return statisticServiceStatus;
     }
 
-    public void setBarModel(PieChartModel barModel) {
-        this.barModel = barModel;
+    public void setStatisticServiceStatus(StatisticsServices statisticServiceStatus) {
+        this.statisticServiceStatus = statisticServiceStatus;
     }
 
-    public PieChartModel getBarModelState() {
-        return barModelState;
+    public PieChartModel getPieModel() {
+        return pieModel;
     }
 
-    public void setBarModelState(PieChartModel barModelState) {
-        this.barModelState = barModelState;
+    public void setPieModel(PieChartModel pieModel) {
+        this.pieModel = pieModel;
+    }
+
+    public PieChartModel getPieModelStatus() {
+        return pieModelStatus;
+    }
+
+    public void setPieModelStatus(PieChartModel pieModelStatus) {
+        this.pieModelStatus = pieModelStatus;
     }
 
     @PostConstruct
     public void createBarModels() {
         createBarModel();
+        createBarModelStatus();
     }
 
     private void createBarModel() {
-        barModel = loadData();
-        barModel.setLegendPosition("e");
-        barModel.setShowDataLabels(true);
-        barModel.setShadow(false);
-        barModel.setDataFormat("value");
-        barModel.setDataLabelFormatString("%d");
+        pieModel = loadData();
+        pieModel.setLegendPosition("e");
+        pieModel.setShowDataLabels(true);
+        pieModel.setShadow(false);
+        pieModel.setDataFormat("value");
+        pieModel.setDataLabelFormatString("%d");
     }
 
     private PieChartModel loadData() {
@@ -74,23 +85,19 @@ public class StatisticBean {
 
     }
 
-    @PostConstruct
-    public void createBarModelsStatus() {
-        createBarModelStatus();
-    }
     private void createBarModelStatus() {
-        barModelState = loadDataStatus();
-        barModelState.setLegendPosition("e");
-        barModelState.setShowDataLabels(true);
-        barModelState.setShadow(false);
-        barModelState.setDataFormat("value");
-        barModelState.setDataLabelFormatString("%d");
+        pieModelStatus = loadDataStatus();
+        pieModelStatus.setLegendPosition("e");
+        pieModelStatus.setShowDataLabels(true);
+        pieModelStatus.setShadow(false);
+        pieModelStatus.setDataFormat("value");
+        pieModelStatus.setDataLabelFormatString("%d");
     }
 
     private PieChartModel loadDataStatus() {
         try {
             PieChartModel modelStatus = new PieChartModel();
-            List<Statistic> statisticsStatus = statisticService.getStatisticsStatus();
+            List<Statistic> statisticsStatus = statisticServiceStatus.getStatisticsStatus();
             for (Statistic s: statisticsStatus ){
                 modelStatus.set(s.getTypeStatusId(),s.getScount());
             }

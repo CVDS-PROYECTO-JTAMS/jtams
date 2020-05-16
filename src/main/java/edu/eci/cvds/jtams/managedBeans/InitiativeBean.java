@@ -6,16 +6,14 @@ import edu.eci.cvds.jtams.model.User;
 import edu.eci.cvds.jtams.services.InitiativeServices;
 import edu.eci.cvds.jtams.services.InitiativeServicesFactory;
 import edu.eci.cvds.jtams.services.UserServices;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-
-import org.primefaces.event.RowEditEvent;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,6 +43,7 @@ public class InitiativeBean {
 	private String area2 ;
 	private Initiative idEdit;
 	private List<Initiative> iniciativaPorPalabra;
+    private List<Initiative> iniciativaPorArea;
 	private List<Initiative> listaIniciativas;
 	private List<Initiative> listaIniciativasProponente;
 	private List<Initiative> listaIniciativasParaAgrupar;
@@ -153,7 +152,21 @@ public class InitiativeBean {
 		this.keyword = keyword;
 		//System.out.println(keyword);
 	}
-	
+
+    public List<Initiative> buscaAreaIniciativas() throws JtamsExceptions{
+
+        try {
+
+            this.iniciativaPorArea = initiativeService.buscaAreaIniciativa(area);
+
+            return  iniciativaPorArea;
+
+        } catch (JtamsExceptions ex){
+
+            throw new JtamsExceptions("No se encuentran iniciativas con ese tipo de estado");
+        }
+    }
+
 	public List<Initiative> buscaEstadoIniciativas() throws JtamsExceptions{
 		
 		try {

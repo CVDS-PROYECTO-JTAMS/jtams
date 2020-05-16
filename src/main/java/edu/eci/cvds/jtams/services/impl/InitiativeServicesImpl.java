@@ -117,6 +117,17 @@ public class InitiativeServicesImpl implements InitiativeServices {
 	}
 
 	@Override
+	public List<Initiative> buscaAreaIniciativa(String area) throws JtamsExceptions {
+		try {
+
+			return initiativeDAO.buscaAreaIniciativa(area);
+
+		} catch (JtamsExceptions ex) {
+			throw new  JtamsExceptions("error al consultar el area de la iniciativa");
+		}
+	}
+
+	@Override
 	public void darlike(int idUser, int idInitiative)throws JtamsExceptions {
 		try {
 		    initiativeDAO.darlike(idUser,idInitiative);

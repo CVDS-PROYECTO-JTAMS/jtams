@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      lang="es">
+
+<h:head>
+	<title>Votar (Like)</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<style>
+		body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+		  overflow: hidden;
+		  background-color:#DDDDDD;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: black;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #B70000;
+		  color: white;
+		}
+
+		.topnav a.active {
+		  background-color: #AD0000;
+		  color: white;
+		}
+		</style>
+	<style>
+		table, th, td {
+		  border: 3px solid black;
+		  border-collapse: collapse;
+		}
+		th, td {
+		  padding: 20px;
+		  text-align: left;
+		}
+		div.background {
+		  border: 0.5px solid black;
+		}
+
+		div.transbox {
+		  margin: 30px;
+		  background-color: #ffffff;
+		  border: 0.5px solid black;
+		  opacity: 0.8;
+		}
+
+		div.imagen {
+		  left: 30px;
+		  text-align: center;
+		}
+		</style>
+
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
+    </link>
+
+	<div class="background">
+		<div class="transbox">
+			<div class ="imagen">
+				<img src="../img/personal.png" style="width:1858px;height:200px;" />
+			</div>
+		</div>
+	</div>
+</h:head>
+<h:body>
+    <h:form>
+		<div class="topnav">
+			<a href="personal.xhtml">Home</a>
+			<a href="searchInitiativePersonal.xhtml">Consultar Iniciativas</a>
+			<a href="searchInitiativeStatusPersonal.xhtml">Consultar Iniciativas por estado</a>
+			<a href="searchInitiativeByAreas.xhtml">Consultar Iniciativas por area</a>
+			<a href="statistic.xhtml">Estadisticas area</a>
+			<a href="stateStatistic.xhtml">Estadisticas estado</a>
+			<a class="active" href="listInitiativePublic.xhtml">Votar (Like)</a>
+			<p:commandButton value="Cerrar sesión"
+							 class="btn btn-rose btn-simple btn-wd btn-lg"
+							 action="#{LoginBean.logout}" style="position: absolute; left: 1950px; width:150px; height:35px; font-size:18px; padding: 0px; top: 270px ; background:#AD0000; color:white;"/>
+
+		</div>
+    </h:form>
+    <center>
+    <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
+    </center>
+    <h:form>
+  
+  
+  
+                <p:dataTable  id="tabla_iniciativas" var="initiative" value="#{InitiativeBean.Todasiniciativas()}"  style="margin-bottom: 1%; 
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
+					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
+					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
+					rowsPerPageTemplate="5,10,15,20">				>
+				
+				
+						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
+							<f:facet name="header">
+								<h:outputText value="ID" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.id}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
+							<f:facet name="header">
+								<h:outputText value="Descripcion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.description}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
+							<f:facet name="header">
+								<h:outputText value="Area" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.area}" />
+	                    </p:column>
+						
+	                    <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+							<f:facet name="header">
+								<h:outputText value="Estado" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.typeStatusId}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+							<f:facet name="header">
+								<h:outputText value="Fecha de creacion" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.creationDate}" />
+	                    </p:column>
+						
+	                    <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+							<f:facet name="header">
+								<h:outputText value="# de votos" />
+							</f:facet>
+	                        <h:outputText value="#{initiative.numVotes }" />
+	                    </p:column>
+						
+						<p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+							<f:facet name="header">
+								<h:outputText value="Votar" />
+							</f:facet>
+	                       
+							<p:commandButton action="#{InitiativeBean.darVoto(initiative.id)}" update=":@form" id="iconOnly" style="margin-right:20px;" icon="pi pi-check" title="votar" />
+							<p:commandButton action="#{InitiativeBean.quitarVoto(initiative.id)}" update=":@form" id="iconOnly2" style="margin-right:20px;" icon="pi pi-times" title="quitar voto" />
+							
+	                    </p:column>
+						
+            </p:dataTable>
+                 
+	</h:form>
+</h:body>
+</html>

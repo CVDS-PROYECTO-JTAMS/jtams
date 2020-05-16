@@ -144,6 +144,10 @@
         SELECT *
         FROM initiative  WHERE   initiative.Type_Status_id= #{Type_Status_id};
     </select>
+    <select id="buscaAreaIniciativa" resultMap="InitiativeResult1" parameterType="map">
+        SELECT *
+        FROM initiative  WHERE   initiative.area= #{area};
+    </select>
 	<select id="consultarIniciativaProponente" resultMap="InitiativeResult1" parameterType="map">
         SELECT *
         FROM initiative  WHERE  initiative.User_id= #{User_id};

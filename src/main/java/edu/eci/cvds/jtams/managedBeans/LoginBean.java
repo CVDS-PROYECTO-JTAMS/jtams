@@ -82,20 +82,40 @@ public class LoginBean {
             }
         } catch (JtamsExceptions e) {
             LoginBean.setErrorMessage(e);
+            System.out.println("Clave 1");
             e.printStackTrace();
         }catch (IOException e) {
             LoginBean.setErrorMessage(e);
             e.printStackTrace();
+
         }catch(Exception e) {
             LoginBean.setErrorMessage(e);
             e.printStackTrace();
         }
 
     }
+    public void initiative() throws JtamsExceptions {
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/index2.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
     public void activeSession () throws IOException {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         facesContext.getExternalContext().redirect("");
     }
+
+    public void goToMenu(){
+            try{
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+            }catch(IOException e){
+                setErrorMessage(e);
+            }
+        }
 
     public void devolver(){
         if (isLogged()){

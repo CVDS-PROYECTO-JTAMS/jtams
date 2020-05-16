@@ -7,9 +7,41 @@ xmlns:shiro="http://shiro.apache.org/tags"
 xmlns:th="http://www.thymeleaf.org"
 lang="es">
 
-  <title>Reserva de Recursos ECI</title>
   <h:head>
-	  <style>
+      <title>Home</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <style>
+		body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+		  overflow: hidden;
+		  background-color:#DDDDDD;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: black;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #B70000;
+		  color: white;
+		}
+
+		.topnav a.active {
+		  background-color: #AD0000;
+		  color: white;
+		}
+		</style>
+      <style>
 		table, th, td {
 		  border: 3px solid black;
 		  border-collapse: collapse;
@@ -24,15 +56,13 @@ lang="es">
 
 		div.transbox {
 		  margin: 30px;
-		  background-color: #00366E;
-		  border: 1px solid black;
-		  opacity: 0.6;
+		  background-color: #ffffff;
+		  border: 0.5px solid black;
+		  opacity: 0.8;
 		}
 
-		div.transbox p {
-		  margin: 5%;
-		  font-weight: bold;
-		  color: #ffffff;
+		div.imagen {
+		  left: 30px;
 		  text-align: center;
 		}
 		</style>
@@ -50,20 +80,29 @@ lang="es">
 	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
 	  </link>
 
-	  <div class="background">
-		  <div class="transbox">
-			  <p>PERSONAL</p>
-		  </div>
-	  </div>
+      <div class="background">
+          <div class="transbox">
+              <div class ="imagen">
+                  <img src="../img/personal.png" style="width:1858px;height:200px;" />
+              </div>
+          </div>
+      </div>
   </h:head>
   <body>
   <h:form>
-      <p:tabMenu activeIndex="-1">
-          <p:menuitem value="Consultar Iniciativas" outcome="searchInitiativePersonal.xhtml" icon="ui-icon-document"/>
-          <p:menuitem value="Cambiar Estado de iniciativa" outcome="changeState.xhtml" icon="ui-icon-document"/>
-          <p:menuitem value="Consultar Iniciativas por estado" outcome="searchInitiativeStatusPersonal.xhtml" icon="ui-icon-document"/>
-          <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 950px;"/>
-      </p:tabMenu>
+      <div class="topnav">
+          <a class="active" href="personal.xhtml">Home</a>
+          <a href="searchInitiativePersonal.xhtml">Consultar Iniciativas</a>
+          <a href="searchInitiativeStatusPersonal.xhtml">Consultar Iniciativas por estado</a>
+          <a href="searchInitiativeByAreas.xhtml">Consultar Iniciativas por area</a>
+          <a href="statistic.xhtml">Estadisticas area</a>
+          <a href="stateStatistic.xhtml">Estadisticas estado</a>
+          <a href="listInitiativePublic.xhtml">Votar (Like)</a>
+          <p:commandButton value="Cerrar sesión"
+                           class="btn btn-rose btn-simple btn-wd btn-lg"
+                           action="#{LoginBean.logout}" style="position: absolute; left: 1950px; width:150px; height:35px; font-size:18px; padding: 0px; top: 270px ; background:#AD0000; color:white;"/>
+
+      </div>
   </h:form>
 
   </body>

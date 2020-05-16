@@ -6,8 +6,40 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       lang="es">
 
-<title>Reserva de Recursos ECI</title>
 <h:head>
+    <title>Consultar Iniciativas</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+		body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+		  overflow: hidden;
+		  background-color:#DDDDDD;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: black;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		.topnav a:hover {
+		  background-color: #B70000;
+		  color: white;
+		}
+
+		.topnav a.active {
+		  background-color: #AD0000;
+		  color: white;
+		}
+		</style>
     <style>
 		table, th, td {
 		  border: 3px solid black;
@@ -23,26 +55,15 @@
 
 		div.transbox {
 		  margin: 30px;
-		  background-color: #00366E;
-		  border: 1px solid black;
-		  opacity: 0.6;
+		  background-color: #ffffff;
+		  border: 0.5px solid black;
+		  opacity: 0.8;
 		}
 
-		div.transbox p {
-		  margin: 5%;
-		  font-weight: bold;
-		  color: #ffffff;
+		div.imagen {
+		  left: 30px;
 		  text-align: center;
 		}
-		h4 {
-          display: block;
-          font-size: 2em;
-          margin-top: 0.67em;
-          margin-bottom: 0.67em;
-          margin-left: 230px;
-          margin-right: 0;
-          font-weight: bold;
-        }
 		</style>
 
 
@@ -60,95 +81,80 @@
 
     <div class="background">
         <div class="transbox">
-            <p>PERSONAL</p>
+            <div class ="imagen">
+                <img src="../img/personal.png" style="width:1858px;height:200px;" />
+            </div>
         </div>
     </div>
 </h:head>
 <h:body>
     <h:form>
-        <p:tabMenu activeIndex="0">
-            <p:menuitem value="Consultar Iniciativas" outcome="searchInitiativePersonal.xhtml" icon="ui-icon-document"/>
-            <p:menuitem value="Cambiar Estado de iniciativa" outcome="changeState.xhtml" icon="ui-icon-document"/>
-            <p:menuitem value="Consultar Iniciativas por estado" outcome="searchInitiativeStatusPersonal.xhtml" icon="ui-icon-document"/>
-            <p:menuitem value="Salir" action="#{LoginBean.logout}" icon="ui-icon-close" style="position: absolute; left: 950px;"/>
-        </p:tabMenu>
+        <div class="topnav">
+            <a href="personal.xhtml">Home</a>
+            <a class="active" href="searchInitiativePersonal.xhtml">Consultar Iniciativas</a>
+            <a href="searchInitiativeStatusPersonal.xhtml">Consultar Iniciativas por estado</a>
+            <a href="searchInitiativeByAreas.xhtml">Consultar Iniciativas por area</a>
+            <a href="statistic.xhtml">Estadisticas area</a>
+            <a href="stateStatistic.xhtml">Estadisticas estado</a>
+            <a href="listInitiativePublic.xhtml">Votar (Like)</a>
+            <p:commandButton value="Cerrar sesión"
+                             class="btn btn-rose btn-simple btn-wd btn-lg"
+                             action="#{LoginBean.logout}" style="position: absolute; left: 1950px; width:150px; height:35px; font-size:18px; padding: 0px; top: 270px ; background:#AD0000; color:white;"/>
 
-    <center>
-    <h1 style="color:white">Ultimas Iniciativas Agregadas</h1>
-    </center>
-
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class= "modal-header">
-                    <center>
-                        <h4 style="color:white ; text-align:center">Busqueda de Iniciativas</h4>
-                    </center>
-                </div>
-                <div class= "modal-body">
-
-                        <p:messages autoUpdate="true" />
-
-                        <div class="form-group" id="cont">
-                            <label style="color:white" for="NuevoRol2">Realice la busqueda por medio de: palabras claves</label>
-                            <h:inputText id="keywordIn" value="#{InitiativeBean.keyword}" styleClass="form-control" required="true"/>
-                            <br></br>
-                            <h:commandButton  id="ingresar"  action="#{InitiativeBean.buscainiciativa()}"  styleClass="btn btn-primary" value = "Buscar" update=":tabla_iniciativas"/>
-
-                        </div>
-                </div>
-            </div>
         </div>
-        <center>
-            <h1 style="color:white;">Iniciativas Buscadas</h1>
-        </center>
-        <p:dataTable id="tabla_iniciativas" var="initiative" value="#{InitiativeBean.buscainiciativa()}"  style="margin-bottom: 1%;
-					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
+        <br>            </br>
+        <br></br>
+        <br></br>
+        <p:dataTable id="tablain" var="initiative" value="#{InitiativeBean.Todasiniciativas()}" selection="#{InitiativeBean.listaIniciativasParaAgrupar}" style="margin-bottom: 1%;
+					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10" rowKey="#{initiative.id}"
                      paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
                      currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
                      rowsPerPageTemplate="5,10,15,20">				>
 
+            <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
 
-            <p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}" filterMatchMode="contains" >
+            <p:column  style="color:black;width:16px;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
                 <f:facet name="header">
                     <h:outputText value="ID" />
                 </f:facet>
                 <h:outputText value="#{initiative.id}" />
             </p:column>
 
-            <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" filterMatchMode="startsWith">
+            <p:column style="color:black;width:86px;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
                 <f:facet name="header">
                     <h:outputText value="Descripcion" />
                 </f:facet>
                 <h:outputText value="#{initiative.description}" />
             </p:column>
 
-            <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" filterMatchMode="startsWith">
+            <p:column style="color:black;width:56px;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
                 <f:facet name="header">
                     <h:outputText value="Area" />
                 </f:facet>
                 <h:outputText value="#{initiative.area}" />
             </p:column>
 
-            <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
+            <p:column style="color:black;width:96px;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
                 <f:facet name="header">
                     <h:outputText value="Estado" />
                 </f:facet>
                 <h:outputText value="#{initiative.typeStatusId}" />
             </p:column>
 
-            <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
+            <p:column  style="color:black;width:106px;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
                 <f:facet name="header">
                     <h:outputText value="Fecha de creacion" />
                 </f:facet>
                 <h:outputText value="#{initiative.creationDate}" />
             </p:column>
 
-            <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
+            <p:column  style="color:black;width:26px;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
                 <f:facet name="header">
                     <h:outputText value="# de votos" />
                 </f:facet>
                 <h:outputText value="#{initiative.numVotes }" />
             </p:column>
+
 
         </p:dataTable>
     </h:form>

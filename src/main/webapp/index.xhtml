@@ -1,188 +1,61 @@
 <!DOCTYPE html>
+
+
 <html xmlns="http://www.w3c.org/1999/xhtml"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:p="http://primefaces.org/ui"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:th="http://www.thymeleaf.org"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-lang="es">
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  lang="es">
+<h:head>
+	<title>JTAMS LogIn</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+	<link rel="stylesheet" href="css/main.css" />
+</h:head>
+<h:body class="is-preload">
 
-  <title>Reserva de Recursos ECI</title>
-  <h:head>
-  	  <style>
-table, th, td {
-  border: 3px solid white;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 20px;
-  text-align: left;
-}
-div.background {
-  border: 0.5px solid White;
-}
+	<!-- Header -->
+	<header id="header">
+		<h1>Banco Iniciativas - JTAMS</h1>
+		<p> Hola Bienvenido, conoce nuestra plataforma interactiva<br />
+			donde puedes ingresar tus ideas en nuestro Banco de Iniciativas.</p>
+	</header>
 
-
-
-div.transbox p {
-  margin: 5%;
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
-}
-h1 {
-          display: block;
-          font-size: 2em;
-          margin-top: 0.67em;
-          margin-bottom: 0.67em;
-          margin-left: 680px;
-          margin-right: 0;
-          font-weight: bold;
-        }
-</style>
-	  <!--JQUERY-->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-	  <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-	  <!-- Los iconos tipo Solid de Fontawesome-->
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"/>
-	  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
-	  <!-- Nuestro css-->
-	  <link rel="stylesheet" type="text/css" href="/css/indexEci.css" >
-	  </link>
-
-  </h:head>
-  <h:body>
-  <div class="modal-dialog text-center">
-    <div class="col-sm-8 main-section">
-        <div class="modal-content">
-            <div class="col-12 user-img">
-	            <img src="img/user.png" th:src="@{/img/user.png}"/>
-            </div>
-
-	<h:form>
-		
-			<p:outputPanel>
-                <div class="form-group" id="user-group">
-                <center>
-                <p:inputText id="userInput"  style="width:150px" class="form-control" data-validation-required-message="Please enter your username." placeholder="Ingresa tu email" value="#{LoginBean.username}"/>
-                </center>
-                </div>
-            </p:outputPanel>
-			 <p:outputPanel>
-                 <div class="form-group" id="contrasena-group">
-                 <center>
-                 <p:inputText type="password" class="form-control" data-validation-required-message="Please enter your password." id="passwordInput" style="width:150px" placeholder="Ingresa tu contrasena" value="#{LoginBean.password}"/>
-                 </center>
-                 </div>
-             </p:outputPanel>
-			<div class="control-group">
-				<div class="form-group floating-label-form-group controls">
-					<p:selectBooleanCheckbox itemLabel="Recuerdame" value="#{LoginBean.rememberMe}"/>
-				</div>
+	<!-- Signup Form -->
+	<h:form id="signup-form" method="post" action="#">
+		<p:inputText type="email" name="email" id="email" placeholder="Email Address" value="#{LoginBean.username}"/><br/>
+		<p:inputText type="password" name="password" id="password" placeholder="Password"  value="#{LoginBean.password}"/>
+		<p:commandButton type="submit" value="Entrar" style="background:#00468D; margin-top: 0.5% " styleClass="customStyleButton" action="#{LoginBean.login()}"/>
+	</h:form>
+	<p:commandButton  value="Ver Iniciativas" style="background:#00468D; margin-top: 10%; height:35px; width:200px; font-size:20px; left: 560px;  top: -200px;"  action="#{LoginBean.initiative()}"/>
+	<br>
+		<div class="control-group">
+			<div class="form-group floating-label-form-group controls">
+				<p:selectBooleanCheckbox itemLabel="Recuerdame" value="#{LoginBean.rememberMe}" style="position: absolute; left: 150px; top: -265px;"/>
 			</div>
-            <center>
-			<p:commandButton id="ingresar" action="#{LoginBean.login}" class="btn btn-primary"  value="Ingresar"  />
-            </center>
+		</div>
+	</br>
 
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="https://twitter.com/explore" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="https://github.com/CVDS-PROYECTO-JTAMS/jtams" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			<li><a href="" class="icon fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
 
+	</footer>
 
-	</h:form>
+	<!-- Scripts -->
+	<script src="js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-           
-  			</div>
-  		</div>
-  </div>
-  <h:form>
-  <h1 style="color:white;">Ultimas Iniciativas Agregadas</h1>
-  
-  
-  
-                <p:dataTable var="initiative" value="#{InitiativeBean.Todasiniciativas()}"  style="margin-bottom: 1%; 
-					width: 90%; margin-left: 5%; border-radius: 15px;" paginator="true"  rows="10"
-					paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
-					currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas"
-					rowsPerPageTemplate="5,10,15,20">				>
-				
-				
-						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
-							<f:facet name="header">
-								<h:outputText value="ID" />
-							</f:facet>
-	                        <h:outputText value="#{initiative.id}" />
-	                    </p:column>
-						
-	                    <p:column style="color:black;" filterBy="#{initiative.description}" sortBy="#{initiative.description}" >
-							<f:facet name="header">
-								<h:outputText value="Descripcion" />
-							</f:facet>
-	                        <h:outputText value="#{initiative.description}" />
-	                    </p:column>
-						
-	                    <p:column style="color:black;" filterBy="#{initiative.area}" sortBy="#{initiative.area}" >
-							<f:facet name="header">
-								<h:outputText value="Area" />
-							</f:facet>
-	                        <h:outputText value="#{initiative.area}" />
-	                    </p:column>
-						
-	                    <p:column style="color:black;" filterBy="#{initiative.typeStatusId}" sortBy="#{initiative.typeStatusId}">
-							<f:facet name="header">
-								<h:outputText value="Estado" />
-							</f:facet>
-	                        <h:outputText value="#{initiative.typeStatusId}" />
-	                    </p:column>
-						
-	                    <p:column  style="color:black;" filterBy="#{initiative.creationDate}" sortBy="#{initiative.creationDate}">
-							<f:facet name="header">
-								<h:outputText value="Fecha de creacion" />
-							</f:facet>
-	                        <h:outputText value="#{initiative.creationDate}" />
-	                    </p:column>
-						
-	                    <p:column  style="color:black;" filterBy="#{initiative.numVotes}" sortBy="#{initiative.numVotes}">
-							<f:facet name="header">
-								<h:outputText value="# de votos" />
-							</f:facet>
-	                        <h:outputText value="#{initiative.numVotes }" />
-	                    </p:column>
-						
-                </p:dataTable>
-                 
-	</h:form>
-
- </h:body>
-
-
-  
-  
+</h:body>
 </html>
-
-
-
-
-
-
-
-
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

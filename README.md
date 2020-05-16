@@ -31,7 +31,7 @@ comunidad universitaria de la Escuela. El banco de iniciativas debe contar con u
 
       Registrar de una iniciativa o idea
       Consultar las ideas o iniciativas que el proponente ha realizado
-      Modificar una iniciativa o idea siempre y cuando se encuentre en el estado “propuesta”.
+      Modificar una iniciativa o idea siempre y cuando se encuentre en el estado “En Revision”.
       
 - Público
 

@@ -51,8 +51,49 @@ comunidad universitaria de la Escuela. El banco de iniciativas debe contar con u
       
       
 # Arquitectura y diseño JTAMS
+
 ## Diagrama de clases
 ![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/PrimerasImagenes/ModeloDeClases.PNG "Diagrama de clases")
+
+#  Manual de usuario
+
+## Pantalla de login y de inicio: 
+
+#### Se pueden consultar todas las iniciativas, se realiza la validacion del login y puede recordar el usuario, este login tiene la adecuada seguridad 
+![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/login/Login.PNG "login")
+
+![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/login/Bienvenidos.PNG "Bienvenidos")
+
+## Pantalla del administrador:
+
+#### Puede Modificar el Estado de las ideas o iniciativas, agrupar las iniciativas relacionadas, asignar perfil a los usuarios, consultar las iniciativas agrupadas, ademas de cerrar la sesion y con posibilidad de volver al menu principal
+ 
+ ##### Menu principal
+ 
+ ![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/Home.png "Home")
+ 
+ ##### Modificar estado
+ ![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/ModificarEstadoIniciativa1.png "ModificarEstadoIniciativa1")
+
+ ![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/ModificarEstadoIniciativa2.png "ModificarEstadoIniciativa2")
+ 
+ ##### Agrupar iniciativas
+![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/AgruparIniciativas1.png "AgruparIniciativas1")
+
+![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/AgruparIniciativas2.png "AgruparIniciativas2")
+
+##### Asignar perfil a usuarios
+
+![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/AsignarPerfilUsuarios.png "AsignarPerfilUsuarios")
+
+##### Consulta iniciativas relacionadas
+
+![alt text](https://github.com/CVDS-PROYECTO-JTAMS/jtams/blob/master/ImagenesContenidoAplicacion/administrador/ConsultarIniciativasAgrupadas.png "ConsultarIniciativasAgrupadas")
+
+## Pantalla del usuario tipo personal:
+
+####  Consultar todas las iniciativa, todas las iniciativas por estado, todas las iniciativas por area, la estadisticas de por areas,la estadisticas de por estados y por ulimo ermite dar like a una iniciativa, con posibilidad de cerrar sesion y volver al menu principal
+
 
 ## Enlace de la aplicacion Heroku 
   https://proyecto-jtams.herokuapp.com/

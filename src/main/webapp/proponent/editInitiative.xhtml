@@ -116,10 +116,6 @@
 				<p:messages autoUpdate="true" />
 				<center>
 					<div class="form-group">
-						<label for="Nombre" style="color:white;">Nombre</label>
-						<p:inputText id="nam1" value="#{InitiativeBean.namenuevo}" styleClass="form-control" required="true"/>
-					</div>
-					<div class="form-group">
 						<label for="Email1" style="color:white;">Descripcion</label>
 						<p:inputText id="desc2" value="#{InitiativeBean.descripcion}" styleClass="form-control" required="true" />
 					</div>
@@ -145,6 +141,10 @@
 					selection="#{InitiativeBean.idEdit}" rowKey="#{initiative.id}" 
 					paginator="true"  rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}  {LastPageLink} {RowsPerPageDropdown}"
                      currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas" rowsPerPageTemplate="5,10,15,20">>
+					 <f:facet name="header">
+							
+							<p:commandButton style="width: 90px" value="Aplicar" id="modificar" update=":@form"   actionListener="#{InitiativeBean.editInitiative}"  ajax="true" />
+						</f:facet>
 						<p:column  style="color:black;"  filterBy="#{initiative.id}" sortBy="#{initiative.id}"  >
 							<f:facet name="header">
 								<h:outputText value="ID" />
@@ -187,10 +187,7 @@
 							<h:outputText value="#{initiative.numVotes }" />
 						</p:column>
 
-						<f:facet name="footer">
-							
-							<p:commandButton style="width: 90px" value="Aplicar" id="modificar" update=":@form"   actionListener="#{InitiativeBean.editInitiative}"  ajax="true" />
-						</f:facet>
+						
 					</p:dataTable>
 
 </h:form>

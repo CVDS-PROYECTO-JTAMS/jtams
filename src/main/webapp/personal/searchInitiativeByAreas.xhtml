@@ -120,8 +120,15 @@
 
                         <div class="form-group" id="cont">
                             <label style="color:white" for="NuevoRol2">Realice la busqueda por medio de: Areas</label>
-                            <h:inputText id="keywordIn" value="#{InitiativeBean.area}" styleClass="form-control" required="true"/>
+                            <h:selectOneMenu id="asd" value="#{InitiativeBean.area}" styleClass="form-control" required="true">
+								<f:selectItem itemLabel="Proyectos" itemValue="Proyectos" />
+								<f:selectItem itemLabel="Campus" itemValue="Campus" />
+								<f:selectItem itemLabel="Instalaciones" itemValue="Instalaciones" />
+								<f:selectItem itemLabel="Novedad" itemValue="Novedad" />
+								<f:selectItem itemLabel="Economia" itemValue="Economia" />
+							</h:selectOneMenu>
                             <br></br>
+							
                             <h:commandButton  id="ingresar"  action="#{InitiativeBean.buscaAreaIniciativas()}"  styleClass="btn btn-primary" value = "Buscar" update=":tabla_iniciativas"/>
 
                         </div>

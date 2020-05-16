@@ -120,21 +120,21 @@
 				  </div>
 			  </f:facet>
 
-			  <p:column>
+			  <p:column sortBy="#{initiative.id}">
 				  <f:facet name="header">
 					  <h:outputText value="Id" />
 				  </f:facet>
 				  <h:outputText value="#{initiative.id}" />
 			  </p:column>
 
-			  <p:column>
+			  <p:column sortBy="#{initiative.description}">
 				  <f:facet name="header">
 					  <h:outputText value="Description"/>
 				  </f:facet>
 				  <h:outputText value="#{initiative.description}" />
 			  </p:column>
 
-			  <p:column>
+			  <p:column sortBy="#{initiative.area}">
 				  <f:facet name="header">
 					  <h:outputText value="Area" />
 				  </f:facet>
